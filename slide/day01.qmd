@@ -22,8 +22,6 @@ format:
 
 ```{r}
 #| include: false
-pacman::p_load(tidyverse, haven, gt, modelsummary, ggdag, dagitty, icons)
-pacman::p_load_gh("JaehyunSong/BalanceR")
 knitr::opts_chunk$set(dev       = "ragg_png",
                       dpi       = 300,
                       fig.align = "center",
@@ -34,11 +32,94 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 
 ## 講義概要
 
+* 科目名: 社会科学における因果推論
+* 講師: 宋財泫 (ソン ジェヒョン)
+* 所属: 関西大学総合情報学部
+   * E-mail: song [*at*] kansai-u.ac.jp
+   * Homepage: <https://www.jaysong.net>
+* 時間: 月曜日2限
+* 教室: ？？？
+
 ## 内容
+
+::::{.columns}
+:::{.column width=50%}
+#### 因果推論の考え方
+
+* 因果推論とは
+* 内生性（自己選択バイアス）
+* 因果推論の根本問題
+:::
+
+:::{.column width=50%}
+#### 因果推論の理論と方法
+
+* 無作為化比較試験
+* 回帰分析とその拡張
+   * 共変量調整
+   * マッチング
+   * 差分の差分法
+   * 回帰不連続デザイン
+   * 操作変数法
+:::
+::::
 
 ## 実習
 
+実習はRで行う。4・5回目はRの導入および使い方についても解説（復習レベル）する。
+
+* 本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能
+
+::::{.columns}
+
+:::{.column width=70%}
+### 宋のR環境
+
+* macOS 12.5 "Monterey"
+* `r version$version.string`
+   * R > 4.1ならOK
+* RStudio 2022.11.0+105 "Elsbeth Geranium"
+* スライド、サポートページ、実習用資料の執筆環境
+   * Quarto `r quarto::quarto_inspect()$quarto$version`
+   * R package {quarto} `r packageVersion("quarto")`
+:::
+
+:::{.column width=20%}
+![](figs/01/R.png)
+:::
+:::{.column width=10%}
+:::
+
+::::
+
 ## 前提知識
+
+第4回講義までに以下の本の内容が理解できていれば問題ない。
+
+* 浅野正彦・矢内勇生. 2019『[Rによる計量政治学](https://www.amazon.co.jp/dp/4274223132)』オーム社.
+
+<br/>
+
+::::{.columns}
+:::{.column width=47%}
+### 統計学
+
+* 仮説検定
+* 統計的有意性検定
+   * $p$値$\neq$帰無仮説が正しい確率
+* 回帰分析
+:::
+
+:::{.column width=53%}
+### R
+
+* データクリーニング、回帰分析、可視化などができるならベスト
+* 第4・5回にはRの復習を行う
+* 以下の内容が分かればOK
+   * <https://www.jaysong.net/micro-book/>
+   * 『[私たちのR](https://www.jaysong.net/RBook/)』を読もう！
+:::
+::::
 
 # 資料
 

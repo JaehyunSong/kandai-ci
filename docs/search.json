@@ -2076,21 +2076,21 @@
     "href": "slide/day01.html#講義概要-1",
     "title": "社会科学における因果推論",
     "section": "講義概要",
-    "text": "講義概要"
+    "text": "講義概要\n\n科目名: 社会科学における因果推論\n講師: 宋財泫 (ソン ジェヒョン)\n所属: 関西大学総合情報学部\n\nE-mail: song [at] kansai-u.ac.jp\nHomepage: https://www.jaysong.net\n\n時間: 月曜日2限\n教室: ？？？"
   },
   {
     "objectID": "slide/day01.html#内容",
     "href": "slide/day01.html#内容",
     "title": "社会科学における因果推論",
     "section": "内容",
-    "text": "内容"
+    "text": "内容\n\n\n因果推論の考え方\n\n因果推論とは\n内生性（自己選択バイアス）\n因果推論の根本問題\n\n\n因果推論の理論と方法\n\n無作為化比較試験\n回帰分析とその拡張\n\n共変量調整\nマッチング\n差分の差分法\n回帰不連続デザイン\n操作変数法"
   },
   {
     "objectID": "slide/day01.html#実習",
     "href": "slide/day01.html#実習",
     "title": "社会科学における因果推論",
     "section": "実習",
-    "text": "実習"
+    "text": "実習\n実習はRで行う。4・5回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS 12.5 “Monterey”\nR version 4.2.1 (2022-06-23)\n\nR > 4.1ならOK\n\nRStudio 2022.11.0+105 “Elsbeth Geranium”\nスライド、サポートページ、実習用資料の執筆環境\n\nQuarto 1.0.38\nR package {quarto} 1.2"
   },
   {
     "objectID": "slide/day01.html#サポートページ",
@@ -2167,7 +2167,7 @@
     "href": "slide/day01.html#前提知識",
     "title": "社会科学における因果推論",
     "section": "前提知識",
-    "text": "前提知識"
+    "text": "前提知識\n第4回講義までに以下の本の内容が理解できていれば問題ない。\n\n浅野正彦・矢内勇生. 2019『Rによる計量政治学』オーム社.\n\n\n\n\n統計学\n\n仮説検定\n統計的有意性検定\n\n\\(p\\)値\\(\\neq\\)帰無仮説が正しい確率\n\n回帰分析\n\n\nR\n\nデータクリーニング、回帰分析、可視化などができるならベスト\n第4・5回にはRの復習を行う\n以下の内容が分かればOK\n\nhttps://www.jaysong.net/micro-book/\n『私たちのR』を読もう！"
   },
   {
     "objectID": "syllabus.html#講義内容",
