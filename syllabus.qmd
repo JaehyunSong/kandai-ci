@@ -55,18 +55,18 @@ knitr::opts_chunk$set(fig.align = "center",
 以下は本書の内容を(一部)カバーする書籍の目録である。必ずしも購入する必要はないが、予習・復習において適宜参照することを推奨する。
 
 * 因果推論の理論と実例
-   * **【AP 2008】** Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion.*](http://amzn.asia/d/2TJ1HXE) Princeton University Press.
+   * Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion.*](http://amzn.asia/d/2TJ1HXE) Princeton University Press.
       * 『[「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド](http://amzn.asia/d/3JwCmNG)』 (翻訳はかなり有害)
-   * **【AP 2014】** Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect.*](http://amzn.asia/d/fIkurDl) Princeton University Press.
-   * **【森田 2014】** 森田果. 2014.『[実証分析入門—データから「因果関係」を読み解く作法](http://amzn.asia/d/g0ADpxT)』日本評論社.
-   * **【中室・津川 2017】** 中室牧子・津川友介. 2017.『[「原因と結果」の経済学—データから真実を見抜く思考法](http://amzn.asia/d/gQN4bLu)』ダイヤモンド社.
-   * **【伊藤 2017】** 伊藤公一郎. 2017.『[データ分析の力—因果関係に迫る思考法](http://amzn.asia/d/avVVT5S)』光文社新書.
-   * **【松林 2021】** 松林哲也. 2021.『[政治学と因果推論](https://www.amazon.co.jp/dp/4000269992/)』岩波書店.
+   * Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect.*](http://amzn.asia/d/fIkurDl) Princeton University Press.
+   * 森田果. 2014.『[実証分析入門—データから「因果関係」を読み解く作法](http://amzn.asia/d/g0ADpxT)』日本評論社.
+   * 中室牧子・津川友介. 2017.『[「原因と結果」の経済学—データから真実を見抜く思考法](http://amzn.asia/d/gQN4bLu)』ダイヤモンド社.
+   * 伊藤公一郎. 2017.『[データ分析の力—因果関係に迫る思考法](http://amzn.asia/d/avVVT5S)』光文社新書.
+   * 松林哲也. 2021.『[政治学と因果推論](https://www.amazon.co.jp/dp/4000269992/)』岩波書店.
 * 理論+R
-   * **【星野・田中 2016】** 星野匡郎・田中久稔. 2016.『[Rによる実証分析—回帰分析から因果分析へ—](http://amzn.asia/d/0LFlZqm)』オーム社.
-   * **【安井 2020】** 安井翔太. 2020. 『[効果検証入門—正しい比較のための因果推論/計量経済学の基礎](https://www.amazon.co.jp/dp/4297111179)』技術評論社.
-   * **【Cunningham 2021】** Cunningham, Scott. 2021. [*Causal Inference: The Mixtape.*](https://mixtape.scunning.com/) Yale University Press.
-   * **【高橋 2022】** 高橋将宜. 2022. 『[統計的因果推論の理論と実装](https://www.amazon.co.jp/dp/4320112458/)』共立出版.
+   * 星野匡郎・田中久稔. 2016.『[Rによる実証分析—回帰分析から因果分析へ—](http://amzn.asia/d/0LFlZqm)』オーム社.
+   * 安井翔太. 2020. 『[効果検証入門—正しい比較のための因果推論/計量経済学の基礎](https://www.amazon.co.jp/dp/4297111179)』技術評論社.
+   * Cunningham, Scott. 2021. [*Causal Inference: The Mixtape.*](https://mixtape.scunning.com/) Yale University Press.
+   * 高橋将宜. 2022. 『[統計的因果推論の理論と実装](https://www.amazon.co.jp/dp/4320112458/)』共立出版.
 
 ## 講義内容
 
