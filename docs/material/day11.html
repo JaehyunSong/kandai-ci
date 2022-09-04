@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Causal Inference in Social Science@Kandai - プロジェクト管理</title>
+<title>Causal Inference in Social Science@Kandai - 回帰不連続デザイン</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,8 +24,8 @@ ul.task-list{list-style: none;}
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../intro/file.html" rel="next">
-<link href="../intro/rstudio.html" rel="prev">
+<link href="../material/day13.html" rel="next">
+<link href="../material/day09.html" rel="prev">
 <link href="../figs/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -127,6 +127,34 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
     <a class="dropdown-item" href="../material/day02.html">
  <span class="dropdown-text">因果推論の考え方</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day03.html">
+ <span class="dropdown-text">ランダム化比較試験</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day04.html">
+ <span class="dropdown-text">Rの復習</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day06.html">
+ <span class="dropdown-text">回帰分析と因果推論</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day07.html">
+ <span class="dropdown-text">マッチング</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day09.html">
+ <span class="dropdown-text">差分の差分法</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day11.html">
+ <span class="dropdown-text">回帰不連続デザイン</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day13.html">
+ <span class="dropdown-text">操作変数法</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -151,7 +179,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">プロジェクト管理</h1>
+      <h1 class="quarto-secondary-nav-title">回帰不連続デザイン</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -166,32 +194,47 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/install.html" class="sidebar-item-text sidebar-link">Rの導入</a>
+  <a href="../material/day01.html" class="sidebar-item-text sidebar-link">ガイダンス</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/rstudio.html" class="sidebar-item-text sidebar-link">RStudioの設定</a>
+  <a href="../material/day02.html" class="sidebar-item-text sidebar-link">因果推論の考え方</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/project.html" class="sidebar-item-text sidebar-link active">プロジェクト管理</a>
+  <a href="../material/day03.html" class="sidebar-item-text sidebar-link">ランダム化比較試験</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/file.html" class="sidebar-item-text sidebar-link">ファイル管理</a>
+  <a href="../material/day04.html" class="sidebar-item-text sidebar-link">Rの復習</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/filesystem.html" class="sidebar-item-text sidebar-link">ファイル管理術</a>
+  <a href="../material/day06.html" class="sidebar-item-text sidebar-link">回帰分析と因果推論</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/packages.html" class="sidebar-item-text sidebar-link">パッケージ</a>
+  <a href="../material/day07.html" class="sidebar-item-text sidebar-link">マッチング</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../material/day09.html" class="sidebar-item-text sidebar-link">差分の差分法</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../material/day11.html" class="sidebar-item-text sidebar-link active">回帰不連続デザイン</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../material/day13.html" class="sidebar-item-text sidebar-link">操作変数法</a>
   </div>
 </li>
     </ul>
@@ -199,21 +242,14 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">目次</h2>
-   
-  <ul>
-  <li><a href="#プロジェクトの作成" id="toc-プロジェクトの作成" class="nav-link active" data-scroll-target="#プロジェクトの作成"> <span class="header-section-number">1</span> プロジェクトの作成</a></li>
-  <li><a href="#プロジェクトの開き方" id="toc-プロジェクトの開き方" class="nav-link" data-scroll-target="#プロジェクトの開き方"> <span class="header-section-number">2</span> プロジェクトの開き方</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">プロジェクト管理</h1>
+<h1 class="title d-none d-lg-block">回帰不連続デザイン</h1>
 </div>
 
 
@@ -227,121 +263,8 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 
 </header>
 
-<section id="プロジェクトの作成" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="プロジェクトの作成"><span class="header-section-number">1</span> プロジェクトの作成</h2>
-<p><strong>手順1:</strong> File &gt; New Project…をクリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Create1.png" class="img-fluid figure-img" width="500"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>手順2:</strong> New Directoryをクリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Create2.png" class="img-fluid figure-img" width="500"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>手順3:</strong> New Projectをクリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Create3.png" class="img-fluid figure-img" width="500"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>手順4:</strong> Directory name:にプロジェクト名を入力し、Create Projectをクリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Create4.png" class="img-fluid figure-img" width="500"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-注意: プロジェクト名の付け方
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>　プロジェクト名には<strong>ローマ字、数字のみ</strong>を使おう。つまり、日本語、中国語、韓国語、全角文字、スペースはなるべく使わないこと。空白を入れたい場合はスペースの代わりにアンダースコア（<code>_</code>）を使おう。</p>
-</div>
-</div>
-</section>
-<section id="プロジェクトの開き方" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="プロジェクトの開き方"><span class="header-section-number">2</span> プロジェクトの開き方</h2>
-<p>　プロジェクトを作成すれば、自動的に出来たてのプロジェクトが開かれる。しかし、NIIオンライン分析システムから一旦ログアウトし、改めてRStudioを起動する場合、プロジェクトをロードする必要がある。</p>
-<p><strong>手順1:</strong> File &gt; Open Project…をクリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Open1.png" class="img-fluid figure-img" width="500"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>手順2:</strong> プロジェクト・フォルダー名を<strong>ダブル</strong>クリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Open2.png" class="img-fluid figure-img" width="500"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>手順3:</strong> <code>.Rproj</code>で終わるファイルを<strong>ダブル</strong>クリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Open3.png" class="img-fluid figure-img" width="500"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>プロジェクトが正しくロードされている場合、RStudioの右上にプロジェクト名が表示される。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Figs/Project/Check.png" class="img-fluid figure-img" width="300"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-常にプロジェクト機能を使おう!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>　RStudionの右上のプロジェクト名表示が「Project: (None)」になっていることは、現在プロジェクトを開いていないことを意味する。簡単な計算機として使う目的以外（つまり、授業中の実習や課題）は必ずプロジェクト機能を使おう。</p>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -439,17 +362,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return popup.innerHTML;
     });
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/www\.jaysong\.net\/kandai-ci\//);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../intro/rstudio.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">RStudioの設定</span>
+      <a href="../material/day09.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">差分の差分法</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../intro/file.html" class="pagination-link">
-        <span class="nav-page-text">ファイル管理</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../material/day13.html" class="pagination-link">
+        <span class="nav-page-text">操作変数法</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

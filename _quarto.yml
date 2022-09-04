@@ -51,6 +51,14 @@ website:
       style: "docked"
       contents:
         - material/day01.qmd
+        - material/day02.qmd
+        - material/day03.qmd
+        - material/day04.qmd
+        - material/day06.qmd
+        - material/day07.qmd
+        - material/day09.qmd
+        - material/day11.qmd
+        - material/day13.qmd
   google-analytics: "G-9F94XL4N4M"
 
 format:

@@ -1,0 +1,7 @@
+---
+title: "ランダム化比較試験"
+link-external-icon: true
+link-external-newwindow: true
+code-line-numbers: true
+---
+

@@ -1,5 +1,5 @@
 ---
-title: "ガイダンス"
+title: "因果推論の考え方"
 link-external-icon: true
 link-external-newwindow: true
 code-line-numbers: true
@@ -7,10 +7,10 @@ code-line-numbers: true
 
 ## スライド
 
-<a href="../slide/day01.html" class="btn btn-primary btn-sm" target="_blank" role="button"><i class="bi bi-window"></i> 新しいタブで開く</a>
+<a href="../slide/day02.html" class="btn btn-primary btn-sm" target="_blank" role="button"><i class="bi bi-window"></i> 新しいタブで開く</a>
 
 ```{=html}
-<iframe class="slide-deck" src="../slide/day01.html" width="100%" style="aspect-ratio: 16 / 9.2;"></iframe>
+<iframe class="slide-deck" src="../slide/day02.html" width="100%" style="aspect-ratio: 16 / 9.2;"></iframe>
 ```
 
 ```{r}

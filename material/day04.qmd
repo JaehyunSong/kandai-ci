@@ -1,0 +1,8 @@
+---
+title: "Rの復習"
+toc: true
+link-external-icon: true
+link-external-newwindow: true
+code-line-numbers: true
+---
+
