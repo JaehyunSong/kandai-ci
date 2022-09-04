@@ -1,0 +1,146 @@
+---
+title: "社会科学における因果推論"
+subtitle: "ガイダンス"
+author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
+institute: "関西大学総合情報学部"
+date: "2022年 9月 26日"
+format:
+  revealjs: 
+    width: 1400
+    slide-number: true
+    logo: figs/logo.png
+    theme: [default, styles.scss]
+    footer: <https://www.jaysong.net/kandai-ci>
+    link-external-newwindow: true
+    chalkboard: true
+    touch: true
+    controls: true
+    auto-stretch: false
+---
+
+# 講義概要
+
+```{r}
+#| include: false
+pacman::p_load(tidyverse, haven, gt, modelsummary, ggdag, dagitty, icons)
+pacman::p_load_gh("JaehyunSong/BalanceR")
+knitr::opts_chunk$set(dev       = "ragg_png",
+                      dpi       = 300,
+                      fig.align = "center",
+                      echo      = FALSE,
+                      message   = FALSE,
+                      warning   = FALSE)
+```
+
+## 講義概要
+
+## 内容
+
+## 実習
+
+## 前提知識
+
+# 資料
+
+## サポートページ
+
+* <https://www.jaysong.net/kandai-ci/>（ブラウザーの「お気に入り」に登録）
+
+![](figs/01/SupportPage.png)
+
+## 教科書
+
+* なし（[サポートページ](https://www.jaysong.net/kandai-ci/)、およびスライドのみ使用）
+
+## 参考書（R）
+
+* 宋財泫・矢内勇生.『[私たちのR: ベストプラクティスの探求](https://www.jaysong.net/RBook/)』（Web-book）
+* 松村優哉 他. 2021. 『[改訂2版 RユーザのためのRStudio[実践]入門](https://www.amazon.co.jp/dp/4297121700/)』技術評論社
+* Garrett Grolemund and Hadley Wickham. 2017. [*R for Data Science*.](https://r4ds.had.co.nz/) O’Reilly. 
+
+:::{layout-ncol=3}
+![](figs/01/Reference_R1.png){width=325px fig-align="center"}
+
+![](figs/01/Reference_R2.jpg){width=365px fig-align="center"}
+
+![](figs/01/Reference_R3.jpg){width=360px fig-align="center"}
+:::
+
+## 参考書（因果推論）
+
+::: {.r-stack}
+* 理論
+   * 初級: 松林哲也. 2021.『[政治学と因果推論](https://www.amazon.co.jp/dp/4000269992/)』岩波書店.
+   * 初級: Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect*.](http://amzn.asia/d/fIkurDl) Princeton University Press.
+   * 中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion*.](http://amzn.asia/d/2TJ1HXE) Princeton University Press. 
+      * 『[「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド](http://amzn.asia/d/3JwCmNG)』
+* 実装
+   * Cunningham, Scott. 2021. [*Causal Inference: The Mixtape*.](https://mixtape.scunning.com/) Yale University Press.
+   * 安井翔太. 2020. 『[効果検証入門](https://www.amazon.co.jp/dp/4297111179)』技術評論社.
+   * 高橋将宜. 2022. 『[統計的因果推論の理論と実装](https://www.amazon.co.jp/dp/4320112458/)』共立出版.
+
+::: {.fragment fragment-index=1}
+:::{layout-ncol=6}
+![](figs/01/Reference_CI1.jpg){width=250px fig-align="center"}
+
+![](figs/01/Reference_CI2.jpg){width=230px fig-align="center"}
+
+![](figs/01/Reference_CI3.jpg){width=250px fig-align="center"}
+
+![](figs/01/Reference_CI4.jpg){width=230px fig-align="center"}
+
+![](figs/01/Reference_CI5.jpg){width=250px fig-align="center"}
+
+![](figs/01/Reference_CI6.jpg){width=240px fig-align="center"}
+:::
+:::
+
+:::
+
+# 評価
+
+## 評価
+
+期末課題の詳細は学期末（12月頃）アナウンス
+
+* 平常点: 70%
+   * 授業への貢献度
+* 期末課題: 30%
+   * 研究構想の発表
+
+# その他
+
+## オフィス・アワー
+
+宋が研究室に待機し、事前予約**なし**に相談、質問などが可能な時間
+
+* 場所：TA227研究室（A棟の2階）
+* 毎週火曜日3限 (13:00〜14:30)
+* 上記の時間外は事前予約が必要（メール、対面）
+   * <i class="bi bi-envelope"></i> <song@kansai-u.ac.jp>
+
+## 分析環境の準備
+
+#### 自分のPCにR + RStudioがインストールされて**いる**場合
+
+* Rのバージョンが4.1.2以上であればOK
+
+<br/>
+
+#### 自分のPCにR + RStudioがインストールされて**いない**場合
+
+* 少しでも不安があれば宋と相談しよう！
+
+::::{.columns}
+:::{.column width=50%}
+**方法1:** 自分のPCにインストールする。
+
+* 参考資料: <https://yukiyanai.github.io/jp/resources/>
+:::
+
+:::{.column width=50%}
+**方法2:** クラウド版のR/RStudioを使用する。
+
+* 参考資料: サポートページ > [Rの使い方](https://www.jaysong.net/kandai-ci/intro/install.html)
+:::
+::::

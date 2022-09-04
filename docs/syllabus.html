@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Causal Inference in Social Science@Kandai - 本講義について</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./figs/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9F94XL4N4M"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <img src="./figs/logo.png" alt="">
+    <span class="navbar-title">Causal Inference in Social Science@Kandai</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./syllabus.html" aria-current="page">シラバス</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rの使い方</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rの使い方">    
+        <li>
+    <a class="dropdown-item" href="./intro/install.html">
+ <span class="dropdown-text">Rの導入</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./intro/rstudio.html">
+ <span class="dropdown-text">RStudioの設定</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./intro/project.html">
+ <span class="dropdown-text">プロジェクト管理</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./intro/file.html">
+ <span class="dropdown-text">ファイル管理</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./intro/filesystem.html">
+ <span class="dropdown-text">ファイル管理術</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./intro/packages.html">
+ <span class="dropdown-text">パッケージ</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">講義資料</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="./material/day01.html">
+ <span class="dropdown-text">ガイダンス</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./data.html">データ集</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"><i class="bi bi-terminal" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.jaysong.net/RBook/"><i class="bi bi-book" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#概要" id="toc-概要" class="nav-link active" data-scroll-target="#概要">概要</a></li>
+  <li><a href="#授業の内容" id="toc-授業の内容" class="nav-link" data-scroll-target="#授業の内容">授業の内容</a></li>
+  <li><a href="#評価" id="toc-評価" class="nav-link" data-scroll-target="#評価">評価</a></li>
+  <li><a href="#履修上の注意" id="toc-履修上の注意" class="nav-link" data-scroll-target="#履修上の注意">履修上の注意</a></li>
+  <li><a href="#教科書参考書" id="toc-教科書参考書" class="nav-link" data-scroll-target="#教科書参考書">教科書・参考書</a></li>
+  <li><a href="#講義内容" id="toc-講義内容" class="nav-link" data-scroll-target="#講義内容">講義内容</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">本講義について</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="概要" class="level2">
+<h2 class="anchored" data-anchor-id="概要">概要</h2>
+<ul>
+<li>科目名: 社会科学における因果推論</li>
+<li>講師: 宋財泫 (ソン ジェヒョン)</li>
+<li>所属: 関西大学総合情報学部
+<ul>
+<li>E-mail: song [<em>at</em>] kansai-u.ac.jp</li>
+<li>Homepage: <a href="https://www.jaysong.net" class="uri">https://www.jaysong.net</a></li>
+</ul></li>
+<li>時間: 月曜日2限</li>
+<li>教室: フロンティア館 304 教室</li>
+</ul>
+</section>
+<section id="授業の内容" class="level2">
+<h2 class="anchored" data-anchor-id="授業の内容">授業の内容</h2>
+<p>　本講義は、近年政治学において関心が高まっている「因果推論」を行うための諸手段を 理解・習得することを目的とする。最初に、最良の因果推論とも称される RCT(ランダム 化比較試験)を説明し、RCT が不可能な際の手法としてマッチング、回帰不連続デザイ ン、差分の差などを紹介する。</p>
+</section>
+<section id="評価" class="level2">
+<h2 class="anchored" data-anchor-id="評価">評価</h2>
+<ul>
+<li>平常点: 70%
+<ul>
+<li>授業への参加度、質問など</li>
+</ul></li>
+<li>期末課題: 30%
+<ul>
+<li>第16回の研究構想の発表</li>
+</ul></li>
+</ul>
+</section>
+<section id="履修上の注意" class="level2">
+<h2 class="anchored" data-anchor-id="履修上の注意">履修上の注意</h2>
+<p>　統計学に関する基礎知識が必要である。目安は母平均の差の検定、および線形回帰分析が理解でき、統計ソフトウェアで実行・解釈が可能なレベルである。</p>
+<p>　本講義における共通言語はRである。Rの使い方に関しては既にインターネット上に膨大な情報がある。<a href="https://www.jaysong.net">宋</a>と<a href="https://yukiyanai.github.io/">矢内勇生</a>(高知工科大学)が執筆中の以下の資料(無料で閲覧可能)を参照することも1つの選択肢である。</p>
+<ul>
+<li>宋財泫・矢内勇生. 『<a href="https://www.jaysong.net/RBook/">私たちの R: ベストプラクティスの探究</a>』(web-book)
+<ul>
+<li>Rの導入方法は講義中、宋が解説する。</li>
+</ul></li>
+</ul>
+<p>　統計学および定量的分析、Rの使い方については以下の書籍を講義開始日までに読んで おくことを強く推奨する。</p>
+<ul>
+<li>浅野正彦・矢内勇生. 2019『<a href="https://www.amazon.co.jp/dp/4274223132">Rによる計量政治学</a>』オーム社.</li>
+</ul>
+<p>　R スクリプト作成の際、{tidyverse} というパッケージ群を積極的に活用する。この パッケージには {dplyr}、{ggplot2} などのパッケージが含まれている。各パッケージの 使い方を習得するには以下の教材を推奨する。</p>
+<ul>
+<li>Wickham, Hadley and Grolemund, Garrett. 2017. <a href="https://www.amazon.co.jp/dp/1491910399/"><em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data,</em></a> O’Reilly. (<a href="www.amazon.co.jp/dp/487311814X/">邦訳</a>あり/<a href="https://r4ds.had.co.nz">原著</a>はインターネットから無料で閲覧可)</li>
+<li>松村優哉・湯谷啓明・紀ノ定保礼・前田和寛 . 2021. 『<a href="https://www.amazon.co.jp/dp/4297121700/">改訂2版 Rユーザのための RStudio[実践] 入門—tidyverseによるモダンな分析フローの世界—</a>』技術評論社.</li>
+</ul>
+</section>
+<section id="教科書参考書" class="level2">
+<h2 class="anchored" data-anchor-id="教科書参考書">教科書・参考書</h2>
+<p>以下は本書の内容を(一部)カバーする書籍の目録である。必ずしも購入する必要はないが、予習・復習において適宜参照することを推奨する。</p>
+<ul>
+<li>因果推論の理論と実例
+<ul>
+<li><strong>【AP 2008】</strong> Angrist, Joahua D., and Jorn-steffen Pischke. 2008. <a href="http://amzn.asia/d/2TJ1HXE"><em>Mostly Harmless Econometrics: An Empiricist’s Companion.</em></a> Princeton University Press.
+<ul>
+<li>『<a href="http://amzn.asia/d/3JwCmNG">「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド</a>』 (翻訳はかなり有害)</li>
+</ul></li>
+<li><strong>【AP 2014】</strong> Angrist, Joahua D., and Jorn-steffen Pischke. 2014. <a href="http://amzn.asia/d/fIkurDl"><em>Mastering ’Metrics: The Path from Cause to Effect.</em></a> Princeton University Press.</li>
+<li><strong>【森田 2014】</strong> 森田果. 2014.『<a href="http://amzn.asia/d/g0ADpxT">実証分析入門—データから「因果関係」を読み解く作法</a>』日本評論社.</li>
+<li><strong>【中室・津川 2017】</strong> 中室牧子・津川友介. 2017.『<a href="http://amzn.asia/d/gQN4bLu">「原因と結果」の経済学—データから真実を見抜く思考法</a>』ダイヤモンド社.</li>
+<li><strong>【伊藤 2017】</strong> 伊藤公一郎. 2017.『<a href="http://amzn.asia/d/avVVT5S">データ分析の力—因果関係に迫る思考法</a>』光文社新書.</li>
+<li><strong>【松林 2021】</strong> 松林哲也. 2021.『<a href="https://www.amazon.co.jp/dp/4000269992/">政治学と因果推論</a>』岩波書店.</li>
+</ul></li>
+<li>理論+R
+<ul>
+<li><strong>【星野・田中 2016】</strong> 星野匡郎・田中久稔. 2016.『<a href="http://amzn.asia/d/0LFlZqm">Rによる実証分析—回帰分析から因果分析へ—</a>』オーム社.</li>
+<li><strong>【安井 2020】</strong> 安井翔太. 2020. 『<a href="https://www.amazon.co.jp/dp/4297111179">効果検証入門—正しい比較のための因果推論/計量経済学の基礎</a>』技術評論社.</li>
+<li><strong>【Cunningham 2021】</strong> Cunningham, Scott. 2021. <a href="https://mixtape.scunning.com/"><em>Causal Inference: The Mixtape.</em></a> Yale University Press.</li>
+<li><strong>【高橋 2022】</strong> 高橋将宜. 2022. 『<a href="https://www.amazon.co.jp/dp/4320112458/">統計的因果推論の理論と実装</a>』共立出版.</li>
+</ul></li>
+</ul>
+</section>
+<section id="講義内容" class="level2">
+<h2 class="anchored" data-anchor-id="講義内容">講義内容</h2>
+<p>以下の内容は履修者の理解度や進捗状況に応じて変更される可能性がある。</p>
+<ol type="1">
+<li>ガイダンス</li>
+<li>内生成と因果推論の考え方</li>
+<li>ランダム化比較試験</li>
+<li>分析ツールの使い方</li>
+<li>分析ツールの使い方（続き）</li>
+<li>多変量解析による因果推論の考え方</li>
+<li>マッチング（理論）</li>
+<li>マッチング（実習）</li>
+<li>差分の差分法（理論）</li>
+<li>差分の差分法（実習）</li>
+<li>回帰不連続デザイン（理論）</li>
+<li>回帰不連続デザイン（実習）</li>
+<li>操作変数法（理論）</li>
+<li>操作変数法（実習）</li>
+<li>研究構想の発表</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.jaysong.net">
+      <i class="bi bi-house-fill" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/JaehyunSong">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
