@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.38">
+  <meta name="generator" content="quarto-1.1.165">
 
   <meta name="author" content="宋(そん)&nbsp;&nbsp;財泫(じぇひょん)">
   <title>Causal Inference in Social Science@Kandai - 社会科学における因果推論</title>
@@ -20,10 +20,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9F94XL4N4M"></script>
@@ -338,14 +343,1194 @@
   <p class="date">2022年 10月 3日</p>
 </section>
 
-<section class="slide level2">
+<section>
+<section id="因果推論とその敵" class="title-slide slide level1 center">
+<h1>因果推論とその敵</h1>
 
+</section>
+<section id="社会科学における因果推論の意味" class="slide level2">
+<h2>社会科学における因果推論の意味</h2>
+<p>Morgan and Winship (2014) <a href="(https://www.amazon.co.jp/dp/1107694167)"><em>Counterfactuals and Causal Inference: Methods And Principles For Social Research</em></a>. Cambridge.</p>
+<blockquote>
+<p>More has been learned about causal inference in the last few decades than sum total of everything that had been learned about it in all prior recorded history. (Gary King)</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Morgan_Winship.jpg" height="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/GaryKing.jpg" height="400"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="相関から因果へ" class="slide level2">
+<h2>相関から因果へ</h2>
+<p>原因 (<span class="math inline">\(X\)</span>) と結果 (<span class="math inline">\(Y\)</span>) の関係: 啓発活動と投票率の関係（架空の例）</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day02_files/figure-revealjs/unnamed-chunk-2-1.png" width="2400"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li><span class="math inline">\(\bigcirc\)</span>: 啓発活動が行われる選挙区の投票率は低い（<strong>相関</strong>関係）</li>
+<li><span class="math inline">\(\times\)</span>: 啓発活動は投票率を下げる（<strong>因果</strong>関係）</li>
+<li><span class="math inline">\(\Rightarrow\)</span> 統計分析から得られる結果は相関関係<strong>のみ</strong></li>
+</ul>
+<p><br></p>
+<ul>
+<li>理論/デザインを用い、観察された相関関係が因果関係であることを<strong>説得</strong>
+<ul>
+<li>因果関係を担保してくれる統計的手法は<strong>ない</strong>。</li>
+</ul></li>
+<li>「これは相関関係でなく因果関係である」と主張するためには、<strong>内生性</strong>がないことを示す必要がある。</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="同時性" class="slide level2">
+<h2>同時性</h2>
+<p><strong>Simultaneity</strong></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Sake.png"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p>原因と結果の間に双方向の因果関係が存在</p>
+<ul>
+<li>例) お酒 (原因; X) とストレス (結果; Y) の関係
+<ul>
+<li>酒を飲むとストレスが貯まる</li>
+<li>ストレス解消のために酒を飲む</li>
+<li>酒を飲むとストレスが貯まる</li>
+<li>ストレス解消のために酒を飲む</li>
+<li>酒を飲むとストレスが貯まる</li>
+<li>…</li>
+</ul></li>
+<li><span class="math inline">\(\rightarrow\)</span> 地獄のような無限ループ</li>
+</ul>
+<p><span class="math inline">\(\Rightarrow\)</span> 酒がストレスに与える影響は?</p>
+</div>
+</div>
+</section>
+<section id="見かけ上の相関" class="slide level2">
+<h2>見かけ上の相関</h2>
+<p><strong>Spurious Correlation</strong>、擬似相関</p>
+<ul>
+<li><strong>たまたま</strong>相関関係がある場合
+<ul>
+<li>例) メイン州の離婚率一人当たりマーガリンの消費量</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Spurious1.png" style="width:90.0%"></p>
+</figure>
+</div>
+</section>
+<section id="見かけ上の相関-1" class="slide level2">
+<h2>見かけ上の相関</h2>
+<p><strong>Spurious Correlation</strong>、擬似相関</p>
+<ul>
+<li>共通の要因からの影響（ビールとアイスクリーム消費量）</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Spurious2.png" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="見かけ上の相関-2" class="slide level2">
+<h2>見かけ上の相関</h2>
+<p><strong>Spurious Correlation</strong>、擬似相関</p>
+<ul>
+<li>共通の要因からの影響（ゲームをやると身長が伸びる説）</li>
+</ul>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Game_Height1.png" style="width:55.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Game_Height2.png" class="fragment" style="width:55.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="逆の因果" class="slide level2">
+<h2>逆の因果</h2>
+<p><strong>Reverse Causality</strong></p>
+<ul>
+<li>例) 心臓移植と生存率の例</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">5年後に死亡</th>
+<th style="text-align: right;">5年後に生存</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">心臓移植を</td>
+<td style="text-align: left;">受けた</td>
+<td style="text-align: right;">10名</td>
+<td style="text-align: right;">5名</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">受けなかった</td>
+<td style="text-align: right;">5名</td>
+<td style="text-align: right;">10名</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>心臓移植を受けたら死亡確率が上がる?</li>
+<li>死亡確率が高い人が心臓移植を受ける?</li>
+</ul>
+</section>
+<section id="逆の因果-1" class="slide level2">
+<h2>逆の因果</h2>
+<p><strong>Reverse Causality</strong></p>
+<ul>
+<li>「人気だから4文字に略されるのか、4文字に略せるからヒットす るのか、どっちなんでしょうね」</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/ReverseCausality.png" style="width:50.0%"></p>
+</figure>
+</div>
+</section>
+<section id="欠落変数バイアス" class="slide level2">
+<h2>欠落変数バイアス</h2>
+<p><strong>Omitted Variable Bias</strong></p>
+<p>例) 真のモデルが<span class="math inline">\(Y = \beta_0 + \beta_1 \cdot X + \beta_2 \cdot Z + e\)</span>の場合</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day02_files/figure-revealjs/unnamed-chunk-3-1.png" width="1200"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>モデルに<span class="math inline">\(Z\)</span>が含まれていなくても<span class="math inline">\(\beta_1\)</span>の推定値は変化<span class="math inline">\(\times\)</span>
+<ul>
+<li><span class="math inline">\(X\)</span>と<span class="math inline">\(Z\)</span>は<strong>独立</strong>（<span class="math inline">\(X \perp Z\)</span>）</li>
+<li><span class="math inline">\(\sigma_{X, Z} = 0\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="欠落変数バイアス-1" class="slide level2">
+<h2>欠落変数バイアス</h2>
+<p><strong>Omitted Variable Bias</strong></p>
+<p>例) 真のモデルが<span class="math inline">\(Y = \beta_0 + \beta_1 \cdot X + \beta_2 \cdot Z + e\)</span>の場合</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day02_files/figure-revealjs/unnamed-chunk-4-1.png" width="1200"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>モデルに<span class="math inline">\(Z\)</span>が含まれていない場合、<span class="math inline">\(\beta_1\)</span>の推定値にバイアス
+<ul>
+<li><span class="math inline">\(Z \rightarrow X\)</span>の関係が存在</li>
+<li><span class="math inline">\(\sigma_{X, Z} \neq 0\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\beta_1\)</span>の真の値（=不偏推定量）を推定するためには<span class="math inline">\(X\)</span>と<span class="math inline">\(Y\)</span>両方と相関する変数<strong>すべて</strong>が必要
+<ul>
+<li>そもそも、「真の値」とは？</li>
+<li><span class="math inline">\(X\)</span>と<span class="math inline">\(Y\)</span>両方と相関する<strong>すべて</strong>の変数は特定可能? 測定可能?</li>
+</ul></li>
+<li><span class="math inline">\(\rightarrow\)</span> データ分析から得られた結果はあくまでも「<strong>分析モデルが想定している世界</strong>」のものに過ぎない
+<ul>
+<li>定量的手法は反証可能性を高めやすい手法（=科学的な手法に<strong>なりやすい</strong>）であって、科学そのものも、得られた結果が真理であることを保障するものでもない。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="自己選択バイアス" class="slide level2">
+<h2>自己選択バイアス</h2>
+<p><strong>(Self-)Selection Bias</strong></p>
+<ul>
+<li>例1) 職業訓練と期待収入</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">3年後の収入</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">職業訓練を</td>
+<td style="text-align: left;">受けた</td>
+<td style="text-align: right;">6349ドル</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">受けなかった</td>
+<td style="text-align: right;">6984ドル</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>職業訓練を受けたら収入が上がる?</li>
+<li>もともと低収入の人が職業訓練を受けようとする?</li>
+<li>参考) 心臓移植の例も自己選択のバイアスとして解釈可能</li>
+<li>参考) 交絡因子の不在として解釈可能（就労意欲など）</li>
+</ul>
+</section>
+<section id="内生性" class="slide level2">
+<h2>内生性</h2>
+<p>これまでの多くの例は<strong>内生性</strong>（endogeneity）の問題</p>
+<ul>
+<li>内生性: <strong>説明変数と誤差項間に相関</strong>が存在
+<ul>
+<li>誤差項と相関のある説明変数: <strong>内生変数</strong>（endogenous variable）</li>
+</ul></li>
+<li>内生性がある場合、推定値は一致推定量でも、不偏推定量でもはない
+<ul>
+<li>サンプルサイズ（<span class="math inline">\(N\)</span>）をいくら増やしても無駄</li>
+</ul></li>
+<li>内生性の原因
+<ol type="1">
+<li>同時性</li>
+<li>欠落変数バイアス</li>
+<li>（体系的な）測定誤差</li>
+<li>自己選択バイアス</li>
+</ol></li>
+<li>最近の教科書はこれはすべてを<strong>自己選択バイアス</strong>や欠落変数バイアスでまとめる傾向</li>
+</ul>
+</section>
+<section id="単純比較の罠" class="slide level2">
+<h2>単純比較の罠</h2>
+<p>啓発活動と投票率の関係（架空の例）</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day02_files/figure-revealjs/unnamed-chunk-5-1.png" width="2400"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li>単純比較の手法
+<ul>
+<li>平均値の比較、平均値の差の検定（<span class="math inline">\(t\)</span>検定、ANOVA）、単回帰分析など</li>
+<li>啓発ありの投票率 - 啓発なしの投票率 = -10%p</li>
+</ul></li>
+<li>内生性がない場合、「啓発活動は投票率を-10%p下げる」と主張できる。</li>
+<li>本当に、本当に、本当に、内生性はないのか。</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="内生性は" class="slide level2">
+<h2>内生性は?</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day02_files/figure-revealjs/unnamed-chunk-6-1.png" width="1200"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<ul>
+<li><span class="math inline">\(Y\)</span>: 投票率</li>
+<li><span class="math inline">\(X\)</span>: 啓発活動の有無</li>
+<li><span class="math inline">\(W\)</span>: 若者の割合</li>
+<li><span class="math inline">\(Z\)</span>: これまでの投票率</li>
+<li><span class="math inline">\(e\)</span>: <span class="math inline">\(X\)</span>と<span class="math inline">\(Z\)</span>以外に、<span class="math inline">\(Y\)</span>に影響を与える要因</li>
+</ul>
+<p><br></p>
+<ul>
+<li>投票率が低い選挙区ほど、啓発活動を行う傾向</li>
+<li>投票率が元々低い選挙区の場合、今回の投票率も低い傾向
+<ul>
+<li><span class="math inline">\(\Rightarrow\)</span> 自己選択バイアス/欠落変数バイアスの存在</li>
+</ul></li>
+<li>本当に比較すべき対象は…
+<ul>
+<li>啓発活動を行わなかったA市 vs.&nbsp;行ったA市</li>
+<li>啓発活動を行わなかったB市 vs.&nbsp;行ったB市</li>
+<li>これらは比較可能か?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="相関から因果へ-1" class="slide level2">
+<h2>相関から因果へ</h2>
+<p>内生性の除外 <span class="math inline">\(\rightarrow\)</span> 因果効果の推定</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Door1.jpg"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/Door2.jpg"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="因果推論の根本問題" class="title-slide slide level1 center">
+<h1>因果推論の根本問題</h1>
+
+</section>
+<section id="因果関係の例" class="slide level2">
+<h2>因果関係の例</h2>
+<p>ソンさんの講義を履修することで期待年収が上がるか</p>
+<ul>
+<li>オバマ君の場合: ソンさんの講義を履修し、年収が5000万円に
+<ul>
+<li>ソンさんの授業のおかげで富裕層になった（次は社交界進出）</li>
+<li>友達に教えてあげよう</li>
+</ul></li>
+</ul>
+<p>講義履修の効果</p>
+<ul>
+<li>処置: ソンさんの講義を履修するか否か</li>
+<li>効果: 履修した場合の年収 − 履修しなかった場合の年収</li>
+</ul>
+</section>
+<section id="因果関係の例-1" class="slide level2">
+<h2>因果関係の例</h2>
+<p>ソンさんの講義を履修することで期待年収が上がるか</p>
+<ul>
+<li>オバマ君の場合: ソンさんの講義を履修し、年収が5000万円に
+<ul>
+<li>ソンさんの授業のおかげで富裕層になった（次は社交界進出）</li>
+<li>友達に教えてあげよう</li>
+</ul></li>
+</ul>
+<p>講義履修の効果（ケース1）</p>
+<ul>
+<li>オバマ君がソンさんの授業を履修しなくても年収5000万円なら
+<ul>
+<li>ソンさんの講義の因果効果は0</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">履修しなかった場合の年収(A)</th>
+<th style="text-align: right;">履修した場合の年収(B)</th>
+<th style="text-align: right;">効果(B-A)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ケース1</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;"><strong>0万</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="因果関係の例-2" class="slide level2">
+<h2>因果関係の例</h2>
+<p>ソンさんの講義を履修することで期待年収が上がるか</p>
+<ul>
+<li>オバマ君の場合: ソンさんの講義を履修し、年収が5000万円に
+<ul>
+<li>ソンさんの授業のおかげで富裕層になった（次は社交界進出）</li>
+<li>友達に教えてあげよう</li>
+</ul></li>
+</ul>
+<p>講義履修の効果（ケース2）</p>
+<ul>
+<li>オバマ君がソンさんの授業を履修しなかった場合、年収1000万円なら
+<ul>
+<li>ソンさんの講義の因果効果は4000万円</li>
+<li>一生ソンさんには頭が上がらない</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">履修しなかった場合の年収(A)</th>
+<th style="text-align: right;">履修した場合の年収(B)</th>
+<th style="text-align: right;">効果(B-A)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ケース2</td>
+<td style="text-align: right;">1000万</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;"><strong>4000万</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="因果関係の例-3" class="slide level2">
+<h2>因果関係の例</h2>
+<p>ソンさんの講義を履修することで期待年収が上がるか</p>
+<ul>
+<li>オバマ君の場合: ソンさんの講義を履修し、年収が5000万円に
+<ul>
+<li>ソンさんの授業のおかげで富裕層になった（次は社交界進出）</li>
+<li>友達に教えてあげよう</li>
+</ul></li>
+</ul>
+<p>講義履修の効果（ケース3）</p>
+<ul>
+<li>オバマ君がソンさんの授業を履修しなかった場合、年収8000万円なら
+<ul>
+<li>ソンさんの講義の因果効果は-3000万</li>
+<li>ソンさんは悪くない</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">履修しなかった場合の年収(A)</th>
+<th style="text-align: right;">履修した場合の年収(B)</th>
+<th style="text-align: right;">効果(B-A)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ケース3</td>
+<td style="text-align: right;">8000万</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;"><strong>-3000万</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="因果関係の例-4" class="slide level2">
+<h2>因果関係の例</h2>
+<p>ソンさんの講義を履修することで期待年収が上がるか</p>
+<ul>
+<li>オバマ君の場合: ソンさんの講義を履修し、年収が5000万円に
+<ul>
+<li>ソンさんの授業のおかげで富裕層になった（次は社交界進出）</li>
+<li>友達に教えてあげよう</li>
+</ul></li>
+</ul>
+<p>講義履修の効果</p>
+<ul>
+<li>ソンさんの講義を<strong>履修しなかった場合</strong>のオバマ君の年収は…?
+<ul>
+<li>個人（オバマ君）における処置効果を推定する際にはこれが不可欠</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">履修しなかった場合の年収(A)</th>
+<th style="text-align: right;">履修した場合の年収(B)</th>
+<th style="text-align: right;">効果(B-A)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ケース1</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;"><strong>0万</strong></td>
+</tr>
+<tr class="even">
+<td>ケース2</td>
+<td style="text-align: right;">1000万</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;"><strong>4000万</strong></td>
+</tr>
+<tr class="odd">
+<td>ケース3</td>
+<td style="text-align: right;">8000万</td>
+<td style="text-align: right;">5000万</td>
+<td style="text-align: right;"><strong>-3000万</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="潜在的結果枠組み" class="slide level2">
+<h2>潜在的結果枠組み</h2>
+<p>Neyman-Rubin-Hollandの<strong>Potential Outcome Framework</strong></p>
+<ul>
+<li><span class="math inline">\(i\)</span> : 学生ID ( <span class="math inline">\(i = 1,2,3,...,N\)</span> )</li>
+<li><span class="math inline">\(T\)</span> : 処置
+<ul>
+<li>学生 <span class="math inline">\(i\)</span> が謎の薬を飲んだ ( <span class="math inline">\(T_i = 1\)</span> )</li>
+<li>学生 <span class="math inline">\(i\)</span> が謎の薬を飲まなかった ( <span class="math inline">\(T_i = 0\)</span> )</li>
+</ul></li>
+<li><span class="math inline">\(Y_i(T_i = 1)\)</span> : 学生 <span class="math inline">\(i\)</span> が謎の薬を飲んだ場合の数学成績</li>
+<li><span class="math inline">\(Y_i(T_i = 0)\)</span> : 学生 <span class="math inline">\(i\)</span> が謎の薬を飲まなかった場合の数学成績</li>
+<li><span class="math inline">\(ITE_i = Y_i(T_i = 1) − Y_i(T_i = 0)\)</span> : 学生iにおける薬の処置効果
+<ul>
+<li><strong>ITE</strong>: Individual Treatment Effect (個人における処置効果)
+<ul>
+<li>= <strong>UTE</strong>: Unit Treatment Effect</li>
+</ul></li>
+<li>全く同じ個人において薬を飲んだ場合と飲まなかった場合の数学成績の差 = 謎の薬の因果効果</li>
+</ul></li>
+</ul>
+</section>
+<section id="薬の効果は" class="slide level2">
+<h2>薬の効果は?</h2>
+<p>ITEの平均値は−4であり、個人差はあるものの、全体的に薬は成績に負の影響</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(T_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 0)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 1)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(ITE_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">-17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">-11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">-20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">平均</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">-4</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="因果推論の根本問題-1" class="slide level2">
+<h2>因果推論の根本問題</h2>
+<p>しかし、観察できるのは<span class="math inline">\(Y_i(T_i = 1)\)</span>か<span class="math inline">\(Y_i(T_i = 0)\)</span>、片方のみ</p>
+<ul>
+<li><span class="math inline">\(Y_i(T_i = 0)\)</span>は<strong>反実仮想</strong>（counterfactual）であり、観察不可 (<span class="math inline">\(i \in \{1,2,3\}\)</span>)</li>
+<li><span class="math inline">\(Y_i(T_i = 1)\)</span>も<strong>反実仮想</strong>(<span class="math inline">\(i \in \{4,5,6\}\)</span>)</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(T_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 0)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 1)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(ITE_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">平均</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<center>
+「みんなで薬やろうぜ」って言っていいのか
+</center>
+</section>
+<section id="世界一受けたいソンさんの授業" class="slide level2">
+<h2>世界一受けたいソンさんの授業</h2>
+<p>履修者5名と非履修者5名の年収の比較</p>
+<ul>
+<li>ITEは分からないが、平均値の差分を見ると、+100万円の効果</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(T_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 0)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 1)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(ITE_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">平均</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="世界一受けたいソンさんの授業-1" class="slide level2">
+<h2>世界一受けたいソンさんの授業</h2>
+<p>履修者5名と非履修者5名の年収の比較（ケース1）</p>
+<ul>
+<li>ITEは分からないが、平均値の差分を見ると、+100万円の効果</li>
+<li>80万円の価値があるソンさんの講義、みんなで履修しよう!</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(T_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 0)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 1)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(ITE_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>550</strong></td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>650</strong></td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">350</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>600</strong></td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;">-50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>300</strong></td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>300</strong></td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;"><strong>300</strong></td>
+<td style="text-align: right;">-100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>700</strong></td>
+<td style="text-align: right;">200</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;"><strong>600</strong></td>
+<td style="text-align: right;">250</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: right;"><strong>700</strong></td>
+<td style="text-align: right;">-50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>400</strong></td>
+<td style="text-align: right;">-100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">平均</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">490</td>
+<td style="text-align: right;">570</td>
+<td style="text-align: right;">80</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="世界一受けたいソンさんの授業-2" class="slide level2">
+<h2>世界一受けたいソンさんの授業</h2>
+<p>履修者5名と非履修者5名の年収の比較（ケース2）</p>
+<ul>
+<li>ITEは分からないが、平均値の差分を見ると、+100万円の効果</li>
+<li>ソンさんは悪くない</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(T_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 0)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 1)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(ITE_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>800</strong></td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">-100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>650</strong></td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">350</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>600</strong></td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;">-50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>400</strong></td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;">-50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>350</strong></td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;"><strong>300</strong></td>
+<td style="text-align: right;">-100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>500</strong></td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;"><strong>400</strong></td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: right;"><strong>500</strong></td>
+<td style="text-align: right;">-250</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>400</strong></td>
+<td style="text-align: right;">-100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">平均</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">530</td>
+<td style="text-align: right;">510</td>
+<td style="text-align: right;">-20</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="因果推論の根本問題-2" class="slide level2">
+<h2>因果推論の根本問題</h2>
+<ul>
+<li><span class="math inline">\(Y_i(T_i = 1)\)</span>か<span class="math inline">\(Y_i(T_i = 0)\)</span>、片方のみしか観察できない状態においてITEから因果効果を推定することは不可能
+<ul>
+<li><strong>因果推論の根本問題</strong> (The Fundamental Problem of Causal Inference)</li>
+</ul></li>
+</ul>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>解決方法
+<ul>
+<li>もう一回、過去に戻って異なる処置を行う</li>
+</ul></li>
+</ul>
+</div>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/02/TimeMachine.png" class="fragment fade-in-then-semi-out" style="width:40.0%" data-fragment-index="1"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="因果推論の根本問題-3" class="slide level2">
+<h2>因果推論の根本問題</h2>
+<ul>
+<li><span class="math inline">\(Y_i(T_i = 1)\)</span>か<span class="math inline">\(Y_i(T_i = 0)\)</span>、片方のみしか観察できない状態において、ITEから因果効果を推定することは不可能
+<ul>
+<li>ただし、ドラえもんが存在する世界線を除く</li>
+<li><strong>因果推論の根本問題</strong> (The Fundamental Problem of Causal Inference)</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>潜在的結果を直接観察する方法
+<ul>
+<li>ただし、個々人の潜在的結果ではなく、<strong>集団における潜在的結果</strong></li>
+<li><strong>平均処置効果</strong> (ATE; Average Treatment Effect)
+<ul>
+<li>平均値の差分から<strong>平均的</strong>な因果効果を推定</li>
+<li>しかし、…</li>
+</ul></li>
+<li><strong>無作為割当</strong>の重要性</li>
+</ul></li>
+</ul>
+</section>
+<section id="平均取るだけでok" class="slide level2">
+<h2>平均取るだけでOK?</h2>
+<p>観察されたデータから差分を計算するだけではATEは推定不可能</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(T_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 0)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(Y_i(T_i = 1)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(ITE_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">550</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;"><strong>?</strong></td>
+<td style="text-align: right;"><strong>?</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">平均</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="信頼できるateの条件" class="slide level2">
+<h2>信頼できるATEの条件</h2>
+<p>ATE 推定値の信頼性を損なう敵: <strong>内生性</strong> (しかも、常に存在する)</p>
+<p>例) やる気のある学生だけがソンさんの講義を履修した場合</p>
+<ol type="1">
+<li>自己選択バイアス
+<ul>
+<li>ソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下</li>
+</ul></li>
+<li>疑似相関
+<ul>
+<li>やる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。</li>
+</ul></li>
+<li>測定誤差
+<ul>
+<li>履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）</li>
+</ul></li>
+</ol>
+<p><br></p>
+<center>
+<p>内生性は因果推論の敵! どうすれば…?</p>
+<p><span class="math inline">\(\downarrow\)</span></p>
+<strong>無作為割当</strong> (Random Assignment)
+</center>
 
 <p><img src="figs/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://www.jaysong.net/kandai-ci" class="uri">https://www.jaysong.net/kandai-ci</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -559,6 +1744,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -627,7 +1854,8 @@
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
