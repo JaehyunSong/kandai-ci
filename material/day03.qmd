@@ -1,7 +1,23 @@
 ---
-title: "ランダム化比較試験"
+title: "無作為化比較試験"
 link-external-icon: true
 link-external-newwindow: true
 code-line-numbers: true
 ---
 
+## スライド
+
+<a href="../slide/day03.html" class="btn btn-primary btn-sm" target="_blank" role="button"><i class="bi bi-window"></i> 新しいタブで開く</a>
+
+```{=html}
+<iframe class="slide-deck" src="../slide/day03.html" width="100%" style="aspect-ratio: 16 / 9.2;"></iframe>
+```
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(dev       = "ragg_png",
+                      dpi       = 300,
+                      fig.align = "center",
+                      message   = FALSE,
+                      warning   = FALSE)
+```

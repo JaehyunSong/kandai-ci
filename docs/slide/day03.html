@@ -1,0 +1,2978 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../figs/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.1.165">
+
+  <meta name="author" content="宋(そん)&nbsp;&nbsp;財泫(じぇひょん)">
+  <title>Causal Inference in Social Science@Kandai - 社会科学における因果推論</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9F94XL4N4M"></script>
+
+  <script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
+  </script>
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+  <h1 class="title">社会科学における因果推論</h1>
+  <p class="subtitle">第3回 無作為化比較試験</p>
+  <p class="author"><ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby></p>
+  <p class="institute">関西大学総合情報学部</p>
+  <p class="date">2022年 10月 10日</p>
+</section>
+
+<section id="信頼できるateの条件" class="slide level2">
+<h2>信頼できるATEの条件</h2>
+<p><strong>内生性</strong>の存在 <span class="math inline">\(\rightarrow\)</span> ATE推定値の信頼性<span class="math inline">\(\downarrow\)</span></p>
+<p>例) やる気のある学生だけがソンさんの講義を履修した場合</p>
+<ol type="1">
+<li>自己選択バイアス
+<ul>
+<li>ソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下</li>
+</ul></li>
+<li>疑似相関
+<ul>
+<li>やる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。</li>
+</ul></li>
+<li>測定誤差
+<ul>
+<li>履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）</li>
+</ul></li>
+</ol>
+<p><br></p>
+<center>
+<p>内生性は因果推論の敵! どうすれば…?</p>
+<p><span class="math inline">\(\downarrow\)</span></p>
+<strong>無作為割当</strong> (Random Assignment)
+</center>
+</section>
+<section id="無作為割当とは" class="slide level2">
+<h2>無作為割当とは</h2>
+<p><strong>無作為割当</strong> (Random Assignment)</p>
+<ul>
+<li>処置を受けるかどうかを無作為に割り当てる方法
+<ul>
+<li>完全無作為割当: 全ての被験者において、どのグループに属するかの確率が等しい</li>
+<li><span class="math inline">\(Pr(T_i = 1) = Pr(T_j = 1) \text{ where } i \neq j\)</span></li>
+<li><span class="math inline">\(Pr(T_i = 0) = Pr(T_j = 0) \text{ where } i \neq j\)</span></li>
+<li>無作為割当の方法は色々</li>
+</ul></li>
+<li>無作為に割り当てると、処置を受けないグループと処置を受けるグループは「集団」として同質なグループになる。
+<ul>
+<li>受けないグループ: <strong>統制群</strong> (Control Group)</li>
+<li>受けるグループ: <strong>処置群</strong> (Treatment Group)</li>
+</ul></li>
+<li><strong>一つの集団を一人の個人として扱い</strong>、ITEを測定 ⇒ ATE</li>
+</ul>
+</section>
+<section id="無作為割当の力" class="slide level2">
+<h2>無作為割当の力</h2>
+<p>コインを投げ、表( <span class="math inline">\(H\)</span> )なら統制群、裏( <span class="math inline">\(T\)</span> )なら処置群に割当</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">データ生成</a></li><li><a href="#tabset-1-2"><code>Data</code>の中身</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">set.seed</span>(<span class="dv">19861008</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>Data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,</span>
+<span id="cb1-3"><a href="#cb1-3"></a>               <span class="at">Female =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb1-4"><a href="#cb1-4"></a>                               <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.6</span>)),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>               <span class="at">Age    =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">38</span>, <span class="dv">10</span>), <span class="dv">0</span>))</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>Data <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>   <span class="fu">summarise</span>(<span class="at">Female =</span> <span class="fu">mean</span>(Female),</span>
+<span id="cb1-9"><a href="#cb1-9"></a>             <span class="at">Age    =</span> <span class="fu">mean</span>(Age))</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  Female   Age
+   &lt;dbl&gt; &lt;dbl&gt;
+1   0.55    38</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<div id="xsyeumcwqw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#xsyeumcwqw) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#xsyeumcwqw) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#xsyeumcwqw) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#xsyeumcwqw) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#xsyeumcwqw) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#xsyeumcwqw) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#xsyeumcwqw) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#xsyeumcwqw) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#xsyeumcwqw) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#xsyeumcwqw) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#xsyeumcwqw) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#xsyeumcwqw) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#xsyeumcwqw) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xsyeumcwqw) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#xsyeumcwqw) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#xsyeumcwqw) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xsyeumcwqw) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#xsyeumcwqw) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xsyeumcwqw) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#xsyeumcwqw) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xsyeumcwqw) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#xsyeumcwqw) .gt_left {
+  text-align: left;
+}
+
+:where(#xsyeumcwqw) .gt_center {
+  text-align: center;
+}
+
+:where(#xsyeumcwqw) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#xsyeumcwqw) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#xsyeumcwqw) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#xsyeumcwqw) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#xsyeumcwqw) .gt_super {
+  font-size: 65%;
+}
+
+:where(#xsyeumcwqw) .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+:where(#xsyeumcwqw) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#xsyeumcwqw) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#xsyeumcwqw) .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+:where(#xsyeumcwqw) .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+:where(#xsyeumcwqw) .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Age</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">31</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">38</td></tr>
+    <tr><td class="gt_row gt_right">2</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">41</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">12</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">29</td></tr>
+    <tr><td class="gt_row gt_right">3</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">31</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">21</td></tr>
+    <tr><td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">14</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">26</td></tr>
+    <tr><td class="gt_row gt_right">5</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">37</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">15</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">36</td></tr>
+    <tr><td class="gt_row gt_right">6</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">37</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">16</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">40</td></tr>
+    <tr><td class="gt_row gt_right">7</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">30</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">17</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">50</td></tr>
+    <tr><td class="gt_row gt_right">8</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">42</td></tr>
+    <tr><td class="gt_row gt_right">9</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">29</td></tr>
+    <tr><td class="gt_row gt_right">10</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">47</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">20</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">47</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="無作為割当の力-1" class="slide level2">
+<h2>無作為割当の力</h2>
+<p>コイン投げの結果</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">コイン投げ</a></li><li><a href="#tabset-2-2"><code>Data</code>の中身</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">set.seed</span>(<span class="dv">19861008</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>Coin <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"H"</span>, <span class="st">"T"</span>), <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>Coin</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "H" "T" "T" "T" "H" "H" "H" "T" "H" "H" "H" "T" "H" "T" "H" "T" "T" "T" "H"
+[20] "H"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">table</span>(Coin)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Coin
+ H  T 
+11  9 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>Data<span class="sc">$</span>Coin <span class="ot">&lt;-</span> Coin</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<div id="todzftlhwn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#todzftlhwn) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#todzftlhwn) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#todzftlhwn) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#todzftlhwn) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#todzftlhwn) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#todzftlhwn) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#todzftlhwn) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#todzftlhwn) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#todzftlhwn) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#todzftlhwn) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#todzftlhwn) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#todzftlhwn) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#todzftlhwn) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#todzftlhwn) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#todzftlhwn) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#todzftlhwn) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#todzftlhwn) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#todzftlhwn) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#todzftlhwn) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#todzftlhwn) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#todzftlhwn) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#todzftlhwn) .gt_left {
+  text-align: left;
+}
+
+:where(#todzftlhwn) .gt_center {
+  text-align: center;
+}
+
+:where(#todzftlhwn) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#todzftlhwn) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#todzftlhwn) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#todzftlhwn) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#todzftlhwn) .gt_super {
+  font-size: 65%;
+}
+
+:where(#todzftlhwn) .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+:where(#todzftlhwn) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#todzftlhwn) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#todzftlhwn) .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+:where(#todzftlhwn) .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+:where(#todzftlhwn) .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Coin</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Coin</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">31</td>
+<td class="gt_row gt_left">H</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">38</td>
+<td class="gt_row gt_left">H</td></tr>
+    <tr><td class="gt_row gt_right">2</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">41</td>
+<td class="gt_row gt_left">T</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">12</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">29</td>
+<td class="gt_row gt_left">T</td></tr>
+    <tr><td class="gt_row gt_right">3</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">31</td>
+<td class="gt_row gt_left">T</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">21</td>
+<td class="gt_row gt_left">H</td></tr>
+    <tr><td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_left">T</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">14</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">26</td>
+<td class="gt_row gt_left">T</td></tr>
+    <tr><td class="gt_row gt_right">5</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">37</td>
+<td class="gt_row gt_left">H</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">15</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">36</td>
+<td class="gt_row gt_left">H</td></tr>
+    <tr><td class="gt_row gt_right">6</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">37</td>
+<td class="gt_row gt_left">H</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">16</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">40</td>
+<td class="gt_row gt_left">T</td></tr>
+    <tr><td class="gt_row gt_right">7</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">30</td>
+<td class="gt_row gt_left">H</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">17</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_left">T</td></tr>
+    <tr><td class="gt_row gt_right">8</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_left">T</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">42</td>
+<td class="gt_row gt_left">T</td></tr>
+    <tr><td class="gt_row gt_right">9</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_left">H</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">29</td>
+<td class="gt_row gt_left">H</td></tr>
+    <tr><td class="gt_row gt_right">10</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">47</td>
+<td class="gt_row gt_left">H</td>
+<td class="gt_row gt_left"></td>
+<td class="gt_row gt_right">20</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">47</td>
+<td class="gt_row gt_left">H</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="無作為割当の力-2" class="slide level2">
+<h2>無作為割当の力</h2>
+<p>統制群と処置群が比較的同質的なグループに</p>
+<ul>
+<li>統制群（11名）: 女性比率が54.5%、平均年齢が37.2歳</li>
+<li>処置群 (9名): 女性比率が55.6%、平均年齢が39歳</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>Data <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">group_by</span>(Coin) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">summarise</span>(<span class="at">Female =</span> <span class="fu">mean</span>(Female),</span>
+<span id="cb8-4"><a href="#cb8-4"></a>            <span class="at">Age    =</span> <span class="fu">mean</span>(Age),</span>
+<span id="cb8-5"><a href="#cb8-5"></a>            <span class="at">N      =</span> <span class="fu">n</span>())</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  Coin  Female   Age     N
+  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+1 H      0.545  37.2    11
+2 T      0.556  39       9</code></pre>
+</div>
+</div>
+</section>
+<section id="無作為割当の力-3" class="slide level2">
+<h2>無作為割当の力</h2>
+<p>集団として処置群と統制群は、母集団とほぼ同質</p>
+<ul>
+<li><span class="math inline">\(n \rightarrow \infty\)</span> なら2つのグループはより同質的に（大数の弱法則）</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">女性の割合</th>
+<th style="text-align: right;">平均年齢</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">母集団 (<span class="math inline">\(n=20\)</span>)</td>
+<td style="text-align: right;">55.0%</td>
+<td style="text-align: right;">38.0歳</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">統制群 (<span class="math inline">\(n=11\)</span>)</td>
+<td style="text-align: right;">54.5%</td>
+<td style="text-align: right;">37.2歳</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">処置群 (<span class="math inline">\(n=9\)</span>)</td>
+<td style="text-align: right;">55.6%</td>
+<td style="text-align: right;">39.0歳</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>統制群と処置群、母集団はそれぞれ<strong>交換可能</strong> (exchangeable)
+<ul>
+<li>処置群に処置を与えること = 母集団全体に処置を与えること</li>
+<li>統制群に処置を与えないこと = 母集団全体に処置を与えないこと</li>
+</ul></li>
+<li>統制群と処置群の比較で<strong>集団を一つの単位としたITE (= ATE)</strong>が推定可能
+<ul>
+<li>処置を与えた母集団 vs.&nbsp;処置を与えなかった母集団</li>
+</ul></li>
+</ul>
+</section>
+<section id="無作為割当の力-4" class="slide level2">
+<h2>無作為割当の力</h2>
+<p>無作為割当は均質な複数のグループを作る手法</p>
+<ul>
+<li>講義履修と年収の例だと、無作為割当をすることによって …
+<ul>
+<li>各グループにやる気のある学生とない学生が均等に
+<ul>
+<li>自己選択バイアス、擬似相関の除去</li>
+</ul></li>
+<li>ジンバブエ・ドルで測定される学生も均等に（これはないか）
+<ul>
+<li>測定誤差の除去</li>
+</ul></li>
+</ul></li>
+<li>内生性:処置変数（講義の履修）と誤差項（やる気など）間の相関
+<ul>
+<li>コイン投げの結果は被験者（学生）の性質と<strong>無関係</strong>に行われるため、誤差項と相関がない。</li>
+<li><strong>外生変数</strong> (Exogenous variable)</li>
+<li>学生の性質 (X) と処置有無 (T) は独立している ⇒ <span class="math inline">\(X \perp T\)</span></li>
+</ul></li>
+</ul>
+<p><br></p>
+<center>
+<strong>無作為割当は内生性を除去する最良の手法</strong>
+</center>
+</section>
+<section id="無作為抽出と無作為割当" class="slide level2">
+<h2>無作為抽出と無作為割当</h2>
+<ul>
+<li>無作為<strong>抽出</strong>によってサンプル（標本）と母集団が交換可能（実はここが難しい）</li>
+<li>無作為<strong>割当</strong>によって各グループとサンプルに交換可能（=各グループ間で交換可能）</li>
+<li>無作為<strong>抽出</strong>&amp;無作為<strong>割当</strong>によって各グループと母集団が交換可能（グループへの刺激=母集団への刺激）</li>
+</ul>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/03/Exchange1.png" style="width:60.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/03/Exchange2.png" class="fragment fade-in-then-semi-out" style="width:60.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/03/Exchange3.png" class="fragment fade-in-then-semi-out" style="width:60.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/03/Exchange4.png" class="fragment fade-in-then-semi-out" style="width:60.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/03/Exchange5.png" class="fragment fade-in-then-semi-out" style="width:60.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/03/Exchange6.png" class="fragment fade-in-then-semi-out" style="width:60.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/03/Exchange7.png" class="fragment fade-in-then-semi-out" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section>
+<section id="ランダム化比較試験" class="title-slide slide level1 center">
+<h1>ランダム化比較試験</h1>
+
+</section>
+<section id="ランダム化比較試験とは" class="slide level2">
+<h2>ランダム化比較試験とは</h2>
+<p><strong>Randomized Controlled Trial</strong> (RCT)</p>
+<ul>
+<li>無作為割当で複数のグループを作り上げた上で、異なる刺激・処置を与え、結果を観察する手法
+<ul>
+<li>社会科学でいう「<strong>実験</strong>」の多くはこれを指す</li>
+<li><strong>因果推論の王道</strong></li>
+</ul></li>
+<li>因果効果をもたらす(と想定される)処置変数が外生的
+<ul>
+<li>グループ間における結果変数の差 = 因果効果</li>
+</ul></li>
+<li>データ生成過程(Data Generating Process; DGP)への直接介入
+<ul>
+<li><strong>「真のモデル」が分かる</strong></li>
+</ul></li>
+</ul>
+
+<aside><div>
+<ul>
+<li>参考）データ生成過程について
+<ul>
+<li>King, Gary. 1989. <a href="https://www.amazon.co.jp/gp/product/0472085549/"><em>Unifying Political Methodology</em></a>, Michigan University Press.（Ch.1-4）</li>
+<li>豊田秀樹. 2022.『<a href="https://www.amazon.co.jp/dp/4254122721/">統計学入門 II: 尤度によるデータ生成過程の表現</a>』朝倉書店</li>
+</ul></li>
+</ul>
+</div></aside></section>
+<section id="データ生成過程への介入" class="slide level2">
+<h2>データ生成過程への介入</h2>
+<p><span class="math display">\[
+\text{Income} = \beta_0 + \beta_1 \cdot \text{Quant} + \varepsilon
+\]</span></p>
+<ul>
+<li>Income: 10年後の年収 (<span class="math inline">\(\in [0, \infty)\)</span>)</li>
+<li>Quant:ソンさんの講義を履修したか否か (<span class="math inline">\(\in \{0, 1\})\)</span> )</li>
+<li>誤差項(<span class="math inline">\(\varepsilon\)</span>)には「やる気」や「真面目さ」が含まれるため、Quantと相関がある (<span class="math inline">\(\rightarrow\)</span> <strong>内生性</strong>)</li>
+<li>無作為割当で受講有無を決めると、「やる気」や「真面目さ」はQunatと無関係 (<strong>独立</strong>) になる
+<ul>
+<li>例) 受講有無をコイン投げ（W）で決める場合、コインの結果は誤差項（やる気や真面目さ）と独立（ただし、全員がコイン投げの結果に従うと仮定）</li>
+<li><span class="math inline">\(\Rightarrow\)</span> 内生性がなくなる!</li>
+</ul></li>
+</ul>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day03_files/figure-revealjs/unnamed-chunk-7-1.png" width="1800"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day03_files/figure-revealjs/unnamed-chunk-7-2.png" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="実験の方法" class="slide level2">
+<h2>実験の方法</h2>
+<p>Hyde (2015) による分類</p>
+<ul>
+<li>フィールド実験: 実際の社会を舞台に行う実験
+<ul>
+<li>Gerber, Alan S. and Donald P. Green. 2012. <a href="https://www.amazon.co.jp/dp/0393979954/"><em>Field Experiments</em></a>, Norton.</li>
+</ul></li>
+<li>実験室実験: 人為的に作られた（=統制された）環境内で行う実験</li>
+<li>サーベイ実験: 世論調査に埋め込む実験
+<ul>
+<li>SONG Jaehyun・秦正樹. 2020. 「<a href="https://doi.org/10.11218/ojjams.35.92">オンライン・サーベイ実験の方法: 理論編</a>」『理論と方法』35 (1): 92-108.</li>
+<li>秦正樹・SONG Jaehyun. 2020. 「<a href="https://doi.org/10.11218/ojjams.35.109">オンライン・サーベイ実験の方法: 実践編</a>」『理論と方法』35 (1): 109-127.</li>
+</ul></li>
+</ul>
+</section>
+<section id="フィールド実験1" class="slide level2">
+<h2>フィールド実験（1）</h2>
+<p>実際の社会を舞台に行う実験</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">例1</a></li><li><a href="#tabset-3-2">例2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p>Ito, Koichiro, Takanori Ida, and Makoto Tanaka. 2018. “<a href="https://www.aeaweb.org/articles?id=10.1257/pol.20160093">Moral Suasion and Economic Incentives: Field Experimental Evidence from Energy Demand</a>,” <em>American Economic Journal: Economic Policy,</em> 10 (1): 240-267.</p>
+<ul>
+<li>京都府内の691世帯が対象</li>
+<li>電気メーターを設置し、統制群と処置群1、処置群2に分割
+<ul>
+<li>設置のみ (153) / 単純節電要請 (154) / 動機づけ節電要請 (384)</li>
+</ul></li>
+<li>電気使用量の比較</li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<p>Gerber, Alan S., Donald P. Green, and Christopher W. Larimer. 2010. “<a href="https://link.springer.com/article/10.1007/s11109-010-9110-4">An Experiment Testing the Relative Effectiveness of Encouraging Voter Participation by Inducing Feelings of Pride or Shame</a>,” <em>Political Behavior,</em> 32: 409-422.</p>
+<ul>
+<li>ミシガン州の18万世帯が対象</li>
+<li>4つの処置群にそれぞれ異なる投票を促す内容の葉書を発送
+<ul>
+<li>統制群: 99,999世帯 / 処置群1: 20,001世帯 / 処置群2: 20,002世帯 / 処置群3: 20,00 世帯 / 処置群4: 20,000世帯</li>
+</ul></li>
+<li>それぞれのグループ間の投票率を比較</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="フィールド実験2" class="slide level2">
+<h2>フィールド実験（2）</h2>
+<ul>
+<li>メリット
+<ul>
+<li>実際の社会と対象にするため、高い外的妥当性
+<ul>
+<li>一般的に外的妥当性は実験研究の最大の弱点とも言われる</li>
+<li>ただし、全国民ではなく、一部の地域を対象にするケースが多いため、限界もある
+<ul>
+<li>Ito, Ida and Tanaka (2018) は外的妥当性の確保のために同様の実験を京都以外でも実施 (京都市、横浜市、北九州市、豊田市)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>デメリット
+<ul>
+<li>高費用
+<ul>
+<li>Gerber, Green, and Larimer (2010) は安い方?
+<ul>
+<li>アメリカで切手は100円以上の場合が多いため、18万世帯$$100円だけでも1800万円</li>
+<li>葉書もタダじゃない (Amazon.comで100枚12ドル程度)</li>
+</ul></li>
+<li>Ito, Ida and Tanaka (2018) は . . .</li>
+</ul></li>
+</ul></li>
+<li>政府や企業などの協力なしでは実施が困難なケースが多い</li>
+</ul>
+</section>
+<section id="実験室実験1" class="slide level2">
+<h2>実験室実験（1）</h2>
+<p>人為的に作られた環境内で行う実験</p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">例1</a></li><li><a href="#tabset-4-2">例2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p>Blais, André, Simon Labbé-St-Vincent, Laslier Jean-François, Nicolas Sauger, and Karine Van der Straeten. 2011. “<a href="https://journals.sagepub.com/doi/full/10.1177/1065912909358583">Strategic Vote Choice in One-Round and Two-Round Elections: An Experimental Study</a>,” <em>Political Research Quarterly,</em> 64(3): 637–645.</p>
+<ul>
+<li>42名 <span class="math inline">\(\times\)</span> 2グループ
+<ul>
+<li>グループ1: 一回投票制4回 <span class="math inline">\(\rightarrow\)</span> 二回投票制4回</li>
+<li>グループ2: 二回投票制4回 <span class="math inline">\(\rightarrow\)</span> 一回投票制4回</li>
+</ul></li>
+<li>投票方式による戦略投票 (Strategic Vote) の傾向を比較</li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<p>Mueller, Pam A. and Daniel M. Oppenheimer. 2014. “<a href="https://journals.sagepub.com/doi/full/10.1177/0956797614524581">The Pen Is Mightier Than the Keyboard: Advantages of Longhand Over Laptop Note Taking</a>,” <em>Psychological Science,</em> 25(6): 1159-1168.</p>
+<ul>
+<li>学生を2グループに分割
+<ul>
+<li>グループ 1: ノートパソコンでノートテイキング</li>
+<li>グループ 2: ノートとペンでノートテイキング</li>
+</ul></li>
+<li>レクチャーの理解度をグループごとに比較</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="実験室実験2" class="slide level2">
+<h2>実験室実験（2）</h2>
+<ul>
+<li>メリット
+<ul>
+<li>環境を自由に操作できる</li>
+<li>被験者の訓練・統制が容易
+<ul>
+<li>実験前のルールの説明など</li>
+</ul></li>
+</ul></li>
+<li>デメリット
+<ul>
+<li>被験者の属性が偏りやすい <span class="math inline">\(\Rightarrow\)</span> 低い外的妥当性
+<ul>
+<li>主に学生が動員される</li>
+<li>Hovland (1959): “College sophomores may not be people.”</li>
+</ul></li>
+</ul></li>
+<li>トレードオフ
+<ul>
+<li>一般的に、被験者が少数
+<ul>
+<li>Small <span class="math inline">\(N\)</span> <span class="math inline">\(\leftrightarrow\)</span> 低コスト<del>(単位を餌にする研究者ならタダでできる)</del></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="サーベイ実験1" class="slide level2">
+<h2>サーベイ実験（1）</h2>
+<p>世論調査に実験を埋め込む方法</p>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">例1</a></li><li><a href="#tabset-5-2">例2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Asaba, Yuki, Kyu S Hahn, Seulgi Jang, Tetsuro Kobayashi, and Atsushi Tago. 2020. “<a href="https://academic.oup.com/irap/article/20/2/253/5151306">38 seconds above the 38th parallel: how short video clips produced by the US military can promote alignment despite antagonism between Japan and Korea</a>,” <em>International Relations of the Asia-Pacific,</em> 20(2): 253–273.</p>
+<ul>
+<li>サーベイの回答者1500名を2グループに分割
+<ul>
+<li>統制群: 38秒の日米韓軍事協力に関するPACOM制作の動画を視聴</li>
+<li>処置群: ほぼ同じ長さのPACOM制作の動画を視聴 (日韓の言及はなし)</li>
+</ul></li>
+<li>アメリカに対する感情温度、日韓協力に対する態度を測定</li>
+<li>グループごとに結果を比較</li>
+</ul>
+</div>
+<div id="tabset-5-2">
+<p>Song, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022 (forthcoming). “<a href="https://www.waseda.jp/fpse/winpec/public/working-paper/">Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US</a>,” <em>Canadian Journal of Political Science</em>.</p>
+<ul>
+<li>回答者621名を統制群と処置群に割当</li>
+<li>統制群に以下のように質問</li>
+</ul>
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>Now we are going to show you four activities that some people may experience during the electoral campaign. After you read all four, just answer HOW MANY activities you experienced during the last electoral campaign. (We do NOT want to know which ones, just how many.)</p>
+<ul>
+<li>I saw public debates between candidates for presidential elections on TV.</li>
+<li>I saw official websites/blogs of politicians and candidates.</li>
+<li>My family/friends told me about the election.</li>
+<li>Campaign activists threatened me to vote for a candidate.</li>
+</ul>
+</div>
+</div>
+</div>
+<ul>
+<li>処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加</li>
+<li>結果の平均値を比較</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="サーベイ実験2" class="slide level2">
+<h2>サーベイ実験（2）</h2>
+<ul>
+<li>メリット
+<ul>
+<li>コストが低い (数万円で<strong>一応</strong>実施可能OK)</li>
+<li>大規模の実験が可能（数百人〜数千人）</li>
+<li>機動性が高い</li>
+<li>SUTVA（後述）が満たされやすい</li>
+</ul></li>
+<li>デメリット
+<ul>
+<li>実際の環境を再現するのが困難（外的妥当性の問題）</li>
+<li>「行動」を対象とした場合、測定尺度の問題</li>
+<li>不良回答者（satisficer）の存在</li>
+<li>実験のトラブルに対応するのが困難</li>
+</ul></li>
+</ul>
+</section>
+<section id="rctの例" class="slide level2">
+<h2>RCTの例</h2>
+<p>Bertrand, Marianne, and Sendhil Mullainathan. 2004. “<a href="https://www.aeaweb.org/articles?id=10.1257/0002828042002561">Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination</a>,” <em>American Economic Review</em>, 94(4): 991-1013.</p>
+<ul>
+<li>労働市場における人種差別</li>
+<li>約5000人分の架空の履歴書を求人中の会社へ送る
+<ul>
+<li>履歴書の内容 (性別、人種、能力など) は<strong>完全無作為</strong></li>
+<li>履歴書に人種は記入できないため、白人っぽい名前 (Emily など)、黒人っぽい名前 (Jamal など) を記入</li>
+</ul></li>
+<li>後は、返事を待つだけ</li>
+</ul>
+<p><strong>処置変数:</strong> 人種 ( <span class="math inline">\(\in \{\text{black}, \text{white}\}\)</span> )</p>
+<p><strong>結果変数:</strong> 連絡の有無 ( <span class="math inline">\(\in \{0, 1\}\)</span> )</p>
+</section>
+<section id="内生性の可能性" class="slide level2">
+<h2>内生性の可能性</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day03_files/figure-revealjs/unnamed-chunk-8-1.png" width="1500"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>誤差項には教育水準、親の所得、居住地などが含まれる
+<ul>
+<li>実際に人種と上記の要因には相関あり</li>
+<li>人種 (処置) と誤差項間の相関関係 <span class="math inline">\(\rightarrow\)</span> <strong>内生性</strong></li>
+</ul></li>
+<li>黒人が採用されなかった場合…
+<ul>
+<li>黒人だから? <span class="math inline">\(\leftarrow\)</span> 人種差別<span class="math inline">\(\bigcirc\)</span></li>
+<li>教育水準が低いから <span class="math inline">\(\leftarrow\)</span> 人種差別<span class="math inline">\(\times\)</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><br><br> <span class="math inline">\(\Rightarrow\)</span> 内生性がある限り、因果効果の識別は困難 <br><br><br><br> <span class="math inline">\(\Rightarrow\)</span> ケースによって政策的含意が変わる。</p>
+</div>
+</div>
+</section>
+<section id="rctの力" class="slide level2">
+<h2>RCTの力</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">白人の名前</th>
+<th style="text-align: right;">黒人の名前</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">76.42%</td>
+<td style="text-align: right;">77.45%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HighQuality</td>
+<td style="text-align: right;">50.23%</td>
+<td style="text-align: right;">50.23%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Call Rate</td>
+<td style="text-align: right;">9.65%</td>
+<td style="text-align: right;">6.45%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">計 (人)</td>
+<td style="text-align: right;">2435</td>
+<td style="text-align: right;">2435</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>無作為割当の結果、人種と性別・能力の相関がほぼ0に
+<ul>
+<li>内生性のない状態</li>
+<li>この場合、労働市場における人種の因果効果は
+<ul>
+<li>ATE = 黒人の平均連絡率 − 白人の平均連絡率</li>
+<li>黒人という理由だけで会社から連絡が来る確率が 3.2%p<span class="math inline">\(\downarrow\)</span></li>
+<li>-3.2%p: 人種の<strong>因果効果</strong> or <strong>処置効果</strong> (treatment effect)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="バランスチェック" class="slide level2">
+<h2>バランスチェック</h2>
+<p>無作為割当が行われているか否かを確認</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center" data-cahce="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="day03_files/figure-revealjs/unnamed-chunk-9-1.png" width="1500"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>標準化差分</strong>を使用</p>
+<ul>
+<li>Standardized Bias (or Difference)
+<ul>
+<li>サンプルサイズの影響<span class="math inline">\(\times\)</span></li>
+<li>統計的検定ではない</li>
+</ul></li>
+<li><span class="math inline">\(t\)</span> 検定、ANOVA、 <span class="math inline">\(\chi^2\)</span> 検定は<span class="math inline">\(\times\)</span>
+<ul>
+<li>バランスチェックに統計的有意性検定は使わない</li>
+</ul></li>
+<li><a href="https://ngreifer.github.io/cobalt/">{cobalt}</a>、<a href="https://github.com/JaehyunSong/BalanceR">{BalanceR}</a>など</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="標準化差分について" class="slide level2">
+<h2>標準化差分について</h2>
+<p>連続変数</p>
+<p><span class="math display">\[
+\text{SB}_{T-C} = 100 \cdot \frac{\bar{X}_T - \bar{X}_C}{\sqrt{0.5 \cdot (s_T^2 + s_C^2)}}
+\]</span></p>
+<p>二値変数</p>
+<p><span class="math display">\[
+\text{SB}_{T-C} = 100 \cdot \frac{\bar{X}_T - \bar{X}_C}{\sqrt{0.5 \cdot (\bar{X}_T(1-\bar{X}_T) + \bar{X}_C(1-\bar{X}_C))}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\bar{X}_T\)</span> : 処置群におけるXの平均値</li>
+<li><span class="math inline">\(s_T^2\)</span> : 処置群におけるXの分散</li>
+<li>|SB|が小さいほどバランス
+<ul>
+<li>明確な基準はないが、3、5、10、25などを使用</li>
+</ul></li>
+<li>グループが3つ以上の場合、それぞれのペアで実行</li>
+</ul>
+</section>
+<section id="因果効果の推定" class="slide level2">
+<h2>因果効果の推定</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">平均値の差分の検定</a></li><li><a href="#tabset-6-2">単回帰分析</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<p><strong>方法1:</strong> グループ間の結果変数の差分の検定 (<span class="math inline">\(t\)</span>検定)</p>
+<ul>
+<li>因果効果 (ATE): <span class="math inline">\(\mathbb{E}[\mbox{Call}|\mbox{Race = Black}] - \mathbb{E}[\mbox{Call}|\mbox{Race = White}] = -0.032\)</span></li>
+<li>ATE = 0の帰無仮説の検定
+<ul>
+<li><span class="math inline">\(t_{\text{df} = 4711.7} = −4.117\)</span>; <span class="math inline">\(p\)</span> &lt; 0.001; 95% CI = [−0.047, −0.017]</li>
+</ul></li>
+<li>応答変数の尺度に応じてノンパラメトリック分析</li>
+</ul>
+</div>
+<div id="tabset-6-2">
+<p><strong>方法2:</strong> 単回帰分析 (線形 or ロジスティックス/プロビット)</p>
+<center>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<table>
+<caption>線形回帰分析（LPM）</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Covriates</th>
+<th style="text-align: right;">Est.</th>
+<th style="text-align: right;">S.E.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">0.064</td>
+<td style="text-align: right;">0.006</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Race: White</td>
+<td style="text-align: right;"><strong>0.032</strong></td>
+<td style="text-align: right;">0.008</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<table>
+<caption>ロジスティック回帰分析</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Covriates</th>
+<th style="text-align: right;">Est.</th>
+<th style="text-align: right;">S.E.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">-2.675</td>
+<td style="text-align: right;">0.083</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Race: White</td>
+<td style="text-align: right;"><strong>0.438</strong></td>
+<td style="text-align: right;">0.107</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<table>
+<caption>プロビット回帰分析</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Covriates</th>
+<th style="text-align: right;">Est.</th>
+<th style="text-align: right;">S.E.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">-1.518</td>
+<td style="text-align: right;">0.039</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Race: White</td>
+<td style="text-align: right;"><strong>0.217</strong></td>
+<td style="text-align: right;">0.053</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</center>
+
+</div>
+</div>
+</div>
+<aside><div>
+<p>参考）Freedman, David A. 2008. “<a href="https://www.jstor.org/stable/27645896">Randomization Does Not Justify Logistic Regression</a>,” <em>Statistical Science Statistical Science,</em> 23(2): 237-249.</p>
+<ul>
+<li>Logit: 一致推定量<span class="math inline">\(\times\)</span> &amp; 不偏推定量<span class="math inline">\(\times\)</span></li>
+<li>Linear: 一致推定量<span class="math inline">\(\bigcirc\)</span> &amp; 不偏推定量<span class="math inline">\(\times\)</span></li>
+<li><a href="https://www.jaysong.net/notes/simulation/consistency.html">一致性と不偏性の違いについて</a></li>
+</ul>
+</div></aside></section>
+<section id="因果効果の推定-重回帰分析は" class="slide level2">
+<h2>因果効果の推定: 重回帰分析は?</h2>
+<p>無作為割当のおかげですべての変数が互いに独立</p>
+<ul>
+<li>重回帰分析をしても人種のATEは変化しない (OVB がない)
+<ul>
+<li>無作為割当の場合、回帰は<strong>してもしなくても</strong>良い</li>
+</ul></li>
+<li>現実的に<strong>完全に</strong>バランスが取れていないため、若干の変化はある</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Covriates</th>
+<th style="text-align: right;">Est.</th>
+<th style="text-align: right;">S.E.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">0.057</td>
+<td style="text-align: right;">0.007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Race: White</td>
+<td style="text-align: right;"><strong>0.032</strong></td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">0.007</td>
+<td style="text-align: right;">0.009</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Military</td>
+<td style="text-align: right;">-0.027</td>
+<td style="text-align: right;">0.014</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;">-0.002</td>
+<td style="text-align: right;">0.005</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">High Quality</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">0.008</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="因果効果の不均一性" class="slide level2">
+<h2>因果効果の不均一性</h2>
+<p>因果効果が下位グループによって異なる場合</p>
+<ul>
+<li><strong>因果効果の不均一性</strong> (heterogeneous treatment effects)
+<ul>
+<li>例) 性別によって薬の効果が異なる場合</li>
+<li>薬の効果が男性なら 1、女性なら 2 の場合
+<ul>
+<li>男女比が1:1なら、ATEは1.5に</li>
+</ul></li>
+<li>薬の効果が男性なら 4、女性なら-1 の場合
+<ul>
+<li>男女比が1:1なら、ATEは1.5だが…</li>
+</ul></li>
+</ul></li>
+<li><strong>方法1:</strong> 男女に分けてATEを推定</li>
+<li><strong>方法2:</strong> 性別と処置有無の交差項を投入した重回帰分析</li>
+</ul>
+
+<aside><div>
+<p>参考) Bryan, Christopher J., Elizabeth Tipton and David S. Yeager. 2021. “<a href="https://www.nature.com/articles/s41562-021-01143-3">Behavioural science is unlikely to change the world without a heterogeneity revolution</a>,” <em>Nature Human Behaviour.</em> 5: 980–989.</p>
+</div></aside></section>
+<section id="因果効果の不均一性intro_data2.csv" class="slide level2">
+<h2>因果効果の不均一性（<code>intro_data2.csv</code>）</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/intro_data2.csv"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>data2</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 500 × 4
+      ID Outcome Treatment Female
+   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+ 1     1  1.09           0      1
+ 2     2  0.0281         0      1
+ 3     3  1.65           0      0
+ 4     4  3.83           1      1
+ 5     5  2.65           1      1
+ 6     6  1.24           1      1
+ 7     7  0.136          1      0
+ 8     8  0.507          0      1
+ 9     9  2.99           1      1
+10    10  4.34           1      1
+# … with 490 more rows
+# ℹ Use `print(n = ...)` to see more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="因果効果の不均一性-1" class="slide level2">
+<h2>因果効果の不均一性</h2>
+<p><strong>方法1:</strong> 男女に分けてATEを推定</p>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">比較</a></li><li><a href="#tabset-7-2">コード1</a></li><li><a href="#tabset-7-3">コード2</a></li><li><a href="#tabset-7-4">コード3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">統制群</th>
+<th style="text-align: right;">処置群</th>
+<th style="text-align: right;">ATE</th>
+<th style="text-align: right;"><span class="math inline">\(t\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">男性のみ</td>
+<td style="text-align: right;">0.611</td>
+<td style="text-align: right;">1.561</td>
+<td style="text-align: right;">0.951</td>
+<td style="text-align: right;">-7.521</td>
+<td style="text-align: right;">&lt; 0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">女性のみ</td>
+<td style="text-align: right;">0.493</td>
+<td style="text-align: right;">2.480</td>
+<td style="text-align: right;">1.987</td>
+<td style="text-align: right;">-15.573</td>
+<td style="text-align: right;">&lt; 0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">全体</td>
+<td style="text-align: right;">0.551</td>
+<td style="text-align: right;">2.057</td>
+<td style="text-align: right;">1.506</td>
+<td style="text-align: right;">-15.945</td>
+<td style="text-align: right;">&lt; 0.001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tabset-7-2">
+<p>男性のみ</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">t.test</span>(Outcome <span class="sc">~</span> Treatment, <span class="at">data =</span> data2, <span class="at">subset =</span> (Female <span class="sc">==</span> <span class="dv">0</span>))</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Outcome by Treatment
+t = -7.5211, df = 235.95, p-value = 1.132e-12
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -1.1996845 -0.7016501
+sample estimates:
+mean in group 0 mean in group 1 
+      0.6105137       1.5611810 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-3">
+<p>女性のみ</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">t.test</span>(Outcome <span class="sc">~</span> Treatment, <span class="at">data =</span> data2, <span class="at">subset =</span> (Female <span class="sc">==</span> <span class="dv">1</span>))</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Outcome by Treatment
+t = -15.573, df = 259.72, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -2.238053 -1.735599
+sample estimates:
+mean in group 0 mean in group 1 
+      0.4931905       2.4800169 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-7-4">
+<p>全体</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">t.test</span>(Outcome <span class="sc">~</span> Treatment, <span class="at">data =</span> data2)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Outcome by Treatment
+t = -15.945, df = 494.24, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ -1.692061 -1.320817
+sample estimates:
+mean in group 0 mean in group 1 
+      0.5509135       2.0573524 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="因果効果の不均一性-2" class="slide level2">
+<h2>因果効果の不均一性</h2>
+<p><strong>方法2:</strong> 性別と処置有無の交差項を投入した重回帰分析</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">lm</span>(Outcome <span class="sc">~</span> Treatment <span class="sc">*</span> Female, </span>
+<span id="cb18-2"><a href="#cb18-2"></a>   <span class="at">data =</span> data2) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>   <span class="fu">summary</span>()</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Model 1 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> (Intercept) </td>
+   <td style="text-align:right;"> 0.611 (0.091) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Treatment </td>
+   <td style="text-align:right;"> 0.951 (0.131) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> −0.117 (0.127) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;box-shadow: 0px 1px"> Treatment × Female </td>
+   <td style="text-align:right;box-shadow: 0px 1px"> 1.036 (0.180) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Num.Obs. </td>
+   <td style="text-align:right;"> 500 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> R2 Adj. </td>
+   <td style="text-align:right;"> 0.398 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F </td>
+   <td style="text-align:right;"> 110.905 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="math display">\[
+\begin{align}
+\hat{y} = &amp; \beta_0 + \beta_1 \mbox{Treatment} + \beta_2 \mbox{Female} + \\
+&amp; \beta_3 \mbox{Treatment} \cdot \mbox{Female} \\
+= &amp; \beta_0 + (\beta_1 + \beta_3 \mbox{Female}) \mbox{Treatment} + \beta_2 \mbox{Female}.
+\end{align}
+\]</span></p>
+<ul>
+<li>処置効果はTreatmentの係数
+<ul>
+<li><span class="math inline">\(\beta_1 + \beta_3 \mbox{Female}\)</span></li>
+<li><span class="math inline">\(\Rightarrow\)</span> 処置効果がFemaleの値にも依存</li>
+</ul></li>
+<li>男性のATE: <span class="math inline">\(\beta_1 + \beta_3 \cdot 0 = \beta_1\)</span> = 0.951</li>
+<li>女性のATE: <span class="math inline">\(\beta_1 + \beta_3 \cdot 1 = \beta_1 + \beta_3\)</span> = 1.987</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="因果推論の前提sutva" class="slide level2">
+<h2>因果推論の前提:SUTVA</h2>
+<p><strong>Stable Unit Treatment Value Assumption</strong></p>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">非干渉性</a></li><li><a href="#tabset-8-2">処置の無分散性</a></li><li><a href="#tabset-8-3">サーベイ実験の場合</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<p><strong>非干渉性:</strong> 他人の処置・統制有無が処置効果に影響を与えないこと</p>
+<ul>
+<li>例) AさんITEは
+<ul>
+<li>例1) Bさんが統制群の場合は10、処置群の場合は5 <span class="math inline">\(\leftarrow\)</span> <svg viewbox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm0-144c-33.6 0-65.2 14.8-86.8 40.6-8.5 10.2-7.1 25.3 3.1 33.8s25.3 7.2 33.8-3c24.8-29.7 75-29.7 99.8 0 8.1 9.7 23.2 11.9 33.8 3 10.2-8.5 11.5-23.6 3.1-33.8-21.6-25.8-53.2-40.6-86.8-40.6zm-48-72c10.3 0 19.9-6.7 23-17.1 3.8-12.7-3.4-26.1-16.1-29.9l-80-24c-12.8-3.9-26.1 3.4-29.9 16.1-3.8 12.7 3.4 26.1 16.1 29.9l28.2 8.5c-3.1 4.9-5.3 10.4-5.3 16.6 0 17.7 14.3 32 32 32s32-14.4 32-32.1zm199-54.9c-3.8-12.7-17.1-19.9-29.9-16.1l-80 24c-12.7 3.8-19.9 17.2-16.1 29.9 3.1 10.4 12.7 17.1 23 17.1 0 17.7 14.3 32 32 32s32-14.3 32-32c0-6.2-2.2-11.7-5.3-16.6l28.2-8.5c12.7-3.7 19.9-17.1 16.1-29.8z"></path></svg></li>
+<li>例2) Bさんが統制群の場合も、処置群の場合も、5 <span class="math inline">\(\leftarrow\)</span> <svg viewbox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm-80-216c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm4 72.6c-20.8 25-51.5 39.4-84 39.4s-63.2-14.3-84-39.4c-8.5-10.2-23.7-11.5-33.8-3.1-10.2 8.5-11.5 23.6-3.1 33.8 30 36 74.1 56.6 120.9 56.6s90.9-20.6 120.9-56.6c8.5-10.2 7.1-25.3-3.1-33.8-10.1-8.4-25.3-7.1-33.8 3.1z"></path></svg></li>
+</ul></li>
+</ul>
+<center>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table>
+<caption>例1</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Aさんが統制群</th>
+<th style="text-align: left;">Aさんが処置群</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bさんが統制群</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bさんが処置群</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table>
+<caption>例2</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Aさんが統制群</th>
+<th style="text-align: left;">Aさんが処置群</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bさんが統制群</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bさんが処置群</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</center>
+</div>
+<div id="tabset-8-2">
+<p><strong>処置の無分散性:</strong> 同じグループに属する対象は同じ処置を受けること</p>
+<ul>
+<li>手術の場合: 医者、設備、手順、環境など</li>
+<li>投票参加: 当日、期日前など</li>
+</ul>
+</div>
+<div id="tabset-8-3">
+<ul>
+<li>サーベイ実験ではSUTVAが満たされやすい。
+<ul>
+<li>実験室実験、フィールド実験の場合、「非干渉性」には気をつける。</li>
+<li>例) 隣の人が見てるのとと私が見てるのが違いますが…?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="二重盲検法" class="slide level2">
+<h2>二重盲検法</h2>
+<p><strong>二重盲検法</strong> (Double Blind Test):ある被験者がどのような処置を受けているかについて研究者と被験者両方において不明な状態で実験を行う</p>
+<p><br></p>
+<p>二重盲検法を使えば以下の問題点に対処することが可能</p>
+<ul>
+<li><strong>プラセボ効果</strong> (placebo effect):偽薬が与えられても、薬だと信じ込む 事によって何らかの効果が生じる</li>
+<li><strong>ホーソン効果</strong> (Hawthorne effect):自分が観察されていることを認知さ れることによって何らかの効果が生じる</li>
+<li><strong>観察者効果</strong> (observer/experimenter effect):研究者の期待により被験者へ の対応が異なったり、被験者がその期待に添えるように行動すること</li>
+</ul>
+</section></section>
+<section>
+<section id="来週以降の実習について" class="title-slide slide level1 center">
+<h1>来週以降の実習について</h1>
+
+</section>
+<section id="用意するもの" class="slide level2">
+<h2>用意するもの</h2>
+<ul>
+<li>ノートPC
+<ul>
+<li>デスクトップを持ち込む自信があるなら、デスクトップでもOK</li>
+</ul></li>
+<li>Rの導入
+<ul>
+<li>自分のPCにR/RStudioをインストール</li>
+<li>クラウド版のR + RStudioの利用</li>
+<li>分からない場合は至急、宋と相談すること</li>
+</ul></li>
+<li>ブラインドタッチのスキル</li>
+</ul>
+
+<p><img src="figs/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://www.jaysong.net/kandai-ci" class="uri">https://www.jaysong.net/kandai-ci</a></p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1400,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        setTimeout(function() {
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var filterRegex = new RegExp(/https:\/\/www\.jaysong\.net\/kandai-ci\//);
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+          }
+        }
+    });
+    </script>
+    
+
+</body></html>

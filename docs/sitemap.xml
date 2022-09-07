@@ -2,82 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jaysong.net/kandai-ci/slide/day02.html</loc>
-    <lastmod>2022-09-05T05:20:35.990Z</lastmod>
+    <lastmod>2022-09-07T05:42:51.622Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/slide/day03.html</loc>
+    <lastmod>2022-09-07T05:56:55.346Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/slide/day01.html</loc>
-    <lastmod>2022-09-04T06:37:28.784Z</lastmod>
+    <lastmod>2022-09-07T05:43:03.143Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/intro/filesystem.html</loc>
-    <lastmod>2022-09-04T06:37:31.885Z</lastmod>
+    <lastmod>2022-09-07T05:43:05.025Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/intro/file.html</loc>
-    <lastmod>2022-09-04T06:37:33.394Z</lastmod>
+    <lastmod>2022-09-07T05:43:06.076Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/intro/install.html</loc>
-    <lastmod>2022-09-04T06:37:35.710Z</lastmod>
+    <lastmod>2022-09-07T05:43:07.061Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/intro/packages.html</loc>
-    <lastmod>2022-09-04T06:37:38.099Z</lastmod>
+    <lastmod>2022-09-07T05:43:08.084Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/intro/project.html</loc>
-    <lastmod>2022-09-04T06:37:39.580Z</lastmod>
+    <lastmod>2022-09-07T05:43:09.037Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/intro/rstudio.html</loc>
-    <lastmod>2022-09-04T06:37:41.327Z</lastmod>
+    <lastmod>2022-09-07T05:43:10.154Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/index.html</loc>
-    <lastmod>2022-09-04T06:43:55.639Z</lastmod>
+    <lastmod>2022-09-07T05:56:03.808Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/syllabus.html</loc>
-    <lastmod>2022-09-04T06:44:58.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kandai-ci/material/day02.html</loc>
-    <lastmod>2022-09-04T06:43:56.566Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kandai-ci/material/day01.html</loc>
-    <lastmod>2022-09-04T06:37:49.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kandai-ci/data.html</loc>
-    <lastmod>2022-09-04T06:37:49.352Z</lastmod>
+    <lastmod>2022-09-07T05:43:12.448Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/material/day04.html</loc>
-    <lastmod>2022-09-04T06:44:13.843Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kandai-ci/material/day03.html</loc>
-    <lastmod>2022-09-04T06:43:58.798Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kandai-ci/material/day07.html</loc>
-    <lastmod>2022-09-04T06:44:06.870Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kandai-ci/material/day09.html</loc>
-    <lastmod>2022-09-04T06:44:08.352Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/kandai-ci/material/day06.html</loc>
-    <lastmod>2022-09-04T06:44:11.594Z</lastmod>
+    <lastmod>2022-09-07T05:43:12.668Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/material/day11.html</loc>
-    <lastmod>2022-09-04T06:44:30.228Z</lastmod>
+    <lastmod>2022-09-07T05:43:12.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/material/day07.html</loc>
+    <lastmod>2022-09-07T05:43:13.102Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/kandai-ci/material/day13.html</loc>
-    <lastmod>2022-09-04T06:44:35.955Z</lastmod>
+    <lastmod>2022-09-07T05:43:13.318Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/material/day06.html</loc>
+    <lastmod>2022-09-07T05:43:13.529Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/material/day02.html</loc>
+    <lastmod>2022-09-07T05:43:14.223Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/material/day03.html</loc>
+    <lastmod>2022-09-07T05:43:14.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/material/day01.html</loc>
+    <lastmod>2022-09-07T05:43:15.596Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/material/day09.html</loc>
+    <lastmod>2022-09-07T05:43:15.833Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/kandai-ci/data.html</loc>
+    <lastmod>2022-09-07T05:43:16.070Z</lastmod>
   </url>
 </urlset>

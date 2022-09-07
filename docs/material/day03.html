@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.165">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Causal Inference in Social Science@Kandai - ランダム化比較試験</title>
+<title>Causal Inference in Social Science@Kandai - 無作為化比較試験</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -75,10 +80,14 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../index.html">
-    <img src="../figs/logo.png" alt="">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../figs/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Causal Inference in Social Science@Kandai</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -129,7 +138,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
   </li>  
         <li>
     <a class="dropdown-item" href="../material/day03.html">
- <span class="dropdown-text">ランダム化比較試験</span></a>
+ <span class="dropdown-text">無作為化比較試験</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../material/day04.html">
@@ -179,7 +188,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">ランダム化比較試験</h1>
+      <h1 class="quarto-secondary-nav-title">無作為化比較試験</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -204,7 +213,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/day03.html" class="sidebar-item-text sidebar-link active">ランダム化比較試験</a>
+  <a href="../material/day03.html" class="sidebar-item-text sidebar-link active">無作為化比較試験</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -247,7 +256,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">ランダム化比較試験</h1>
+<h1 class="title d-none d-lg-block">無作為化比較試験</h1>
 </div>
 
 
@@ -261,8 +270,13 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 
 </header>
 
+<section id="スライド" class="level2">
+<h2 class="anchored" data-anchor-id="スライド">スライド</h2>
+<p><a href="../slide/day03.html" class="btn btn-primary btn-sm" target="_blank" role="button"><i class="bi bi-window"></i> 新しいタブで開く</a></p>
+<iframe class="slide-deck" src="../slide/day03.html" width="100%" style="aspect-ratio: 16 / 9.2;"></iframe>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -334,7 +348,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

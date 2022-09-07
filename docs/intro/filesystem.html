@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.165">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -75,10 +80,14 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../index.html">
-    <img src="../figs/logo.png" alt="">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../figs/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Causal Inference in Social Science@Kandai</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -126,6 +135,34 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
         <li>
     <a class="dropdown-item" href="../material/day02.html">
  <span class="dropdown-text">因果推論の考え方</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day03.html">
+ <span class="dropdown-text">無作為化比較試験</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day04.html">
+ <span class="dropdown-text">Rの復習</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day06.html">
+ <span class="dropdown-text">回帰分析と因果推論</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day07.html">
+ <span class="dropdown-text">マッチング</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day09.html">
+ <span class="dropdown-text">差分の差分法</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day11.html">
+ <span class="dropdown-text">回帰不連続デザイン</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../material/day13.html">
+ <span class="dropdown-text">操作変数法</span></a>
   </li>  
     </ul>
   </li>
@@ -199,19 +236,19 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">目次</h2>
    
   <ul>
-  <li><a href="#拡張子" id="toc-拡張子" class="nav-link active" data-scroll-target="#拡張子"> <span class="header-section-number">1</span> 拡張子</a></li>
-  <li><a href="#ファイルシステム" id="toc-ファイルシステム" class="nav-link" data-scroll-target="#ファイルシステム"> <span class="header-section-number">2</span> ファイルシステム</a>
+  <li><a href="#拡張子" id="toc-拡張子" class="nav-link active" data-scroll-target="#拡張子"><span class="toc-section-number">1</span>  拡張子</a></li>
+  <li><a href="#ファイルシステム" id="toc-ファイルシステム" class="nav-link" data-scroll-target="#ファイルシステム"><span class="toc-section-number">2</span>  ファイルシステム</a>
   <ul class="collapse">
-  <li><a href="#ファイルの入出力" id="toc-ファイルの入出力" class="nav-link" data-scroll-target="#ファイルの入出力"> <span class="header-section-number">2.1</span> ファイルの入出力</a></li>
-  <li><a href="#パスとは" id="toc-パスとは" class="nav-link" data-scroll-target="#パスとは"> <span class="header-section-number">2.2</span> パスとは</a></li>
+  <li><a href="#ファイルの入出力" id="toc-ファイルの入出力" class="nav-link" data-scroll-target="#ファイルの入出力"><span class="toc-section-number">2.1</span>  ファイルの入出力</a></li>
+  <li><a href="#パスとは" id="toc-パスとは" class="nav-link" data-scroll-target="#パスとは"><span class="toc-section-number">2.2</span>  パスとは</a></li>
   </ul></li>
-  <li><a href="#rstudioのプロジェクト機能" id="toc-rstudioのプロジェクト機能" class="nav-link" data-scroll-target="#rstudioのプロジェクト機能"> <span class="header-section-number">3</span> RStudioのプロジェクト機能</a></li>
-  <li><a href="#本講義でおすすめするフォルダー構造" id="toc-本講義でおすすめするフォルダー構造" class="nav-link" data-scroll-target="#本講義でおすすめするフォルダー構造"> <span class="header-section-number">4</span> 本講義でおすすめするフォルダー構造</a></li>
-  <li><a href="#参考" id="toc-参考" class="nav-link" data-scroll-target="#参考"> <span class="header-section-number">5</span> 参考</a></li>
+  <li><a href="#rstudioのプロジェクト機能" id="toc-rstudioのプロジェクト機能" class="nav-link" data-scroll-target="#rstudioのプロジェクト機能"><span class="toc-section-number">3</span>  RStudioのプロジェクト機能</a></li>
+  <li><a href="#本講義でおすすめするフォルダー構造" id="toc-本講義でおすすめするフォルダー構造" class="nav-link" data-scroll-target="#本講義でおすすめするフォルダー構造"><span class="toc-section-number">4</span>  本講義でおすすめするフォルダー構造</a></li>
+  <li><a href="#参考" id="toc-参考" class="nav-link" data-scroll-target="#参考"><span class="toc-section-number">5</span>  参考</a></li>
   </ul>
 </nav>
     </div>
@@ -326,32 +363,32 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 <p>　たとえば、以下のような構造でファイルが保存されているとしよう。拡張子が付いているものはファイル、それ以外はフォルダー、1行目の<code>.</code>は最上位フォルダーである。</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>                         levelName
-1  .                              
-2   ¦--Day01                     
-3   ¦   ¦--Day01.Rproj          
-4   ¦   ¦--Script01.R           
-5   ¦   ¦--Script02.R           
-6   ¦   ¦--Data                 
+<pre><code>                      levelName
+1  .                           
+2   ¦--Day01                   
+3   ¦   ¦--Day01.Rproj         
+4   ¦   ¦--Script01.R          
+5   ¦   ¦--Script02.R          
+6   ¦   ¦--Data                
 7   ¦   ¦   ¦--raw_data.csv    
 8   ¦   ¦   °--cleaned_data.csv
-9   ¦   °--Figs                 
-10  ¦       ¦--Figure01.png     
-11  ¦       °--Figure02.png     
-12  °--Day02                     
-13      ¦--Day02.Rproj           
-14      ¦--Script01.R            
-15      ¦--Document01.Rmd        
-16      ¦--Document01.html       
-17      ¦--Data                  
-18      ¦   °--my_data.csv      
-19      °--Figs                  
-20          ¦--Old               
-21          ¦   ¦--Figure01.pdf 
-22          ¦   ¦--Figure02.pdf 
-23          ¦   °--Figure03.pdf 
-24          °--New               
-25              °--Figure01.png  </code></pre>
+9   ¦   °--Figs                
+10  ¦       ¦--Figure01.png    
+11  ¦       °--Figure02.png    
+12  °--Day02                   
+13      ¦--Day02.Rproj         
+14      ¦--Script01.R          
+15      ¦--Document01.Rmd      
+16      ¦--Document01.html     
+17      ¦--Data                
+18      ¦   °--my_data.csv     
+19      °--Figs                
+20          ¦--Old             
+21          ¦   ¦--Figure01.pdf
+22          ¦   ¦--Figure02.pdf
+23          ¦   °--Figure03.pdf
+24          °--New             
+25              °--Figure01.png</code></pre>
 </div>
 </div>
 <p>　ここで<code>read_csv()</code>関数を使って<code>Day01</code>フォルダー内の<code>Data</code>フォルダー内の<code>raw_data.csv</code>を読み込む場合は<code>read_csv("/Day01/Data/raw_data.csv")</code>となる。また、<code>ggsave()</code>を用いて、<code>Day02</code>内の<code>Figs</code>内の<code>New</code>内に<code>Figure02.png</code>という名で図を保存する場合は、<code>ggsave(filename = "/Day02/Figs/New/Figure02.png", ...)</code>と入力する必要がある。しかし、通常、パスを指定する際に、<code>/</code>（Windownなら<code>C:\</code>）から始めることは滅多にない。それは「作業フォルダーはパスで省略可能」だからだ。</p>
@@ -419,13 +456,13 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">注</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">注</h2>
 
 <ol>
-<li id="fn1" role="doc-endnote"><p>一部、拡張子を持たないファイルもある。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>文書ファイルが<code>.pdf</code>以外にも<code>.docx</code>、<code>.odt</code>、<code>.txt</code>などがあるように、画像ファイルも<code>.png</code>だけでなく、<code>.jpg</code>、<code>.gif</code>、<code>.bmp</code>、<code>.svg</code>など様々なフォーマットがある。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>ただし、LMSに提出する場合、ファイル名をわざわざ修正しなくても良い。教員側からダウンロードする際、勝手に学生番号と氏名が付いたファイル名になるからだ。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>人によってはスクリプトファイルを<code>Script</code>フォルダー内に入れる人もいるが推奨しない。とりわけ、R MarkdownやQuartoの場合、コンソール上で実行時のパスとKnit時のパスの扱いが異なる場合が多い。プロジェクトフォルダーに入れておけば、問題は解決される。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>一部、拡張子を持たないファイルもある。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>文書ファイルが<code>.pdf</code>以外にも<code>.docx</code>、<code>.odt</code>、<code>.txt</code>などがあるように、画像ファイルも<code>.png</code>だけでなく、<code>.jpg</code>、<code>.gif</code>、<code>.bmp</code>、<code>.svg</code>など様々なフォーマットがある。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>ただし、LMSに提出する場合、ファイル名をわざわざ修正しなくても良い。教員側からダウンロードする際、勝手に学生番号と氏名が付いたファイル名になるからだ。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>人によってはスクリプトファイルを<code>Script</code>フォルダー内に入れる人もいるが推奨しない。とりわけ、R MarkdownやQuartoの場合、コンソール上で実行時のパスとKnit時のパスの扱いが異なる場合が多い。プロジェクトフォルダーに入れておけば、問題は解決される。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -497,7 +534,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

@@ -1,5 +1,432 @@
 [
   {
+    "objectID": "slide/day02.html#社会科学における因果推論の意味",
+    "href": "slide/day02.html#社会科学における因果推論の意味",
+    "title": "社会科学における因果推論",
+    "section": "社会科学における因果推論の意味",
+    "text": "社会科学における因果推論の意味\nMorgan and Winship (2014) Counterfactuals and Causal Inference: Methods And Principles For Social Research. Cambridge.\n\nMore has been learned about causal inference in the last few decades than sum total of everything that had been learned about it in all prior recorded history. (Gary King)"
+  },
+  {
+    "objectID": "slide/day02.html#相関から因果へ",
+    "href": "slide/day02.html#相関から因果へ",
+    "title": "社会科学における因果推論",
+    "section": "相関から因果へ",
+    "text": "相関から因果へ\n原因 (\\(X\\)) と結果 (\\(Y\\)) の関係: 啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\bigcirc\\): 啓発活動が行われる選挙区の投票率は低い（相関関係）\n\\(\\times\\): 啓発活動は投票率を下げる（因果関係）\n\\(\\Rightarrow\\) 統計分析から得られる結果は相関関係のみ\n\n\n\n理論/デザインを用い、観察された相関関係が因果関係であることを説得\n\n因果関係を担保してくれる統計的手法はない。\n\n「これは相関関係でなく因果関係である」と主張するためには、内生性がないことを示す必要がある。"
+  },
+  {
+    "objectID": "slide/day02.html#同時性",
+    "href": "slide/day02.html#同時性",
+    "title": "社会科学における因果推論",
+    "section": "同時性",
+    "text": "同時性\nSimultaneity\n\n\n\n\n\n\n\n\n原因と結果の間に双方向の因果関係が存在\n\n例) お酒 (原因; X) とストレス (結果; Y) の関係\n\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\n…\n\n\\(\\rightarrow\\) 地獄のような無限ループ\n\n\\(\\Rightarrow\\) 酒がストレスに与える影響は?"
+  },
+  {
+    "objectID": "slide/day02.html#見かけ上の相関",
+    "href": "slide/day02.html#見かけ上の相関",
+    "title": "社会科学における因果推論",
+    "section": "見かけ上の相関",
+    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\nたまたま相関関係がある場合\n\n例) メイン州の離婚率一人当たりマーガリンの消費量"
+  },
+  {
+    "objectID": "slide/day02.html#見かけ上の相関-1",
+    "href": "slide/day02.html#見かけ上の相関-1",
+    "title": "社会科学における因果推論",
+    "section": "見かけ上の相関",
+    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\n共通の要因からの影響（ビールとアイスクリーム消費量）"
+  },
+  {
+    "objectID": "slide/day02.html#見かけ上の相関-2",
+    "href": "slide/day02.html#見かけ上の相関-2",
+    "title": "社会科学における因果推論",
+    "section": "見かけ上の相関",
+    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\n共通の要因からの影響（ゲームをやると身長が伸びる説）"
+  },
+  {
+    "objectID": "slide/day02.html#逆の因果",
+    "href": "slide/day02.html#逆の因果",
+    "title": "社会科学における因果推論",
+    "section": "逆の因果",
+    "text": "逆の因果\nReverse Causality\n\n例) 心臓移植と生存率の例\n\n\n\n\n\n\n5年後に死亡\n5年後に生存\n\n\n\n\n心臓移植を\n受けた\n10名\n5名\n\n\n\n受けなかった\n5名\n10名\n\n\n\n\n心臓移植を受けたら死亡確率が上がる?\n死亡確率が高い人が心臓移植を受ける?"
+  },
+  {
+    "objectID": "slide/day02.html#逆の因果-1",
+    "href": "slide/day02.html#逆の因果-1",
+    "title": "社会科学における因果推論",
+    "section": "逆の因果",
+    "text": "逆の因果\nReverse Causality\n\n「人気だから4文字に略されるのか、4文字に略せるからヒットす るのか、どっちなんでしょうね」"
+  },
+  {
+    "objectID": "slide/day02.html#欠落変数バイアス",
+    "href": "slide/day02.html#欠落変数バイアス",
+    "title": "社会科学における因果推論",
+    "section": "欠落変数バイアス",
+    "text": "欠落変数バイアス\nOmitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていなくても\\(\\beta_1\\)の推定値は変化\\(\\times\\)\n\n\\(X\\)と\\(Z\\)は独立（\\(X \\perp Z\\)）\n\\(\\sigma_{X, Z} = 0\\)"
+  },
+  {
+    "objectID": "slide/day02.html#欠落変数バイアス-1",
+    "href": "slide/day02.html#欠落変数バイアス-1",
+    "title": "社会科学における因果推論",
+    "section": "欠落変数バイアス",
+    "text": "欠落変数バイアス\nOmitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていない場合、\\(\\beta_1\\)の推定値にバイアス\n\n\\(Z \\rightarrow X\\)の関係が存在\n\\(\\sigma_{X, Z} \\neq 0\\)\n\n\\(\\beta_1\\)の真の値（=不偏推定量）を推定するためには\\(X\\)と\\(Y\\)両方と相関する変数すべてが必要\n\nそもそも、「真の値」とは？\n\\(X\\)と\\(Y\\)両方と相関するすべての変数は特定可能? 測定可能?\n\n\\(\\rightarrow\\) データ分析から得られた結果はあくまでも「分析モデルが想定している世界」のものに過ぎない\n\n定量的手法は反証可能性を高めやすい手法（=科学的な手法になりやすい）であって、科学そのものも、得られた結果が真理であることを保障するものでもない。"
+  },
+  {
+    "objectID": "slide/day02.html#自己選択バイアス",
+    "href": "slide/day02.html#自己選択バイアス",
+    "title": "社会科学における因果推論",
+    "section": "自己選択バイアス",
+    "text": "自己選択バイアス\n(Self-)Selection Bias\n\n例1) 職業訓練と期待収入\n\n\n\n\n\n\n3年後の収入\n\n\n\n\n職業訓練を\n受けた\n6349ドル\n\n\n\n受けなかった\n6984ドル\n\n\n\n\n職業訓練を受けたら収入が上がる?\nもともと低収入の人が職業訓練を受けようとする?\n参考) 心臓移植の例も自己選択のバイアスとして解釈可能\n参考) 交絡因子の不在として解釈可能（就労意欲など）"
+  },
+  {
+    "objectID": "slide/day02.html#内生性",
+    "href": "slide/day02.html#内生性",
+    "title": "社会科学における因果推論",
+    "section": "内生性",
+    "text": "内生性\nこれまでの多くの例は内生性（endogeneity）の問題\n\n内生性: 説明変数と誤差項間に相関が存在\n\n誤差項と相関のある説明変数: 内生変数（endogenous variable）\n\n内生性がある場合、推定値は一致推定量でも、不偏推定量でもはない\n\nサンプルサイズ（\\(N\\)）をいくら増やしても無駄\n\n内生性の原因\n\n同時性\n欠落変数バイアス\n（体系的な）測定誤差\n自己選択バイアス\n\n最近の教科書はこれはすべてを自己選択バイアスや欠落変数バイアスでまとめる傾向"
+  },
+  {
+    "objectID": "slide/day02.html#単純比較の罠",
+    "href": "slide/day02.html#単純比較の罠",
+    "title": "社会科学における因果推論",
+    "section": "単純比較の罠",
+    "text": "単純比較の罠\n啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n単純比較の手法\n\n平均値の比較、平均値の差の検定（\\(t\\)検定、ANOVA）、単回帰分析など\n啓発ありの投票率 - 啓発なしの投票率 = -10%p\n\n内生性がない場合、「啓発活動は投票率を-10%p下げる」と主張できる。\n本当に、本当に、本当に、内生性はないのか。"
+  },
+  {
+    "objectID": "slide/day02.html#内生性は",
+    "href": "slide/day02.html#内生性は",
+    "title": "社会科学における因果推論",
+    "section": "内生性は?",
+    "text": "内生性は?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(Y\\): 投票率\n\\(X\\): 啓発活動の有無\n\\(W\\): 若者の割合\n\\(Z\\): これまでの投票率\n\\(e\\): \\(X\\)と\\(Z\\)以外に、\\(Y\\)に影響を与える要因\n\n\n\n投票率が低い選挙区ほど、啓発活動を行う傾向\n投票率が元々低い選挙区の場合、今回の投票率も低い傾向\n\n\\(\\Rightarrow\\) 自己選択バイアス/欠落変数バイアスの存在\n\n本当に比較すべき対象は…\n\n啓発活動を行わなかったA市 vs. 行ったA市\n啓発活動を行わなかったB市 vs. 行ったB市\nこれらは比較可能か?"
+  },
+  {
+    "objectID": "slide/day02.html#相関から因果へ-1",
+    "href": "slide/day02.html#相関から因果へ-1",
+    "title": "社会科学における因果推論",
+    "section": "相関から因果へ",
+    "text": "相関から因果へ\n内生性の除外 \\(\\rightarrow\\) 因果効果の推定"
+  },
+  {
+    "objectID": "slide/day02.html#因果関係の例",
+    "href": "slide/day02.html#因果関係の例",
+    "title": "社会科学における因果推論",
+    "section": "因果関係の例",
+    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果\n\n処置: ソンさんの講義を履修するか否か\n効果: 履修した場合の年収 − 履修しなかった場合の年収"
+  },
+  {
+    "objectID": "slide/day02.html#因果関係の例-1",
+    "href": "slide/day02.html#因果関係の例-1",
+    "title": "社会科学における因果推論",
+    "section": "因果関係の例",
+    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果（ケース1）\n\nオバマ君がソンさんの授業を履修しなくても年収5000万円なら\n\nソンさんの講義の因果効果は0\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース1\n5000万\n5000万\n0万"
+  },
+  {
+    "objectID": "slide/day02.html#因果関係の例-2",
+    "href": "slide/day02.html#因果関係の例-2",
+    "title": "社会科学における因果推論",
+    "section": "因果関係の例",
+    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果（ケース2）\n\nオバマ君がソンさんの授業を履修しなかった場合、年収1000万円なら\n\nソンさんの講義の因果効果は4000万円\n一生ソンさんには頭が上がらない\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース2\n1000万\n5000万\n4000万"
+  },
+  {
+    "objectID": "slide/day02.html#因果関係の例-3",
+    "href": "slide/day02.html#因果関係の例-3",
+    "title": "社会科学における因果推論",
+    "section": "因果関係の例",
+    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果（ケース3）\n\nオバマ君がソンさんの授業を履修しなかった場合、年収8000万円なら\n\nソンさんの講義の因果効果は-3000万\nソンさんは悪くない\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース3\n8000万\n5000万\n-3000万"
+  },
+  {
+    "objectID": "slide/day02.html#因果関係の例-4",
+    "href": "slide/day02.html#因果関係の例-4",
+    "title": "社会科学における因果推論",
+    "section": "因果関係の例",
+    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果\n\nソンさんの講義を履修しなかった場合のオバマ君の年収は…?\n\n個人（オバマ君）における処置効果を推定する際にはこれが不可欠\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース1\n5000万\n5000万\n0万\n\n\nケース2\n1000万\n5000万\n4000万\n\n\nケース3\n8000万\n5000万\n-3000万"
+  },
+  {
+    "objectID": "slide/day02.html#潜在的結果枠組み",
+    "href": "slide/day02.html#潜在的結果枠組み",
+    "title": "社会科学における因果推論",
+    "section": "潜在的結果枠組み",
+    "text": "潜在的結果枠組み\nNeyman-Rubin-HollandのPotential Outcome Framework\n\n\\(i\\) : 学生ID ( \\(i = 1,2,3,...,N\\) )\n\\(T\\) : 処置\n\n学生 \\(i\\) が謎の薬を飲んだ ( \\(T_i = 1\\) )\n学生 \\(i\\) が謎の薬を飲まなかった ( \\(T_i = 0\\) )\n\n\\(Y_i(T_i = 1)\\) : 学生 \\(i\\) が謎の薬を飲んだ場合の数学成績\n\\(Y_i(T_i = 0)\\) : 学生 \\(i\\) が謎の薬を飲まなかった場合の数学成績\n\\(ITE_i = Y_i(T_i = 1) − Y_i(T_i = 0)\\) : 学生iにおける薬の処置効果\n\nITE: Individual Treatment Effect (個人における処置効果)\n\n= UTE: Unit Treatment Effect\n\n全く同じ個人において薬を飲んだ場合と飲まなかった場合の数学成績の差 = 謎の薬の因果効果"
+  },
+  {
+    "objectID": "slide/day02.html#薬の効果は",
+    "href": "slide/day02.html#薬の効果は",
+    "title": "社会科学における因果推論",
+    "section": "薬の効果は?",
+    "text": "薬の効果は?\nITEの平均値は−4であり、個人差はあるものの、全体的に薬は成績に負の影響\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n77\n85\n8\n\n\n2\n1\n49\n59\n10\n\n\n3\n1\n60\n66\n6\n\n\n4\n0\n61\n44\n-17\n\n\n5\n0\n50\n39\n-11\n\n\n6\n0\n75\n55\n-20\n\n\n平均\n\n62\n58\n-4"
+  },
+  {
+    "objectID": "slide/day02.html#因果推論の根本問題-1",
+    "href": "slide/day02.html#因果推論の根本問題-1",
+    "title": "社会科学における因果推論",
+    "section": "因果推論の根本問題",
+    "text": "因果推論の根本問題\nしかし、観察できるのは\\(Y_i(T_i = 1)\\)か\\(Y_i(T_i = 0)\\)、片方のみ\n\n\\(Y_i(T_i = 0)\\)は反実仮想（counterfactual）であり、観察不可 (\\(i \\in \\{1,2,3\\}\\))\n\\(Y_i(T_i = 1)\\)も反実仮想(\\(i \\in \\{4,5,6\\}\\))\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n?\n85\n?\n\n\n2\n1\n?\n59\n?\n\n\n3\n1\n?\n66\n?\n\n\n4\n0\n61\n?\n?\n\n\n5\n0\n50\n?\n?\n\n\n6\n0\n75\n?\n?\n\n\n平均\n\n62\n70\n8\n\n\n\n\n\n「みんなで薬やろうぜ」って言っていいのか"
+  },
+  {
+    "objectID": "slide/day02.html#世界一受けたいソンさんの授業",
+    "href": "slide/day02.html#世界一受けたいソンさんの授業",
+    "title": "社会科学における因果推論",
+    "section": "世界一受けたいソンさんの授業",
+    "text": "世界一受けたいソンさんの授業\n履修者5名と非履修者5名の年収の比較\n\nITEは分からないが、平均値の差分を見ると、+100万円の効果\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n?\n700\n?\n\n\n2\n1\n?\n1000\n?\n\n\n3\n1\n?\n550\n?\n\n\n4\n1\n?\n350\n?\n\n\n5\n1\n?\n400\n?\n\n\n6\n0\n400\n?\n?\n\n\n7\n0\n500\n?\n?\n\n\n8\n0\n350\n?\n?\n\n\n9\n0\n750\n?\n?\n\n\n10\n0\n500\n?\n?\n\n\n平均\n\n500\n600\n100"
+  },
+  {
+    "objectID": "slide/day02.html#世界一受けたいソンさんの授業-1",
+    "href": "slide/day02.html#世界一受けたいソンさんの授業-1",
+    "title": "社会科学における因果推論",
+    "section": "世界一受けたいソンさんの授業",
+    "text": "世界一受けたいソンさんの授業\n履修者5名と非履修者5名の年収の比較（ケース1）\n\nITEは分からないが、平均値の差分を見ると、+100万円の効果\n80万円の価値があるソンさんの講義、みんなで履修しよう!\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n550\n700\n150\n\n\n2\n1\n650\n1000\n350\n\n\n3\n1\n600\n550\n-50\n\n\n4\n1\n300\n350\n50\n\n\n5\n1\n300\n400\n100\n\n\n6\n0\n400\n300\n-100\n\n\n7\n0\n500\n700\n200\n\n\n8\n0\n350\n600\n250\n\n\n9\n0\n750\n700\n-50\n\n\n10\n0\n500\n400\n-100\n\n\n平均\n\n490\n570\n80"
+  },
+  {
+    "objectID": "slide/day02.html#世界一受けたいソンさんの授業-2",
+    "href": "slide/day02.html#世界一受けたいソンさんの授業-2",
+    "title": "社会科学における因果推論",
+    "section": "世界一受けたいソンさんの授業",
+    "text": "世界一受けたいソンさんの授業\n履修者5名と非履修者5名の年収の比較（ケース2）\n\nITEは分からないが、平均値の差分を見ると、+100万円の効果\nソンさんは悪くない\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n800\n700\n-100\n\n\n2\n1\n650\n1000\n350\n\n\n3\n1\n600\n550\n-50\n\n\n4\n1\n400\n350\n-50\n\n\n5\n1\n350\n400\n50\n\n\n6\n0\n400\n300\n-100\n\n\n7\n0\n500\n500\n0\n\n\n8\n0\n350\n400\n50\n\n\n9\n0\n750\n500\n-250\n\n\n10\n0\n500\n400\n-100\n\n\n平均\n\n530\n510\n-20"
+  },
+  {
+    "objectID": "slide/day02.html#因果推論の根本問題-2",
+    "href": "slide/day02.html#因果推論の根本問題-2",
+    "title": "社会科学における因果推論",
+    "section": "因果推論の根本問題",
+    "text": "因果推論の根本問題\n\n\\(Y_i(T_i = 1)\\)か\\(Y_i(T_i = 0)\\)、片方のみしか観察できない状態においてITEから因果効果を推定することは不可能\n\n因果推論の根本問題 (The Fundamental Problem of Causal Inference)\n\n\n\n\n解決方法\n\nもう一回、過去に戻って異なる処置を行う"
+  },
+  {
+    "objectID": "slide/day02.html#因果推論の根本問題-3",
+    "href": "slide/day02.html#因果推論の根本問題-3",
+    "title": "社会科学における因果推論",
+    "section": "因果推論の根本問題",
+    "text": "因果推論の根本問題\n\n\\(Y_i(T_i = 1)\\)か\\(Y_i(T_i = 0)\\)、片方のみしか観察できない状態において、ITEから因果効果を推定することは不可能\n\nただし、ドラえもんが存在する世界線を除く\n因果推論の根本問題 (The Fundamental Problem of Causal Inference)\n\n\n\n\n潜在的結果を直接観察する方法\n\nただし、個々人の潜在的結果ではなく、集団における潜在的結果\n平均処置効果 (ATE; Average Treatment Effect)\n\n平均値の差分から平均的な因果効果を推定\nしかし、…\n\n無作為割当の重要性"
+  },
+  {
+    "objectID": "slide/day02.html#平均取るだけでok",
+    "href": "slide/day02.html#平均取るだけでok",
+    "title": "社会科学における因果推論",
+    "section": "平均取るだけでOK?",
+    "text": "平均取るだけでOK?\n観察されたデータから差分を計算するだけではATEは推定不可能\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n?\n700\n?\n\n\n2\n1\n?\n1000\n?\n\n\n3\n1\n?\n550\n?\n\n\n4\n1\n?\n350\n?\n\n\n5\n1\n?\n400\n?\n\n\n6\n0\n400\n?\n?\n\n\n7\n0\n500\n?\n?\n\n\n8\n0\n350\n?\n?\n\n\n9\n0\n750\n?\n?\n\n\n10\n0\n500\n?\n?\n\n\n平均\n\n500\n600\n100"
+  },
+  {
+    "objectID": "slide/day02.html#信頼できるateの条件",
+    "href": "slide/day02.html#信頼できるateの条件",
+    "title": "社会科学における因果推論",
+    "section": "信頼できるATEの条件",
+    "text": "信頼できるATEの条件\nATE推定値の信頼性を損なう敵: 内生性 (しかも、常に存在する)\n例) やる気のある学生だけがソンさんの講義を履修した場合\n\n自己選択バイアス\n\nソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下\n\n疑似相関\n\nやる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。\n\n測定誤差\n\n履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）\n\n\n\n\n内生性は因果推論の敵! どうすれば…?\n\\(\\downarrow\\)\n無作為割当 (Random Assignment)\n\n\n\n\nhttps://www.jaysong.net/kandai-ci"
+  },
+  {
+    "objectID": "slide/day03.html#信頼できるateの条件",
+    "href": "slide/day03.html#信頼できるateの条件",
+    "title": "社会科学における因果推論",
+    "section": "信頼できるATEの条件",
+    "text": "信頼できるATEの条件\n内生性の存在 \\(\\rightarrow\\) ATE推定値の信頼性\\(\\downarrow\\)\n例) やる気のある学生だけがソンさんの講義を履修した場合\n\n自己選択バイアス\n\nソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下\n\n疑似相関\n\nやる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。\n\n測定誤差\n\n履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）\n\n\n\n\n内生性は因果推論の敵! どうすれば…?\n\\(\\downarrow\\)\n無作為割当 (Random Assignment)"
+  },
+  {
+    "objectID": "slide/day03.html#無作為割当とは",
+    "href": "slide/day03.html#無作為割当とは",
+    "title": "社会科学における因果推論",
+    "section": "無作為割当とは",
+    "text": "無作為割当とは\n無作為割当 (Random Assignment)\n\n処置を受けるかどうかを無作為に割り当てる方法\n\n完全無作為割当: 全ての被験者において、どのグループに属するかの確率が等しい\n\\(Pr(T_i = 1) = Pr(T_j = 1) \\text{ where } i \\neq j\\)\n\\(Pr(T_i = 0) = Pr(T_j = 0) \\text{ where } i \\neq j\\)\n無作為割当の方法は色々\n\n無作為に割り当てると、処置を受けないグループと処置を受けるグループは「集団」として同質なグループになる。\n\n受けないグループ: 統制群 (Control Group)\n受けるグループ: 処置群 (Treatment Group)\n\n一つの集団を一人の個人として扱い、ITEを測定 ⇒ ATE"
+  },
+  {
+    "objectID": "slide/day03.html#無作為割当の力",
+    "href": "slide/day03.html#無作為割当の力",
+    "title": "社会科学における因果推論",
+    "section": "無作為割当の力",
+    "text": "無作為割当の力\nコインを投げ、表( \\(H\\) )なら統制群、裏( \\(T\\) )なら処置群に割当\n\nデータ生成Dataの中身\n\n\n\nset.seed(19861008)\nData <- tibble(ID = 1:20,\n               Female = sample(0:1, 20, replace = TRUE, \n                               prob = c(0.4, 0.6)),\n               Age    = round(rnorm(20, 38, 10), 0))\n\nData |>\n   summarise(Female = mean(Female),\n             Age    = mean(Age))\n\n# A tibble: 1 × 2\n  Female   Age\n   <dbl> <dbl>\n1   0.55    38\n\n\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      Female\n      Age\n      \n      ID\n      Female\n      Age\n    \n  \n  \n    1\n1\n31\n\n11\n0\n38\n    2\n1\n41\n\n12\n1\n29\n    3\n0\n31\n\n13\n0\n21\n    4\n1\n46\n\n14\n0\n26\n    5\n1\n37\n\n15\n1\n36\n    6\n1\n37\n\n16\n1\n40\n    7\n0\n30\n\n17\n0\n50\n    8\n1\n46\n\n18\n0\n42\n    9\n1\n56\n\n19\n0\n29\n    10\n0\n47\n\n20\n1\n47"
+  },
+  {
+    "objectID": "slide/day03.html#無作為割当の力-1",
+    "href": "slide/day03.html#無作為割当の力-1",
+    "title": "社会科学における因果推論",
+    "section": "無作為割当の力",
+    "text": "無作為割当の力\nコイン投げの結果\n\nコイン投げDataの中身\n\n\n\nset.seed(19861008)\nCoin <- sample(c(\"H\", \"T\"), 20, replace = TRUE)\nCoin\n\n [1] \"H\" \"T\" \"T\" \"T\" \"H\" \"H\" \"H\" \"T\" \"H\" \"H\" \"H\" \"T\" \"H\" \"T\" \"H\" \"T\" \"T\" \"T\" \"H\"\n[20] \"H\"\n\ntable(Coin)\n\nCoin\n H  T \n11  9 \n\nData$Coin <- Coin\n\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      Female\n      Age\n      Coin\n      \n      ID\n      Female\n      Age\n      Coin\n    \n  \n  \n    1\n1\n31\nH\n\n11\n0\n38\nH\n    2\n1\n41\nT\n\n12\n1\n29\nT\n    3\n0\n31\nT\n\n13\n0\n21\nH\n    4\n1\n46\nT\n\n14\n0\n26\nT\n    5\n1\n37\nH\n\n15\n1\n36\nH\n    6\n1\n37\nH\n\n16\n1\n40\nT\n    7\n0\n30\nH\n\n17\n0\n50\nT\n    8\n1\n46\nT\n\n18\n0\n42\nT\n    9\n1\n56\nH\n\n19\n0\n29\nH\n    10\n0\n47\nH\n\n20\n1\n47\nH"
+  },
+  {
+    "objectID": "slide/day03.html#無作為割当の力-2",
+    "href": "slide/day03.html#無作為割当の力-2",
+    "title": "社会科学における因果推論",
+    "section": "無作為割当の力",
+    "text": "無作為割当の力\n統制群と処置群が比較的同質的なグループに\n\n統制群（11名）: 女性比率が54.5%、平均年齢が37.2歳\n処置群 (9名): 女性比率が55.6%、平均年齢が39歳\n\n\nData |>\n  group_by(Coin) |>\n  summarise(Female = mean(Female),\n            Age    = mean(Age),\n            N      = n())\n\n# A tibble: 2 × 4\n  Coin  Female   Age     N\n  <chr>  <dbl> <dbl> <int>\n1 H      0.545  37.2    11\n2 T      0.556  39       9"
+  },
+  {
+    "objectID": "slide/day03.html#無作為割当の力-3",
+    "href": "slide/day03.html#無作為割当の力-3",
+    "title": "社会科学における因果推論",
+    "section": "無作為割当の力",
+    "text": "無作為割当の力\n集団として処置群と統制群は、母集団とほぼ同質\n\n\\(n \\rightarrow \\infty\\) なら2つのグループはより同質的に（大数の弱法則）\n\n\n\n\n\n女性の割合\n平均年齢\n\n\n\n\n母集団 (\\(n=20\\))\n55.0%\n38.0歳\n\n\n統制群 (\\(n=11\\))\n54.5%\n37.2歳\n\n\n処置群 (\\(n=9\\))\n55.6%\n39.0歳\n\n\n\n\n統制群と処置群、母集団はそれぞれ交換可能 (exchangeable)\n\n処置群に処置を与えること = 母集団全体に処置を与えること\n統制群に処置を与えないこと = 母集団全体に処置を与えないこと\n\n統制群と処置群の比較で集団を一つの単位としたITE (= ATE)が推定可能\n\n処置を与えた母集団 vs. 処置を与えなかった母集団"
+  },
+  {
+    "objectID": "slide/day03.html#無作為割当の力-4",
+    "href": "slide/day03.html#無作為割当の力-4",
+    "title": "社会科学における因果推論",
+    "section": "無作為割当の力",
+    "text": "無作為割当の力\n無作為割当は均質な複数のグループを作る手法\n\n講義履修と年収の例だと、無作為割当をすることによって …\n\n各グループにやる気のある学生とない学生が均等に\n\n自己選択バイアス、擬似相関の除去\n\nジンバブエ・ドルで測定される学生も均等に（これはないか）\n\n測定誤差の除去\n\n\n内生性:処置変数（講義の履修）と誤差項（やる気など）間の相関\n\nコイン投げの結果は被験者（学生）の性質と無関係に行われるため、誤差項と相関がない。\n外生変数 (Exogenous variable)\n学生の性質 (X) と処置有無 (T) は独立している ⇒ \\(X \\perp T\\)\n\n\n\n\n無作為割当は内生性を除去する最良の手法"
+  },
+  {
+    "objectID": "slide/day03.html#無作為抽出と無作為割当",
+    "href": "slide/day03.html#無作為抽出と無作為割当",
+    "title": "社会科学における因果推論",
+    "section": "無作為抽出と無作為割当",
+    "text": "無作為抽出と無作為割当\n\n無作為抽出によってサンプル（標本）と母集団が交換可能（実はここが難しい）\n無作為割当によって各グループとサンプルに交換可能（=各グループ間で交換可能）\n無作為抽出&無作為割当によって各グループと母集団が交換可能（グループへの刺激=母集団への刺激）"
+  },
+  {
+    "objectID": "slide/day03.html#ランダム化比較試験とは",
+    "href": "slide/day03.html#ランダム化比較試験とは",
+    "title": "社会科学における因果推論",
+    "section": "ランダム化比較試験とは",
+    "text": "ランダム化比較試験とは\nRandomized Controlled Trial (RCT)\n\n無作為割当で複数のグループを作り上げた上で、異なる刺激・処置を与え、結果を観察する手法\n\n社会科学でいう「実験」の多くはこれを指す\n因果推論の王道\n\n因果効果をもたらす(と想定される)処置変数が外生的\n\nグループ間における結果変数の差 = 因果効果\n\nデータ生成過程(Data Generating Process; DGP)への直接介入\n\n「真のモデル」が分かる\n\n\n\n\n\n参考）データ生成過程について\n\nKing, Gary. 1989. Unifying Political Methodology, Michigan University Press.（Ch.1-4）\n豊田秀樹. 2022.『統計学入門 II: 尤度によるデータ生成過程の表現』朝倉書店"
+  },
+  {
+    "objectID": "slide/day03.html#データ生成過程への介入",
+    "href": "slide/day03.html#データ生成過程への介入",
+    "title": "社会科学における因果推論",
+    "section": "データ生成過程への介入",
+    "text": "データ生成過程への介入\n\\[\n\\text{Income} = \\beta_0 + \\beta_1 \\cdot \\text{Quant} + \\varepsilon\n\\]\n\nIncome: 10年後の年収 (\\(\\in [0, \\infty)\\))\nQuant:ソンさんの講義を履修したか否か (\\(\\in \\{0, 1\\})\\) )\n誤差項(\\(\\varepsilon\\))には「やる気」や「真面目さ」が含まれるため、Quantと相関がある (\\(\\rightarrow\\) 内生性)\n無作為割当で受講有無を決めると、「やる気」や「真面目さ」はQunatと無関係 (独立) になる\n\n例) 受講有無をコイン投げ（W）で決める場合、コインの結果は誤差項（やる気や真面目さ）と独立（ただし、全員がコイン投げの結果に従うと仮定）\n\\(\\Rightarrow\\) 内生性がなくなる!"
+  },
+  {
+    "objectID": "slide/day03.html#実験の方法",
+    "href": "slide/day03.html#実験の方法",
+    "title": "社会科学における因果推論",
+    "section": "実験の方法",
+    "text": "実験の方法\nHyde (2015) による分類\n\nフィールド実験: 実際の社会を舞台に行う実験\n\nGerber, Alan S. and Donald P. Green. 2012. Field Experiments, Norton.\n\n実験室実験: 人為的に作られた（=統制された）環境内で行う実験\nサーベイ実験: 世論調査に埋め込む実験\n\nSONG Jaehyun・秦正樹. 2020. 「オンライン・サーベイ実験の方法: 理論編」『理論と方法』35 (1): 92-108.\n秦正樹・SONG Jaehyun. 2020. 「オンライン・サーベイ実験の方法: 実践編」『理論と方法』35 (1): 109-127."
+  },
+  {
+    "objectID": "slide/day03.html#フィールド実験1",
+    "href": "slide/day03.html#フィールド実験1",
+    "title": "社会科学における因果推論",
+    "section": "フィールド実験（1）",
+    "text": "フィールド実験（1）\n実際の社会を舞台に行う実験\n\n例1例2\n\n\nIto, Koichiro, Takanori Ida, and Makoto Tanaka. 2018. “Moral Suasion and Economic Incentives: Field Experimental Evidence from Energy Demand,” American Economic Journal: Economic Policy, 10 (1): 240-267.\n\n京都府内の691世帯が対象\n電気メーターを設置し、統制群と処置群1、処置群2に分割\n\n設置のみ (153) / 単純節電要請 (154) / 動機づけ節電要請 (384)\n\n電気使用量の比較\n\n\n\nGerber, Alan S., Donald P. Green, and Christopher W. Larimer. 2010. “An Experiment Testing the Relative Effectiveness of Encouraging Voter Participation by Inducing Feelings of Pride or Shame,” Political Behavior, 32: 409-422.\n\nミシガン州の18万世帯が対象\n4つの処置群にそれぞれ異なる投票を促す内容の葉書を発送\n\n統制群: 99,999世帯 / 処置群1: 20,001世帯 / 処置群2: 20,002世帯 / 処置群3: 20,00 世帯 / 処置群4: 20,000世帯\n\nそれぞれのグループ間の投票率を比較"
+  },
+  {
+    "objectID": "slide/day03.html#フィールド実験2",
+    "href": "slide/day03.html#フィールド実験2",
+    "title": "社会科学における因果推論",
+    "section": "フィールド実験（2）",
+    "text": "フィールド実験（2）\n\nメリット\n\n実際の社会と対象にするため、高い外的妥当性\n\n一般的に外的妥当性は実験研究の最大の弱点とも言われる\nただし、全国民ではなく、一部の地域を対象にするケースが多いため、限界もある\n\nIto, Ida and Tanaka (2018) は外的妥当性の確保のために同様の実験を京都以外でも実施 (京都市、横浜市、北九州市、豊田市)\n\n\n\nデメリット\n\n高費用\n\nGerber, Green, and Larimer (2010) は安い方?\n\nアメリカで切手は100円以上の場合が多いため、18万世帯$$100円だけでも1800万円\n葉書もタダじゃない (Amazon.comで100枚12ドル程度)\n\nIto, Ida and Tanaka (2018) は . . .\n\n\n政府や企業などの協力なしでは実施が困難なケースが多い"
+  },
+  {
+    "objectID": "slide/day03.html#実験室実験1",
+    "href": "slide/day03.html#実験室実験1",
+    "title": "社会科学における因果推論",
+    "section": "実験室実験（1）",
+    "text": "実験室実験（1）\n人為的に作られた環境内で行う実験\n\n例1例2\n\n\nBlais, André, Simon Labbé-St-Vincent, Laslier Jean-François, Nicolas Sauger, and Karine Van der Straeten. 2011. “Strategic Vote Choice in One-Round and Two-Round Elections: An Experimental Study,” Political Research Quarterly, 64(3): 637–645.\n\n42名 \\(\\times\\) 2グループ\n\nグループ1: 一回投票制4回 \\(\\rightarrow\\) 二回投票制4回\nグループ2: 二回投票制4回 \\(\\rightarrow\\) 一回投票制4回\n\n投票方式による戦略投票 (Strategic Vote) の傾向を比較\n\n\n\nMueller, Pam A. and Daniel M. Oppenheimer. 2014. “The Pen Is Mightier Than the Keyboard: Advantages of Longhand Over Laptop Note Taking,” Psychological Science, 25(6): 1159-1168.\n\n学生を2グループに分割\n\nグループ 1: ノートパソコンでノートテイキング\nグループ 2: ノートとペンでノートテイキング\n\nレクチャーの理解度をグループごとに比較"
+  },
+  {
+    "objectID": "slide/day03.html#実験室実験2",
+    "href": "slide/day03.html#実験室実験2",
+    "title": "社会科学における因果推論",
+    "section": "実験室実験（2）",
+    "text": "実験室実験（2）\n\nメリット\n\n環境を自由に操作できる\n被験者の訓練・統制が容易\n\n実験前のルールの説明など\n\n\nデメリット\n\n被験者の属性が偏りやすい \\(\\Rightarrow\\) 低い外的妥当性\n\n主に学生が動員される\nHovland (1959): “College sophomores may not be people.”\n\n\nトレードオフ\n\n一般的に、被験者が少数\n\nSmall \\(N\\) \\(\\leftrightarrow\\) 低コスト(単位を餌にする研究者ならタダでできる)"
+  },
+  {
+    "objectID": "slide/day03.html#サーベイ実験1",
+    "href": "slide/day03.html#サーベイ実験1",
+    "title": "社会科学における因果推論",
+    "section": "サーベイ実験（1）",
+    "text": "サーベイ実験（1）\n世論調査に実験を埋め込む方法\n\n例1例2\n\n\nAsaba, Yuki, Kyu S Hahn, Seulgi Jang, Tetsuro Kobayashi, and Atsushi Tago. 2020. “38 seconds above the 38th parallel: how short video clips produced by the US military can promote alignment despite antagonism between Japan and Korea,” International Relations of the Asia-Pacific, 20(2): 253–273.\n\nサーベイの回答者1500名を2グループに分割\n\n統制群: 38秒の日米韓軍事協力に関するPACOM制作の動画を視聴\n処置群: ほぼ同じ長さのPACOM制作の動画を視聴 (日韓の言及はなし)\n\nアメリカに対する感情温度、日韓協力に対する態度を測定\nグループごとに結果を比較\n\n\n\nSong, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022 (forthcoming). “Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US,” Canadian Journal of Political Science.\n\n回答者621名を統制群と処置群に割当\n統制群に以下のように質問\n\n\n\n\nNow we are going to show you four activities that some people may experience during the electoral campaign. After you read all four, just answer HOW MANY activities you experienced during the last electoral campaign. (We do NOT want to know which ones, just how many.)\n\nI saw public debates between candidates for presidential elections on TV.\nI saw official websites/blogs of politicians and candidates.\nMy family/friends told me about the election.\nCampaign activists threatened me to vote for a candidate.\n\n\n\n\n\n処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加\n結果の平均値を比較"
+  },
+  {
+    "objectID": "slide/day03.html#サーベイ実験2",
+    "href": "slide/day03.html#サーベイ実験2",
+    "title": "社会科学における因果推論",
+    "section": "サーベイ実験（2）",
+    "text": "サーベイ実験（2）\n\nメリット\n\nコストが低い (数万円で一応実施可能OK)\n大規模の実験が可能（数百人〜数千人）\n機動性が高い\nSUTVA（後述）が満たされやすい\n\nデメリット\n\n実際の環境を再現するのが困難（外的妥当性の問題）\n「行動」を対象とした場合、測定尺度の問題\n不良回答者（satisficer）の存在\n実験のトラブルに対応するのが困難"
+  },
+  {
+    "objectID": "slide/day03.html#rctの例",
+    "href": "slide/day03.html#rctの例",
+    "title": "社会科学における因果推論",
+    "section": "RCTの例",
+    "text": "RCTの例\nBertrand, Marianne, and Sendhil Mullainathan. 2004. “Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination,” American Economic Review, 94(4): 991-1013.\n\n労働市場における人種差別\n約5000人分の架空の履歴書を求人中の会社へ送る\n\n履歴書の内容 (性別、人種、能力など) は完全無作為\n履歴書に人種は記入できないため、白人っぽい名前 (Emily など)、黒人っぽい名前 (Jamal など) を記入\n\n後は、返事を待つだけ\n\n処置変数: 人種 ( \\(\\in \\{\\text{black}, \\text{white}\\}\\) )\n結果変数: 連絡の有無 ( \\(\\in \\{0, 1\\}\\) )"
+  },
+  {
+    "objectID": "slide/day03.html#内生性の可能性",
+    "href": "slide/day03.html#内生性の可能性",
+    "title": "社会科学における因果推論",
+    "section": "内生性の可能性",
+    "text": "内生性の可能性\n\n\n\n\n\n\n\n\n\n\n\n\n誤差項には教育水準、親の所得、居住地などが含まれる\n\n実際に人種と上記の要因には相関あり\n人種 (処置) と誤差項間の相関関係 \\(\\rightarrow\\) 内生性\n\n黒人が採用されなかった場合…\n\n黒人だから? \\(\\leftarrow\\) 人種差別\\(\\bigcirc\\)\n教育水準が低いから \\(\\leftarrow\\) 人種差別\\(\\times\\)\n\n\n\n \\(\\Rightarrow\\) 内生性がある限り、因果効果の識別は困難  \\(\\Rightarrow\\) ケースによって政策的含意が変わる。"
+  },
+  {
+    "objectID": "slide/day03.html#rctの力",
+    "href": "slide/day03.html#rctの力",
+    "title": "社会科学における因果推論",
+    "section": "RCTの力",
+    "text": "RCTの力\n\n\n\n\n白人の名前\n黒人の名前\n\n\n\n\nFemale\n76.42%\n77.45%\n\n\nHighQuality\n50.23%\n50.23%\n\n\nCall Rate\n9.65%\n6.45%\n\n\n計 (人)\n2435\n2435\n\n\n\n\n無作為割当の結果、人種と性別・能力の相関がほぼ0に\n\n内生性のない状態\nこの場合、労働市場における人種の因果効果は\n\nATE = 黒人の平均連絡率 − 白人の平均連絡率\n黒人という理由だけで会社から連絡が来る確率が 3.2%p\\(\\downarrow\\)\n-3.2%p: 人種の因果効果 or 処置効果 (treatment effect)"
+  },
+  {
+    "objectID": "slide/day03.html#バランスチェック",
+    "href": "slide/day03.html#バランスチェック",
+    "title": "社会科学における因果推論",
+    "section": "バランスチェック",
+    "text": "バランスチェック\n無作為割当が行われているか否かを確認\n\n\n\n\n\n\n\n\n\n\n\n\n標準化差分を使用\n\nStandardized Bias (or Difference)\n\nサンプルサイズの影響\\(\\times\\)\n統計的検定ではない\n\n\\(t\\) 検定、ANOVA、 \\(\\chi^2\\) 検定は\\(\\times\\)\n\nバランスチェックに統計的有意性検定は使わない\n\n{cobalt}、{BalanceR}など"
+  },
+  {
+    "objectID": "slide/day03.html#標準化差分について",
+    "href": "slide/day03.html#標準化差分について",
+    "title": "社会科学における因果推論",
+    "section": "標準化差分について",
+    "text": "標準化差分について\n連続変数\n\\[\n\\text{SB}_{T-C} = 100 \\cdot \\frac{\\bar{X}_T - \\bar{X}_C}{\\sqrt{0.5 \\cdot (s_T^2 + s_C^2)}}\n\\]\n二値変数\n\\[\n\\text{SB}_{T-C} = 100 \\cdot \\frac{\\bar{X}_T - \\bar{X}_C}{\\sqrt{0.5 \\cdot (\\bar{X}_T(1-\\bar{X}_T) + \\bar{X}_C(1-\\bar{X}_C))}}\n\\]\n\n\\(\\bar{X}_T\\) : 処置群におけるXの平均値\n\\(s_T^2\\) : 処置群におけるXの分散\n|SB|が小さいほどバランス\n\n明確な基準はないが、3、5、10、25などを使用\n\nグループが3つ以上の場合、それぞれのペアで実行"
+  },
+  {
+    "objectID": "slide/day03.html#因果効果の推定",
+    "href": "slide/day03.html#因果効果の推定",
+    "title": "社会科学における因果推論",
+    "section": "因果効果の推定",
+    "text": "因果効果の推定\n\n平均値の差分の検定単回帰分析\n\n\n方法1: グループ間の結果変数の差分の検定 (\\(t\\)検定)\n\n因果効果 (ATE): \\(\\mathbb{E}[\\mbox{Call}|\\mbox{Race = Black}] - \\mathbb{E}[\\mbox{Call}|\\mbox{Race = White}] = -0.032\\)\nATE = 0の帰無仮説の検定\n\n\\(t_{\\text{df} = 4711.7} = −4.117\\); \\(p\\) < 0.001; 95% CI = [−0.047, −0.017]\n\n応答変数の尺度に応じてノンパラメトリック分析\n\n\n\n方法2: 単回帰分析 (線形 or ロジスティックス/プロビット)\n\n\n\n\n\n線形回帰分析（LPM）\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n0.064\n0.006\n\n\nRace: White\n0.032\n0.008\n\n\n\n\n\n\nロジスティック回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-2.675\n0.083\n\n\nRace: White\n0.438\n0.107\n\n\n\n\n\n\nプロビット回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-1.518\n0.039\n\n\nRace: White\n0.217\n0.053\n\n\n\n\n\n\n\n\n\n\n\n\n参考）Freedman, David A. 2008. “Randomization Does Not Justify Logistic Regression,” Statistical Science Statistical Science, 23(2): 237-249.\n\nLogit: 一致推定量\\(\\times\\) & 不偏推定量\\(\\times\\)\nLinear: 一致推定量\\(\\bigcirc\\) & 不偏推定量\\(\\times\\)\n一致性と不偏性の違いについて"
+  },
+  {
+    "objectID": "slide/day03.html#因果効果の推定-重回帰分析は",
+    "href": "slide/day03.html#因果効果の推定-重回帰分析は",
+    "title": "社会科学における因果推論",
+    "section": "因果効果の推定: 重回帰分析は?",
+    "text": "因果効果の推定: 重回帰分析は?\n無作為割当のおかげですべての変数が互いに独立\n\n重回帰分析をしても人種のATEは変化しない (OVB がない)\n\n無作為割当の場合、回帰はしてもしなくても良い\n\n現実的に完全にバランスが取れていないため、若干の変化はある\n\n\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n0.057\n0.007\n\n\nRace: White\n0.032\n0.08\n\n\nFemale\n0.007\n0.009\n\n\nMilitary\n-0.027\n0.014\n\n\nEducation\n-0.002\n0.005\n\n\nHigh Quality\n0.019\n0.008"
+  },
+  {
+    "objectID": "slide/day03.html#因果効果の不均一性",
+    "href": "slide/day03.html#因果効果の不均一性",
+    "title": "社会科学における因果推論",
+    "section": "因果効果の不均一性",
+    "text": "因果効果の不均一性\n因果効果が下位グループによって異なる場合\n\n因果効果の不均一性 (heterogeneous treatment effects)\n\n例) 性別によって薬の効果が異なる場合\n薬の効果が男性なら 1、女性なら 2 の場合\n\n男女比が1:1なら、ATEは1.5に\n\n薬の効果が男性なら 4、女性なら-1 の場合\n\n男女比が1:1なら、ATEは1.5だが…\n\n\n方法1: 男女に分けてATEを推定\n方法2: 性別と処置有無の交差項を投入した重回帰分析\n\n\n\n参考) Bryan, Christopher J., Elizabeth Tipton and David S. Yeager. 2021. “Behavioural science is unlikely to change the world without a heterogeneity revolution,” Nature Human Behaviour. 5: 980–989."
+  },
+  {
+    "objectID": "slide/day03.html#因果効果の不均一性intro_data2.csv",
+    "href": "slide/day03.html#因果効果の不均一性intro_data2.csv",
+    "title": "社会科学における因果推論",
+    "section": "因果効果の不均一性（intro_data2.csv）",
+    "text": "因果効果の不均一性（intro_data2.csv）\n\ndata2 <- read_csv(\"data/intro_data2.csv\")\n\ndata2\n\n# A tibble: 500 × 4\n      ID Outcome Treatment Female\n   <dbl>   <dbl>     <dbl>  <dbl>\n 1     1  1.09           0      1\n 2     2  0.0281         0      1\n 3     3  1.65           0      0\n 4     4  3.83           1      1\n 5     5  2.65           1      1\n 6     6  1.24           1      1\n 7     7  0.136          1      0\n 8     8  0.507          0      1\n 9     9  2.99           1      1\n10    10  4.34           1      1\n# … with 490 more rows\n# ℹ Use `print(n = ...)` to see more rows"
+  },
+  {
+    "objectID": "slide/day03.html#因果効果の不均一性-1",
+    "href": "slide/day03.html#因果効果の不均一性-1",
+    "title": "社会科学における因果推論",
+    "section": "因果効果の不均一性",
+    "text": "因果効果の不均一性\n方法1: 男女に分けてATEを推定\n\n比較コード1コード2コード3\n\n\n\n\n\n\n統制群\n処置群\nATE\n\\(t\\)\n\\(p\\)\n\n\n\n\n男性のみ\n0.611\n1.561\n0.951\n-7.521\n< 0.001\n\n\n女性のみ\n0.493\n2.480\n1.987\n-15.573\n< 0.001\n\n\n全体\n0.551\n2.057\n1.506\n-15.945\n< 0.001\n\n\n\n\n\n男性のみ\n\nt.test(Outcome ~ Treatment, data = data2, subset = (Female == 0))\n\n\n    Welch Two Sample t-test\n\ndata:  Outcome by Treatment\nt = -7.5211, df = 235.95, p-value = 1.132e-12\nalternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0\n95 percent confidence interval:\n -1.1996845 -0.7016501\nsample estimates:\nmean in group 0 mean in group 1 \n      0.6105137       1.5611810 \n\n\n\n\n女性のみ\n\nt.test(Outcome ~ Treatment, data = data2, subset = (Female == 1))\n\n\n    Welch Two Sample t-test\n\ndata:  Outcome by Treatment\nt = -15.573, df = 259.72, p-value < 2.2e-16\nalternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0\n95 percent confidence interval:\n -2.238053 -1.735599\nsample estimates:\nmean in group 0 mean in group 1 \n      0.4931905       2.4800169 \n\n\n\n\n全体\n\nt.test(Outcome ~ Treatment, data = data2)\n\n\n    Welch Two Sample t-test\n\ndata:  Outcome by Treatment\nt = -15.945, df = 494.24, p-value < 2.2e-16\nalternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0\n95 percent confidence interval:\n -1.692061 -1.320817\nsample estimates:\nmean in group 0 mean in group 1 \n      0.5509135       2.0573524"
+  },
+  {
+    "objectID": "slide/day03.html#因果効果の不均一性-2",
+    "href": "slide/day03.html#因果効果の不均一性-2",
+    "title": "社会科学における因果推論",
+    "section": "因果効果の不均一性",
+    "text": "因果効果の不均一性\n方法2: 性別と処置有無の交差項を投入した重回帰分析\n\n\n\nlm(Outcome ~ Treatment * Female, \n   data = data2) |>\n   summary()\n\n\n\n\n\n \n  \n      \n    Model 1 \n  \n \n\n  \n    (Intercept) \n    0.611 (0.091) \n  \n  \n    Treatment \n    0.951 (0.131) \n  \n  \n    Female \n    −0.117 (0.127) \n  \n  \n    Treatment × Female \n    1.036 (0.180) \n  \n  \n    Num.Obs. \n    500 \n  \n  \n    R2 Adj. \n    0.398 \n  \n  \n    F \n    110.905 \n  \n\n\n\n\n\n\n\\[\n\\begin{align}\n\\hat{y} = & \\beta_0 + \\beta_1 \\mbox{Treatment} + \\beta_2 \\mbox{Female} + \\\\\n& \\beta_3 \\mbox{Treatment} \\cdot \\mbox{Female} \\\\\n= & \\beta_0 + (\\beta_1 + \\beta_3 \\mbox{Female}) \\mbox{Treatment} + \\beta_2 \\mbox{Female}.\n\\end{align}\n\\]\n\n処置効果はTreatmentの係数\n\n\\(\\beta_1 + \\beta_3 \\mbox{Female}\\)\n\\(\\Rightarrow\\) 処置効果がFemaleの値にも依存\n\n男性のATE: \\(\\beta_1 + \\beta_3 \\cdot 0 = \\beta_1\\) = 0.951\n女性のATE: \\(\\beta_1 + \\beta_3 \\cdot 1 = \\beta_1 + \\beta_3\\) = 1.987"
+  },
+  {
+    "objectID": "slide/day03.html#因果推論の前提sutva",
+    "href": "slide/day03.html#因果推論の前提sutva",
+    "title": "社会科学における因果推論",
+    "section": "因果推論の前提:SUTVA",
+    "text": "因果推論の前提:SUTVA\nStable Unit Treatment Value Assumption\n\n非干渉性処置の無分散性サーベイ実験の場合\n\n\n非干渉性: 他人の処置・統制有無が処置効果に影響を与えないこと\n\n例) AさんITEは\n\n例1) Bさんが統制群の場合は10、処置群の場合は5 \\(\\leftarrow\\)  \n例2) Bさんが統制群の場合も、処置群の場合も、5 \\(\\leftarrow\\)  \n\n\n\n\n\n\n\n例1\n\n\n\nAさんが統制群\nAさんが処置群\n\n\n\n\nBさんが統制群\n0\n10\n\n\nBさんが処置群\n15\n20\n\n\n\n\n\n\n例2\n\n\n\nAさんが統制群\nAさんが処置群\n\n\n\n\nBさんが統制群\n5\n10\n\n\nBさんが処置群\n15\n20\n\n\n\n\n\n\n\n\n\n処置の無分散性: 同じグループに属する対象は同じ処置を受けること\n\n手術の場合: 医者、設備、手順、環境など\n投票参加: 当日、期日前など\n\n\n\n\nサーベイ実験ではSUTVAが満たされやすい。\n\n実験室実験、フィールド実験の場合、「非干渉性」には気をつける。\n例) 隣の人が見てるのとと私が見てるのが違いますが…?"
+  },
+  {
+    "objectID": "slide/day03.html#二重盲検法",
+    "href": "slide/day03.html#二重盲検法",
+    "title": "社会科学における因果推論",
+    "section": "二重盲検法",
+    "text": "二重盲検法\n二重盲検法 (Double Blind Test):ある被験者がどのような処置を受けているかについて研究者と被験者両方において不明な状態で実験を行う\n\n二重盲検法を使えば以下の問題点に対処することが可能\n\nプラセボ効果 (placebo effect):偽薬が与えられても、薬だと信じ込む 事によって何らかの効果が生じる\nホーソン効果 (Hawthorne effect):自分が観察されていることを認知さ れることによって何らかの効果が生じる\n観察者効果 (observer/experimenter effect):研究者の期待により被験者へ の対応が異なったり、被験者がその期待に添えるように行動すること"
+  },
+  {
+    "objectID": "slide/day03.html#用意するもの",
+    "href": "slide/day03.html#用意するもの",
+    "title": "社会科学における因果推論",
+    "section": "用意するもの",
+    "text": "用意するもの\n\nノートPC\n\nデスクトップを持ち込む自信があるなら、デスクトップでもOK\n\nRの導入\n\n自分のPCにR/RStudioをインストール\nクラウド版のR + RStudioの利用\n分からない場合は至急、宋と相談すること\n\nブラインドタッチのスキル\n\n\n\n\nhttps://www.jaysong.net/kandai-ci"
+  },
+  {
     "objectID": "slide/day01.html#講義概要-1",
     "href": "slide/day01.html#講義概要-1",
     "title": "社会科学における因果推論",
@@ -18,7 +445,7 @@
     "href": "slide/day01.html#実習",
     "title": "社会科学における因果推論",
     "section": "実習",
-    "text": "実習\n実習はRで行う。4・5回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS 12.5 “Monterey”\nR version 4.2.1 (2022-06-23)\n\nR > 4.1ならOK\n\nRStudio 2022.11.0+105 “Elsbeth Geranium”\nスライド、サポートページ、実習用資料の執筆環境\n\nQuarto 1.0.38\nR package {quarto} 1.2"
+    "text": "実習\n実習はRで行う。4・5回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS 12.5 “Monterey”\nR version 4.2.1 (2022-06-23)\n\nR > 4.1ならOK\n\nRStudio 2022.11.0+105 “Elsbeth Geranium”\nスライド、サポートページ、実習用資料の執筆環境\n\nQuarto 1.1.165\nR package {quarto} 1.2"
   },
   {
     "objectID": "slide/day01.html#前提知識",
@@ -88,7 +515,7 @@
     "href": "intro/filesystem.html#ファイルシステム",
     "title": "本講義のためのファイル管理術",
     "section": "2 ファイルシステム",
-    "text": "2 ファイルシステム\n　R上でファイルを入出力を行うためにはファイルシステム（file system）を理解する必要がある。\n\n2.1 ファイルの入出力\n　そもそも、ファイルの「入出力」とは何だろうか。これはコンピューターの構造に関わる話なので極めて難しい内容であるが、我々のような消費者（end user）側から見れば、ファイルの入力（input）とは、いわゆるファイルの読み込みを意味し、多くの場合、表形式のデータ（.csv、.xlsxなど）をR上に読み込む作業を意味する。また、ファイルの出力（output）とは、いわゆるファイルの保存。たとえば、作成したスクリプトを.R形式で保存したり、クリーニングしたデータを.csv形式で保存したり、作成した図を.png、.pdf形式で保存したらい、作成した文書を.pdf、.html形式で保存したらいすることがファイルの出力だ。\n\n\n2.2 パスとは\n　ファイルを読み込む場合はファイル名を指定する必要がある。また、ファイルを書き出す場合もファイルに名付ける必要がある。そしてファイル名は名前.拡張子である。ただし、これらのファイルは全て一箇所に集まっているわけではない。もし、全てのファイルが一箇所に集まっていると、必要なファイルを探すのは非常に難しい。通常、PC内には数万のファイルがある。これらのファイルから必要なファイルを探すのは至難の業だろう。したがって、これらのファイルをいくつかの部屋に分けて保管し、この部屋のことをフォルダー（folder）、またはディレクトリ（directory）と呼ぶ（ここでは「フォルダー」と呼ぶとする）。\n　これは我々が住んでいる居住地の「住所」と同じ概念だ。もし、日本に「都道府県」も「市区町村」も「〜丁目、〜番、〜号」という概念がないとしよう。ここでAmazonで魚を購入し、受取先を指定する場合はどうすれば良いだろうか。日本に人が数十人しか住んでいないのであれば、「XXXさんの家」と書くだけで十分かも知れない。しかし、日本には1億人以上の人がある。「ソンさんの家」と書いても届かない。届いたとしても数年、あるいは数十年後に魚の化石の状態で届くかも知れない。そもそも日本に「ソンさん」はこの授業の担当教員以外にもいくらでもいる（ちなみに송（Song; 宋・松）さんも、손（Sohn; 孫）さんも、성（Seong/Sung; 成・星）さんも、선（Sun/Seon; 宣）さんも韓国語では発音が全く別だが、日本ではソンさんになってしまう。）。それぞれの家を何かの区域内に位置づけないとモノが届くまで数年かかってしまう。そこで必要なのが住所だ。「東京都千代田区永田町1丁目7番1号の田中さん」は「東京都」、「千代田区」、「永田町」、「1丁目」、「7番」、「1号」、「田中さん」で構成される。これをファイルシステムに例えると、東京都というフォルダーの中に千代田区というフォルダーがあり、その中には永田町というフォルダー、その中に1丁目といるファルダー、…が存在する。むろん、一つのフォルダーには複数のフォルダーが存在する可能性もある。東京都のフォルダーには千代田区以外にも大田区、中野区、文京区、葛飾区といった複数のフォルダーがあり、千代田区の中にも複数のフォルダーがある。最後の「田中さん」は受け取る人、コンピューターでいるファイル名である。\n　この住所のことをコンピューターではパス（path）と呼ぶ。それぞれのフォルダーは/で区切られる（macOS/Linuxでは/、Windowsでは\\または￥; NIIオンライン分析システムはLinuxベースである）。先ほどの住所の例だと、東京都/千代田区/永田町/1丁目/7番/1号/田中さんとなる（macOS/Linuxの場合）。左に行くほど上位のフォルダーとなり、最後のものはファイル名である。ただし、コンピュターではパスの最初に/を付ける。Windowsなら主にC:\\でスタートし、C:\\東京都\\千代田区\\永田町\\1丁目\\7番\\1号\\田中さんとなる。\n　たとえば、以下のような構造でファイルが保存されているとしよう。拡張子が付いているものはファイル、それ以外はフォルダー、1行目の.は最上位フォルダーである。\n\n\n                         levelName\n1  .                              \n2   ¦--Day01                     \n3   ¦   ¦--Day01.Rproj          \n4   ¦   ¦--Script01.R           \n5   ¦   ¦--Script02.R           \n6   ¦   ¦--Data                 \n7   ¦   ¦   ¦--raw_data.csv    \n8   ¦   ¦   °--cleaned_data.csv\n9   ¦   °--Figs                 \n10  ¦       ¦--Figure01.png     \n11  ¦       °--Figure02.png     \n12  °--Day02                     \n13      ¦--Day02.Rproj           \n14      ¦--Script01.R            \n15      ¦--Document01.Rmd        \n16      ¦--Document01.html       \n17      ¦--Data                  \n18      ¦   °--my_data.csv      \n19      °--Figs                  \n20          ¦--Old               \n21          ¦   ¦--Figure01.pdf \n22          ¦   ¦--Figure02.pdf \n23          ¦   °--Figure03.pdf \n24          °--New               \n25              °--Figure01.png  \n\n\n　ここでread_csv()関数を使ってDay01フォルダー内のDataフォルダー内のraw_data.csvを読み込む場合はread_csv(\"/Day01/Data/raw_data.csv\")となる。また、ggsave()を用いて、Day02内のFigs内のNew内にFigure02.pngという名で図を保存する場合は、ggsave(filename = \"/Day02/Figs/New/Figure02.png\", ...)と入力する必要がある。しかし、通常、パスを指定する際に、/（WindownならC:\\）から始めることは滅多にない。それは「作業フォルダーはパスで省略可能」だからだ。"
+    "text": "2 ファイルシステム\n　R上でファイルを入出力を行うためにはファイルシステム（file system）を理解する必要がある。\n\n2.1 ファイルの入出力\n　そもそも、ファイルの「入出力」とは何だろうか。これはコンピューターの構造に関わる話なので極めて難しい内容であるが、我々のような消費者（end user）側から見れば、ファイルの入力（input）とは、いわゆるファイルの読み込みを意味し、多くの場合、表形式のデータ（.csv、.xlsxなど）をR上に読み込む作業を意味する。また、ファイルの出力（output）とは、いわゆるファイルの保存。たとえば、作成したスクリプトを.R形式で保存したり、クリーニングしたデータを.csv形式で保存したり、作成した図を.png、.pdf形式で保存したらい、作成した文書を.pdf、.html形式で保存したらいすることがファイルの出力だ。\n\n\n2.2 パスとは\n　ファイルを読み込む場合はファイル名を指定する必要がある。また、ファイルを書き出す場合もファイルに名付ける必要がある。そしてファイル名は名前.拡張子である。ただし、これらのファイルは全て一箇所に集まっているわけではない。もし、全てのファイルが一箇所に集まっていると、必要なファイルを探すのは非常に難しい。通常、PC内には数万のファイルがある。これらのファイルから必要なファイルを探すのは至難の業だろう。したがって、これらのファイルをいくつかの部屋に分けて保管し、この部屋のことをフォルダー（folder）、またはディレクトリ（directory）と呼ぶ（ここでは「フォルダー」と呼ぶとする）。\n　これは我々が住んでいる居住地の「住所」と同じ概念だ。もし、日本に「都道府県」も「市区町村」も「〜丁目、〜番、〜号」という概念がないとしよう。ここでAmazonで魚を購入し、受取先を指定する場合はどうすれば良いだろうか。日本に人が数十人しか住んでいないのであれば、「XXXさんの家」と書くだけで十分かも知れない。しかし、日本には1億人以上の人がある。「ソンさんの家」と書いても届かない。届いたとしても数年、あるいは数十年後に魚の化石の状態で届くかも知れない。そもそも日本に「ソンさん」はこの授業の担当教員以外にもいくらでもいる（ちなみに송（Song; 宋・松）さんも、손（Sohn; 孫）さんも、성（Seong/Sung; 成・星）さんも、선（Sun/Seon; 宣）さんも韓国語では発音が全く別だが、日本ではソンさんになってしまう。）。それぞれの家を何かの区域内に位置づけないとモノが届くまで数年かかってしまう。そこで必要なのが住所だ。「東京都千代田区永田町1丁目7番1号の田中さん」は「東京都」、「千代田区」、「永田町」、「1丁目」、「7番」、「1号」、「田中さん」で構成される。これをファイルシステムに例えると、東京都というフォルダーの中に千代田区というフォルダーがあり、その中には永田町というフォルダー、その中に1丁目といるファルダー、…が存在する。むろん、一つのフォルダーには複数のフォルダーが存在する可能性もある。東京都のフォルダーには千代田区以外にも大田区、中野区、文京区、葛飾区といった複数のフォルダーがあり、千代田区の中にも複数のフォルダーがある。最後の「田中さん」は受け取る人、コンピューターでいるファイル名である。\n　この住所のことをコンピューターではパス（path）と呼ぶ。それぞれのフォルダーは/で区切られる（macOS/Linuxでは/、Windowsでは\\または￥; NIIオンライン分析システムはLinuxベースである）。先ほどの住所の例だと、東京都/千代田区/永田町/1丁目/7番/1号/田中さんとなる（macOS/Linuxの場合）。左に行くほど上位のフォルダーとなり、最後のものはファイル名である。ただし、コンピュターではパスの最初に/を付ける。Windowsなら主にC:\\でスタートし、C:\\東京都\\千代田区\\永田町\\1丁目\\7番\\1号\\田中さんとなる。\n　たとえば、以下のような構造でファイルが保存されているとしよう。拡張子が付いているものはファイル、それ以外はフォルダー、1行目の.は最上位フォルダーである。\n\n\n                      levelName\n1  .                           \n2   ¦--Day01                   \n3   ¦   ¦--Day01.Rproj         \n4   ¦   ¦--Script01.R          \n5   ¦   ¦--Script02.R          \n6   ¦   ¦--Data                \n7   ¦   ¦   ¦--raw_data.csv    \n8   ¦   ¦   °--cleaned_data.csv\n9   ¦   °--Figs                \n10  ¦       ¦--Figure01.png    \n11  ¦       °--Figure02.png    \n12  °--Day02                   \n13      ¦--Day02.Rproj         \n14      ¦--Script01.R          \n15      ¦--Document01.Rmd      \n16      ¦--Document01.html     \n17      ¦--Data                \n18      ¦   °--my_data.csv     \n19      °--Figs                \n20          ¦--Old             \n21          ¦   ¦--Figure01.pdf\n22          ¦   ¦--Figure02.pdf\n23          ¦   °--Figure03.pdf\n24          °--New             \n25              °--Figure01.png\n\n\n　ここでread_csv()関数を使ってDay01フォルダー内のDataフォルダー内のraw_data.csvを読み込む場合はread_csv(\"/Day01/Data/raw_data.csv\")となる。また、ggsave()を用いて、Day02内のFigs内のNew内にFigure02.pngという名で図を保存する場合は、ggsave(filename = \"/Day02/Figs/New/Figure02.png\", ...)と入力する必要がある。しかし、通常、パスを指定する際に、/（WindownならC:\\）から始めることは滅多にない。それは「作業フォルダーはパスで省略可能」だからだ。"
   },
   {
     "objectID": "intro/filesystem.html#rstudioのプロジェクト機能",
@@ -249,7 +676,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "アイコン説明\n\n\n\n\n：NIIオンライン分析システムの起動\n\n右クリックし、新しいタブ（or ウィンドウ）で開いてください。\n初期設定が必要です。初期設定の方法はRの使い方 > Rの導入を参照してください。\n\n：Rの教科書（『私たちのR』）\n：本ウェブサイト内の検索\n\n\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2022年09月04日\n開発環境\n\nmacOS 12.5.1 “Monterey”\nFirefox 104.0.1\nR version 4.2.1 (2022-06-23)\nRStudio 2022.07.1+554 “Elsbeth Geranium”\nQuarto 1.0.38\nR package {quarto} 1.2\n\n本サポートページのレポジトリ"
+    "text": "アイコン説明\n\n\n\n\n：NIIオンライン分析システムの起動\n\n右クリックし、新しいタブ（or ウィンドウ）で開いてください。\n初期設定が必要です。初期設定の方法はRの使い方 > Rの導入を参照してください。\n\n：Rの教科書（『私たちのR』）\n：本ウェブサイト内の検索\n\n\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2022年09月07日\n開発環境\n\nmacOS 12.5.1 “Monterey”\nFirefox 104.0.2\nR version 4.2.1 (2022-06-23)\nRStudio 2022.07.1+554 “Elsbeth Geranium”\nQuarto 1.1.165\nR package {quarto} 1.2\n\n本サポートページのレポジトリ"
   },
   {
     "objectID": "syllabus.html",
@@ -301,6 +728,13 @@
     "text": "新しいタブで開く"
   },
   {
+    "objectID": "material/day03.html",
+    "href": "material/day03.html",
+    "title": "無作為化比較試験",
+    "section": "",
+    "text": "新しいタブで開く"
+  },
+  {
     "objectID": "material/day01.html",
     "href": "material/day01.html",
     "title": "ガイダンス",
@@ -313,215 +747,5 @@
     "title": "実習用データ集",
     "section": "",
     "text": "ファイル名\n備考\n\n\n\n\n1\nxxx.csv\nXXX"
-  },
-  {
-    "objectID": "slide/day02.html#社会科学における因果推論の意味",
-    "href": "slide/day02.html#社会科学における因果推論の意味",
-    "title": "社会科学における因果推論",
-    "section": "社会科学における因果推論の意味",
-    "text": "社会科学における因果推論の意味\nMorgan and Winship (2014) Counterfactuals and Causal Inference: Methods And Principles For Social Research. Cambridge.\n\nMore has been learned about causal inference in the last few decades than sum total of everything that had been learned about it in all prior recorded history. (Gary King)"
-  },
-  {
-    "objectID": "slide/day02.html#相関から因果へ",
-    "href": "slide/day02.html#相関から因果へ",
-    "title": "社会科学における因果推論",
-    "section": "相関から因果へ",
-    "text": "相関から因果へ\n原因 (\\(X\\)) と結果 (\\(Y\\)) の関係: 啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\bigcirc\\): 啓発活動が行われる選挙区の投票率は低い（相関関係）\n\\(\\times\\): 啓発活動は投票率を下げる（因果関係）\n\\(\\Rightarrow\\) 統計分析から得られる結果は相関関係のみ\n\n\n\n理論/デザインを用い、観察された相関関係が因果関係であることを説得\n\n因果関係を担保してくれる統計的手法はない。\n\n「これは相関関係でなく因果関係である」と主張するためには、内生性がないことを示す必要がある。"
-  },
-  {
-    "objectID": "slide/day02.html#同時性",
-    "href": "slide/day02.html#同時性",
-    "title": "社会科学における因果推論",
-    "section": "同時性",
-    "text": "同時性\nSimultaneity\n\n\n\n\n\n\n\n\n原因と結果の間に双方向の因果関係が存在\n\n例) お酒 (原因; X) とストレス (結果; Y) の関係\n\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\n…\n\n\\(\\rightarrow\\) 地獄のような無限ループ\n\n\\(\\Rightarrow\\) 酒がストレスに与える影響は?"
-  },
-  {
-    "objectID": "slide/day02.html#見かけ上の相関",
-    "href": "slide/day02.html#見かけ上の相関",
-    "title": "社会科学における因果推論",
-    "section": "見かけ上の相関",
-    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\nたまたま相関関係がある場合\n\n例) メイン州の離婚率一人当たりマーガリンの消費量"
-  },
-  {
-    "objectID": "slide/day02.html#見かけ上の相関-1",
-    "href": "slide/day02.html#見かけ上の相関-1",
-    "title": "社会科学における因果推論",
-    "section": "見かけ上の相関",
-    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\n共通の要因からの影響（ビールとアイスクリーム消費量）"
-  },
-  {
-    "objectID": "slide/day02.html#見かけ上の相関-2",
-    "href": "slide/day02.html#見かけ上の相関-2",
-    "title": "社会科学における因果推論",
-    "section": "見かけ上の相関",
-    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\n共通の要因からの影響（ゲームをやると身長が伸びる説）"
-  },
-  {
-    "objectID": "slide/day02.html#逆の因果",
-    "href": "slide/day02.html#逆の因果",
-    "title": "社会科学における因果推論",
-    "section": "逆の因果",
-    "text": "逆の因果\nReverse Causality\n\n例) 心臓移植と生存率の例\n\n\n\n\n\n\n5年後に死亡\n5年後に生存\n\n\n\n\n心臓移植を\n受けた\n10名\n5名\n\n\n\n受けなかった\n5名\n10名\n\n\n\n\n心臓移植を受けたら死亡確率が上がる?\n死亡確率が高い人が心臓移植を受ける?"
-  },
-  {
-    "objectID": "slide/day02.html#逆の因果-1",
-    "href": "slide/day02.html#逆の因果-1",
-    "title": "社会科学における因果推論",
-    "section": "逆の因果",
-    "text": "逆の因果\nReverse Causality\n\n「人気だから4文字に略されるのか、4文字に略せるからヒットす るのか、どっちなんでしょうね」"
-  },
-  {
-    "objectID": "slide/day02.html#欠落変数バイアス",
-    "href": "slide/day02.html#欠落変数バイアス",
-    "title": "社会科学における因果推論",
-    "section": "欠落変数バイアス",
-    "text": "欠落変数バイアス\nOmitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていなくても\\(\\beta_1\\)の推定値は変化\\(\\times\\)\n\n\\(X\\)と\\(Z\\)は独立（\\(X \\perp Z\\)）\n\\(\\sigma_{X, Z} = 0\\)"
-  },
-  {
-    "objectID": "slide/day02.html#欠落変数バイアス-1",
-    "href": "slide/day02.html#欠落変数バイアス-1",
-    "title": "社会科学における因果推論",
-    "section": "欠落変数バイアス",
-    "text": "欠落変数バイアス\nOmitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていない場合、\\(\\beta_1\\)の推定値にバイアス\n\n\\(Z \\rightarrow X\\)の関係が存在\n\\(\\sigma_{X, Z} \\neq 0\\)\n\n\\(\\beta_1\\)の真の値（=不偏推定量）を推定するためには\\(X\\)と\\(Y\\)両方と相関する変数すべてが必要\n\nそもそも、「真の値」とは？\n\\(X\\)と\\(Y\\)両方と相関するすべての変数は特定可能? 測定可能?\n\n\\(\\rightarrow\\) データ分析から得られた結果はあくまでも「分析モデルが想定している世界」のものに過ぎない\n\n定量的手法は反証可能性を高めやすい手法（=科学的な手法になりやすい）であって、科学そのものも、得られた結果が真理であることを保障するものでもない。"
-  },
-  {
-    "objectID": "slide/day02.html#自己選択バイアス",
-    "href": "slide/day02.html#自己選択バイアス",
-    "title": "社会科学における因果推論",
-    "section": "自己選択バイアス",
-    "text": "自己選択バイアス\n(Self-)Selection Bias\n\n例1) 職業訓練と期待収入\n\n\n\n\n\n\n3年後の収入\n\n\n\n\n職業訓練を\n受けた\n6349ドル\n\n\n\n受けなかった\n6984ドル\n\n\n\n\n職業訓練を受けたら収入が上がる?\nもともと低収入の人が職業訓練を受けようとする?\n参考) 心臓移植の例も自己選択のバイアスとして解釈可能\n参考) 交絡因子の不在として解釈可能（就労意欲など）"
-  },
-  {
-    "objectID": "slide/day02.html#内生性",
-    "href": "slide/day02.html#内生性",
-    "title": "社会科学における因果推論",
-    "section": "内生性",
-    "text": "内生性\nこれまでの多くの例は内生性（endogeneity）の問題\n\n内生性: 説明変数と誤差項間に相関が存在\n\n誤差項と相関のある説明変数: 内生変数（endogenous variable）\n\n内生性がある場合、推定値は一致推定量でも、不偏推定量でもはない\n\nサンプルサイズ（\\(N\\)）をいくら増やしても無駄\n\n内生性の原因\n\n同時性\n欠落変数バイアス\n（体系的な）測定誤差\n自己選択バイアス\n\n最近の教科書はこれはすべてを自己選択バイアスや欠落変数バイアスでまとめる傾向"
-  },
-  {
-    "objectID": "slide/day02.html#相関から因果へ-1",
-    "href": "slide/day02.html#相関から因果へ-1",
-    "title": "社会科学における因果推論",
-    "section": "相関から因果へ",
-    "text": "相関から因果へ\n内生性の除外 \\(\\rightarrow\\) 因果効果の推定"
-  },
-  {
-    "objectID": "slide/day02.html#因果関係の例",
-    "href": "slide/day02.html#因果関係の例",
-    "title": "社会科学における因果推論",
-    "section": "因果関係の例",
-    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果\n\n処置: ソンさんの講義を履修するか否か\n効果: 履修した場合の年収 − 履修しなかった場合の年収"
-  },
-  {
-    "objectID": "slide/day02.html#因果関係の例-1",
-    "href": "slide/day02.html#因果関係の例-1",
-    "title": "社会科学における因果推論",
-    "section": "因果関係の例",
-    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果（ケース1）\n\nオバマ君がソンさんの授業を履修しなくても年収5000万円なら\n\nソンさんの講義の因果効果は0\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース1\n5000万\n5000万\n0万"
-  },
-  {
-    "objectID": "slide/day02.html#因果関係の例-2",
-    "href": "slide/day02.html#因果関係の例-2",
-    "title": "社会科学における因果推論",
-    "section": "因果関係の例",
-    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果（ケース2）\n\nオバマ君がソンさんの授業を履修しなかった場合、年収1000万円なら\n\nソンさんの講義の因果効果は4000万円\n一生ソンさんには頭が上がらない\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース2\n1000万\n5000万\n4000万"
-  },
-  {
-    "objectID": "slide/day02.html#因果関係の例-3",
-    "href": "slide/day02.html#因果関係の例-3",
-    "title": "社会科学における因果推論",
-    "section": "因果関係の例",
-    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果（ケース3）\n\nオバマ君がソンさんの授業を履修しなかった場合、年収8000万円なら\n\nソンさんの講義の因果効果は-3000万\nソンさんは悪くない\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース3\n8000万\n5000万\n-3000万"
-  },
-  {
-    "objectID": "slide/day02.html#因果関係の例-4",
-    "href": "slide/day02.html#因果関係の例-4",
-    "title": "社会科学における因果推論",
-    "section": "因果関係の例",
-    "text": "因果関係の例\nソンさんの講義を履修することで期待年収が上がるか\n\nオバマ君の場合: ソンさんの講義を履修し、年収が5000万円に\n\nソンさんの授業のおかげで富裕層になった（次は社交界進出）\n友達に教えてあげよう\n\n\n講義履修の効果\n\nソンさんの講義を履修しなかった場合のオバマ君の年収は…?\n\n個人（オバマ君）における処置効果を推定する際にはこれが不可欠\n\n\n\n\n\n\n履修しなかった場合の年収(A)\n履修した場合の年収(B)\n効果(B-A)\n\n\n\n\nケース1\n5000万\n5000万\n0万\n\n\nケース2\n1000万\n5000万\n4000万\n\n\nケース3\n8000万\n5000万\n-3000万"
-  },
-  {
-    "objectID": "slide/day02.html#潜在的結果枠組み",
-    "href": "slide/day02.html#潜在的結果枠組み",
-    "title": "社会科学における因果推論",
-    "section": "潜在的結果枠組み",
-    "text": "潜在的結果枠組み\nNeyman-Rubin-HollandのPotential Outcome Framework\n\n\\(i\\) : 学生ID ( \\(i = 1,2,3,...,N\\) )\n\\(T\\) : 処置\n\n学生 \\(i\\) が謎の薬を飲んだ ( \\(T_i = 1\\) )\n学生 \\(i\\) が謎の薬を飲まなかった ( \\(T_i = 0\\) )\n\n\\(Y_i(T_i = 1)\\) : 学生 \\(i\\) が謎の薬を飲んだ場合の数学成績\n\\(Y_i(T_i = 0)\\) : 学生 \\(i\\) が謎の薬を飲まなかった場合の数学成績\n\\(ITE_i = Y_i(T_i = 1) − Y_i(T_i = 0)\\) : 学生iにおける薬の処置効果\n\nITE: Individual Treatment Effect (個人における処置効果)\n\n= UTE: Unit Treatment Effect\n\n全く同じ個人において薬を飲んだ場合と飲まなかった場合の数学成績の差 = 謎の薬の因果効果"
-  },
-  {
-    "objectID": "slide/day02.html#薬の効果は",
-    "href": "slide/day02.html#薬の効果は",
-    "title": "社会科学における因果推論",
-    "section": "薬の効果は?",
-    "text": "薬の効果は?\nITEの平均値は−4であり、個人差はあるものの、全体的に薬は成績に負の影響\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n77\n85\n8\n\n\n2\n1\n49\n59\n10\n\n\n3\n1\n60\n66\n6\n\n\n4\n0\n61\n44\n-17\n\n\n5\n0\n50\n39\n-11\n\n\n6\n0\n75\n55\n-20\n\n\n平均\n\n62\n58\n-4"
-  },
-  {
-    "objectID": "slide/day02.html#因果推論の根本問題-1",
-    "href": "slide/day02.html#因果推論の根本問題-1",
-    "title": "社会科学における因果推論",
-    "section": "因果推論の根本問題",
-    "text": "因果推論の根本問題\nしかし、観察できるのは\\(Y_i(T_i = 1)\\)か\\(Y_i(T_i = 0)\\)、片方のみ\n\n\\(Y_i(T_i = 0)\\)は反実仮想（counterfactual）であり、観察不可 (\\(i \\in \\{1,2,3\\}\\))\n\\(Y_i(T_i = 1)\\)も反実仮想(\\(i \\in \\{4,5,6\\}\\))\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n?\n85\n?\n\n\n2\n1\n?\n59\n?\n\n\n3\n1\n?\n66\n?\n\n\n4\n0\n61\n?\n?\n\n\n5\n0\n50\n?\n?\n\n\n6\n0\n75\n?\n?\n\n\n平均\n\n62\n70\n8\n\n\n\n\n\n「みんなで薬やろうぜ」って言っていいのか"
-  },
-  {
-    "objectID": "slide/day02.html#世界一受けたいソンさんの授業",
-    "href": "slide/day02.html#世界一受けたいソンさんの授業",
-    "title": "社会科学における因果推論",
-    "section": "世界一受けたいソンさんの授業",
-    "text": "世界一受けたいソンさんの授業\n履修者5名と非履修者5名の年収の比較\n\nITEは分からないが、平均値の差分を見ると、+100万円の効果\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n?\n700\n?\n\n\n2\n1\n?\n1000\n?\n\n\n3\n1\n?\n550\n?\n\n\n4\n1\n?\n350\n?\n\n\n5\n1\n?\n400\n?\n\n\n6\n0\n400\n?\n?\n\n\n7\n0\n500\n?\n?\n\n\n8\n0\n350\n?\n?\n\n\n9\n0\n750\n?\n?\n\n\n10\n0\n500\n?\n?\n\n\n平均\n\n500\n600\n100"
-  },
-  {
-    "objectID": "slide/day02.html#世界一受けたいソンさんの授業-1",
-    "href": "slide/day02.html#世界一受けたいソンさんの授業-1",
-    "title": "社会科学における因果推論",
-    "section": "世界一受けたいソンさんの授業",
-    "text": "世界一受けたいソンさんの授業\n履修者5名と非履修者5名の年収の比較（ケース1）\n\nITEは分からないが、平均値の差分を見ると、+100万円の効果\n80万円の価値があるソンさんの講義、みんなで履修しよう!\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n550\n700\n150\n\n\n2\n1\n650\n1000\n350\n\n\n3\n1\n600\n550\n-50\n\n\n4\n1\n300\n350\n50\n\n\n5\n1\n300\n400\n100\n\n\n6\n0\n400\n300\n-100\n\n\n7\n0\n500\n700\n200\n\n\n8\n0\n350\n600\n250\n\n\n9\n0\n750\n700\n-50\n\n\n10\n0\n500\n400\n-100\n\n\n平均\n\n490\n570\n80"
-  },
-  {
-    "objectID": "slide/day02.html#世界一受けたいソンさんの授業-2",
-    "href": "slide/day02.html#世界一受けたいソンさんの授業-2",
-    "title": "社会科学における因果推論",
-    "section": "世界一受けたいソンさんの授業",
-    "text": "世界一受けたいソンさんの授業\n履修者5名と非履修者5名の年収の比較（ケース2）\n\nITEは分からないが、平均値の差分を見ると、+100万円の効果\nソンさんは悪くない\n\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n800\n700\n-100\n\n\n2\n1\n650\n1000\n350\n\n\n3\n1\n600\n550\n-50\n\n\n4\n1\n400\n350\n-50\n\n\n5\n1\n350\n400\n50\n\n\n6\n0\n400\n300\n-100\n\n\n7\n0\n500\n500\n0\n\n\n8\n0\n350\n400\n50\n\n\n9\n0\n750\n500\n-250\n\n\n10\n0\n500\n400\n-100\n\n\n平均\n\n530\n510\n-20"
-  },
-  {
-    "objectID": "slide/day02.html#因果推論の根本問題-2",
-    "href": "slide/day02.html#因果推論の根本問題-2",
-    "title": "社会科学における因果推論",
-    "section": "因果推論の根本問題",
-    "text": "因果推論の根本問題\n\n\\(Y_i(T_i = 1)\\)か\\(Y_i(T_i = 0)\\)、片方のみしか観察できない状態においてITEから因果効果を推定することは不可能\n\n因果推論の根本問題 (The Fundamental Problem of Causal Inference)\n\n\n\n\n解決方法\n\nもう一回、過去に戻って異なる処置を行う"
-  },
-  {
-    "objectID": "slide/day02.html#因果推論の根本問題-3",
-    "href": "slide/day02.html#因果推論の根本問題-3",
-    "title": "社会科学における因果推論",
-    "section": "因果推論の根本問題",
-    "text": "因果推論の根本問題\n\n\\(Y_i(T_i = 1)\\)か\\(Y_i(T_i = 0)\\)、片方のみしか観察できない状態において、ITEから因果効果を推定することは不可能\n\nただし、ドラえもんが存在する世界線を除く\n因果推論の根本問題 (The Fundamental Problem of Causal Inference)\n\n\n\n\n潜在的結果を直接観察する方法\n\nただし、個々人の潜在的結果ではなく、集団における潜在的結果\n平均処置効果 (ATE; Average Treatment Effect)\n\n平均値の差分から平均的な因果効果を推定\nしかし、…\n\n無作為割当の重要性"
-  },
-  {
-    "objectID": "slide/day02.html#平均取るだけでok",
-    "href": "slide/day02.html#平均取るだけでok",
-    "title": "社会科学における因果推論",
-    "section": "平均取るだけでOK?",
-    "text": "平均取るだけでOK?\n観察されたデータから差分を計算するだけではATEは推定不可能\n\n\n\n\\(i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\\(ITE_i\\)\n\n\n\n\n1\n1\n?\n700\n?\n\n\n2\n1\n?\n1000\n?\n\n\n3\n1\n?\n550\n?\n\n\n4\n1\n?\n350\n?\n\n\n5\n1\n?\n400\n?\n\n\n6\n0\n400\n?\n?\n\n\n7\n0\n500\n?\n?\n\n\n8\n0\n350\n?\n?\n\n\n9\n0\n750\n?\n?\n\n\n10\n0\n500\n?\n?\n\n\n平均\n\n500\n600\n100"
-  },
-  {
-    "objectID": "slide/day02.html#信頼できるateの条件",
-    "href": "slide/day02.html#信頼できるateの条件",
-    "title": "社会科学における因果推論",
-    "section": "信頼できるATEの条件",
-    "text": "信頼できるATEの条件\nATE 推定値の信頼性を損なう敵: 内生性 (しかも、常に存在する)\n例) やる気のある学生だけがソンさんの講義を履修した場合\n\n自己選択バイアス\n\nソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下\n\n疑似相関\n\nやる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。\n\n測定誤差\n\n履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）\n\n\n\n\n内生性は因果推論の敵! どうすれば…?\n\\(\\downarrow\\)\n無作為割当 (Random Assignment)\n\n\n\n\nhttps://www.jaysong.net/kandai-ci"
-  },
-  {
-    "objectID": "slide/day02.html#単純比較の罠",
-    "href": "slide/day02.html#単純比較の罠",
-    "title": "社会科学における因果推論",
-    "section": "単純比較の罠",
-    "text": "単純比較の罠\n啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n単純比較の手法\n\n平均値の比較、平均値の差の検定（\\(t\\)検定、ANOVA）、単回帰分析など\n啓発ありの投票率 - 啓発なしの投票率 = -10%p\n\n内生性がない場合、「啓発活動は投票率を-10%p下げる」と主張できる。\n本当に、本当に、本当に、内生性はないのか。"
-  },
-  {
-    "objectID": "slide/day02.html#内生性は",
-    "href": "slide/day02.html#内生性は",
-    "title": "社会科学における因果推論",
-    "section": "内生性は?",
-    "text": "内生性は?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(Y\\): 投票率\n\\(X\\): 啓発活動の有無\n\\(W\\): 若者の割合\n\\(Z\\): これまでの投票率\n\\(e\\): \\(X\\)と\\(Z\\)以外に、\\(Y\\)に影響を与える要因\n\n\n\n投票率が低い選挙区ほど、啓発活動を行う傾向\n投票率が元々低い選挙区の場合、今回の投票率も低い傾向\n\n\\(\\Rightarrow\\) 自己選択バイアス/欠落変数バイアスの存在\n\n本当に比較すべき対象は…\n\n啓発活動を行わなかったA市 vs. 行ったA市\n啓発活動を行わなかったB市 vs. 行ったB市\nこれらは比較可能か?"
   }
 ]
