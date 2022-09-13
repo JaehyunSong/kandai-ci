@@ -6,7 +6,8 @@ institute: "関西大学総合情報学部"
 date: "2022年 9月 26日"
 format:
   revealjs: 
-    width: 1400
+    width: 1600
+    height: 900
     slide-number: true
     logo: figs/logo.png
     theme: [default, styles.scss]
