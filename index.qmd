@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Causal Inference in Social Science@Kandai"
 ---
 
 関西大学総合情報学研究科「**社会科学における因果推論**（2022年度）」のサポートページです。
