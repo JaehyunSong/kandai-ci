@@ -431,7 +431,7 @@
     "href": "slide/day01.html#講義概要-1",
     "title": "社会科学における因果推論",
     "section": "講義概要",
-    "text": "講義概要\n\n科目名: 社会科学における因果推論\n講師: 宋財泫 (ソン ジェヒョン)\n所属: 関西大学総合情報学部\n\nE-mail: song [at] kansai-u.ac.jp\nHomepage: https://www.jaysong.net\n\n時間: 月曜日2限\n教室: ？？？"
+    "text": "講義概要\n\n科目名: 社会科学における因果推論\n講師: 宋財泫 (ソン ジェヒョン)\n所属: 関西大学総合情報学部\n\nE-mail: song [at] kansai-u.ac.jp\nHomepage: https://www.jaysong.net\n\n時間: 月曜日2限（10:40〜12:10）\n教室: TD106"
   },
   {
     "objectID": "slide/day01.html#内容",
@@ -480,7 +480,7 @@
     "href": "slide/day01.html#参考書因果推論",
     "title": "社会科学における因果推論",
     "section": "参考書（因果推論）",
-    "text": "参考書（因果推論）\n\n\n理論\n\n初級: 松林哲也. 2021.『政治学と因果推論』岩波書店.\n初級: Angrist, Joahua D., and Jorn-steffen Pischke. 2014. Mastering ’Metrics: The Path from Cause to Effect. Princeton University Press.\n中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton University Press.\n\n『「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド』\n\n\n実装\n\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press.\n安井翔太. 2020. 『効果検証入門』技術評論社.\n高橋将宜. 2022. 『統計的因果推論の理論と実装』共立出版."
+    "text": "参考書（因果推論）\n\n理論\n\n初級: 松林哲也. 2021.『政治学と因果推論』岩波書店.\n初級: Angrist, Joahua D., and Jorn-steffen Pischke. 2014. Mastering ’Metrics: The Path from Cause to Effect. Princeton University Press.\n中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton University Press.（『「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド』）\n\n実装\n\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press.\n安井翔太. 2020. 『効果検証入門』技術評論社.\n高橋将宜. 2022. 『統計的因果推論の理論と実装』共立出版.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::"
   },
   {
     "objectID": "slide/day01.html#評価-1",
@@ -501,7 +501,7 @@
     "href": "slide/day01.html#分析環境の準備",
     "title": "社会科学における因果推論",
     "section": "分析環境の準備",
-    "text": "分析環境の準備\n自分のPCにR + RStudioがインストールされている場合\n\nRのバージョンが4.1.2以上であればOK\n\n\n自分のPCにR + RStudioがインストールされていない場合\n\n少しでも不安があれば宋と相談しよう！\n\n\n\n方法1: 自分のPCにインストールする。\n\n参考資料: https://yukiyanai.github.io/jp/resources/\n\n\n方法2: クラウド版のR/RStudioを使用する。\n\n参考資料: サポートページ > Rの使い方\n\n\n\n\n\n\nhttps://www.jaysong.net/kandai-ci"
+    "text": "分析環境の準備\n自分のPCにR + RStudioがインストールされている場合\n\nRのバージョンが4.1.2以上であればOK\n\n\n自分のPCにR + RStudioがインストールされていない場合\n\\(\\Rightarrow\\) 少しでも不安があれば宋と相談しよう！\n\n\n方法1: 自分のPCにインストールする。\n\n参考資料: https://yukiyanai.github.io/jp/resources/\n\n\n方法2: クラウド版のR/RStudioを使用する。\n\n参考資料: サポートページ > Rの使い方\n\n\n\n\n\n\nhttps://www.jaysong.net/kandai-ci"
   },
   {
     "objectID": "intro/filesystem.html",
@@ -683,7 +683,7 @@
     "href": "syllabus.html",
     "title": "本講義について",
     "section": "",
-    "text": "科目名: 社会科学における因果推論\n講師: 宋財泫 (ソン ジェヒョン)\n所属: 関西大学総合情報学部\n\nE-mail: song [at] kansai-u.ac.jp\nHomepage: https://www.jaysong.net\n\n時間: 月曜日2限\n教室: ？？？"
+    "text": "科目名: 社会科学における因果推論\n講師: 宋財泫 (ソン ジェヒョン)\n所属: 関西大学総合情報学部\n\nE-mail: song [at] kansai-u.ac.jp\nHomepage: https://www.jaysong.net\n\n時間: 月曜日2限（10:40〜12:10）\n教室: TD106"
   },
   {
     "objectID": "syllabus.html#授業の内容",

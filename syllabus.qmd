@@ -17,8 +17,8 @@ knitr::opts_chunk$set(fig.align = "center",
 * 所属: 関西大学総合情報学部
    * E-mail: song [*at*] kansai-u.ac.jp
    * Homepage: <https://www.jaysong.net>
-* 時間: 月曜日2限
-* 教室: ？？？
+* 時間: 月曜日2限（10:40〜12:10）
+* 教室: TD106
 
 ## 授業の内容
 

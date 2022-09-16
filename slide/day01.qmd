@@ -38,8 +38,8 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 * 所属: 関西大学総合情報学部
    * E-mail: song [*at*] kansai-u.ac.jp
    * Homepage: <https://www.jaysong.net>
-* 時間: 月曜日2限
-* 教室: ？？？
+* 時間: 月曜日2限（10:40〜12:10）
+* 教室: TD106
 
 ## 内容
 
@@ -150,31 +150,27 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 
 ## 参考書（因果推論）
 
-::: {.r-stack}
 * 理論
    * 初級: 松林哲也. 2021.『[政治学と因果推論](https://www.amazon.co.jp/dp/4000269992/)』岩波書店.
    * 初級: Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect*.](http://amzn.asia/d/fIkurDl) Princeton University Press.
-   * 中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion*.](http://amzn.asia/d/2TJ1HXE) Princeton University Press. 
-      * 『[「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド](http://amzn.asia/d/3JwCmNG)』
+   * 中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion*.](http://amzn.asia/d/2TJ1HXE) Princeton University Press.（『[「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド](http://amzn.asia/d/3JwCmNG)』）
 * 実装
    * Cunningham, Scott. 2021. [*Causal Inference: The Mixtape*.](https://mixtape.scunning.com/) Yale University Press.
    * 安井翔太. 2020. 『[効果検証入門](https://www.amazon.co.jp/dp/4297111179)』技術評論社.
    * 高橋将宜. 2022. 『[統計的因果推論の理論と実装](https://www.amazon.co.jp/dp/4320112458/)』共立出版.
 
-::: {.fragment fragment-index=1}
 :::{layout-ncol=6}
-![](figs/01/Reference_CI1.jpg){width=250px fig-align="center"}
+![](figs/01/Reference_CI1.jpg){width=200px fig-align="center"}
 
-![](figs/01/Reference_CI2.jpg){width=230px fig-align="center"}
+![](figs/01/Reference_CI2.jpg){width=185px fig-align="center"}
 
-![](figs/01/Reference_CI3.jpg){width=250px fig-align="center"}
+![](figs/01/Reference_CI3.jpg){width=200px fig-align="center"}
 
-![](figs/01/Reference_CI4.jpg){width=230px fig-align="center"}
+![](figs/01/Reference_CI4.jpg){width=185px fig-align="center"}
 
-![](figs/01/Reference_CI5.jpg){width=250px fig-align="center"}
+![](figs/01/Reference_CI5.jpg){width=200px fig-align="center"}
 
-![](figs/01/Reference_CI6.jpg){width=240px fig-align="center"}
-:::
+![](figs/01/Reference_CI6.jpg){width=193px fig-align="center"}
 :::
 
 :::
@@ -211,7 +207,7 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 
 #### 自分のPCにR + RStudioがインストールされて**いない**場合
 
-* 少しでも不安があれば宋と相談しよう！
+$\Rightarrow$ 少しでも不安があれば宋と相談しよう！
 
 ::::{.columns}
 :::{.column width=50%}
