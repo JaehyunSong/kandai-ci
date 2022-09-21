@@ -18,7 +18,7 @@ knitr::opts_chunk$set(fig.align = "center",
    * E-mail: song [*at*] kansai-u.ac.jp
    * Homepage: <https://www.jaysong.net>
 * 時間: 月曜日2限（10:40〜12:10）
-* 教室: TD106
+* 教室: TD109AB
 
 ## 授業の内容
 
