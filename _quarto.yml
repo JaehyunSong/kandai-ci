@@ -19,15 +19,15 @@ website:
   navbar:
     logo: figs/logo.png
     search: true
-    background: "#4169E1"
+    background: "#1955A6"
     pinned: true
     left:
       - text: "シラバス"
         href: syllabus.qmd
       - sidebar:intro
       - sidebar:material
-      - text: "データ集"
-        href: data.qmd
+      - text: "セッション情報"
+        href: session.qmd
     right: 
       - icon: terminal
         href: https://jupyter.cs.rcos.nii.ac.jp/
@@ -59,9 +59,11 @@ website:
         - material/day09.qmd
         - material/day11.qmd
         - material/day13.qmd
-  google-analytics: "G-9F94XL4N4M"
+  google-analytics: "G-9D5YDZ704S"
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css

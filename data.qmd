@@ -1,8 +1,0 @@
----
-title: "実習用データ集"
-toc: false
----
-
-||ファイル名|備考|
-|:---:|:---|:---|
-|1|<a href = "#" download>`xxx.csv`</a>|XXX|

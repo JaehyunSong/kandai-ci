@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,10 +36,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,14 +61,14 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9F94XL4N4M"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9D5YDZ704S"></script>
 
 <script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
+gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 </script>
 
 
@@ -166,7 +168,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../data.html">データ集</a>
+    <a class="nav-link" href="../session.html">セッション情報</a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -181,6 +183,9 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
  </a>
   </li>  
 </ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -267,7 +272,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 
 <section id="初期設定" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="初期設定"><span class="header-section-number">1</span> 初期設定</h2>
-<p>　本講義の実習は<strong>NIIオンライン分析システムの使用を推奨</strong>する。（自分 or 大学の）PCにインストールしたR + RStudio、<a href="https://rstudio.cloud/">RStuio.cloud</a>、<a href="https://colab.research.google.com/?hl=ja">Google Colaboratory</a>などの使用を妨げないが、本ページの資料と同じ結果が得られることは保証しない。また、この場合、実習・分析中に起きた不具合についても授業中には対応しない。</p>
+<p>　本講義の実習は<strong>NIIオンライン分析システムの使用を推奨</strong>する。自分のPCにインストールした<a href="https://cran.r-project.org/">R</a> + <a href="https://www.rstudio.com/">RStudio</a>、<a href="https://rstudio.cloud/">RStuio.cloud</a>、大学PCにインストールされているR + RStudioなどの使用を妨げないが<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>、本ページの資料と同じ結果が得られることは保証しない。また、実習・分析中に起きた不具合についても授業中には対応しない（オフィスアワーなどでは対応可能）。</p>
 <p>　以下ではNIIオンライン分析システムを用いたRおよびRStudioの導入方法について解説する。</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -282,19 +287,11 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 <p>初期設定は国立情報学研究所（以下、NII）のサーバーに自分の作業用スペースを借りる作業である。つまり、初期設定を繰り返すことはNIIのサーバー（のスペース）をいくつも借りることとなり、サーバーを圧迫してしまう可能性がある。したがって、初期設定は授業全体を通じて<strong>1回のみ</strong>実行すること。</p>
 </div>
 </div>
-<p><strong>手順1:</strong> OpenIdPアカウントを登録する。</p>
+<p><strong>手順1:</strong> 以下のアドレスにアクセスする。</p>
 <ul>
-<li>以下のページの手順1〜9を参照すること。
-<ul>
-<li>https://meatwiki.nii.ac.jp/confluence/pages/viewpage.action?pageId=67620540</li>
-</ul></li>
-<li>登録するメールアドレスは<strong>必ずac.jp、go.jpで終わる大学アドレス</strong>を使うこと。</li>
+<li><a href="https://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/Binder_R/HEAD" target="_blank">https://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/Binder_R/HEAD</a></li>
 </ul>
-<p><strong>手順2:</strong> 以下のアドレスにアクセスする（1〜2分所要）。</p>
-<ul>
-<li><a href="https://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/binder-kobe/HEAD" target="_blank">https://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/binder-kobe/HEAD</a></li>
-</ul>
-<p><strong>手順2:</strong> 所属機関に「OpenIdP」を入力・選択し、「選択」をクリックする。</p>
+<p><strong>手順2:</strong> 所属機関に「関西大学」、または「Kansai University」を入力・選択し、「選択」をクリックする。このような画面が表示されない場合は手順2から5は飛ばしても良い。</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -304,20 +301,27 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p><strong>手順3:</strong> OpenIdPのアカウント名とパスワードを入力する。</p>
-<ul>
-<li>なにか同意を求める画面が表示される場合、そのまま「同意します」をクリックする。</li>
-</ul>
+<p><strong>手順3:</strong> 自分の関西大学のIDをパスワードを入力する。こちらのIDとパスワードは関西大学インフォメーション・システムおよびLMSのID/パスワードと同じである。</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/Install/IdP_Login.png" class="img-fluid figure-img" width="400"></p>
+<p><img src="Figs/Install/Kandai_Login.png" class="img-fluid figure-img" width="400"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>手順4:</strong> 以下のような画面が表示されたらしばらく待つ。</p>
+<p><strong>手順4:</strong> このまま「同意します」をクリックする。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/Install/Gakunin_agreement.png" class="img-fluid figure-img" width="500"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>手順5:</strong> 以下のような画面が表示されたらしばらく待つ。</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -327,7 +331,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p><strong>手順5:</strong> 以下のような画面が表示されたら初期設定は完了</p>
+<p><strong>手順6:</strong> 以下のような画面が表示されたら初期設定は完了</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -337,7 +341,7 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p><strong>手順6:</strong> 初期設定が終わったら、すぐRおよびRStudioが利用可能だが、ここでは一旦右上の「Logout」をクリックし、タブ (or ウィンドウ) を閉じる。</p>
+<p><strong>手順7:</strong> 初期設定が終わったら、すぐRおよびRStudioが利用可能だが、ここでは一旦右上の「Logout」をクリックし、タブ (or ウィンドウ) を閉じる。</p>
 </section>
 <section id="niiオンライン分析システムの起動" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="niiオンライン分析システムの起動"><span class="header-section-number">2</span> NIIオンライン分析システムの起動</h2>
@@ -420,7 +424,13 @@ gtag('config', 'G-9F94XL4N4M', { 'anonymize_ip': true});
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">注</h2>
+
+<ol>
+<li id="fn1"><p>ただし、大学PCにインストールされているR + RStudioの場合、RMarkdown使用の際、正しくコンパイルされない可能性があるため、非推奨。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -441,6 +451,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
