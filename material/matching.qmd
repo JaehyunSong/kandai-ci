@@ -1,0 +1,15 @@
+---
+title: "回帰分析とマッチング"
+toc: true
+link-external-icon: true
+link-external-newwindow: true
+code-line-numbers: true
+---
+
+## スライド
+
+<a href="../slide/matching.html" class="btn btn-primary btn-sm" target="_blank" role="button"><i class="bi bi-window"></i> 新しいタブで開く</a>
+
+```{=html}
+<iframe class="slide-deck" src="../slide/matching.html" width="100%" style="aspect-ratio: 16 / 9.2;"></iframe>
+```

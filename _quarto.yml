@@ -50,15 +50,14 @@ website:
       title: "講義資料"
       style: "docked"
       contents:
-        - material/day01.qmd
-        - material/day02.qmd
-        - material/day03.qmd
-        - material/day04.qmd
-        - material/day06.qmd
-        - material/day07.qmd
-        - material/day09.qmd
-        - material/day11.qmd
-        - material/day13.qmd
+        - material/intro.qmd
+        - material/foundation.qmd
+        - material/rct.qmd
+        - material/r.qmd
+        - material/matching.qmd
+        - material/did.qmd
+        - material/rdd.qmd
+        - material/iv.qmd
   google-analytics: "G-9D5YDZ704S"
 
 format:
