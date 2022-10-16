@@ -859,5 +859,446 @@
     "title": "回帰分析とマッチング",
     "section": "",
     "text": "新しいタブで開く"
+  },
+  {
+    "objectID": "slide/matching.html#因果推論と内生性",
+    "href": "slide/matching.html#因果推論と内生性",
+    "title": "社会科学における因果推論",
+    "section": "因果推論と内生性",
+    "text": "因果推論と内生性\n内生性: 処置変数と誤差項間の相関関係\n\n内生性は因果推論の敵\n例\n\n処置変数 = ソンさんの講義を履修するか否か\n結果変数 = 10年後の年収\nもし、やる気のある学生が履修する傾向があるとしたら?\nやる気のある学生は履修の有無と関係なく、高所得者になりやすい。\n\\(\\rightarrow\\) 「やる気」は処置と結果、両方と連関している\n\n\n\n\n内生性を除去する最良の手法 \\(\\rightarrow\\) RCT"
+  },
+  {
+    "objectID": "slide/matching.html#rctの限界",
+    "href": "slide/matching.html#rctの限界",
+    "title": "社会科学における因果推論",
+    "section": "RCTの限界",
+    "text": "RCTの限界\n\n高費用\n\n数万〜数億円\n\n倫理的な問題による実行不可能性\n\n喫煙と健康\nPhilip Zimbardo. 2008. The Lucifer Effect: How Good People Turn Evil. Rider.\n\n外的妥当性の問題\n\nMichael G. Findley, Kyosuke Kikuta, and Michael Denly. 2021. “External Validity,” Annual Review of Political Science, 24:365-393.\n\n回顧的因果推論には不向き\n\n主に介入 (intervention)の効果が推定対象"
+  },
+  {
+    "objectID": "slide/matching.html#因果推論",
+    "href": "slide/matching.html#因果推論",
+    "title": "社会科学における因果推論",
+    "section": "因果推論",
+    "text": "因果推論\nThe Three Layer Causal Hierarchy (Pearl 2009: p. 29)\n\nLevel1: Association\n\\(P(y|x)\\)\nTypical Activity: Seeing\nTypical Question:\n\nWhat is?\nHow would seeing \\(X\\) change my belief in \\(Y\\) ?\n\nExamples:\n\nWhat does a symptom tell me about a disease?\nWhat does a survey tell us about the election results?"
+  },
+  {
+    "objectID": "slide/matching.html#因果推論-1",
+    "href": "slide/matching.html#因果推論-1",
+    "title": "社会科学における因果推論",
+    "section": "因果推論",
+    "text": "因果推論\nThe Three Layer Causal Hierarchy (Pearl 2009: p. 29)\n\nLevel2: Intervention\n\\(P(y|do(x), z)\\)\nTypical Activity: Doing\nTypical Question:\n\nWhat if?\nWhat if I do \\(X\\) ?\n\nExamples:\n\nWhat if I take asprin, will my headache be cured?\nWhat if we ban cigarettes?"
+  },
+  {
+    "objectID": "slide/matching.html#因果推論-2",
+    "href": "slide/matching.html#因果推論-2",
+    "title": "社会科学における因果推論",
+    "section": "因果推論",
+    "text": "因果推論\nThe Three Layer Causal Hierarchy (Pearl 2009: p. 29)\n\nLevel3: Counterfactual\n\\(P(y_x|x^{\\prime}, y^{\\prime})\\)\nTypical Activity: Imagining and Retrospection\nTypical Question:\n\nWhy?\nWhat is \\(X\\) that caused \\(Y\\) ?\nWhat if I had acted differently?\n\nExamples:\n\nWas it the asprin that stopped my headache?\nWould Kennedy be alive had Oswald not shot him?\nWhat if I had not been smoking the past 2 years?"
+  },
+  {
+    "objectID": "slide/matching.html#観察データを用いた因果推論",
+    "href": "slide/matching.html#観察データを用いた因果推論",
+    "title": "社会科学における因果推論",
+    "section": "観察データを用いた因果推論",
+    "text": "観察データを用いた因果推論\nもし、\\(X\\)をしたら（did）\\(Y\\)はどうなった（would）だろうか\n\n過去を対象にRCTを行うことは不可能\n過去に収集された観察データを使用した因果推論が必要\nマッチング、回帰不連続デザイン、差分の差分法、操作変数法など\n\n\n割当メカニズム (assignment mechanism)\n\nユニットが処置を受けるか否かを規定するメカニズム\n例) 「やる気」が「履修」を規定\n無作為割当なら無作為に処置を受けるか否かが決まるため、考える必要がない。"
+  },
+  {
+    "objectID": "slide/matching.html#内生性への対処",
+    "href": "slide/matching.html#内生性への対処",
+    "title": "社会科学における因果推論",
+    "section": "内生性への対処",
+    "text": "内生性への対処\nmatching_data1.csvの例 (架空データ; 30行 \\(\\times\\) 4列)\n\n明らかに「やる気」と「履修」は連関\n履修有無による平均年収の差は約265.333万円\n\n\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   <dbl>  <dbl>  <dbl> <dbl>\n 1     1    659      0     1\n 2     2    587      1     1\n 3     3    628      1     1\n 4     4    563      1     1\n 5     5    531      1     1\n 6     6     79      0     0\n 7     7    356      0     1\n 8     8    176      0     0\n 9     9    339      0     0\n10    10    520      1     1\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   <dbl>  <dbl>  <dbl> <dbl>\n 1    11    239      0     0\n 2    12    276      1     0\n 3    13    609      1     1\n 4    14    254      0     0\n 5    15    423      0     1\n 6    16    172      0     1\n 7    17     20      0     0\n 8    18    447      1     0\n 9    19    498      1     1\n10    20    648      1     1\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   <dbl>  <dbl>  <dbl> <dbl>\n 1    21    155      0     0\n 2    22    768      1     1\n 3    23    463      1     0\n 4    24    309      1     0\n 5    25    304      0     0\n 6    26    408      1     1\n 7    27    259      0     0\n 8    28    516      1     1\n 9    29    476      1     0\n10    30    110      0     0"
+  },
+  {
+    "objectID": "slide/matching.html#内生性への対処-1",
+    "href": "slide/matching.html#内生性への対処-1",
+    "title": "社会科学における因果推論",
+    "section": "内生性への対処",
+    "text": "内生性への対処\n方法: 処置変数と結果変数に影響を与える要因(交絡要因)を揃える\n\n「やる気」のない学生（Yaruki == 0）だけに絞ってみる\n履修有無による平均年収の差は209万円\n\n\n\n\n\ndf1 |>\n  filter(Yaruki == 0) |>\n  group_by(Rishu) |>\n  summarise(Inc = mean(Income)) |>\n  pull(Inc)\n\n[1] 193.5 402.5\n\n\n\n402.5 - 193.5\n\n[1] 209\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      所得\n      やる気\n      履修\n      　\n      ID\n      所得\n      やる気\n      履修\n    \n  \n  \n    1\n659\n0\n1\n\n6\n79\n0\n0\n    7\n356\n0\n1\n\n8\n176\n0\n0\n    15\n423\n0\n1\n\n9\n339\n0\n0\n    16\n172\n0\n1\n\n11\n239\n0\n0\n    \n\n\n\n\n14\n254\n0\n0\n    \n\n\n\n\n17\n20\n0\n0\n    \n\n\n\n\n21\n155\n0\n0\n    \n\n\n\n\n25\n304\n0\n0\n    \n\n\n\n\n27\n259\n0\n0\n    \n\n\n\n\n30\n110\n0\n0\n    Mean\n402.5\n\n\n\nMean\n193.5"
+  },
+  {
+    "objectID": "slide/matching.html#内生性への対処-2",
+    "href": "slide/matching.html#内生性への対処-2",
+    "title": "社会科学における因果推論",
+    "section": "内生性への対処",
+    "text": "内生性への対処\n方法: 処置変数と結果変数に影響を与える要因(交絡要因)を揃える\n\n「やる気」のある学生（Yaruki == 1）だけに絞ってみる\n履修有無による平均年収の差は176.3万円\n\n\n\n\n\ndf1 |>\n  filter(Yaruki == 1) |>\n  group_by(Rishu) |>\n  summarise(Inc = mean(Income)) |>\n  pull(Inc)\n\n[1] 394.2000 570.5455\n\n\n\n570.5455 - 394.2000\n\n[1] 176.3455\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      所得\n      やる気\n      履修\n      　\n      ID\n      所得\n      やる気\n      履修\n    \n  \n  \n    2\n587\n1\n1\n\n12\n276\n1\n0\n    3\n628\n1\n1\n\n18\n447\n1\n0\n    4\n563\n1\n1\n\n23\n463\n1\n0\n    5\n531\n1\n1\n\n24\n309\n1\n0\n    10\n520\n1\n1\n\n29\n476\n1\n0\n    13\n609\n1\n1\n\n\n\n\n\n    19\n498\n1\n1\n\n\n\n\n\n    20\n648\n1\n1\n\n\n\n\n\n    22\n768\n1\n1\n\n\n\n\n\n    26\n408\n1\n1\n\n\n\n\n\n    28\n516\n1\n1\n\n\n\n\n\n    Mean\n570.5\n\n\n\nMean\n394.2"
+  },
+  {
+    "objectID": "slide/matching.html#内生性への対処-3",
+    "href": "slide/matching.html#内生性への対処-3",
+    "title": "社会科学における因果推論",
+    "section": "内生性への対処",
+    "text": "内生性への対処\n\n\n\n\nやる気のない学生のみ（\\(Z_i = 0\\)）\n\n\n\n履修（\\(T\\)）\n平均年収（\\(Y\\)）\n\n\n\n\n1\n402.5000\n\n\n0\n193.5000\n\n\n\n\n\n\nやる気のある学生のみ（\\(Z_i = 1\\)）\n\n\n\n履修（\\(T\\)）\n平均年収（\\(Y\\)）\n\n\n\n\n1\n570.5455\n\n\n0\n394.2000\n\n\n\n\n\n\n\n\nやる気のある（ない）被験者を一人の被験者として考える場合、差分はITEと解釈可能。\n\nITEの加重平均 \\(\\rightarrow\\) 講義履修の因果効果 \\(\\rightarrow\\) 約191.6万円\n（言い換えれば、）\\(Z = 0\\)の学生のみのATEと\\(Z = 1\\)の学生のみのATEの加重平均\n\n\n\n\n\n\n\n\n\n\\(i\\)\n\\(N\\)\n\\(Z_i\\)\n\\(Y_i(T_i = 1)\\)\n\\(Y_i(T_i = 0)\\)\n\\(\\mbox{ITE}_i\\)\n\n\n\n\n1\n14\n0\n402.5000\n193.5000\n209.0000\n\n\n2\n16\n1\n570.5455\n394.2000\n176.3455\n\n\n\n\n\n\n加重平均\n191.5843"
+  },
+  {
+    "objectID": "slide/matching.html#マッチングの考え方-1",
+    "href": "slide/matching.html#マッチングの考え方-1",
+    "title": "社会科学における因果推論",
+    "section": "マッチングの考え方",
+    "text": "マッチングの考え方\n割当メカニズムを想定し、交絡要因が同じユニット同士を比較\n\n交絡要因: 処置変数と結果変数、両方と関係のある変数\n以下の条件が満たされる場合、マッチングで因果効果の推定が可能\n条件付き独立の仮定 (Conditional Independece Assumption; CIA)\n\n\\(\\{Y_i(T_i = 1),Y_i(T_i = 0)\\} \\perp T_i∣X_i\\)\n\\(T_i\\) : 学生 \\(i\\) の履修有無、 \\(X_i\\) : 学生 \\(i\\) のやる気\nやる気(=交絡要因)が同じ場合、学生 \\(i\\) がソンさんの講義を履修するか否か(=処置変数)は彼(女)の将来収入(=結果変数)と関係なく決まる\n\\(\\rightarrow\\) 処置変数を外生変数として扱うことが可能に\n\nCIAが満たされるためには、割当メカニズム上のすべての交絡要因が必要"
+  },
+  {
+    "objectID": "slide/matching.html#条件付き独立の仮定とは",
+    "href": "slide/matching.html#条件付き独立の仮定とは",
+    "title": "社会科学における因果推論",
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\\(i\\)\n\\(Z_i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n\n\\(\\mathbb{E}[Y(T = 0)]\\)\n\\(\\mathbb{E}[Y(T = 1)]\\)\n\n\n\n\n統制群（\\(T = 0\\)）\n(A) 0.429\n(B) 0.429\n\n\n処置群（\\(T = 1\\)）\n(C) 0.538\n(D) 0.538\n\n\n\n\n観察可能なデータから計算した処置効果は0.538 − 0.429 = 0.109\n\n真の処置効果は0\n\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dのはず\n処置群がもし統制群になっても、今の統制群と同じ\n\\(\\Rightarrow\\) 交換可能性が成立せず"
+  },
+  {
+    "objectID": "slide/matching.html#条件付き独立の仮定とは-1",
+    "href": "slide/matching.html#条件付き独立の仮定とは-1",
+    "title": "社会科学における因果推論",
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\\(i\\)\n\\(Z_i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\\(Z\\) で条件づけた場合 ( \\(Z = 0\\) )\n\n\n\n\n\\(\\mathbb{E}[Y(T = 0)]\\)\n\\(\\mathbb{E}[Y(T = 1)]\\)\n\n\n\n\n統制群（\\(T = 0\\)）\n(A) 0.250\n(B) 0.250\n\n\n処置群（\\(T = 1\\)）\n(C) 0.250\n(D) 0.250\n\n\n\n\n処置効果は0.250 − 0.250 = 0.000\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dが成立\n\\(\\Rightarrow\\) 交換可能性が成立"
+  },
+  {
+    "objectID": "slide/matching.html#条件付き独立の仮定とは-2",
+    "href": "slide/matching.html#条件付き独立の仮定とは-2",
+    "title": "社会科学における因果推論",
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\\(i\\)\n\\(Z_i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\\(Z\\) で条件づけた場合 ( \\(Z = 1\\) )\n\n\n\n\n\\(\\mathbb{E}[Y(T = 0)]\\)\n\\(\\mathbb{E}[Y(T = 1)]\\)\n\n\n\n\n統制群（\\(T = 0\\)）\n(A) 0.667\n(B) 0.667\n\n\n処置群（\\(T = 1\\)）\n(C) 0.667\n(D) 0.667\n\n\n\n\n処置効果は0.667 − 0.667 = 0.000\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dが成立\n\\(\\Rightarrow\\) 交換可能性が成立"
+  },
+  {
+    "objectID": "slide/matching.html#条件付き独立の仮定とは-3",
+    "href": "slide/matching.html#条件付き独立の仮定とは-3",
+    "title": "社会科学における因果推論",
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\\(i\\)\n\\(Z_i\\)\n\\(T_i\\)\n\\(Y_i(T_i = 0)\\)\n\\(Y_i(T_i = 1)\\)\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n条件付き独立が成立するということは…\n\n処置群を統制群に、統制群を処置群にしても同じ結果が得られること\n\n\\(\\Rightarrow\\) 統制群と処置群は交換可能"
+  },
+  {
+    "objectID": "slide/matching.html#重回帰分析との比較",
+    "href": "slide/matching.html#重回帰分析との比較",
+    "title": "社会科学における因果推論",
+    "section": "重回帰分析との比較",
+    "text": "重回帰分析との比較\n重回帰分析における回帰係数の解釈\n\n他の変数すべてが同じ場合、ある変数が1単位変化する時の応答変数の変化量\nマッチングと同じ?\n\n重回帰分析とマッチングの結果が近似することも \\(\\bigcirc\\)\n\n手計算マッチング: 191.5843\n\n\n\n\n\n# df1 は matching_data1.csv\n# 単回帰分析\nFit1 <- lm(Income ~ Rishu, data = df1)\n# 重回帰分析\nFit2 <- lm(Income ~ Rishu + Yaruki, data = df1)\n\n\n\n\n\n\n \n  \n      \n    単回帰分析 \n    重回帰分析 \n  \n \n\n  \n    (Intercept) \n    260.400 (36.459) \n    198.595 (32.737) \n  \n  \n    Rishu \n    265.333 (51.561) \n    191.167 (44.915) \n  \n  \n    Yaruki \n     \n    185.415 (45.015) \n  \n  \n    Num.Obs. \n    30 \n    30 \n  \n  \n    R2 \n    0.486 \n    0.684"
+  },
+  {
+    "objectID": "slide/matching.html#重回帰分析との比較-1",
+    "href": "slide/matching.html#重回帰分析との比較-1",
+    "title": "社会科学における因果推論",
+    "section": "重回帰分析との比較",
+    "text": "重回帰分析との比較\n実質的にマッチングと回帰分析は同じという見解も (Angrist and Pischke 2009)\n\n具体的に言えば、回帰分析はマッチングの特殊な形態\n\n強い仮定を置いたマッチング\n回帰分析は \\(Y = \\beta_0 + \\beta_1 X_1 + ... + \\beta_k X_k\\) の関数型を仮定 (parametric)\n\n回帰分析において誤差項の平均値は必ず0を仮定 ( \\(\\mathbb{E}[\\varepsilon|T, X] = 0\\) )\n\nマッチングの場合、( \\(\\mathbb{E}[\\varepsilon|T = 0, X] = \\mathbb{E}[\\varepsilon|T = 1, X]\\) )\n\n回帰分析はオーバーラップ条件を無視する\n\nマッチングされないケースでも、線形関数によって予測されてしまう\nマッチングはオーバーラップされないケースを分析から除外する\n\n結論: 回帰分析より柔軟、拡張性がある"
+  },
+  {
+    "objectID": "slide/matching.html#ate-att-atc",
+    "href": "slide/matching.html#ate-att-atc",
+    "title": "社会科学における因果推論",
+    "section": "ATE, ATT, ATC",
+    "text": "ATE, ATT, ATC\n3種類の因果効果\n\nATE (Average Treatment Effect): 平均処置効果\nATT (ATE for the Treated): 処置群における平均処置効果\n\n潜在結果: 処置群が処置を受けなかった場合の応答変数\n\nATC (ATE for the Control): 統制群における平均処置効果\n\n潜在結果: 統制群が処置を受けた場合の応答変数\n\n\n\n\n因果効果は一般的に母集団ではなく、サンプルから推定されるため、「SATE/SATT/SATC」と呼ばれる場合も\n他にもRIE (Retrospective Intervention Effect) なども (Samii et al. 2016)\nRCTでは主にATEが推定対象（マッチングでは区分するケースが多い）\n統計ソフトウェアによってはATTを因果効果の推定値として表示する場合もある。"
+  },
+  {
+    "objectID": "slide/matching.html#att-処置群における平均処置効果",
+    "href": "slide/matching.html#att-処置群における平均処置効果",
+    "title": "社会科学における因果推論",
+    "section": "ATT: 処置群における平均処置効果",
+    "text": "ATT: 処置群における平均処置効果\n\n処置群の潜在的結果を統制群から割り当てる。\n処置群は \\(Y_i(T_i = 1)\\) が観察済みであり、潜在的結果は \\(Y_i(T_i = 0)\\)\nやる気のない学生の \\(Y_i(T_i = 0)\\) は193.5、ある学生は394.2\n\n\n\n\n\n\n\n  \n  \n    \n      ID (i)\n      Yarukii\n      Yi(Ti = 1)\n      Yi(Ti = 0)\n      ITEi\n    \n  \n  \n    1\n0\n659\n193.5\n465.5\n    2\n1\n587\n394.2\n192.8\n    3\n1\n628\n394.2\n233.8\n    4\n1\n563\n394.2\n168.8\n    5\n1\n531\n394.2\n136.8\n    7\n0\n356\n193.5\n162.5\n    ...\n...\n...\n...\n...\n    20\n1\n648\n394.2\n253.8\n    22\n1\n768\n394.2\n373.8\n    26\n1\n408\n394.2\n13.8\n    28\n1\n516\n394.2\n121.8\n    平均\n\n\n\n185.1"
+  },
+  {
+    "objectID": "slide/matching.html#atc-統制群における平均処置効果",
+    "href": "slide/matching.html#atc-統制群における平均処置効果",
+    "title": "社会科学における因果推論",
+    "section": "ATC: 統制群における平均処置効果",
+    "text": "ATC: 統制群における平均処置効果\n\n統制群の潜在的結果を処置群から割り当てる。\n統制群は \\(Y_i(T_i = 0)\\) が観察済みであり、潜在的結果は \\(Y_i(T_i = 1)\\)\nやる気のない学生の \\(Y_i(T_i = 1)\\) は402.5、ある学生は570.5\n\n\n\n\n\n\n\n  \n  \n    \n      ID (i)\n      Yarukii\n      Yi(Ti = 1)\n      Yi(Ti = 0)\n      ITEi\n    \n  \n  \n    6\n0\n402.5\n79\n323.5\n    8\n0\n402.5\n176\n226.5\n    9\n0\n402.5\n339\n63.5\n    11\n0\n402.5\n239\n163.5\n    12\n1\n570.5\n276\n294.5\n    14\n0\n402.5\n254\n148.5\n    ...\n...\n...\n...\n...\n    25\n0\n402.5\n304\n98.5\n    27\n0\n402.5\n259\n143.5\n    29\n1\n570.5\n476\n94.5\n    30\n0\n402.5\n110\n292.5\n    平均\n\n\n\n198.1"
+  },
+  {
+    "objectID": "slide/matching.html#ate-平均処置効果",
+    "href": "slide/matching.html#ate-平均処置効果",
+    "title": "社会科学における因果推論",
+    "section": "ATE: 平均処置効果",
+    "text": "ATE: 平均処置効果\n\nATTとATCの加重平均\n今回は処置群と統制群が15:15 \\(\\rightarrow\\) 単純平均でOK\n\n\\(\\frac{1}{2}(185.1 + 198.1) = 191.6\\)\n手計算マッチングとと同じ結果\n\n\n\\[\\text{ATE} = \\frac{N_{\\text{treated}}}{N_{\\text{all}}} \\text{ATT} + \\frac{N_{\\text{controlled}}}{N_{\\text{all}}} \\text{ATC}.\\]"
+  },
+  {
+    "objectID": "slide/matching.html#マッチングいろいろ",
+    "href": "slide/matching.html#マッチングいろいろ",
+    "title": "社会科学における因果推論",
+    "section": "マッチングいろいろ",
+    "text": "マッチングいろいろ\n\nExact Matching\nNearest-neighbor Matching\n\nk-nearest Neighbor Matching\nCaliper Matching (Radius Matching)\n\nCoarsened Exact Matching\nPropensity Score Matching\n\nInverse Probability Weighting\nEnsemble Matching"
+  },
+  {
+    "objectID": "slide/matching.html#exact-matching",
+    "href": "slide/matching.html#exact-matching",
+    "title": "社会科学における因果推論",
+    "section": "Exact Matching",
+    "text": "Exact Matching\n\n「正確マッチング」、「厳格なマッチング」などで訳される\nこれまで見てきた方法が Exact Matching\n\nデータ内の共変量 (交絡要因) が完全に一致するケース同士の比較\n\n共変量が少数、かつ、名目or順序変数の場合、使用可\n共変量が多数、または連続変数の場合は実質的に無理\n\n次元の呪い or 次元爆発"
+  },
+  {
+    "objectID": "slide/matching.html#nearest-neighbor-matching",
+    "href": "slide/matching.html#nearest-neighbor-matching",
+    "title": "社会科学における因果推論",
+    "section": "Nearest-neighbor Matching",
+    "text": "Nearest-neighbor Matching\nNearest-neighbor Matching\n\n「最近傍マッチング」と訳される。\n共変量が連続変数、多次元の場合、「完全に一致」ケースはない場合がほとんど\n\n\\(\\rightarrow\\) 「一致」ではなく、「最も似ている」ケース同士と比較\n共変量を座標（超）平面に位置づけた場合、最も近いケースをマッチング\n\n\n\n「近さ」の基準\n\nManhattan Distance\nStandardized Euclidean Distance\nMahalanobis Distance (\\(\\leftarrow\\) 最もよく使われる基準)"
+  },
+  {
+    "objectID": "slide/matching.html#マンハッタン距離manhattan-distance-city-block-distance",
+    "href": "slide/matching.html#マンハッタン距離manhattan-distance-city-block-distance",
+    "title": "社会科学における因果推論",
+    "section": "マンハッタン距離（Manhattan Distance; City-block Distance）",
+    "text": "マンハッタン距離（Manhattan Distance; City-block Distance）\n\\[d(i, j) = |X_i - X_j| + |Y_i - Y_j| \\text{ where } i \\neq j.\\]"
+  },
+  {
+    "objectID": "slide/matching.html#標準化ユークリッド距離standardized-euclidean-distance",
+    "href": "slide/matching.html#標準化ユークリッド距離standardized-euclidean-distance",
+    "title": "社会科学における因果推論",
+    "section": "標準化ユークリッド距離（Standardized Euclidean Distance）",
+    "text": "標準化ユークリッド距離（Standardized Euclidean Distance）\n\\[d(i, j) = \\sqrt{\\Bigg(\\frac{X_i - X_j}{\\sigma_X}\\Bigg)^2 + \\Bigg(\\frac{Y_i - Y_j}{\\sigma_Y}\\Bigg)^2} \\text{ where } i \\neq j.\\]"
+  },
+  {
+    "objectID": "slide/matching.html#マハラノビス距離mahalanobis-distance",
+    "href": "slide/matching.html#マハラノビス距離mahalanobis-distance",
+    "title": "社会科学における因果推論",
+    "section": "マハラノビス距離（Mahalanobis Distance）",
+    "text": "マハラノビス距離（Mahalanobis Distance）\n\n共変量間の相関が0（\\(\\rho = 0\\)）の場合、Standardized Euclidean Distanceと同じ\n\n\\[d(i, j) = \\sqrt{\\frac{1}{1 - \\rho^2_{X, Y}} \\Bigg[\\Bigg(\\frac{X_i - X_j}{\\sigma_X}\\Bigg)^2 + \\Bigg(\\frac{Y_i - Y_j}{\\sigma_Y}\\Bigg)^2 - 2\\rho_{X,Y}\\Bigg(\\frac{X_i - X_j}{\\sigma_X}\\Bigg) \\Bigg(\\frac{Y_i - Y_j}{\\sigma_Y}\\Bigg)\\Bigg]} \\text{ where } i \\neq j.\\]"
+  },
+  {
+    "objectID": "slide/matching.html#マッチング方法",
+    "href": "slide/matching.html#マッチング方法",
+    "title": "社会科学における因果推論",
+    "section": "マッチング方法",
+    "text": "マッチング方法\nATTの場合、処置群のケースに統制群の中で最も近いケース1個を割当\n\n近さの測定はマハラノビス距離が一般的\n処置群内の1ケースに複数の統制群ケースを割り当てる場合も\n\nk-nearest Neighbor Matching\nCaliper Matching\n\n復元マッチングと非復元マッチング"
+  },
+  {
+    "objectID": "slide/matching.html#k-nearest-neighbor-matching",
+    "href": "slide/matching.html#k-nearest-neighbor-matching",
+    "title": "社会科学における因果推論",
+    "section": "k-nearest Neighbor Matching",
+    "text": "k-nearest Neighbor Matching\n\\(k\\)-最近傍マッチング\n\n最も近い1個ケースを潜在的結果として使うのではなく、最も近い \\(k\\) 個のケースの平均値を潜在的結果として用いる。\n\n\\(j(m)\\) : \\(i\\) から \\(m\\) 番目に近いケース \\(j\\)\n\n\n\\[Y_i(T_i = 0) = \\begin{cases}Y_i & \\text{ if } T_i = 0\\\\ \\frac{1}{K} \\sum_{m = 1}^K Y_{j(m)} & \\text{ if } T_i = 1\\end{cases}\\]\n\n最適 \\(k\\) を決める理論的基準は無し\n\n\\(k\\) を大きくすると、モデルの分散が小さくなる\nただし、モデルの分散が小さい = バイアスが拡大\n\nBias–variance trade-off\n\n\\(k\\) を変化させることによって結果がどのように変わるか観察"
+  },
+  {
+    "objectID": "slide/matching.html#caliper-matching",
+    "href": "slide/matching.html#caliper-matching",
+    "title": "社会科学における因果推論",
+    "section": "Caliper Matching",
+    "text": "Caliper Matching\n「カリパーマッチング」と訳される（訳されてない…?）\n\n半径 \\(h\\) の中にある全てのケースの平均値を潜在的結果として使用\n\n\n\n\n\\[Y_i(T_i = 0) = \\begin{cases}Y_i & \\text{ if } T_i = 0\\\\ \\frac{\\sum_{j=1}^N I(T_j = 0, d(i, j) < h)\\cdot Y_i}{\\sum_{j=1}^N I(T_j = 0, d(i, j) < h)} & \\text{ if } T_i = 1\\end{cases}\\]"
+  },
+  {
+    "objectID": "slide/matching.html#復元マッチングと非復元マッチング",
+    "href": "slide/matching.html#復元マッチングと非復元マッチング",
+    "title": "社会科学における因果推論",
+    "section": "復元マッチングと非復元マッチング",
+    "text": "復元マッチングと非復元マッチング\n\n1:1マッチングの場合に生じる問題: マッチング済みの統制群（処置群）をどう扱うか\n\n他にも近い処置群のケースがあればマッチング \\(\\rightarrow\\) 復元マッチング\n他にも近い処置群のケースがあっても使わない \\(\\rightarrow\\) 非復元マッチング\n\n復元マッチングの場合、統制群の各ケースに重みが付与される。\n\n加重平均 or 重み付け回帰分析が必要\n\n多くのパッケージは非復元がデフォルトとなっているが、推定ごとに結果が変化することも（図BとC）\n\n復元マッチングはバランスが改善されやすいが、サンプルサイズが小さくなる。\n\n正しい方法はなく、分析者の判断が必要。\n\n\n\n\n\n\n\nA) 復元マッチング\n\n\n\n\n\n\n\nB) 非復元マッチング (1)\n\n\n\n\n\n\n\nC) 非復元マッチング (2)"
+  },
+  {
+    "objectID": "slide/matching.html#coarsened-exact-matching",
+    "href": "slide/matching.html#coarsened-exact-matching",
+    "title": "社会科学における因果推論",
+    "section": "Coarsened Exact Matching",
+    "text": "Coarsened Exact Matching\nCoarsened Exact Matching (Iacus, King, and Porro 2011)\n\n定訳はなく、「CEM」で呼ばれる(粗い正確マッチング?)\nアルゴリズムは簡単\n\n共変量をいくつかの層 (strata) へ分割する。\n各層にそれぞれ該当する処置・統制ユニットを入れる。\n最低一つ以上の処置・統制ユニットがない層は捨てる。\n各層の処置・統制ユニットの結果変数の差分を計算し、すべての層に対して加重平均\n\n層を細かくするほどExact Matchingへ近づく\n\nただし、マッチングされないケースが多くなり、分析に使えるケースが減少\nバイアス\\(\\downarrow\\); 分散\\(\\uparrow\\)"
+  },
+  {
+    "objectID": "slide/matching.html#cemの例",
+    "href": "slide/matching.html#cemの例",
+    "title": "社会科学における因果推論",
+    "section": "CEMの例",
+    "text": "CEMの例\nmatching_data2.csvの例\n\n年齢は10歳刻み、学歴は大卒以上・未満に層化\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      年齢\n      教育\n      処置\n      結果\n      　\n      ID\n      年齢\n      教育\n      処置\n      結果\n    \n  \n  \n    1\n29\n院\n0\n6\n\n13\n57\n高\n0\n4\n    2\n41\n大\n0\n3\n\n14\n25\n院\n1\n5\n    3\n31\n院\n1\n7\n\n15\n55\n中\n1\n9\n    4\n39\n院\n0\n5\n\n16\n48\n院\n0\n2\n    5\n53\n大\n0\n6\n\n17\n23\n専\n0\n2\n    6\n59\n大\n0\n1\n\n18\n34\n大\n1\n4\n    7\n37\n高\n1\n8\n\n19\n42\n大\n1\n9\n    8\n44\n中\n0\n4\n\n20\n23\n高\n0\n4\n    9\n51\n中\n0\n2\n\n21\n22\n高\n1\n8\n    10\n59\n小\n1\n8\n\n22\n49\n大\n0\n9\n    11\n21\n大\n1\n4\n\n23\n45\n高\n1\n6\n    12\n24\n中\n1\n6\n\n24\n33\n大\n0\n8"
+  },
+  {
+    "objectID": "slide/matching.html#cemの例-1",
+    "href": "slide/matching.html#cemの例-1",
+    "title": "社会科学における因果推論",
+    "section": "CEMの例",
+    "text": "CEMの例\n年齢は10歳刻み、学歴は大卒以上・未満に層化\n\nカテゴリが少なくなり、マッチングしやすくなる\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      年齢\n      教育\n      処置\n      結果\n      　\n      ID\n      年齢\n      教育\n      処置\n      結果\n    \n  \n  \n    1\n20代\nH\n0\n6\n\n13\n50代\nL\n0\n4\n    2\n40代\nH\n0\n3\n\n14\n20代\nH\n1\n5\n    3\n30代\nH\n1\n7\n\n15\n50代\nL\n1\n9\n    4\n30代\nH\n0\n5\n\n16\n40代\nH\n0\n2\n    5\n50代\nH\n0\n6\n\n17\n20代\nL\n0\n2\n    6\n50代\nH\n0\n1\n\n18\n30代\nH\n1\n4\n    7\n30代\nL\n1\n8\n\n19\n40代\nH\n1\n9\n    8\n40代\nL\n0\n4\n\n20\n20代\nL\n0\n4\n    9\n50代\nL\n0\n2\n\n21\n20代\nL\n1\n8\n    10\n50代\nL\n1\n8\n\n22\n40代\nH\n0\n9\n    11\n20代\nH\n1\n4\n\n23\n40代\nL\n1\n6\n    12\n20代\nL\n1\n6\n\n24\n30代\nH\n0\n8"
+  },
+  {
+    "objectID": "slide/matching.html#cemの例-2",
+    "href": "slide/matching.html#cemの例-2",
+    "title": "社会科学における因果推論",
+    "section": "CEMの例",
+    "text": "CEMの例\n\n\n層ごとにケースをマッチング\n\nペアが組めない層が存在\n\n30代 & L\n50代 & H\n\n\n\n\n\n\n\n\n\n  \n  \n    \n      年齢\n      教育\n      \n        処置群\n      \n      \n        統制群\n      \n    \n    \n      ID\n      処置\n      結果\n      ID\n      処置\n      結果\n    \n  \n  \n    20代\nH\n11\n1\n5\n1\n0\n6\n    20代\nH\n14\n1\n5\n\n\n\n    20代\nL\n12\n1\n6\n17\n0\n2\n    20代\nL\n21\n1\n8\n20\n0\n4\n    30代\nH\n3\n1\n7\n4\n0\n5\n    30代\nH\n18\n1\n4\n24\n0\n8\n    30代\nL\n7\n1\n8\n\n\n\n    40代\nH\n19\n1\n9\n2\n0\n3\n    40代\nH\n\n\n\n16\n0\n2\n    40代\nH\n\n\n\n22\n0\n9\n    40代\nL\n23\n1\n6\n8\n0\n4\n    50代\nH\n\n\n\n5\n0\n6\n    50代\nH\n\n\n\n6\n0\n1\n    50代\nL\n10\n1\n8\n9\n0\n2\n    50代\nL\n15\n1\n9\n13\n0\n4"
+  },
+  {
+    "objectID": "slide/matching.html#cemの例-3",
+    "href": "slide/matching.html#cemの例-3",
+    "title": "社会科学における因果推論",
+    "section": "CEMの例",
+    "text": "CEMの例\nペアが組めない層を除外（30代Lと50代H）\n\n\n\n\n\n\n  \n  \n    \n      年齢\n      教育\n      \n        処置群\n      \n      \n        統制群\n      \n    \n    \n      ID\n      処置\n      結果\n      ID\n      処置\n      結果\n    \n  \n  \n    20代\nH\n11\n1\n5\n1\n0\n6\n    20代\nH\n14\n1\n5\n\n\n\n    20代\nL\n12\n1\n6\n17\n0\n2\n    20代\nL\n21\n1\n8\n20\n0\n4\n    30代\nH\n3\n1\n7\n4\n0\n5\n    30代\nH\n18\n1\n4\n24\n0\n8\n    40代\nH\n19\n1\n9\n2\n0\n3\n    40代\nH\n\n\n\n16\n0\n2\n    40代\nH\n\n\n\n22\n0\n9\n    40代\nL\n23\n1\n6\n8\n0\n4\n    50代\nL\n10\n1\n8\n9\n0\n2\n    50代\nL\n15\n1\n9\n13\n0\n4"
+  },
+  {
+    "objectID": "slide/matching.html#cemの例-4",
+    "href": "slide/matching.html#cemの例-4",
+    "title": "社会科学における因果推論",
+    "section": "CEMの例",
+    "text": "CEMの例\n各ユニットの重みを計算\n\n\n\\[w_i = \\begin{cases} 1 & \\text{ if } T_i = 1, \\\\ \\frac{m_C}{m_T} \\cdot \\frac{m^s_T}{m^s_C} & \\text{ if } T_i = 0.\\end{cases}\\]\n\n\\(m_{C,T}\\): 統制・処置ケースの数\n\nペアを組めなかったケースはカウントしない\n\n\\(m^s_{C,T}\\): 層 \\(s\\) 内の統制・処置ケースの数\n\n\n\n\n\n\n\n\n  \n  \n    \n      年齢\n      教育\n      \n        処置群\n      \n      \n        統制群\n      \n    \n    \n      ID\n      処置\n      結果\n      重み\n      ID\n      処置\n      結果\n      重み\n    \n  \n  \n    20代\nH\n11\n1\n5\n1\n1\n0\n6\n2.2\n    20代\nH\n14\n1\n5\n1\n\n\n\n\n    20代\nL\n12\n1\n6\n1\n17\n0\n2\n1.1\n    20代\nL\n21\n1\n8\n1\n20\n0\n4\n1.1\n    30代\nH\n3\n1\n7\n1\n4\n0\n5\n1.1\n    30代\nH\n18\n1\n4\n1\n24\n0\n8\n1.1\n    40代\nH\n19\n1\n9\n1\n2\n0\n3\n0.367\n    40代\nH\n\n\n\n\n16\n0\n2\n0.367\n    40代\nH\n\n\n\n\n22\n0\n9\n0.367\n    40代\nL\n23\n1\n6\n1\n8\n0\n4\n1.1\n    50代\nL\n10\n1\n8\n1\n9\n0\n2\n1.1\n    50代\nL\n15\n1\n9\n1\n13\n0\n4\n1.1"
+  },
+  {
+    "objectID": "slide/matching.html#cemの例-5",
+    "href": "slide/matching.html#cemの例-5",
+    "title": "社会科学における因果推論",
+    "section": "CEMの例",
+    "text": "CEMの例\n重み付け回帰分析\n\n\\(W = \\{2.200, 0.367, 1.000, 1.100, 0.000, 0.000, ..., 1.100\\}^{\\top}\\)\n\nマッチングされないケースの重みは0にするか、分析から除外\n\\(\\beta = (X^{\\top}WX)^{-1}X^{\\top}WY\\)\n\nRの場合、lm(formula, data, weight = ...)で推定可能\n\n{cem} or {MatchIt}パッケージならもっと簡単\n\n\\(\\widehat{\\text{Outcome}} = 4.567 + 2.033 \\cdot \\text{Treat}\\)\n\n処置群における因果効果 (ATT) = 2.033"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアとは",
+    "href": "slide/matching.html#傾向スコアとは",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアとは",
+    "text": "傾向スコアとは\nPropensity Score\n\n簡単にいうと「あるユニット \\(i\\) が処置を受ける確率」\n\n\\(e_i = Pr(T_i = 1 | X_i)\\)\n\n\n\nなぜ傾向スコア?\n\nマッチングの限界\n\n次元の問題 (dimension problem)\n恣意性\nカテゴリ変数の扱い方\nスケールの問題"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアの計算",
+    "href": "slide/matching.html#傾向スコアの計算",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアの計算",
+    "text": "傾向スコアの計算\n処置変数 ( \\(T_i\\) ) を応答変数とし、共変量 ( \\(X_i\\) ) を説明変数とする\n\n一般的に、ロジットやプロビット回帰分析で推定する。\n\n他にも色々ある\n\nSupport Vector Machine, Decision Tree, Neural Network, …\n\n色んな手法で算出した傾向スコアを重み付けして合成することも可能\n\nEnsemble Method (Samii, Paler, and Zukerman 2016)\n\n\n\n\n\n推定された予測確率 \\(\\rightarrow\\) 傾向スコア\n\nRではオブジェクト名$fitted.valueで抽出可\n傾向スコアは多くの共変量を一つの変数に集約したもの\n\\(\\rightarrow\\) 傾向スコアを統制した回帰分析で因果効果を推定\n\\(\\rightarrow\\) 傾向スコアを用いて最近傍マッチング"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアマッチングの手順",
+    "href": "slide/matching.html#傾向スコアマッチングの手順",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコア・マッチングの手順",
+    "text": "傾向スコア・マッチングの手順\n割り当てメカニズムを仮定\n\n\n\\[Pr(\\text{処置}) \\propto \\beta_0 + \\beta_1 \\cdot \\text{年齢} + \\beta_2 \\cdot \\text{教育}\\]\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      年齢\n      教育\n      処置\n      結果\n      　\n      ID\n      年齢\n      教育\n      処置\n      結果\n    \n  \n  \n    1\n29\n院\n0\n6\n\n13\n57\n高\n0\n4\n    2\n41\n大\n0\n3\n\n14\n25\n院\n1\n5\n    3\n31\n院\n1\n7\n\n15\n55\n中\n1\n9\n    4\n39\n院\n0\n5\n\n16\n48\n院\n0\n2\n    5\n53\n大\n0\n6\n\n17\n23\n専\n0\n2\n    6\n59\n大\n0\n1\n\n18\n34\n大\n1\n4\n    7\n37\n高\n1\n8\n\n19\n42\n大\n1\n9\n    8\n44\n中\n0\n4\n\n20\n23\n高\n0\n4\n    9\n51\n中\n0\n2\n\n21\n22\n高\n1\n8\n    10\n59\n小\n1\n8\n\n22\n49\n大\n0\n9\n    11\n21\n大\n1\n4\n\n23\n45\n高\n1\n6\n    12\n24\n中\n1\n6\n\n24\n33\n大\n0\n8"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアの算出",
+    "href": "slide/matching.html#傾向スコアの算出",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアの算出",
+    "text": "傾向スコアの算出\n傾向スコアの算出\n\nPS_Fit <- glm(処置 ~ 年齢 + 学歴, data = データ, family = binomial(\"logit\"))\nsummary(PS_Fit)\n\n\n\n\n\n \n  \n      \n    Model 1 \n  \n \n\n  \n    (Intercept) \n    3.839 (2.364) \n  \n  \n    Age \n    −0.059 (0.039) \n  \n  \n    Edu \n    −0.420 (0.304) \n  \n  \n    Num.Obs. \n    24 \n  \n  \n    AIC \n    35.5 \n  \n  \n    F \n    1.486"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアの算出-1",
+    "href": "slide/matching.html#傾向スコアの算出-1",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアの算出",
+    "text": "傾向スコアの算出\n傾向スコアの抽出\n\nデータ$PS <- PS_Fit$fitted.value\n\n\n\n\n\n\n\n  \n  \n    \n      ID\n      年齢\n      教育\n      処置\n      結果\n      PS\n      　\n      ID\n      年齢\n      教育\n      処置\n      結果\n      PS\n    \n  \n  \n    1\n29\n院\n0\n6\n0.406\n\n13\n57\n高\n0\n4\n0.317\n    2\n41\n大\n0\n3\n0.339\n\n14\n25\n院\n1\n5\n0.463\n    3\n31\n院\n1\n7\n0.378\n\n15\n55\n中\n1\n9\n0.443\n    4\n39\n院\n0\n5\n0.275\n\n16\n48\n院\n0\n2\n0.183\n    5\n53\n大\n0\n6\n0.203\n\n17\n23\n専\n0\n2\n0.692\n    6\n59\n大\n0\n1\n0.152\n\n18\n34\n大\n1\n4\n0.437\n    7\n37\n高\n1\n8\n0.601\n\n19\n42\n大\n1\n9\n0.326\n    8\n44\n中\n0\n4\n0.603\n\n20\n23\n高\n0\n4\n0.774\n    9\n51\n中\n0\n2\n0.502\n\n21\n22\n高\n1\n8\n0.784\n    10\n59\n小\n1\n8\n0.489\n\n22\n49\n大\n0\n9\n0.243\n    11\n21\n大\n1\n4\n0.624\n\n23\n45\n高\n1\n6\n0.485\n    12\n24\n中\n1\n6\n0.831\n\n24\n33\n大\n0\n8\n0.451"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアの算出-2",
+    "href": "slide/matching.html#傾向スコアの算出-2",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアの算出",
+    "text": "傾向スコアの算出\n\n\nATT: 傾向スコアが最も近い統制群を割り当てる\n\n一回マッチングされたケースを除外する vs. しない\n傾向スコアが同じケースが複数ある場合の対処\n\n\n\n\n\n\n\n\n  \n  \n    \n      \n        処置群\n      \n      　\n      \n        統制群\n      \n      差分\n    \n    \n      ID\n      結果\n      PS\n      ID\n      結果\n      PS\n    \n  \n  \n    3\n7\n0.378\n\n1\n6\n0.406\n1\n    7\n8\n0.601\n\n8\n4\n0.603\n4\n    10\n8\n0.489\n\n9\n2\n0.502\n6\n    11\n4\n0.624\n\n8\n4\n0.603\n0\n    12\n6\n0.831\n\n20\n4\n0.774\n2\n    14\n5\n0.463\n\n24\n8\n0.451\n-3\n    15\n9\n0.443\n\n24\n8\n0.451\n1\n    18\n4\n0.437\n\n24\n8\n0.451\n-4\n    19\n9\n0.326\n\n13\n4\n0.317\n5\n    21\n8\n0.784\n\n20\n4\n0.774\n4\n    23\n6\n0.485\n\n9\n2\n0.502\n4\n  \n  \n  \n    \n       差分の平均値 (ATT): 1.818"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアの算出-3",
+    "href": "slide/matching.html#傾向スコアの算出-3",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアの算出",
+    "text": "傾向スコアの算出\n\n\nATC: 傾向スコアが最も近い処置群を割り当てる\n\n\n\n\n\n\n\n  \n  \n    \n      \n        処置群\n      \n      　\n      \n        統制群\n      \n      差分\n    \n    \n      ID\n      結果\n      PS\n      ID\n      結果\n      PS\n    \n  \n  \n    3\n7\n0.378\n\n1\n6\n0.406\n1\n    19\n9\n0.326\n\n2\n3\n0.339\n6\n    19\n9\n0.326\n\n4\n5\n0.275\n4\n    19\n9\n0.326\n\n5\n6\n0.203\n3\n    19\n9\n0.326\n\n6\n1\n0.152\n8\n    7\n8\n0.601\n\n8\n4\n0.603\n4\n    10\n8\n0.489\n\n9\n2\n0.502\n6\n    19\n9\n0.326\n\n13\n4\n0.317\n5\n    19\n9\n0.326\n\n16\n2\n0.183\n7\n    11\n4\n0.624\n\n17\n2\n0.692\n2\n    21\n8\n0.784\n\n20\n4\n0.774\n4\n    19\n9\n0.326\n\n22\n9\n0.243\n0\n    15\n9\n0.443\n\n24\n8\n0.451\n1\n  \n  \n  \n    \n       差分の平均値 (ATC): 3.923"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアの算出-4",
+    "href": "slide/matching.html#傾向スコアの算出-4",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアの算出",
+    "text": "傾向スコアの算出\nATE: ATTとATCの加重平均\n\\[\\begin{align}\\text{ATE} & = \\frac{N_\\text{Treat}}{N_\\text{All}}\\text{ATT} + \\frac{N_\\text{Control}}{N_\\text{All}}\\text{ATC} \\\\ & = \\frac{11}{24} 1.818 + \\frac{13}{24} 3.923 = 2.958\\end{align}\\]\n\n# 第1引数は平均値を求める値のベクトル、第2引数は重みのベクトル\n# 重みは合計1になるように c(0.4583333, 0.5416667) でもOK\nweighted.mean(c(1.818, 3.923), c(11, 13))\n\n[1] 2.958208"
+  },
+  {
+    "objectID": "slide/matching.html#処置を受ける確率の計算",
+    "href": "slide/matching.html#処置を受ける確率の計算",
+    "title": "社会科学における因果推論",
+    "section": "処置を受ける確率の計算",
+    "text": "処置を受ける確率の計算\n処置を受ける確率 = 傾向スコア\n\n一般的にはロジスティック/プロビット回帰分析が使われる\nただし、確率が予測できるなら他の手法でも良い\n\nCovariate Balancing Propensity Score\nEntropy Balancing\nNeural Network\nSupport Vector Machine（SVM）\nRandom Forest（RF）など\n\n\n\n\n複数の手法を組み合わせる(= ensemble)することも可能\n\n\\(\\rightarrow\\) Super Learner Algorithm"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアのもう一つの使い方",
+    "href": "slide/matching.html#傾向スコアのもう一つの使い方",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアのもう一つの使い方",
+    "text": "傾向スコアのもう一つの使い方\nIPW: Inverse Probability Weighting (Rubin 1985)\n\n「逆確率重み付け」と訳される\n実際に処置を受けた( \\(T_i = 1\\) )にもかかわらず、処置を受ける傾向が 小さい場合は分析において大きい重み\n\n傾向スコアを重み変数として用いる。\n\\(e_i\\) が1または0に近い場合、一部のケースに非常に大きい重みを付け ることになるため、注意が必要\n\n\n\\[w_i = \\begin{cases}\\frac{1}{e_i} & \\text{ if } T_i = 1, \\\\ \\frac{1}{1 - e_i} & \\text{ if } T_i = 0.\\end{cases}\\]\n\n\\(e_i\\) : \\(i\\) の傾向スコア\n\\(T_i\\) : \\(i\\) の処置有無 ( \\(T_i \\in \\{0, 1\\}\\) )"
+  },
+  {
+    "objectID": "slide/matching.html#傾向スコアのもう一つの使い方-1",
+    "href": "slide/matching.html#傾向スコアのもう一つの使い方-1",
+    "title": "社会科学における因果推論",
+    "section": "傾向スコアのもう一つの使い方",
+    "text": "傾向スコアのもう一つの使い方\nIPW: Inverse Probability Weighting (Rubin 1985)\n\n「逆確率重み付け」と訳される\n実際に処置を受けた( \\(T_i = 1\\) )にもかかわらず、処置を受ける傾向が 小さい場合は分析において大きい重み\n\n傾向スコアを重み変数として用いる。\n\\(e_i\\) が1または0に近い場合、一部のケースに非常に大きい重みを付け ることになるため、注意が必要\n\n\n\\[w_i = T_i \\frac{1}{e_i} + (1 - T_i) \\frac{1}{1 - e_i}.\\]\n\n\\(e_i\\) : \\(i\\) の傾向スコア\n\\(T_i\\) : \\(i\\) の処置有無 ( \\(T_i \\in \\{0, 1\\}\\) )"
+  },
+  {
+    "objectID": "slide/matching.html#ipw-の考え方",
+    "href": "slide/matching.html#ipw-の考え方",
+    "title": "社会科学における因果推論",
+    "section": "IPW の考え方",
+    "text": "IPW の考え方\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID (i)\n      Zi\n      Ti\n      Y0, i\n      Y1, i\n    \n  \n  \n    1\n0\n0\n0\n1\n    2\n0\n0\n1\n0\n    3\n0\n0\n0\n0\n    4\n0\n0\n0\n0\n    5\n0\n1\n0\n0\n    6\n0\n1\n1\n0\n    7\n0\n1\n0\n0\n    8\n0\n1\n0\n1\n    9\n1\n0\n1\n1\n    10\n1\n0\n1\n0\n    11\n1\n0\n0\n1\n    12\n1\n1\n1\n1\n    13\n1\n1\n1\n1\n    14\n1\n1\n0\n1\n    15\n1\n1\n0\n1\n    16\n1\n1\n0\n1\n    17\n1\n1\n1\n1\n    18\n1\n1\n1\n0\n    19\n1\n1\n1\n0\n    20\n1\n1\n1\n0\n  \n  \n  \n\n\n\n\n\n条件付き独立の例のデータ（matching_data3.csv）\n\n\\(Pr(Z = 0) = 0.4\\) 、 \\(Pr(Z = 1) = 0.6\\)\n\\(Z = 0\\) の場合\n\n\\(Pr(T = 0) = 0.5\\) 、 \\(Pr(T = 1) = 0.5\\)\n\n\\(Z = 1\\) の場合\n\n\\(Pr(T = 0) = 0.25\\) 、 \\(Pr(T = 1) = 0.75\\)\n\n観察されたデータからは約0.1の処置効果が推定されるが、本当の処置効果は0"
+  },
+  {
+    "objectID": "slide/matching.html#ipwの考え方",
+    "href": "slide/matching.html#ipwの考え方",
+    "title": "社会科学における因果推論",
+    "section": "IPWの考え方",
+    "text": "IPWの考え方"
+  },
+  {
+    "objectID": "slide/matching.html#他の考え方",
+    "href": "slide/matching.html#他の考え方",
+    "title": "社会科学における因果推論",
+    "section": "他の考え方",
+    "text": "他の考え方\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID (i)\n      Zi\n      Ti\n      Y0, i\n      Y1, i\n      ei\n      Wi\n    \n  \n  \n    1\n0\n0\n0\n?\n0.50\n2.00\n    2\n0\n0\n1\n?\n0.50\n2.00\n    3\n0\n0\n0\n?\n0.50\n2.00\n    4\n0\n0\n0\n?\n0.50\n2.00\n    5\n0\n1\n?\n0\n0.50\n \n    6\n0\n1\n?\n0\n0.50\n \n    7\n0\n1\n?\n0\n0.50\n \n    8\n0\n1\n?\n1\n0.50\n \n    9\n1\n0\n1\n?\n0.75\n4.00\n    10\n1\n0\n1\n?\n0.75\n4.00\n    11\n1\n0\n0\n?\n0.75\n4.00\n    12\n1\n1\n?\n1\n0.75\n \n    13\n1\n1\n?\n1\n0.75\n \n    14\n1\n1\n?\n1\n0.75\n \n    15\n1\n1\n?\n1\n0.75\n \n    16\n1\n1\n?\n1\n0.75\n \n    17\n1\n1\n?\n1\n0.75\n \n    18\n1\n1\n?\n0\n0.75\n \n    19\n1\n1\n?\n0\n0.75\n \n    20\n1\n1\n?\n0\n0.75\n \n  \n  \n  \n\n\n\n\n\nもし、全ケースが統制群なら?\n\n\\(Z = 0\\) の統制群は4ケース（ID = 1, 2, 3, 4）\n\\(Z = 0\\) は全部で8ケース（2倍）\n\\(\\rightarrow\\) ケース1〜4の重みを2倍に（\\(W = 2\\)）\n\n\n\n\\(Z = 1\\) の統制群は3ケース（ID = 9, 10, 11）\n\\(Z = 1\\) は全部で12ケース（4倍）\n\\(\\rightarrow\\) ケース9〜11の重みを4倍に（\\(W = 4\\)）"
+  },
+  {
+    "objectID": "slide/matching.html#他の考え方-1",
+    "href": "slide/matching.html#他の考え方-1",
+    "title": "社会科学における因果推論",
+    "section": "他の考え方",
+    "text": "他の考え方\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID (i)\n      Zi\n      Ti\n      Y0, i\n      Y1, i\n      ei\n      Wi\n    \n  \n  \n    1\n0\n0\n0\n?\n0.50\n \n    2\n0\n0\n1\n?\n0.50\n \n    3\n0\n0\n0\n?\n0.50\n \n    4\n0\n0\n0\n?\n0.50\n \n    5\n0\n1\n?\n0\n0.50\n2.00\n    6\n0\n1\n?\n0\n0.50\n2.00\n    7\n0\n1\n?\n0\n0.50\n2.00\n    8\n0\n1\n?\n1\n0.50\n2.00\n    9\n1\n0\n1\n?\n0.75\n \n    10\n1\n0\n1\n?\n0.75\n \n    11\n1\n0\n0\n?\n0.75\n \n    12\n1\n1\n?\n1\n0.75\n1.33\n    13\n1\n1\n?\n1\n0.75\n1.33\n    14\n1\n1\n?\n1\n0.75\n1.33\n    15\n1\n1\n?\n1\n0.75\n1.33\n    16\n1\n1\n?\n1\n0.75\n1.33\n    17\n1\n1\n?\n1\n0.75\n1.33\n    18\n1\n1\n?\n0\n0.75\n1.33\n    19\n1\n1\n?\n0\n0.75\n1.33\n    20\n1\n1\n?\n0\n0.75\n1.33\n  \n  \n  \n\n\n\n\n\nもし、全ケースが処置群なら?\n\n\\(Z = 0\\) の処置群は4ケース（ID = 5, 6, 7, 8）\n\\(Z = 0\\) は全部で8ケース（2倍）\n\\(\\rightarrow\\) ケース5〜8の重みを2倍に（\\(W = 2\\)）\n\n\n\n\\(Z = 1\\) の処置群は9ケース（ID = 12, 13, 14, … 20）\n\\(Z = 1\\) は全部で12ケース（1.333倍）\n\\(\\rightarrow\\) ケース12〜20の重みを1.333倍に（\\(W = 1.333\\)）"
+  },
+  {
+    "objectID": "slide/matching.html#他の考え方-2",
+    "href": "slide/matching.html#他の考え方-2",
+    "title": "社会科学における因果推論",
+    "section": "他の考え方",
+    "text": "他の考え方\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID (i)\n      Zi\n      Ti\n      Y0, i\n      Y1, i\n      ei\n      Wi\n    \n  \n  \n    1\n0\n0\n0\n?\n0.50\n2.00\n    2\n0\n0\n1\n?\n0.50\n2.00\n    3\n0\n0\n0\n?\n0.50\n2.00\n    4\n0\n0\n0\n?\n0.50\n2.00\n    5\n0\n1\n?\n0\n0.50\n2.00\n    6\n0\n1\n?\n0\n0.50\n2.00\n    7\n0\n1\n?\n0\n0.50\n2.00\n    8\n0\n1\n?\n1\n0.50\n2.00\n    9\n1\n0\n1\n?\n0.75\n4.00\n    10\n1\n0\n1\n?\n0.75\n4.00\n    11\n1\n0\n0\n?\n0.75\n4.00\n    12\n1\n1\n?\n1\n0.75\n1.33\n    13\n1\n1\n?\n1\n0.75\n1.33\n    14\n1\n1\n?\n1\n0.75\n1.33\n    15\n1\n1\n?\n1\n0.75\n1.33\n    16\n1\n1\n?\n1\n0.75\n1.33\n    17\n1\n1\n?\n1\n0.75\n1.33\n    18\n1\n1\n?\n0\n0.75\n1.33\n    19\n1\n1\n?\n0\n0.75\n1.33\n    20\n1\n1\n?\n0\n0.75\n1.33\n  \n  \n  \n\n\n\n\n\n\n統制群におけるWの和: 20\n処置群におけるWの和: 20\n\\(\\rightarrow\\) 各群におけるWの和はサンプルサイズと一致する\n\\(\\rightarrow\\) 全サンプルが統制/処置群の場合の結果変数の期待値を計算（加重平均）"
+  },
+  {
+    "objectID": "slide/matching.html#他の考え方-3",
+    "href": "slide/matching.html#他の考え方-3",
+    "title": "社会科学における因果推論",
+    "section": "他の考え方",
+    "text": "他の考え方\n\n\n\n\n\n\n\n\n  \n  \n    \n      ID (i)\n      Zi\n      Ti\n      Y0, i\n      Y1, i\n      ei\n      Wi\n    \n  \n  \n    1\n0\n0\n0\n?\n0.50\n2.00\n    2\n0\n0\n1\n?\n0.50\n2.00\n    3\n0\n0\n0\n?\n0.50\n2.00\n    4\n0\n0\n0\n?\n0.50\n2.00\n    5\n0\n1\n?\n0\n0.50\n2.00\n    6\n0\n1\n?\n0\n0.50\n2.00\n    7\n0\n1\n?\n0\n0.50\n2.00\n    8\n0\n1\n?\n1\n0.50\n2.00\n    9\n1\n0\n1\n?\n0.75\n4.00\n    10\n1\n0\n1\n?\n0.75\n4.00\n    11\n1\n0\n0\n?\n0.75\n4.00\n    12\n1\n1\n?\n1\n0.75\n1.33\n    13\n1\n1\n?\n1\n0.75\n1.33\n    14\n1\n1\n?\n1\n0.75\n1.33\n    15\n1\n1\n?\n1\n0.75\n1.33\n    16\n1\n1\n?\n1\n0.75\n1.33\n    17\n1\n1\n?\n1\n0.75\n1.33\n    18\n1\n1\n?\n0\n0.75\n1.33\n    19\n1\n1\n?\n0\n0.75\n1.33\n    20\n1\n1\n?\n0\n0.75\n1.33\n  \n  \n  \n\n\n\n\n\n\n統制群の加重平均\n\n\\(0 \\cdot 2 + 1 \\cdot 2 + 0 \\cdot 2 + 0 \\cdot 2 + \\dots + 0 \\cdot 4\\)\n\\(\\mathbb{E}^w[Y_0] = 10\\)\n\n処置群の加重平均\n\n\\(0 \\cdot 2 + 0 \\cdot 2 + 0 \\cdot 2 + 1 \\cdot 2 + \\dots + 0 \\cdot 1.33\\)\n\\(\\mathbb{E}^w[Y_1] = 10\\)\n\n\n\n\\[\\mathbb{E}^w[Y_1] - \\mathbb{E}^w[Y_0] = 0\\]"
+  },
+  {
+    "objectID": "slide/matching.html#共変量の選択-1",
+    "href": "slide/matching.html#共変量の選択-1",
+    "title": "社会科学における因果推論",
+    "section": "共変量の選択",
+    "text": "共変量の選択\n共変量選択の基準は (星野 2009; Imbens and Rubin 2015など)\n\n処置変数と結果変数、両方と連関があること\n\nOVBと関係\n\n処置前変数と処置後変数の区別\n\n処置変数に時間的に先行しているか否か\n\n処置前変数 (pre-treatment variable) は必ず投入する\n処置後変数 (post-treatment variable) は目的による\n\nというものの、基本的に投入しない\n応答変数よりも時間的に後なら絶対に投入しない"
+  },
+  {
+    "objectID": "slide/matching.html#共変量の選択-2",
+    "href": "slide/matching.html#共変量の選択-2",
+    "title": "社会科学における因果推論",
+    "section": "共変量の選択",
+    "text": "共変量の選択\nVanderWeele (2019) のmodified disjunctive cause criterion\n\n処置変数と応答変数どちらかの原因となる変数\n処置変数と応答変数両方の原因となる変数\n操作変数は共変量として投入しない\n上記の基準を満たさない場合でも、観察されていない共変量の代理変数は統制しても良い\n\nしかし、慎重に選択しないとバイアスが拡大\n2.の該当する変数の代理変数が望ましい\n\n\n\n\n詳細はhttps://www.slideshare.net/tintstyle/ss-141543274を参照"
+  },
+  {
+    "objectID": "slide/matching.html#ダイアグラムを使った例",
+    "href": "slide/matching.html#ダイアグラムを使った例",
+    "title": "社会科学における因果推論",
+    "section": "ダイアグラムを使った例",
+    "text": "ダイアグラムを使った例\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(T \\rightarrow Y\\)の効果は11\n\\(Z\\): \\(T\\)と\\(Y\\)の原因 \\(\\leftarrow\\) 投入\n\\(A\\): 操作変数 \\(\\leftarrow\\) 除外\n\\(X\\): \\(Y\\)の原因 \\(\\leftarrow\\) 投入\n\\(V\\): \\(T\\)の結果 \\(\\leftarrow\\) 除外\n\\(W\\)は…?"
+  },
+  {
+    "objectID": "slide/matching.html#ダイアグラムを使った例-1",
+    "href": "slide/matching.html#ダイアグラムを使った例-1",
+    "title": "社会科学における因果推論",
+    "section": "ダイアグラムを使った例",
+    "text": "ダイアグラムを使った例\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(T \\rightarrow Y\\): 直接効果\n\\(T \\rightarrow W \\rightarrow Y\\): 間接効果\n\n\\(W\\)は中間変数（mediate variable）\n\n因果推論では主に全効果 (total effect) に関心があるため\\(W\\)は投入しない\n\n全効果: 直接効果 + 間接効果\n\\(T\\)が変動したら\\(W\\)も必ず変わるため、\\(T\\)のみの効果はあまり意味なし\n直接効果のみ推定する場合、\\(W\\)も統制\n\n例) 就職市場における人種差別の例\n\n\n結論: \\(Z\\)と\\(X\\)のみ統制\n\n実は\\(X\\)は入れなくてもOK"
+  },
+  {
+    "objectID": "slide/matching.html#ダイアグラムのツール",
+    "href": "slide/matching.html#ダイアグラムのツール",
+    "title": "社会科学における因果推論",
+    "section": "ダイアグラムのツール",
+    "text": "ダイアグラムのツール\nDAGitty — draw and analyze causal diagrams\n\nウェーブページ or Rパッケージ{dagitty}（http://www.dagitty.net/）\n\n\n\n\n\npacman::p_load(ggdag)\nDAG1 <- dagitty(\n  \"dag {\n  T -> Y\n  T -> W -> Y\n  T <- Z -> Y\n  A -> T\n  X -> Y\n  T -> V\n  }\"\n)\n\n\n\n\n\n# Total Effect推定のための共変量\nadjustmentSets(DAG1, \n               exposure = \"T\", outcome = \"Y\",\n               effect = \"total\")\n\n{ Z }\n\n# Direct Effect推定のための共変量\nadjustmentSets(DAG1, \n               exposure = \"T\", outcome = \"Y\",\n               effect = \"direct\")\n\n{ W, Z }"
+  },
+  {
+    "objectID": "slide/matching.html#ダイアグラムのツール-1",
+    "href": "slide/matching.html#ダイアグラムのツール-1",
+    "title": "社会科学における因果推論",
+    "section": "ダイアグラムのツール",
+    "text": "ダイアグラムのツール\n{ggdag}を用いた可視化\n\n詳細は『私たちのR』第20章を参照\n\n\n\n\n\ncoordinates(DAG1) <- list(\n  x = c(T = 1, Y = 5, Z = 3, W = 3, \n        A = 2, V = 2, X = 4),\n  y = c(T = 2, Y = 2, Z = 3, W = 4, \n        A = 1, V = 4, X = 1)\n)\nggdag(DAG1, stylized = TRUE) +\n  theme_dag_blank()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.jaysong.net/kandai-ci"
+  },
+  {
+    "objectID": "slide/matching.html#実習内容",
+    "href": "slide/matching.html#実習内容",
+    "title": "社会科学における因果推論",
+    "section": "実習内容",
+    "text": "実習内容\n\nマッチングの実装: {MatchIt}、{WeightIt}パッケージ\n\n線形回帰分析\n最近傍マッチング（Mahalanobis Matching）\nCEM\n傾向スコアマッチング\nIPW\n\nバランスチェック: {cobalt}パッケージ\n\n標準化差分\nヒストグラム\nQQ Plotなど\n\nマッチング手法間の比較"
+  },
+  {
+    "objectID": "slide/matching.html#実習用データ-lalonde職業訓練と所得",
+    "href": "slide/matching.html#実習用データ-lalonde職業訓練と所得",
+    "title": "社会科学における因果推論",
+    "section": "実習用データ: lalonde（職業訓練と所得）",
+    "text": "実習用データ: lalonde（職業訓練と所得）\nlalondeは様々なパッケージがサンプルデータとして提供しているが、本講義では{cobalt}のlalondeデータセットを利用\n\n\n\ndata(\"lalonde\", package = \"cobalt\")で読み込み\n\nその前に{cobalt}パッケージを読み込む\n\n\n\ndata(\"lalonde\", package = \"cobalt\")\nla_df <- as_tibble(lalonde)\nla_df\n\n# A tibble: 614 × 9\n   treat   age  educ race   married nodegree  re74  re75   re78\n   <int> <int> <int> <fct>    <int>    <int> <dbl> <dbl>  <dbl>\n 1     1    37    11 black        1        1     0     0  9930.\n 2     1    22     9 hispan       0        1     0     0  3596.\n 3     1    30    12 black        0        0     0     0 24909.\n 4     1    27    11 black        0        1     0     0  7506.\n 5     1    33     8 black        0        1     0     0   290.\n 6     1    22     9 black        0        1     0     0  4056.\n 7     1    23    12 black        0        0     0     0     0 \n 8     1    32    11 black        0        1     0     0  8472.\n 9     1    22    16 black        0        0     0     0  2164.\n10     1    33    12 white        1        0     0     0 12418.\n# … with 604 more rows\n\n\n\n\n\n\n\n変数名\n説明\n\n\n\n\n1\ntreat\n職業訓練の履修有無\n\n\n2\nage\n年齢\n\n\n3\neduc\n教育年数\n\n\n4\nrace\n人種\n\n\n5\nmarried\n結婚有無\n\n\n6\nnodegree\n学位有無\n\n\n7\nre74\n1974年の所得\n\n\n8\nre75\n1975年の所得\n\n\n9\nre78\n1978年の所得\n\n\n\n\n\n\n\n\nhttps://www.jaysong.net/kandai-ci"
   }
 ]
