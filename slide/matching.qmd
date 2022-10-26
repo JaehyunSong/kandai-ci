@@ -1,9 +1,9 @@
 ---
 title: "社会科学における因果推論"
-subtitle: "第6回 回帰分析とマッチング"
+subtitle: "第7回 回帰分析とマッチング"
 author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
 institute: "関西大学総合情報学部"
-date: "2022年 10月 31日"
+date: "2022年 11月 7日"
 format:
   revealjs: 
     width: 1600
