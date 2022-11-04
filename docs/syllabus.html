@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.256">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,10 +94,13 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" aria-current="page">シラバス</a>
+    <a class="nav-link active" href="./syllabus.html" aria-current="page">
+ <span class="menu-text">シラバス</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rの使い方</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Rの使い方</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rの使い方">    
         <li>
     <a class="dropdown-item" href="./intro/install.html">
@@ -126,7 +129,9 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">講義資料</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">講義資料</span>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
     <a class="dropdown-item" href="./material/intro.html">
@@ -163,19 +168,20 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./session.html">セッション情報</a>
+    <a class="nav-link" href="./session.html">
+ <span class="menu-text">セッション情報</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"><i class="bi bi-terminal" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.jaysong.net/RBook/"><i class="bi bi-book" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
@@ -217,6 +223,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -349,37 +356,37 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <tr class="even">
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">2022/11/14</td>
-<td style="text-align: left;">回帰分析とマッチング（実習）</td>
+<td style="text-align: left;">回帰分析とマッチング（理論）</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">9</td>
 <td style="text-align: center;">2022/11/21</td>
-<td style="text-align: left;">差分の差分法（理論）</td>
+<td style="text-align: left;">回帰分析とマッチング（実習）</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">10</td>
 <td style="text-align: center;">2022/11/28</td>
-<td style="text-align: left;">差分の差分法（実習）</td>
+<td style="text-align: left;">回帰分析とマッチング（実習）</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">11</td>
 <td style="text-align: center;">2022/12/05</td>
-<td style="text-align: left;">回帰不連続デザイン（理論）</td>
+<td style="text-align: left;">差分の差分法（理論）</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">12</td>
 <td style="text-align: center;">2022/12/12</td>
-<td style="text-align: left;">回帰不連続デザイン（実習）</td>
+<td style="text-align: left;">差分の差分法（実習）</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">13</td>
 <td style="text-align: center;">2022/12/19</td>
-<td style="text-align: left;">操作変数法（理論）</td>
+<td style="text-align: left;">回帰不連続デザイン（理論）</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">14</td>
 <td style="text-align: center;">2022/12/26</td>
-<td style="text-align: left;">操作変数法（実習）</td>
+<td style="text-align: left;">回帰不連続デザイン（実習）</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">15</td>
@@ -525,7 +532,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -547,7 +556,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -583,24 +609,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
