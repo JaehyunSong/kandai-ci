@@ -4,6 +4,7 @@ subtitle: "第7回 回帰分析とマッチング"
 author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
 institute: "関西大学総合情報学部"
 date: "2022/11/07"
+date-format: iso
 format:
   revealjs: 
     width: 1600
