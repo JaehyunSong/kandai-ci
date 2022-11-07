@@ -3,7 +3,7 @@ title: "社会科学における因果推論"
 subtitle: "第7回 回帰分析とマッチング"
 author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
 institute: "関西大学総合情報学部"
-date: "2022年 11月 7日"
+date: "2022/11/07"
 format:
   revealjs: 
     width: 1600
@@ -65,50 +65,6 @@ df3 <- read_csv("data/matching_data3.csv")
    * Michael G. Findley, Kyosuke Kikuta, and Michael Denly. 2021. "External Validity," *Annual Review of Political Science,* 24:365-393.
 * 回顧的因果推論には不向き
    * 主に**介入 (intervention)の効果**が推定対象
-
-## 因果推論
-
-The Three Layer Causal Hierarchy (Pearl 2009: p. 29)
-
-* Level1: **Association** 
-* $P(y|x)$
-* Typical Activity: Seeing
-* Typical Question:
-   * What is?
-   * How would seeing $X$ change my belief in $Y$ ?
-* Examples:
-   * What does a symptom tell me about a disease?
-   * What does a survey tell us about the election results?
-
-## 因果推論
-
-The Three Layer Causal Hierarchy (Pearl 2009: p. 29)
-
-* Level2: **Intervention** 
-* $P(y|do(x), z)$
-* Typical Activity: Doing
-* Typical Question:
-   * What if?
-   * What if I do $X$ ?
-* Examples:
-   * What if I take asprin, will my headache be cured?
-   * What if we ban cigarettes?
-
-## 因果推論
-
-The Three Layer Causal Hierarchy (Pearl 2009: p. 29)
-
-* Level3: **Counterfactual**
-* $P(y_x|x^{\prime}, y^{\prime})$
-* Typical Activity: Imagining and Retrospection
-* Typical Question:
-   * Why?
-   * What is $X$ that caused $Y$ ?
-   * What if I had acted differently?
-* Examples:
-   * Was it the asprin that stopped my headache? 
-   * Would Kennedy be alive had Oswald not shot him? 
-   * What if I had not been smoking the past 2 years?
 
 ## 観察データを用いた因果推論
 
@@ -330,7 +286,7 @@ bind_cols(df1 |>
    * $\rightarrow$ **処置変数を外生変数として扱うことが可能に**
 * CIAが満たされるためには、割当メカニズム上のすべての交絡要因が必要
 
-## 条件付き独立の仮定とは
+## 条件付き独立の仮定とは（`matching_data3.csv`）
 
 ::::{.columns}
 :::{.column width=40%}
@@ -372,10 +328,11 @@ bind_cols(df1 |>
 
 * 観察可能なデータから計算した処置効果は0.538 − 0.429 = 0.109
    * 真の処置効果は0
-* もし、統制群と処置群が同質なら
-* A = C、そしてB = Dのはず
-* 処置群がもし統制群になっても、今の統制群と同じ
-* $\Rightarrow$ 交換可能性が成立せず
+   * (B)と(C)は反実仮想（counterfactual）
+* もし、統制群と処置群が同質なら...
+   * A = C、そしてB = Dのはず
+   * 処置群がもし統制群になっても、今の統制群と同じ
+   * $\Rightarrow$ 交換可能性が成立せず
 
 ![](figs/matching/moolook.png){width=150px fig-align="center"}
 
