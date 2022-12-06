@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.1.251">
+  <meta name="generator" content="quarto-1.2.269">
 
   <meta name="author" content="宋(そん)&nbsp;&nbsp;財泫(じぇひょん)">
   <title>Causal Inference in Social Science@Kandai - 社会科学における因果推論</title>
@@ -402,14 +402,23 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">社会科学における因果推論</h1>
   <p class="subtitle">第3回 無作為化比較試験</p>
-  <p class="author"><ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby></p>
-  <p class="institute">関西大学総合情報学部</p>
-  <p class="date">2022年 10月 10日</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby> 
+</div>
+        <p class="quarto-title-affiliation">
+            関西大学総合情報学部
+          </p>
+    </div>
+</div>
+
+  <p class="date">Invalid Date</p>
+</section>
 <section id="信頼できるateの条件" class="slide level2">
 <h2>信頼できるATEの条件</h2>
 <p><strong>内生性</strong>の存在 <span class="math inline">\(\rightarrow\)</span> ATE推定値の信頼性<span class="math inline">\(\downarrow\)</span></p>
@@ -483,7 +492,7 @@
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div id="xsyeumcwqw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xsyeumcwqw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -523,6 +532,11 @@
   border-right-style: none;
   border-right-width: 1px;
   border-right-color: #D3D3D3;
+}
+
+:where(#xsyeumcwqw) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 :where(#xsyeumcwqw) .gt_title {
@@ -645,6 +659,7 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
 :where(#xsyeumcwqw) .gt_empty_group_heading {
@@ -892,86 +907,86 @@
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Female</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Age</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Female</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Female">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Female">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age">Age</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">31</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">38</td></tr>
-    <tr><td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">41</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">29</td></tr>
-    <tr><td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">31</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">13</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">21</td></tr>
-    <tr><td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">46</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">26</td></tr>
-    <tr><td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">37</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">36</td></tr>
-    <tr><td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">37</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">40</td></tr>
-    <tr><td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">30</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">50</td></tr>
-    <tr><td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">46</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">42</td></tr>
-    <tr><td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">56</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">19</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">29</td></tr>
-    <tr><td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">47</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">20</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">47</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">1</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">31</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">11</td>
+<td headers="Female...6" class="gt_row gt_right">0</td>
+<td headers="Age...7" class="gt_row gt_right">38</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">2</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">41</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">12</td>
+<td headers="Female...6" class="gt_row gt_right">1</td>
+<td headers="Age...7" class="gt_row gt_right">29</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">3</td>
+<td headers="Female...2" class="gt_row gt_right">0</td>
+<td headers="Age...3" class="gt_row gt_right">31</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">13</td>
+<td headers="Female...6" class="gt_row gt_right">0</td>
+<td headers="Age...7" class="gt_row gt_right">21</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">4</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">46</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">14</td>
+<td headers="Female...6" class="gt_row gt_right">0</td>
+<td headers="Age...7" class="gt_row gt_right">26</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">5</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">37</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">15</td>
+<td headers="Female...6" class="gt_row gt_right">1</td>
+<td headers="Age...7" class="gt_row gt_right">36</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">6</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">37</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">16</td>
+<td headers="Female...6" class="gt_row gt_right">1</td>
+<td headers="Age...7" class="gt_row gt_right">40</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">7</td>
+<td headers="Female...2" class="gt_row gt_right">0</td>
+<td headers="Age...3" class="gt_row gt_right">30</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">17</td>
+<td headers="Female...6" class="gt_row gt_right">0</td>
+<td headers="Age...7" class="gt_row gt_right">50</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">8</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">46</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">18</td>
+<td headers="Female...6" class="gt_row gt_right">0</td>
+<td headers="Age...7" class="gt_row gt_right">42</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">9</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">56</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">19</td>
+<td headers="Female...6" class="gt_row gt_right">0</td>
+<td headers="Age...7" class="gt_row gt_right">29</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">10</td>
+<td headers="Female...2" class="gt_row gt_right">0</td>
+<td headers="Age...3" class="gt_row gt_right">47</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...5" class="gt_row gt_right">20</td>
+<td headers="Female...6" class="gt_row gt_right">1</td>
+<td headers="Age...7" class="gt_row gt_right">47</td></tr>
   </tbody>
   
   
@@ -1011,7 +1026,7 @@
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div id="todzftlhwn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="todzftlhwn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -1051,6 +1066,11 @@
   border-right-style: none;
   border-right-width: 1px;
   border-right-color: #D3D3D3;
+}
+
+:where(#todzftlhwn) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 :where(#todzftlhwn) .gt_title {
@@ -1173,6 +1193,7 @@
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
 :where(#todzftlhwn) .gt_empty_group_heading {
@@ -1420,108 +1441,108 @@
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Female</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Age</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Coin</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col"></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">ID</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Female</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Age</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Coin</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Female">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Coin">Coin</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ID">ID</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Female">Female</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Age">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Coin">Coin</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">31</td>
-<td class="gt_row gt_left">H</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">11</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">38</td>
-<td class="gt_row gt_left">H</td></tr>
-    <tr><td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">41</td>
-<td class="gt_row gt_left">T</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">12</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">29</td>
-<td class="gt_row gt_left">T</td></tr>
-    <tr><td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">31</td>
-<td class="gt_row gt_left">T</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">13</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">21</td>
-<td class="gt_row gt_left">H</td></tr>
-    <tr><td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">46</td>
-<td class="gt_row gt_left">T</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">14</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">26</td>
-<td class="gt_row gt_left">T</td></tr>
-    <tr><td class="gt_row gt_right">5</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">37</td>
-<td class="gt_row gt_left">H</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">15</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">36</td>
-<td class="gt_row gt_left">H</td></tr>
-    <tr><td class="gt_row gt_right">6</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">37</td>
-<td class="gt_row gt_left">H</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">16</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">40</td>
-<td class="gt_row gt_left">T</td></tr>
-    <tr><td class="gt_row gt_right">7</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">30</td>
-<td class="gt_row gt_left">H</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">17</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">50</td>
-<td class="gt_row gt_left">T</td></tr>
-    <tr><td class="gt_row gt_right">8</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">46</td>
-<td class="gt_row gt_left">T</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">18</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">42</td>
-<td class="gt_row gt_left">T</td></tr>
-    <tr><td class="gt_row gt_right">9</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">56</td>
-<td class="gt_row gt_left">H</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">19</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">29</td>
-<td class="gt_row gt_left">H</td></tr>
-    <tr><td class="gt_row gt_right">10</td>
-<td class="gt_row gt_right">0</td>
-<td class="gt_row gt_right">47</td>
-<td class="gt_row gt_left">H</td>
-<td class="gt_row gt_right"></td>
-<td class="gt_row gt_right">20</td>
-<td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">47</td>
-<td class="gt_row gt_left">H</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">1</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">31</td>
+<td headers="Coin...4" class="gt_row gt_left">H</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">11</td>
+<td headers="Female...7" class="gt_row gt_right">0</td>
+<td headers="Age...8" class="gt_row gt_right">38</td>
+<td headers="Coin...9" class="gt_row gt_left">H</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">2</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">41</td>
+<td headers="Coin...4" class="gt_row gt_left">T</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">12</td>
+<td headers="Female...7" class="gt_row gt_right">1</td>
+<td headers="Age...8" class="gt_row gt_right">29</td>
+<td headers="Coin...9" class="gt_row gt_left">T</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">3</td>
+<td headers="Female...2" class="gt_row gt_right">0</td>
+<td headers="Age...3" class="gt_row gt_right">31</td>
+<td headers="Coin...4" class="gt_row gt_left">T</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">13</td>
+<td headers="Female...7" class="gt_row gt_right">0</td>
+<td headers="Age...8" class="gt_row gt_right">21</td>
+<td headers="Coin...9" class="gt_row gt_left">H</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">4</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">46</td>
+<td headers="Coin...4" class="gt_row gt_left">T</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">14</td>
+<td headers="Female...7" class="gt_row gt_right">0</td>
+<td headers="Age...8" class="gt_row gt_right">26</td>
+<td headers="Coin...9" class="gt_row gt_left">T</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">5</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">37</td>
+<td headers="Coin...4" class="gt_row gt_left">H</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">15</td>
+<td headers="Female...7" class="gt_row gt_right">1</td>
+<td headers="Age...8" class="gt_row gt_right">36</td>
+<td headers="Coin...9" class="gt_row gt_left">H</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">6</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">37</td>
+<td headers="Coin...4" class="gt_row gt_left">H</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">16</td>
+<td headers="Female...7" class="gt_row gt_right">1</td>
+<td headers="Age...8" class="gt_row gt_right">40</td>
+<td headers="Coin...9" class="gt_row gt_left">T</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">7</td>
+<td headers="Female...2" class="gt_row gt_right">0</td>
+<td headers="Age...3" class="gt_row gt_right">30</td>
+<td headers="Coin...4" class="gt_row gt_left">H</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">17</td>
+<td headers="Female...7" class="gt_row gt_right">0</td>
+<td headers="Age...8" class="gt_row gt_right">50</td>
+<td headers="Coin...9" class="gt_row gt_left">T</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">8</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">46</td>
+<td headers="Coin...4" class="gt_row gt_left">T</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">18</td>
+<td headers="Female...7" class="gt_row gt_right">0</td>
+<td headers="Age...8" class="gt_row gt_right">42</td>
+<td headers="Coin...9" class="gt_row gt_left">T</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">9</td>
+<td headers="Female...2" class="gt_row gt_right">1</td>
+<td headers="Age...3" class="gt_row gt_right">56</td>
+<td headers="Coin...4" class="gt_row gt_left">H</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">19</td>
+<td headers="Female...7" class="gt_row gt_right">0</td>
+<td headers="Age...8" class="gt_row gt_right">29</td>
+<td headers="Coin...9" class="gt_row gt_left">H</td></tr>
+    <tr><td headers="ID...1" class="gt_row gt_right">10</td>
+<td headers="Female...2" class="gt_row gt_right">0</td>
+<td headers="Age...3" class="gt_row gt_right">47</td>
+<td headers="Coin...4" class="gt_row gt_left">H</td>
+<td headers="X" class="gt_row gt_right"></td>
+<td headers="ID...6" class="gt_row gt_right">20</td>
+<td headers="Female...7" class="gt_row gt_right">1</td>
+<td headers="Age...8" class="gt_row gt_right">47</td>
+<td headers="Coin...9" class="gt_row gt_left">H</td></tr>
   </tbody>
   
   
@@ -2811,12 +2832,15 @@ mean in group 0 mean in group 1
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -2827,13 +2851,6 @@ mean in group 0 mean in group 1
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy
@@ -2885,7 +2902,24 @@ mean in group 0 mean in group 1
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -2923,24 +2957,42 @@ mean in group 0 mean in group 1
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var filterRegex = new RegExp(/https:\/\/www\.jaysong\.net\/kandai-ci\//);
@@ -2948,7 +3000,7 @@ mean in group 0 mean in group 1
             return filterRegex.test(href) || localhostRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {
