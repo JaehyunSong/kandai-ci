@@ -3,7 +3,8 @@ title: "社会科学における因果推論"
 subtitle: "第2回 因果推論の考え方"
 author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
 institute: "関西大学総合情報学部"
-date: "2022年 10月 3日"
+date: "2022/10/3"
+date-format: iso
 format:
   revealjs: 
     width: 1600

@@ -3,7 +3,8 @@ title: "社会科学における因果推論"
 subtitle: "第1回 ガイダンス"
 author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
 institute: "関西大学総合情報学部"
-date: "2022年 9月 26日"
+date: "2022/9/26"
+date-format: iso
 format:
   revealjs: 
     width: 1600
