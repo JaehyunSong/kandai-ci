@@ -19,10 +19,10 @@ title: "Causal Inference in Social Science@Kandai"
 
 * 最終更新日: `r format(Sys.Date(), "%Y年%m月%d日")`
 * 開発環境
-   * macOS 12.5.1 "Monterey"
-   * Firefox 104.0.2
+   * macOS 13.1 “Ventura”
+   * Firefox 108.0.1
    * `r version$version.string`
-   * RStudio 2022.07.1+554 "Elsbeth Geranium"
+   * RStudio 2022.12.0+353 "Elsbeth Geranium"
    * Quarto `r quarto::quarto_inspect()$quarto$version`
    * R package {quarto} `r packageVersion("quarto")`
 * 本サポートページのレポジトリ<a href="https://github.com/JaehyunSong/kandai-ci" target="_blank"><i class="bi bi-github"></i></a>

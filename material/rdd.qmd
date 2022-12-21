@@ -4,5 +4,20 @@ toc: true
 link-external-icon: true
 link-external-newwindow: true
 code-line-numbers: true
+knitr: 
+  opts_chunk: 
+    dev: "ragg_png"
+    dpi: 150
+    fig.align: "center"
+    echo: true
+    message: false
+    warning: false
 ---
 
+## スライド
+
+<a href="../slide/rdd.html" class="btn btn-primary btn-sm" target="_blank" role="button"><i class="bi bi-window"></i> 新しいタブで開く</a>
+
+```{=html}
+<iframe class="slide-deck" src="../slide/rdd.html" width="100%" style="aspect-ratio: 16 / 9.5;"></iframe>
+```
