@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.4.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -29,7 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../intro/project.html" rel="next">
+<link href="../intro/filesystem.html" rel="next">
 <link href="../intro/install.html" rel="prev">
 <link href="../figs/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -37,12 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -50,16 +48,22 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "一致なし",
+    "search-matching-documents-text": "一致した文書",
+    "search-copy-link-title": "検索へのリンクをコピー",
+    "search-hide-matches-text": "追加の検索結果を非表示",
+    "search-more-match-text": "追加の検索結果",
+    "search-more-matches-text": "追加の検索結果",
+    "search-clear-button-title": "消去",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "検索",
+    "search-label": "サーチ"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9D5YDZ704S"></script>
@@ -82,7 +86,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../figs/logo.png" alt="" class="navbar-logo">
     </a>
@@ -90,14 +94,15 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     <span class="navbar-title">Causal Inference in Social Science@Kandai</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="サーチ"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="ナビゲーションを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html">
- <span class="menu-text">シラバス</span></a>
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">シラバス</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -113,6 +118,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
  <span class="dropdown-text">RStudioの設定</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../intro/filesystem.html">
+ <span class="dropdown-text">ファイル・システム</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../intro/project.html">
  <span class="dropdown-text">プロジェクト管理</span></a>
   </li>  
@@ -121,12 +130,16 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
  <span class="dropdown-text">ファイル管理</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/filesystem.html">
- <span class="dropdown-text">ファイル管理術</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../intro/packages.html">
  <span class="dropdown-text">パッケージ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/homework.html">
+ <span class="dropdown-text">課題の取り組み方</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/faq.html">
+ <span class="dropdown-text">この授業の「あるある」</span></a>
   </li>  
     </ul>
   </li>
@@ -166,95 +179,122 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../session.html">
- <span class="menu-text">セッション情報</span></a>
+    <a class="nav-link" href="../session.html"> 
+<span class="menu-text">セッション情報</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"><i class="bi bi-terminal" role="img">
+    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"> <i class="bi bi-terminal" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.jaysong.net/RBook/"><i class="bi bi-book" role="img">
+    <a class="nav-link" href="https://www.jaysong.net/RBook/"> <i class="bi bi-book" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">RStudioの設定</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../intro/rstudio.html">RStudioの設定</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/install.html" class="sidebar-item-text sidebar-link">Rの導入</a>
+  <a href="../intro/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rの導入</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/rstudio.html" class="sidebar-item-text sidebar-link active">RStudioの設定</a>
+  <a href="../intro/rstudio.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">RStudioの設定</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/project.html" class="sidebar-item-text sidebar-link">プロジェクト管理</a>
+  <a href="../intro/filesystem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ファイル・システム</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/file.html" class="sidebar-item-text sidebar-link">ファイル管理</a>
+  <a href="../intro/project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">プロジェクト管理</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/filesystem.html" class="sidebar-item-text sidebar-link">ファイル管理術</a>
+  <a href="../intro/file.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ファイル管理</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../intro/packages.html" class="sidebar-item-text sidebar-link">パッケージ</a>
+  <a href="../intro/packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">パッケージ</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/homework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">課題の取り組み方</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">この授業の「あるある」</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">目次</h2>
    
   <ul>
-  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general"><span class="toc-section-number">1</span>  General</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="toc-section-number">2</span>  Code</a>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general"><span class="header-section-number">1</span> General</a>
   <ul class="collapse">
-  <li><a href="#editingタブ" id="toc-editingタブ" class="nav-link" data-scroll-target="#editingタブ"><span class="toc-section-number">2.1</span>  Editingタブ</a></li>
-  <li><a href="#displayタブ" id="toc-displayタブ" class="nav-link" data-scroll-target="#displayタブ"><span class="toc-section-number">2.2</span>  Displayタブ</a></li>
-  <li><a href="#savingタブ" id="toc-savingタブ" class="nav-link" data-scroll-target="#savingタブ"><span class="toc-section-number">2.3</span>  Savingタブ</a></li>
-  <li><a href="#completionタブ" id="toc-completionタブ" class="nav-link" data-scroll-target="#completionタブ"><span class="toc-section-number">2.4</span>  Completionタブ</a></li>
+  <li><a href="#basicタブ" id="toc-basicタブ" class="nav-link" data-scroll-target="#basicタブ"><span class="header-section-number">1.1</span> Basicタブ</a></li>
+  <li><a href="#graphicsタブ" id="toc-graphicsタブ" class="nav-link" data-scroll-target="#graphicsタブ"><span class="header-section-number">1.2</span> Graphicsタブ</a></li>
   </ul></li>
-  <li><a href="#console" id="toc-console" class="nav-link" data-scroll-target="#console"><span class="toc-section-number">3</span>  Console</a></li>
-  <li><a href="#appearance" id="toc-appearance" class="nav-link" data-scroll-target="#appearance"><span class="toc-section-number">4</span>  Appearance</a></li>
-  <li><a href="#pane-layout" id="toc-pane-layout" class="nav-link" data-scroll-target="#pane-layout"><span class="toc-section-number">5</span>  Pane Layout</a></li>
-  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown"><span class="toc-section-number">6</span>  R Markdown</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">2</span> Code</a>
+  <ul class="collapse">
+  <li><a href="#editingタブ" id="toc-editingタブ" class="nav-link" data-scroll-target="#editingタブ"><span class="header-section-number">2.1</span> Editingタブ</a></li>
+  <li><a href="#displayタブ" id="toc-displayタブ" class="nav-link" data-scroll-target="#displayタブ"><span class="header-section-number">2.2</span> Displayタブ</a></li>
+  <li><a href="#savingタブ" id="toc-savingタブ" class="nav-link" data-scroll-target="#savingタブ"><span class="header-section-number">2.3</span> Savingタブ</a></li>
+  <li><a href="#completionタブ" id="toc-completionタブ" class="nav-link" data-scroll-target="#completionタブ"><span class="header-section-number">2.4</span> Completionタブ</a></li>
+  </ul></li>
+  <li><a href="#console" id="toc-console" class="nav-link" data-scroll-target="#console"><span class="header-section-number">3</span> Console</a></li>
+  <li><a href="#appearance" id="toc-appearance" class="nav-link" data-scroll-target="#appearance"><span class="header-section-number">4</span> Appearance</a></li>
+  <li><a href="#pane-layout" id="toc-pane-layout" class="nav-link" data-scroll-target="#pane-layout"><span class="header-section-number">5</span> Pane Layout</a></li>
+  <li><a href="#r-markdown" id="toc-r-markdown" class="nav-link" data-scroll-target="#r-markdown"><span class="header-section-number">6</span> R Markdown</a>
+  <ul class="collapse">
+  <li><a href="#basic" id="toc-basic" class="nav-link" data-scroll-target="#basic"><span class="header-section-number">6.1</span> Basic</a></li>
+  <li><a href="#advanced" id="toc-advanced" class="nav-link" data-scroll-target="#advanced"><span class="header-section-number">6.2</span> Advanced</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -263,7 +303,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">RStudioの設定</h1>
+<h1 class="title">RStudioの設定</h1>
 </div>
 
 
@@ -276,142 +316,570 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
 
 <p>　RStudioはそのままでも使えるが、少しカスタマイズするとより使い勝手が良くなる。RStudioのカスタマイズ画面はTools &gt; Global Optionsをクリックすることで表示される。</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize01.png" class="img-fluid" width="744"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize01.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-</div>
-<p>　以下の設定はNIIオンライン分析システムで使用可能なRStudio最新版 (RStudio Server 2021.09.1+372)の設定であり、宋の設定と同じである。</p>
+<p>　以下の設定はJDCat分析ツールで使用可能なRStudio最新版 (RStudio Server 2022.12.0+353)の設定であり、宋の設定と同じである。</p>
 <section id="general" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="general"><span class="header-section-number">1</span> General</h2>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize02.png" class="img-fluid" width="590"></p>
+<section id="basicタブ" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="basicタブ"><span class="header-section-number">1.1</span> Basicタブ</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize02.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Default working directory (when not in a project)</td>
+<td style="text-align: left;">~</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Restore most recently opened project at startup</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Restore previously open source documents at startup</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Run Rprofile when resuming suspended session</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Restore .RData into workspace at startup</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Save work space to .Rdata on exit</td>
+<td style="text-align: left;">Never</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Always save history (even when not saving .RData)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Remove duplicate entries in history</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wrap around when navigating to previous/next tab</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graphicsタブ" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="graphicsタブ"><span class="header-section-number">1.2</span> Graphicsタブ</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize03.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-<ul>
-<li>Restore .RData into workspace at startupのチェックを<strong>消す</strong>。</li>
-<li>Save workspace to .RData on exit:を<strong>Never</strong>に変更する。</li>
-<li>Always save history (even when not saving .RData)のチェックを<strong>消す</strong>。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Backend</td>
+<td style="text-align: left;">AGG</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Antialising</td>
+<td style="text-align: left;">(defualt)</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="code" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="code"><span class="header-section-number">2</span> Code</h2>
 <section id="editingタブ" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="editingタブ"><span class="header-section-number">2.1</span> Editingタブ</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize03.png" class="img-fluid" width="590"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize04.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-</div>
-<ul>
-<li>Insert spaces for tabのチェックを<strong>付ける</strong>。</li>
-<li>Tab widthは<strong>2、または4</strong>を指定する。</li>
-<li>Auto-detect code indentationのチェックを<strong>付ける</strong>。</li>
-<li>Insert matching parens/quotesのチェックを<strong>付ける</strong>。</li>
-<li>Auto-indent code after pasteのチェックを<strong>付ける</strong>。</li>
-<li>Vertically align arguments in auto-indentのチェックを<strong>付ける</strong>。</li>
-<li>Always save R scripts before sourcingのチェックを<strong>付ける</strong>。</li>
-<li>Ctrl + Return executes:を<strong>Multi-line R statement</strong>に変更する。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Insert spaces for tab</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tab width</td>
+<td style="text-align: left;">2 or 4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Auto-detect code indentation</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Insert matching parens/quotes</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Use native pipe operator</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Auto-indent code after paste</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vertically align arguments in auto-indent</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Soft-wrap R source files</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Continue comment when inserting new line</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Enable hyperlink highlighting in editor</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Editor scroll speed sensitivity</td>
+<td style="text-align: left;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Surround selection on text insertion</td>
+<td style="text-align: left;">Quotes &amp; Brackets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Keybindings</td>
+<td style="text-align: left;">Default</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Focus console after excuting from source</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ctrl + Enter excutes</td>
+<td style="text-align: left;">Multi-line R statement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Enable code snippets</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="displayタブ" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="displayタブ"><span class="header-section-number">2.2</span> Displayタブ</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize04.png" class="img-fluid" width="590"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize05.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-</div>
-<ul>
-<li>Highlight selected wordのチェックを<strong>付ける</strong>。</li>
-<li>Highlight selected lineのチェックを<strong>付ける</strong>。</li>
-<li>Show line numbersのチェックを<strong>付ける</strong>。</li>
-<li>Show syntax highlighting in console inputのチェックを<strong>付ける</strong>。</li>
-<li>Highlight R function callsのチェックを<strong>付ける</strong>。</li>
-<li>Rainbow parenthesesのチェックを<strong>付ける</strong>。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Highlight selected word</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Highlight selected line</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show line numbers</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Relative line numbers</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show margin</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Margin column</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show whitespace characters</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indentation guides</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Blinking cursor</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Allow scroll past end of document</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Allow drag and drop of text</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fold Style</td>
+<td style="text-align: left;">Start and End</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Highlight R function calls</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Enable preview of names and hexadecimal colors</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rainbow parentheses</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="savingタブ" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="savingタブ"><span class="header-section-number">2.3</span> Savingタブ</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize05.png" class="img-fluid" width="590"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize06.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-</div>
-<ul>
-<li>Default text encoding:のChangeをクリックし、<strong>UTF-8</strong>を選択する。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ensure that source files end with newline</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strip trailing horizontal whitespace when saving</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Restore last cursor position when opening file</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Line ending conversion</td>
+<td style="text-align: left;">Platform Native</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Default text encoding</td>
+<td style="text-align: left;">UTF-8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Always save R script before sourcing</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Automatically save when editor loses focus</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">When editor is idle</td>
+<td style="text-align: left;">Backup unsaved changes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Idle period</td>
+<td style="text-align: left;">1000ms</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="completionタブ" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="completionタブ"><span class="header-section-number">2.4</span> Completionタブ</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize06.png" class="img-fluid" width="590"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize07.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-</div>
-<ul>
-<li>Show code completion:を<strong>Automatically</strong>に変更する。</li>
-<li>Allow automatic completions in consoleのチェックを<strong>付ける</strong>。</li>
-<li>Insert parentheses after function completionsのチェックを<strong>付ける</strong>。</li>
-<li>Show help tooltip after function completionsのチェックを<strong>付ける</strong>。</li>
-<li>Insert spaces around equals for argument completionsのチェックを<strong>付ける</strong>。</li>
-<li>Use tab for autocompletionのチェックを<strong>付ける</strong>。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Show code completions</td>
+<td style="text-align: left;">Automatically</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Allow automatic completions in console</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Insert parentheses after function completions</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Show help tooltip after function completions</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show help tooltip on cursor idle</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Insert spaces around equals for argument completions</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Use tab for autocompletions</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Use tab for multiline autocompletions</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show code completions</td>
+<td style="text-align: left;">Automatically</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Show completions after characters entered</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show completions after keyboard idle (ms)</td>
+<td style="text-align: left;">250</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="console" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="console"><span class="header-section-number">3</span> Console</h2>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize07.png" class="img-fluid" width="590"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize08.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-</div>
-<ul>
-<li>Show syntax highlighting in console inputのチェックを<strong>付ける</strong>。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Show syntax highlighting in console input</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Different color for error or message output</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Limit visible console output</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Limit output line length to</td>
+<td style="text-align: left;">1000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ANSI Escape Codes</td>
+<td style="text-align: left;">Show ANSI colors</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Discard pending console input on error</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Automatically expand tracebacks in error inspector</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Double-click to select words</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Warn when automatic session suspension is paused</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of seconds to delay warning</td>
+<td style="text-align: left;">5</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="appearance" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="appearance"><span class="header-section-number">4</span> Appearance</h2>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize08.png" class="img-fluid" width="590"></p>
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize09.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
 <ul>
-<li>自分の好みのものを選択する。ただし、小さすぎる文字サイズ (font size) は推奨しない。目に優しくないだけでなく、誤字脱字が見つけにくくなる。</li>
+<li>自分の好みのものを選択する。ただし、小さすぎる文字サイズ (font size) は推奨しない。目に優しくないだけでなく、誤字脱字が見つけにくくなる。30代から老眼で苦しみたくないなら、なるべくフォントサイズは大きめにしよう。</li>
 </ul>
 </section>
 <section id="pane-layout" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="pane-layout"><span class="header-section-number">5</span> Pane Layout</h2>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize09.png" class="img-fluid" width="590"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize10.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-</div>
-<ul>
-<li>左上: Source</li>
-<li>右上: Console</li>
-<li>左下: 全てチェックを<strong>消す</strong>。</li>
-<li>左下: 全てチェックを<strong>付ける</strong>。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">左上</td>
+<td style="text-align: left;">Source</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">右上</td>
+<td style="text-align: left;">Console</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">左下</td>
+<td style="text-align: left;">すべてチェックを<strong>外す</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">右下</td>
+<td style="text-align: left;">すべてチェックする</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="r-markdown" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="r-markdown"><span class="header-section-number">6</span> R Markdown</h2>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="Figs/RStudio/Customize10.png" class="img-fluid" width="590"></p>
+<section id="basic" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="basic"><span class="header-section-number">6.1</span> Basic</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize11.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Show document outline by default</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Soft-wrap R markdown files</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show in document outline</td>
+<td style="text-align: left;">Sections Only</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Show output preview in</td>
+<td style="text-align: left;">Viewer Pane</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Show output inline for all R Markdown document</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Show equation and image previews</td>
+<td style="text-align: left;">Never</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Evaluate chunks in directory</td>
+<td style="text-align: left;">Document</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Excute setup chunk automatically in notebooks</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hide console automatically when executing notebook chunks</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="advanced" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="advanced"><span class="header-section-number">6.2</span> Advanced</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/RStudio/Customize12.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
-<ul>
-<li>Show output preview in:を<strong>Viewer Pane</strong>に変更する。</li>
-<li>Show output inline for all R Markdown documentsのチェックを<strong>消す</strong>。</li>
-</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">設定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Enable chunk background highlight</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Show inline toolbar for R code chunks</td>
+<td style="text-align: left;">チェック</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Display render command in R Markdown tab</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 <p>設定が終わったら右下のOK、またはApplyをクリックする。</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -435,121 +903,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -557,9 +910,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -570,12 +937,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "コピーしました");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "コピーしました");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -595,10 +962,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -608,8 +974,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -624,6 +999,195 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -670,15 +1234,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../intro/project.html" class="pagination-link">
-        <span class="nav-page-text">プロジェクト管理</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../intro/filesystem.html" class="pagination-link">
+        <span class="nav-page-text">ファイル・システム</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></div>   
+    <div class="nav-footer-left">
+<p>Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -697,6 +1266,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

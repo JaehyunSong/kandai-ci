@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.4.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -29,18 +29,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../intro/faq.html" rel="next">
+<link href="../intro/packages.html" rel="prev">
 <link href="../figs/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -48,16 +48,22 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "一致なし",
+    "search-matching-documents-text": "一致した文書",
+    "search-copy-link-title": "検索へのリンクをコピー",
+    "search-hide-matches-text": "追加の検索結果を非表示",
+    "search-more-match-text": "追加の検索結果",
+    "search-more-matches-text": "追加の検索結果",
+    "search-clear-button-title": "消去",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "検索",
+    "search-label": "サーチ"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9D5YDZ704S"></script>
@@ -74,13 +80,13 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../figs/logo.png" alt="" class="navbar-logo">
     </a>
@@ -88,14 +94,15 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     <span class="navbar-title">Causal Inference in Social Science@Kandai</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="サーチ"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="ナビゲーションを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html">
- <span class="menu-text">シラバス</span></a>
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">シラバス</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -111,6 +118,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
  <span class="dropdown-text">RStudioの設定</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../intro/filesystem.html">
+ <span class="dropdown-text">ファイル・システム</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../intro/project.html">
  <span class="dropdown-text">プロジェクト管理</span></a>
   </li>  
@@ -119,12 +130,16 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
  <span class="dropdown-text">ファイル管理</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/filesystem.html">
- <span class="dropdown-text">ファイル管理術</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../intro/packages.html">
  <span class="dropdown-text">パッケージ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/homework.html">
+ <span class="dropdown-text">課題の取り組み方</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/faq.html">
+ <span class="dropdown-text">この授業の「あるある」</span></a>
   </li>  
     </ul>
   </li>
@@ -164,33 +179,96 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../session.html">
- <span class="menu-text">セッション情報</span></a>
+    <a class="nav-link" href="../session.html"> 
+<span class="menu-text">セッション情報</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"><i class="bi bi-terminal" role="img">
+    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"> <i class="bi bi-terminal" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.jaysong.net/RBook/"><i class="bi bi-book" role="img">
+    <a class="nav-link" href="https://www.jaysong.net/RBook/"> <i class="bi bi-book" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../intro/homework.html">課題の取り組み方</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rの導入</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudioの設定</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/filesystem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ファイル・システム</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">プロジェクト管理</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/file.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ファイル管理</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">パッケージ</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/homework.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">課題の取り組み方</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">この授業の「あるある」</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -223,19 +301,20 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
   </div>
   
 
+
 </header>
 
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 課題の取り組み方が分からない?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>必ず宋と相談すること。</p>
+<p>　必ず宋と相談すること。</p>
 </div>
 </div>
 <section id="step1-課題ファイル一式の入手" class="level2">
@@ -245,54 +324,43 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <li>以下の画面は2021年度のページである。</li>
 <li>タイトルは「第XX回 課題資料」でなく「第XX回 課題用ファイル」など変更される可能性もある。</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/HW/Step1_1.png" class="img-fluid figure-img" width="700"></p>
+<p><img src="Figs/HW/Step1_1.png" class="img-fluid figure-img" style="width:75.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 <p><strong>手順2:</strong> 通常、課題ファイルは2つであるが、1つのみ、または3つ以上の場合もある。それぞれの資料の「添付資料」クリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/HW/Step1_2.png" class="img-fluid figure-img" width="500"></p>
+<p><img src="Figs/HW/Step1_2.png" class="img-fluid figure-img" style="width:50.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 <p><strong>手順3:</strong> 新しいウィンドウが表示される。ここでファイル名をクリックするとファイルがダウンロードされる。この作業を全ファイルに対して行うこと。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/HW/Step1_3.png" class="img-fluid figure-img" width="300"></p>
+<p><img src="Figs/HW/Step1_3.png" class="img-fluid figure-img" style="width:30.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section id="step2-課題ファイルのアップロード" class="level2">
 <h2 class="anchored" data-anchor-id="step2-課題ファイルのアップロード">Step2: 課題ファイルのアップロード</h2>
-<p><strong>手順1:</strong> NIIオンライン分析システムへアクセスし、RStudioを起動する。</p>
+<p><strong>手順1:</strong> JDCat分析ツールへアクセスし、RStudioを起動する。</p>
 <p><strong>手順2:</strong> 課題用のプロジェクトを作成する。プロジェクト名は任意だが、<code>Homework_XX</code>や<code>HW_XX</code>など、分かりやすい名前を付けよう。</p>
 <p><strong>手順3:</strong> ダウンロードしたファイルにデータ（<code>.csv</code>など）がある場合、プロジェクト・フォルダー内に<code>Data</code>というフォルダーを作成する。</p>
-<p><strong>手順4:</strong> ダウンロードしたファイルをアップロードする。課題用ファイル（<code>.Rmd</code>ファイル）はプロジェクト・フォルダー直に、課題用データ（<code>.csv</code>、<code>.xlsx</code>など）は手順3で作成した<code>Data</code>にアップロードする。</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<p><strong>手順4:</strong> ダウンロードしたファイルをアップロードする。課題用ファイル（<code>.qmd</code>ファイル）はプロジェクト・フォルダー直に、課題用データ（<code>.csv</code>、<code>.xlsx</code>など）は手順3で作成した<code>Data</code>にアップロードする。</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 プロジェクト、フォルダー、ファイルの管理
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>以下のページを参照すること。</p>
+<p>　以下のページを参照すること。</p>
 <ul>
+<li><a href="filesystem.html">ファイル・システム</a></li>
 <li><a href="project.html">プロジェクト管理</a></li>
 <li><a href="file.html">ファイル管理</a></li>
 </ul>
@@ -301,93 +369,77 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 </section>
 <section id="step3-頑張る" class="level2">
 <h2 class="anchored" data-anchor-id="step3-頑張る">Step3: 頑張る</h2>
-<p>一部の課題を除き、本講義の課題は本サポートページの「課題」メニューに掲載されている画面と同じ結果が得られるようにコードを書くことである。</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<p>　一部の課題を除き、本講義の課題は本サポートページの「課題」メニューに掲載されている画面と同じ結果が得られるようにコードを書くことである。</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 学籍番号と名前を忘れずに!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>課題用ファイル（<code>.Rmd</code>）の2行目には「情20-0012 関大太郎」と名前が記入されている。課題に取り組む前にまず学籍番号と名前を修正しよう。毎年、関大太郎と関大花子さんから提出された課題が散見されるが、この場合、課題未提出とみなす。むろん、自分の名前が関大太郎/関大花子なら学籍番号のみ修正しても良い。</p>
+<p>　課題用ファイル（<code>.qmd</code>）の2行目には「情20-0012 関大太郎」と名前が記入されている。課題に取り組む前にまず学籍番号と名前を修正しよう。毎年、関大太郎と関大花子さんから提出された課題が散見されるが、この場合、課題未提出とみなす。むろん、自分の名前が関大太郎/関大花子なら学籍番号のみ修正しても良い。</p>
 </div>
 </div>
-<p>一部の課題を除き、履修者がやることは「学籍番号と氏名の修正」と「チャンク（chunk）内にコードを入力すること」、そして最後に「Knit」することだけである。チャンク内には<code># ここにコード</code>と既に何かが書いてあるが、この<code># ここにコード</code>の行は消してからコードを書くこと。あっても減点にはならない（印象は悪くなるかも知れない）。</p>
+<p>　一部の課題を除き、履修者がやることは「学籍番号と氏名の修正」と「チャンク（chunk）内にコードを入力すること」、そして最後に「Knit」することだけである。チャンク内には<code># ここにコード</code>と既に何かが書いてあるが、この<code># ここにコード</code>の行は消してからコードを書くこと。あっても減点にはならない（印象は悪くなるかも知れない）。</p>
 </section>
 <section id="step4-出力物のダウンロード" class="level2">
 <h2 class="anchored" data-anchor-id="step4-出力物のダウンロード">Step4: 出力物のダウンロード</h2>
-<p>本講義の課題は一部を除き、成果として<code>.html</code>ファイルを提出する。Knit後のHTMLファイルは<code>元のRmdファイル名.html</code>である。こちらのファイルをダウンロードしよう。<code>.Rmd</code>も一緒にダウンロードして良いが、指定された形式のファイルを提出すること。<code>.html</code>ファイルを提出しなければならないのに、<code>.Rmd</code>ファイルを提出した場合は未提出とみなす。</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<p>　本講義の課題は一部を除き、成果として<code>.html</code>ファイルを提出する。Knit後のHTMLファイルは<code>元のqmdファイル名.html</code>である。こちらのファイルをダウンロードしよう。<code>.qmd</code>も一緒にダウンロードして良いが、指定された形式のファイルを提出すること。<code>.html</code>ファイルを提出しなければならないのに、<code>.qmd</code>ファイルを提出した場合は未提出とみなす。</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 右クリックしてダウンロードは厳禁!!!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>出力物のダウンロード方法は<a href="file.html">ファイル管理</a>を参考すること。JupyterHubのホーム画面でファイルを右クリックして保存することは<strong>絶対にしないこと</strong>。開いてみれば分かるが、なんの情報もない（ほぼ）空っぽのファイルがダウンロードされる。提出期限が過ぎてから「知りませんでした！ごめんなさい！てへっ」と言われても、宋は「そうか、残念！てへっ」としか言わないので、ダウンロードしたファイルは必ず一回自分で開いてみよう。</p>
+<p>　出力物のダウンロード方法は<a href="file.html">ファイル管理</a>を参考すること。JupyterHubのホーム画面でファイルを右クリックして保存することは<strong>絶対にしないこと</strong>。開いてみれば分かるが、なんの情報もない（ほぼ）空っぽのファイルがダウンロードされる。提出期限が過ぎてから「知りませんでした！ごめんなさい！てへっ」と言われても、宋は「そうか、残念！てへっ」としか言わないので、ダウンロードしたファイルは必ず一回自分で開いてみよう。</p>
 </div>
 </div>
 </section>
 <section id="step5-提出" class="level2">
 <h2 class="anchored" data-anchor-id="step5-提出">Step5: 提出</h2>
 <p><strong>手順1:</strong> LMSの授業ページから「第XX回 課題提出窓口」をクリックする。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/HW/Step5_1.png" class="img-fluid figure-img" width="700"></p>
+<p><img src="Figs/HW/Step5_1.png" class="img-fluid figure-img" style="width:75.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 <p><strong>手順2:</strong> 指定された形式のファイルを添付し、「レポート提出」クリックする。</p>
 <ul>
 <li>提出されたら「202X-XX-XX XX:XX:XX にファイル xxxxxxxx が提出済みです。」と表示される。ここまでできたら終了ボタンをクリックする。</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/HW/Step5_2.png" class="img-fluid figure-img" width="500"></p>
+<p><img src="Figs/HW/Step5_2.png" class="img-fluid figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-</div>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 課題がちゃんと提出されているか不安です…
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>自分が提出した課題はLMSの「マイレポート」から確認できる。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+<p>　自分が提出した課題はLMSの「マイレポート」から確認できる。</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/HW/Step5_3.png" class="img-fluid figure-img" width="700"></p>
+<p><img src="Figs/HW/Step5_3.png" class="img-fluid figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-</div>
-</div>
-<p>以下のように自分が提出した課題のリストが表示される。提出物のダウンロードもできるため、ファイルが問題なくアップロードされているかも確認できる。</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+<p>　以下のように自分が提出した課題のリストが表示される。提出物のダウンロードもできるため、ファイルが問題なくアップロードされているかも確認できる。</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/HW/Step5_4.png" class="img-fluid figure-img" width="700"></p>
+<p><img src="Figs/HW/Step5_4.png" class="img-fluid figure-img" style="width:75.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -416,121 +468,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -538,9 +475,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -551,12 +502,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "コピーしました");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "コピーしました");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -576,10 +527,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -589,8 +539,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -605,6 +564,195 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -644,10 +792,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../intro/packages.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">パッケージ</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../intro/faq.html" class="pagination-link">
+        <span class="nav-page-text">この授業の「あるある」</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></div>   
+    <div class="nav-footer-left">
+<p>Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -666,6 +831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

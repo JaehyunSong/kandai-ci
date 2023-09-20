@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.4.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -100,12 +71,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,16 +82,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "一致なし",
+    "search-matching-documents-text": "一致した文書",
+    "search-copy-link-title": "検索へのリンクをコピー",
+    "search-hide-matches-text": "追加の検索結果を非表示",
+    "search-more-match-text": "追加の検索結果",
+    "search-more-matches-text": "追加の検索結果",
+    "search-clear-button-title": "消去",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "検索",
+    "search-label": "サーチ"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9D5YDZ704S"></script>
@@ -134,10 +109,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 </script>
-
 <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
@@ -149,7 +124,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../figs/logo.png" alt="" class="navbar-logo">
     </a>
@@ -157,14 +132,15 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     <span class="navbar-title">Causal Inference in Social Science@Kandai</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="サーチ"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="ナビゲーションを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html">
- <span class="menu-text">シラバス</span></a>
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">シラバス</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -180,6 +156,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
  <span class="dropdown-text">RStudioの設定</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../intro/filesystem.html">
+ <span class="dropdown-text">ファイル・システム</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../intro/project.html">
  <span class="dropdown-text">プロジェクト管理</span></a>
   </li>  
@@ -188,12 +168,16 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
  <span class="dropdown-text">ファイル管理</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../intro/filesystem.html">
- <span class="dropdown-text">ファイル管理術</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../intro/packages.html">
  <span class="dropdown-text">パッケージ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/homework.html">
+ <span class="dropdown-text">課題の取り組み方</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/faq.html">
+ <span class="dropdown-text">この授業の「あるある」</span></a>
   </li>  
     </ul>
   </li>
@@ -233,82 +217,90 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../session.html">
- <span class="menu-text">セッション情報</span></a>
+    <a class="nav-link" href="../session.html"> 
+<span class="menu-text">セッション情報</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"><i class="bi bi-terminal" role="img">
+    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"> <i class="bi bi-terminal" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.jaysong.net/RBook/"><i class="bi bi-book" role="img">
+    <a class="nav-link" href="https://www.jaysong.net/RBook/"> <i class="bi bi-book" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">差分の差分法</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../material/did.html">差分の差分法</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/intro.html" class="sidebar-item-text sidebar-link">ガイダンス</a>
+  <a href="../material/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ガイダンス</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/foundation.html" class="sidebar-item-text sidebar-link">因果推論の考え方</a>
+  <a href="../material/foundation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">因果推論の考え方</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/rct.html" class="sidebar-item-text sidebar-link">無作為化比較試験</a>
+  <a href="../material/rct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">無作為化比較試験</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/r.html" class="sidebar-item-text sidebar-link">Rの復習</a>
+  <a href="../material/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rの復習</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/matching.html" class="sidebar-item-text sidebar-link">回帰分析とマッチング</a>
+  <a href="../material/matching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">回帰分析とマッチング</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/did.html" class="sidebar-item-text sidebar-link active">差分の差分法</a>
+  <a href="../material/did.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">差分の差分法</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../material/rdd.html" class="sidebar-item-text sidebar-link">回帰不連続デザイン</a>
+  <a href="../material/rdd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">回帰不連続デザイン</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -326,7 +318,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">差分の差分法</h1>
+<h1 class="title">差分の差分法</h1>
 </div>
 
 
@@ -338,6 +330,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     
   </div>
   
+
 
 </header>
 
@@ -357,24 +350,24 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <span id="cb1-5"><a href="#cb1-5"></a></span>
 <span id="cb1-6"><a href="#cb1-6"></a>did_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/did_data3.csv"</span>)</span>
 <span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>did_df</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8"></a>did_df</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 18,749 × 14
-   county state  year shooting fatal_s…¹ non_f…² turnout demvote popul…³ non_w…⁴
-    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
- 1   1001 01     1996        0         0       0    56.1    32.5   40207   0.190
- 2   1001 01     2000        0         0       0    56.8    28.7   44021   0.189
- 3   1001 01     2004        0         0       0    60.2    23.7   48366   0.196
- 4   1001 01     2008        0         0       0    64.1    25.8   53277   0.205
- 5   1001 01     2012        0         0       0    61.0    26.5   55027   0.212
- 6   1001 01     2016        0         0       0    60.7    24.0   55416   0.228
- 7   1003 01     1996        0         0       0    51.8    27.1  125412   0.123
- 8   1003 01     2000        0         0       0    54.6    24.8  141342   0.122
- 9   1003 01     2004        0         0       0    59.8    22.5  156266   0.122
-10   1003 01     2008        0         0       0    62.4    23.8  175827   0.122
-# … with 18,739 more rows, 4 more variables: change_unem_rate &lt;dbl&gt;,
-#   county_f &lt;dbl&gt;, state_f &lt;chr&gt;, year_f &lt;dbl&gt;, and abbreviated variable names
-#   ¹​fatal_shooting, ²​non_fatal_shooting, ³​population, ⁴​non_white</code></pre>
+   county state  year shooting fatal_shooting non_fatal_shooting turnout demvote
+    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1   1001 01     1996        0              0                  0    56.1    32.5
+ 2   1001 01     2000        0              0                  0    56.8    28.7
+ 3   1001 01     2004        0              0                  0    60.2    23.7
+ 4   1001 01     2008        0              0                  0    64.1    25.8
+ 5   1001 01     2012        0              0                  0    61.0    26.5
+ 6   1001 01     2016        0              0                  0    60.7    24.0
+ 7   1003 01     1996        0              0                  0    51.8    27.1
+ 8   1003 01     2000        0              0                  0    54.6    24.8
+ 9   1003 01     2004        0              0                  0    59.8    22.5
+10   1003 01     2008        0              0                  0    62.4    23.8
+# ℹ 18,739 more rows
+# ℹ 6 more variables: population &lt;dbl&gt;, non_white &lt;dbl&gt;,
+#   change_unem_rate &lt;dbl&gt;, county_f &lt;dbl&gt;, state_f &lt;chr&gt;, year_f &lt;dbl&gt;</code></pre>
 </div>
 </div>
 <p>　データの詳細はスライドを参照すること。DID推定には時間（年）とカウンティー（郡）の固定効果を投入し、州レベルでクラスタリングした標準誤差を使う予定である。これらの変数を予めfactor化しておこう。factor化した変数は変数名の後ろに<code>_f</code>を付けて、新しい列として追加しておく。</p>
@@ -384,24 +377,24 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <span id="cb3-3"><a href="#cb3-3"></a>         <span class="at">state_f  =</span> <span class="fu">factor</span>(state),</span>
 <span id="cb3-4"><a href="#cb3-4"></a>         <span class="at">year_f   =</span> <span class="fu">factor</span>(year))</span>
 <span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>did_df</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6"></a>did_df</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 18,749 × 14
-   county state  year shooting fatal_s…¹ non_f…² turnout demvote popul…³ non_w…⁴
-    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
- 1   1001 01     1996        0         0       0    56.1    32.5   40207   0.190
- 2   1001 01     2000        0         0       0    56.8    28.7   44021   0.189
- 3   1001 01     2004        0         0       0    60.2    23.7   48366   0.196
- 4   1001 01     2008        0         0       0    64.1    25.8   53277   0.205
- 5   1001 01     2012        0         0       0    61.0    26.5   55027   0.212
- 6   1001 01     2016        0         0       0    60.7    24.0   55416   0.228
- 7   1003 01     1996        0         0       0    51.8    27.1  125412   0.123
- 8   1003 01     2000        0         0       0    54.6    24.8  141342   0.122
- 9   1003 01     2004        0         0       0    59.8    22.5  156266   0.122
-10   1003 01     2008        0         0       0    62.4    23.8  175827   0.122
-# … with 18,739 more rows, 4 more variables: change_unem_rate &lt;dbl&gt;,
-#   county_f &lt;fct&gt;, state_f &lt;fct&gt;, year_f &lt;fct&gt;, and abbreviated variable names
-#   ¹​fatal_shooting, ²​non_fatal_shooting, ³​population, ⁴​non_white</code></pre>
+   county state  year shooting fatal_shooting non_fatal_shooting turnout demvote
+    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1   1001 01     1996        0              0                  0    56.1    32.5
+ 2   1001 01     2000        0              0                  0    56.8    28.7
+ 3   1001 01     2004        0              0                  0    60.2    23.7
+ 4   1001 01     2008        0              0                  0    64.1    25.8
+ 5   1001 01     2012        0              0                  0    61.0    26.5
+ 6   1001 01     2016        0              0                  0    60.7    24.0
+ 7   1003 01     1996        0              0                  0    51.8    27.1
+ 8   1003 01     2000        0              0                  0    54.6    24.8
+ 9   1003 01     2004        0              0                  0    59.8    22.5
+10   1003 01     2008        0              0                  0    62.4    23.8
+# ℹ 18,739 more rows
+# ℹ 6 more variables: population &lt;dbl&gt;, non_white &lt;dbl&gt;,
+#   change_unem_rate &lt;dbl&gt;, county_f &lt;fct&gt;, state_f &lt;fct&gt;, year_f &lt;fct&gt;</code></pre>
 </div>
 </div>
 <p>　連続変数（<code>shooting</code>から<code>change_unem_rate</code>まで）の記述統計量を出力する。ここで一つ注意が必要だ。それは<code>select()</code>関数の使い方である。具体的に言えば、使い方そのものは変わらない。</p>
@@ -409,7 +402,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>did_df <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">select</span>(shooting<span class="sc">:</span>change_unem_rate) <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">descr</span>(<span class="at">stats =</span> <span class="fu">c</span>(<span class="st">"mean"</span>, <span class="st">"sd"</span>, <span class="st">"min"</span>, <span class="st">"max"</span>, <span class="st">"n.valid"</span>),</span>
-<span id="cb5-4"><a href="#cb5-4"></a>        <span class="at">transpose =</span> <span class="cn">TRUE</span>, <span class="at">order =</span> <span class="st">"p"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4"></a>        <span class="at">transpose =</span> <span class="cn">TRUE</span>, <span class="at">order =</span> <span class="st">"p"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Descriptive Statistics  
 
@@ -560,7 +553,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <span id="cb7-4"><a href="#cb7-4"></a>                      <span class="at">clusters      =</span> state_f,</span>
 <span id="cb7-5"><a href="#cb7-5"></a>                      <span class="at">se_type       =</span> <span class="st">"stata"</span>)</span>
 <span id="cb7-6"><a href="#cb7-6"></a></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">summary</span>(did_fit1)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">summary</span>(did_fit1)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -588,7 +581,7 @@ F-statistic (proj. model): 0.6513 on 1 and 49 DF,  p-value: 0.4235</code></pre>
 <span id="cb9-5"><a href="#cb9-5"></a>                      <span class="at">clusters      =</span> state_f,</span>
 <span id="cb9-6"><a href="#cb9-6"></a>                      <span class="at">se_type       =</span> <span class="st">"stata"</span>)</span>
 <span id="cb9-7"><a href="#cb9-7"></a></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="fu">summary</span>(did_fit2)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="fu">summary</span>(did_fit2)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -642,200 +635,200 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb11-22"><a href="#cb11-22"></a>                      <span class="at">data          =</span> did_df, </span>
 <span id="cb11-23"><a href="#cb11-23"></a>                      <span class="at">fixed_effects =</span> <span class="sc">~</span>year_f <span class="sc">+</span> county_f,</span>
 <span id="cb11-24"><a href="#cb11-24"></a>                      <span class="at">clusters      =</span> state_f,</span>
-<span id="cb11-25"><a href="#cb11-25"></a>                      <span class="at">se_type       =</span> <span class="st">"stata"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-25"><a href="#cb11-25"></a>                      <span class="at">se_type       =</span> <span class="st">"stata"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>　これまで推定してきた6つのモデルを比較してみよう。</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(did_fit1, did_fit2, did_fit3, </span>
-<span id="cb12-2"><a href="#cb12-2"></a>                  did_fit4, did_fit5, did_fit6))</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2"></a>                  did_fit4, did_fit5, did_fit6))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:center;"> Model 1 </th>
-   <th style="text-align:center;"> Model 2 </th>
-   <th style="text-align:center;"> Model 3 </th>
-   <th style="text-align:center;"> Model 4 </th>
-   <th style="text-align:center;"> Model 5 </th>
-   <th style="text-align:center;"> Model 6 </th>
-  </tr>
- </thead>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;(1)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;&nbsp;(2)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;&nbsp;(3)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;&nbsp;(4)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;&nbsp;(5)</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;&nbsp;(6)</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> shooting </td>
-   <td style="text-align:center;"> −0.521 </td>
-   <td style="text-align:center;"> −0.710 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;"> (0.646) </td>
-   <td style="text-align:center;"> (0.624) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> population </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.000008 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.000008 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.000008 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.000006) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.000006) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.000006) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> non_white </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −34.834 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −34.844 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −34.814 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (15.575) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (15.618) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (15.614) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> change_unem_rate </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.159 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.159 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.160 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.066) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.066) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.066) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> fatal_shooting </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −0.678 </td>
-   <td style="text-align:center;"> −0.918 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.619) </td>
-   <td style="text-align:center;"> (0.658) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> non_fatal_shooting </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −0.239 </td>
-   <td style="text-align:center;"> −0.327 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px"> (1.094) </td>
-   <td style="text-align:center;box-shadow: 0px 1px"> (1.145) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Num.Obs. </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R2 </td>
-   <td style="text-align:center;"> 0.857 </td>
-   <td style="text-align:center;"> 0.860 </td>
-   <td style="text-align:center;"> 0.857 </td>
-   <td style="text-align:center;"> 0.860 </td>
-   <td style="text-align:center;"> 0.857 </td>
-   <td style="text-align:center;"> 0.860 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R2 Adj. </td>
-   <td style="text-align:center;"> 0.829 </td>
-   <td style="text-align:center;"> 0.832 </td>
-   <td style="text-align:center;"> 0.829 </td>
-   <td style="text-align:center;"> 0.832 </td>
-   <td style="text-align:center;"> 0.829 </td>
-   <td style="text-align:center;"> 0.832 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> AIC </td>
-   <td style="text-align:center;"> 103543.4 </td>
-   <td style="text-align:center;"> 103237.2 </td>
-   <td style="text-align:center;"> 103543.3 </td>
-   <td style="text-align:center;"> 103237.1 </td>
-   <td style="text-align:center;"> 103544.6 </td>
-   <td style="text-align:center;"> 103239.4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BIC </td>
-   <td style="text-align:center;"> 103559.0 </td>
-   <td style="text-align:center;"> 103276.4 </td>
-   <td style="text-align:center;"> 103559.0 </td>
-   <td style="text-align:center;"> 103276.3 </td>
-   <td style="text-align:center;"> 103560.2 </td>
-   <td style="text-align:center;"> 103278.6 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> RMSE </td>
-   <td style="text-align:center;"> 3.90 </td>
-   <td style="text-align:center;"> 3.87 </td>
-   <td style="text-align:center;"> 3.90 </td>
-   <td style="text-align:center;"> 3.87 </td>
-   <td style="text-align:center;"> 3.90 </td>
-   <td style="text-align:center;"> 3.87 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Std.Errors </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">shooting</td>
+<td style="text-align: center;">−0.521</td>
+<td style="text-align: center;">−0.710</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">(0.646)</td>
+<td style="text-align: center;">(0.624)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">population</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.000</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.000</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.000)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.000)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.000)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">non_white</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−34.834</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−34.844</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−34.814</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(15.575)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(15.618)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(15.614)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">change_unem_rate</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.159</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.159</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.160</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.066)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.066)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.066)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fatal_shooting</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−0.678</td>
+<td style="text-align: center;">−0.918</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.619)</td>
+<td style="text-align: center;">(0.658)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">non_fatal_shooting</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−0.239</td>
+<td style="text-align: center;">−0.327</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;">(1.094)</td>
+<td style="text-align: center; box-shadow: 0px 1.5px;">(1.145)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Num.Obs.</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R2</td>
+<td style="text-align: center;">0.857</td>
+<td style="text-align: center;">0.860</td>
+<td style="text-align: center;">0.857</td>
+<td style="text-align: center;">0.860</td>
+<td style="text-align: center;">0.857</td>
+<td style="text-align: center;">0.860</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R2 Adj.</td>
+<td style="text-align: center;">0.829</td>
+<td style="text-align: center;">0.832</td>
+<td style="text-align: center;">0.829</td>
+<td style="text-align: center;">0.832</td>
+<td style="text-align: center;">0.829</td>
+<td style="text-align: center;">0.832</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AIC</td>
+<td style="text-align: center;">103543.4</td>
+<td style="text-align: center;">103237.2</td>
+<td style="text-align: center;">103543.3</td>
+<td style="text-align: center;">103237.1</td>
+<td style="text-align: center;">103544.6</td>
+<td style="text-align: center;">103239.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BIC</td>
+<td style="text-align: center;">103559.0</td>
+<td style="text-align: center;">103276.4</td>
+<td style="text-align: center;">103559.0</td>
+<td style="text-align: center;">103276.3</td>
+<td style="text-align: center;">103560.2</td>
+<td style="text-align: center;">103278.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RMSE</td>
+<td style="text-align: center;">3.90</td>
+<td style="text-align: center;">3.87</td>
+<td style="text-align: center;">3.90</td>
+<td style="text-align: center;">3.87</td>
+<td style="text-align: center;">3.90</td>
+<td style="text-align: center;">3.87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Std.Errors</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+</tr>
 </tbody>
 </table>
+
 
 </div>
 </div>
@@ -847,11 +840,11 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb13-3"><a href="#cb13-3"></a>tidy_fit3 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(did_fit3, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb13-4"><a href="#cb13-4"></a>tidy_fit4 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(did_fit4, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb13-5"><a href="#cb13-5"></a>tidy_fit5 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(did_fit5, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb13-6"><a href="#cb13-6"></a>tidy_fit6 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(did_fit6, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-6"><a href="#cb13-6"></a>tidy_fit6 <span class="ot">&lt;-</span> <span class="fu">tidy</span>(did_fit6, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>　全て確認する必要はないので、<code>tidy_fit1</code>のみを確認してみる。</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>tidy_fit1</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>tidy_fit1</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      term   estimate std.error  statistic   p.value conf.low conf.high df
 1 shooting -0.5210841 0.6456718 -0.8070417 0.4235426 -1.81861  0.776442 49
@@ -869,7 +862,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb16-6"><a href="#cb16-6"></a>                           <span class="st">"M2_Tr3"</span> <span class="ot">=</span> tidy_fit6),</span>
 <span id="cb16-7"><a href="#cb16-7"></a>                      <span class="at">.id =</span> <span class="st">"Model"</span>)</span>
 <span id="cb16-8"><a href="#cb16-8"></a></span>
-<span id="cb16-9"><a href="#cb16-9"></a>did_est1</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-9"><a href="#cb16-9"></a>did_est1</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Model               term      estimate    std.error  statistic    p.value
 1  M1_Tr1           shooting -5.210841e-01 6.456718e-01 -0.8070417 0.42354260
@@ -910,7 +903,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>did_est1 <span class="ot">&lt;-</span> did_est1 <span class="sc">|&gt;</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">filter</span>(term <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"shooting"</span>, <span class="st">"fatal_shooting"</span>, <span class="st">"non_fatal_shooting"</span>))</span>
 <span id="cb18-3"><a href="#cb18-3"></a></span>
-<span id="cb18-4"><a href="#cb18-4"></a>did_est1</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a href="#cb18-4"></a>did_est1</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Model               term   estimate std.error  statistic   p.value  conf.low
 1 M1_Tr1           shooting -0.5210841 0.6456718 -0.8070417 0.4235426 -1.818610
@@ -931,7 +924,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <p>　ちなみに<code>grepl()</code>関数を使うと、<code>"shooting"</code>が含まれる行を抽出することもできる。以下のコードは上記のコードと同じ機能をする。</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>did_est1 <span class="ot">&lt;-</span> did_est1 <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"shooting"</span>, term))</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"shooting"</span>, term))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>　つづいて、<code>Model</code>列を<code>Model</code>と<code>Treat</code>列へ分割する。</p>
 <div class="cell" data-layout-align="center">
@@ -940,7 +933,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb21-3"><a href="#cb21-3"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"Model"</span>, <span class="st">"Treat"</span>),</span>
 <span id="cb21-4"><a href="#cb21-4"></a>           <span class="at">sep  =</span> <span class="st">"_"</span>)</span>
 <span id="cb21-5"><a href="#cb21-5"></a></span>
-<span id="cb21-6"><a href="#cb21-6"></a>did_est1</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-6"><a href="#cb21-6"></a>did_est1</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Model Treat               term   estimate std.error  statistic   p.value
 1    M1   Tr1           shooting -0.5210841 0.6456718 -0.8070417 0.4235426
@@ -971,7 +964,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb23-9"><a href="#cb23-9"></a>         <span class="at">Model =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_inorder</span>(Model)),</span>
 <span id="cb23-10"><a href="#cb23-10"></a>         <span class="at">Treat =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_inorder</span>(Treat)))</span>
 <span id="cb23-11"><a href="#cb23-11"></a></span>
-<span id="cb23-12"><a href="#cb23-12"></a>did_est1</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-12"><a href="#cb23-12"></a>did_est1</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        Model                   Treat               term
 1              County-Year FE      Any Shooting (t-1)           shooting
@@ -1007,7 +1000,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb25-14"><a href="#cb25-14"></a>  <span class="co"># 横軸の下限と上限を-10〜10とする。</span></span>
 <span id="cb25-15"><a href="#cb25-15"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
 <span id="cb25-16"><a href="#cb25-16"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb25-17"><a href="#cb25-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-17"><a href="#cb25-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1033,7 +1026,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb26-13"><a href="#cb26-13"></a>                                <span class="st">"County-Year FE + Covariates"</span> <span class="ot">=</span> <span class="st">"gray50"</span>)) <span class="sc">+</span></span>
 <span id="cb26-14"><a href="#cb26-14"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
 <span id="cb26-15"><a href="#cb26-15"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb26-16"><a href="#cb26-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-16"><a href="#cb26-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1057,7 +1050,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb27-11"><a href="#cb27-11"></a>                                <span class="st">"County-Year FE + Covariates"</span> <span class="ot">=</span> <span class="st">"gray50"</span>)) <span class="sc">+</span></span>
 <span id="cb27-12"><a href="#cb27-12"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
 <span id="cb27-13"><a href="#cb27-13"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb27-14"><a href="#cb27-14"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-14"><a href="#cb27-14"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>　続いて、民主党候補者の得票率（<code>demvote</code>）を応答変数として6つのモデルを推定し、同じ作業を繰り返す。</p>
 <div class="cell" data-layout-align="center">
@@ -1102,195 +1095,195 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb28-39"><a href="#cb28-39"></a></span>
 <span id="cb28-40"><a href="#cb28-40"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(<span class="st">"Model 7"</span>  <span class="ot">=</span> did_fit7,  <span class="st">"Model 8"</span>  <span class="ot">=</span> did_fit8, </span>
 <span id="cb28-41"><a href="#cb28-41"></a>                  <span class="st">"Model 9"</span>  <span class="ot">=</span> did_fit9,  <span class="st">"Model 10"</span> <span class="ot">=</span> did_fit10, </span>
-<span id="cb28-42"><a href="#cb28-42"></a>                  <span class="st">"Model 11"</span> <span class="ot">=</span> did_fit11, <span class="st">"Model 12"</span> <span class="ot">=</span> did_fit12))</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-42"><a href="#cb28-42"></a>                  <span class="st">"Model 11"</span> <span class="ot">=</span> did_fit11, <span class="st">"Model 12"</span> <span class="ot">=</span> did_fit12))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:center;"> Model 7 </th>
-   <th style="text-align:center;"> Model 8 </th>
-   <th style="text-align:center;"> Model 9 </th>
-   <th style="text-align:center;"> Model 10 </th>
-   <th style="text-align:center;"> Model 11 </th>
-   <th style="text-align:center;"> Model 12 </th>
-  </tr>
- </thead>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 7</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 8</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 9</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 10</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 11</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 12</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> shooting </td>
-   <td style="text-align:center;"> 4.513 </td>
-   <td style="text-align:center;"> 2.364 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;"> (0.875) </td>
-   <td style="text-align:center;"> (0.737) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> population </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.00003 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.00003 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 0.00003 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.000007) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.000007) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.000007) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> non_white </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 86.873 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 86.866 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 86.796 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (17.863) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (17.855) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (17.855) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> change_unem_rate </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −0.139 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −0.139 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> −0.140 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.127) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.128) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (0.127) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> fatal_shooting </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 4.404 </td>
-   <td style="text-align:center;"> 1.782 </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> (1.092) </td>
-   <td style="text-align:center;"> (0.836) </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> non_fatal_shooting </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;">  </td>
-   <td style="text-align:center;"> 4.217 </td>
-   <td style="text-align:center;"> 2.930 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px">  </td>
-   <td style="text-align:center;box-shadow: 0px 1px"> (1.298) </td>
-   <td style="text-align:center;box-shadow: 0px 1px"> (1.037) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Num.Obs. </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-   <td style="text-align:center;"> 18627 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R2 </td>
-   <td style="text-align:center;"> 0.882 </td>
-   <td style="text-align:center;"> 0.894 </td>
-   <td style="text-align:center;"> 0.882 </td>
-   <td style="text-align:center;"> 0.894 </td>
-   <td style="text-align:center;"> 0.882 </td>
-   <td style="text-align:center;"> 0.894 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R2 Adj. </td>
-   <td style="text-align:center;"> 0.859 </td>
-   <td style="text-align:center;"> 0.873 </td>
-   <td style="text-align:center;"> 0.859 </td>
-   <td style="text-align:center;"> 0.873 </td>
-   <td style="text-align:center;"> 0.859 </td>
-   <td style="text-align:center;"> 0.873 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> AIC </td>
-   <td style="text-align:center;"> 110745.2 </td>
-   <td style="text-align:center;"> 108755.4 </td>
-   <td style="text-align:center;"> 110772.0 </td>
-   <td style="text-align:center;"> 108768.2 </td>
-   <td style="text-align:center;"> 110786.5 </td>
-   <td style="text-align:center;"> 108762.1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BIC </td>
-   <td style="text-align:center;"> 110760.8 </td>
-   <td style="text-align:center;"> 108794.6 </td>
-   <td style="text-align:center;"> 110787.7 </td>
-   <td style="text-align:center;"> 108807.3 </td>
-   <td style="text-align:center;"> 110802.2 </td>
-   <td style="text-align:center;"> 108801.3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> RMSE </td>
-   <td style="text-align:center;"> 4.73 </td>
-   <td style="text-align:center;"> 4.48 </td>
-   <td style="text-align:center;"> 4.73 </td>
-   <td style="text-align:center;"> 4.48 </td>
-   <td style="text-align:center;"> 4.73 </td>
-   <td style="text-align:center;"> 4.48 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Std.Errors </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-   <td style="text-align:center;"> by: state_f </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">shooting</td>
+<td style="text-align: center;">4.513</td>
+<td style="text-align: center;">2.364</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">(0.875)</td>
+<td style="text-align: center;">(0.737)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">population</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.000</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.000</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.000)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.000)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.000)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">non_white</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">86.873</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">86.866</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">86.796</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(17.863)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(17.855)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(17.855)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">change_unem_rate</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−0.139</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−0.139</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−0.140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.127)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.128)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.127)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fatal_shooting</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4.404</td>
+<td style="text-align: center;">1.782</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(1.092)</td>
+<td style="text-align: center;">(0.836)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">non_fatal_shooting</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4.217</td>
+<td style="text-align: center;">2.930</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;">(1.298)</td>
+<td style="text-align: center; box-shadow: 0px 1.5px;">(1.037)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Num.Obs.</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+<td style="text-align: center;">18627</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R2</td>
+<td style="text-align: center;">0.882</td>
+<td style="text-align: center;">0.894</td>
+<td style="text-align: center;">0.882</td>
+<td style="text-align: center;">0.894</td>
+<td style="text-align: center;">0.882</td>
+<td style="text-align: center;">0.894</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R2 Adj.</td>
+<td style="text-align: center;">0.859</td>
+<td style="text-align: center;">0.873</td>
+<td style="text-align: center;">0.859</td>
+<td style="text-align: center;">0.873</td>
+<td style="text-align: center;">0.859</td>
+<td style="text-align: center;">0.873</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AIC</td>
+<td style="text-align: center;">110745.2</td>
+<td style="text-align: center;">108755.4</td>
+<td style="text-align: center;">110772.0</td>
+<td style="text-align: center;">108768.2</td>
+<td style="text-align: center;">110786.5</td>
+<td style="text-align: center;">108762.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BIC</td>
+<td style="text-align: center;">110760.8</td>
+<td style="text-align: center;">108794.6</td>
+<td style="text-align: center;">110787.7</td>
+<td style="text-align: center;">108807.3</td>
+<td style="text-align: center;">110802.2</td>
+<td style="text-align: center;">108801.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RMSE</td>
+<td style="text-align: center;">4.73</td>
+<td style="text-align: center;">4.48</td>
+<td style="text-align: center;">4.73</td>
+<td style="text-align: center;">4.48</td>
+<td style="text-align: center;">4.73</td>
+<td style="text-align: center;">4.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Std.Errors</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+<td style="text-align: center;">by: state_f</td>
+</tr>
 </tbody>
 </table>
+
 
 </div>
 </div>
@@ -1312,7 +1305,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb29-13"><a href="#cb29-13"></a>                           <span class="st">"M2_Tr3"</span> <span class="ot">=</span> tidy_fit12),</span>
 <span id="cb29-14"><a href="#cb29-14"></a>                      <span class="at">.id =</span> <span class="st">"Model"</span>)</span>
 <span id="cb29-15"><a href="#cb29-15"></a></span>
-<span id="cb29-16"><a href="#cb29-16"></a>did_est2</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-16"><a href="#cb29-16"></a>did_est2</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Model               term      estimate    std.error statistic      p.value
 1  M1_Tr1           shooting  4.513237e+00 8.752702e-01  5.156393 4.514820e-06
@@ -1352,7 +1345,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>did_est2 <span class="ot">&lt;-</span> did_est2 <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"shooting"</span>, term))</span>
 <span id="cb31-3"><a href="#cb31-3"></a></span>
-<span id="cb31-4"><a href="#cb31-4"></a>did_est2</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-4"><a href="#cb31-4"></a>did_est2</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Model               term estimate std.error statistic      p.value  conf.low
 1 M1_Tr1           shooting 4.513237 0.8752702  5.156393 4.514820e-06 2.7543158
@@ -1376,7 +1369,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb33-3"><a href="#cb33-3"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"Model"</span>, <span class="st">"Treat"</span>),</span>
 <span id="cb33-4"><a href="#cb33-4"></a>           <span class="at">sep  =</span> <span class="st">"_"</span>)</span>
 <span id="cb33-5"><a href="#cb33-5"></a></span>
-<span id="cb33-6"><a href="#cb33-6"></a>did_est2</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-6"><a href="#cb33-6"></a>did_est2</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Model Treat               term estimate std.error statistic      p.value
 1    M1   Tr1           shooting 4.513237 0.8752702  5.156393 4.514820e-06
@@ -1406,7 +1399,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb35-9"><a href="#cb35-9"></a>         <span class="at">Model =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_inorder</span>(Model)),</span>
 <span id="cb35-10"><a href="#cb35-10"></a>         <span class="at">Treat =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_inorder</span>(Treat)))</span>
 <span id="cb35-11"><a href="#cb35-11"></a></span>
-<span id="cb35-12"><a href="#cb35-12"></a>did_est2</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-12"><a href="#cb35-12"></a>did_est2</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        Model                   Treat               term
 1              County-Year FE      Any Shooting (t-1)           shooting
@@ -1440,7 +1433,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb37-13"><a href="#cb37-13"></a>                                <span class="st">"County-Year FE + Covariates"</span> <span class="ot">=</span> <span class="st">"gray50"</span>)) <span class="sc">+</span></span>
 <span id="cb37-14"><a href="#cb37-14"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
 <span id="cb37-15"><a href="#cb37-15"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb37-16"><a href="#cb37-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-16"><a href="#cb37-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1455,7 +1448,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb38-2"><a href="#cb38-2"></a>                          <span class="st">"Out2"</span> <span class="ot">=</span> did_est2),</span>
 <span id="cb38-3"><a href="#cb38-3"></a>                     <span class="at">.id =</span> <span class="st">"Outcome"</span>)</span>
 <span id="cb38-4"><a href="#cb38-4"></a></span>
-<span id="cb38-5"><a href="#cb38-5"></a>did_est</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-5"><a href="#cb38-5"></a>did_est</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Outcome                       Model                   Treat
 1     Out1              County-Year FE      Any Shooting (t-1)
@@ -1506,7 +1499,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb40-4"><a href="#cb40-4"></a>                           <span class="st">"Change in Democratic Vote Share (%p)"</span>),</span>
 <span id="cb40-5"><a href="#cb40-5"></a>         <span class="at">Outcome =</span> <span class="fu">fct_inorder</span>(Outcome))</span>
 <span id="cb40-6"><a href="#cb40-6"></a></span>
-<span id="cb40-7"><a href="#cb40-7"></a>did_est</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-7"><a href="#cb40-7"></a>did_est</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                Outcome                       Model
 1                Change in Turnout (%p)              County-Year FE
@@ -1567,7 +1560,7 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 <span id="cb42-14"><a href="#cb42-14"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
 <span id="cb42-15"><a href="#cb42-15"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Outcome, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb42-16"><a href="#cb42-16"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb42-17"><a href="#cb42-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-17"><a href="#cb42-17"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1582,12 +1575,12 @@ F-statistic (proj. model): 5.047 on 4 and 49 DF,  p-value: 0.001739</code></pre>
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">注</h2>
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
 
 <ol>
 <li id="fn1"><p><code>fixed_effects</code>引数でなく、回帰式に説明変数として指定しても結果は同じである。しかし、回帰式に書く場合、固定効果の推定値も全て出力され、推定結果が非常に長くなる。しかし、固定効果の推定値は論文内で報告することもない。<code>fixed_effects</code>で指定すると、それらの結果は省略される。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section></div></main> <!-- /main -->
+</aside></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1608,121 +1601,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1730,9 +1608,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1743,12 +1635,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "コピーしました");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "コピーしました");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -1768,10 +1660,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1781,8 +1672,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1797,6 +1697,195 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1835,12 +1924,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/https:\/\/www\.jaysong\.net\/kandai-ci\//);
+      var filterRegex = new RegExp("https:\/\/www\.jaysong\.net\/kandai-ci\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1867,7 +1956,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></div>   
+    <div class="nav-footer-left">
+<p>Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
@@ -1886,6 +1980,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

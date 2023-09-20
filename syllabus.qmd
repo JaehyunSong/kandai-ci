@@ -15,7 +15,7 @@ knitr::opts_chunk$set(fig.align = "center",
 * 科目名: 社会科学における因果推論
 * 講師: 宋財泫 (ソン ジェヒョン)
 * 所属: 関西大学総合情報学部
-   * E-mail: song [*at*] kansai-u.ac.jp
+   * E-mail: song<i class="bi bi-at"></i>kansai-u.ac.jp
    * Homepage: <https://www.jaysong.net>
 * 時間: 月曜日2限（10:40〜12:10）
 * 教室: TD106
@@ -45,18 +45,18 @@ knitr::opts_chunk$set(fig.align = "center",
 
 * 浅野正彦・矢内勇生. 2019『[Rによる計量政治学](https://www.amazon.co.jp/dp/4274223132)』オーム社.
 
-　R スクリプト作成の際、{tidyverse} というパッケージ群を積極的に活用する。この パッケージには {dplyr}、{ggplot2} などのパッケージが含まれている。各パッケージの 使い方を習得するには以下の教材を推奨する。
+　R スクリプト作成の際、{tidyverse}というパッケージ**群**を積極的に活用する。このパッケージには {dplyr}、{ggplot2}などのパッケージが含まれている。各パッケージの使い方を習得するには以下の教材を推奨する。
 
 * Wickham, Hadley and Grolemund, Garrett. 2017. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data,*](https://www.amazon.co.jp/dp/1491910399/) O’Reilly. ([邦訳](www.amazon.co.jp/dp/487311814X/)あり/[原著](https://r4ds.had.co.nz)はインターネットから無料で閲覧可)
 * 松村優哉・湯谷啓明・紀ノ定保礼・前田和寛 . 2021. 『[改訂2版 Rユーザのための RStudio[実践] 入門—tidyverseによるモダンな分析フローの世界—](https://www.amazon.co.jp/dp/4297121700/)』技術評論社.
 
 ## 教科書・参考書
 
-以下は本書の内容を(一部)カバーする書籍の目録である。必ずしも購入する必要はないが、予習・復習において適宜参照することを推奨する。
+以下は本書の内容を（一部）カバーする書籍の目録である。必ずしも購入する必要はないが、予習・復習において適宜参照することを推奨する。
 
 * 因果推論の理論と実例
    * Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion.*](http://amzn.asia/d/2TJ1HXE) Princeton University Press.
-      * 『[「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド](http://amzn.asia/d/3JwCmNG)』 (翻訳はかなり有害)
+      * [邦訳](http://amzn.asia/d/3JwCmNG)あり
    * Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect.*](http://amzn.asia/d/fIkurDl) Princeton University Press.
    * 森田果. 2014.『[実証分析入門—データから「因果関係」を読み解く作法](http://amzn.asia/d/g0ADpxT)』日本評論社.
    * 中室牧子・津川友介. 2017.『[「原因と結果」の経済学—データから真実を見抜く思考法](http://amzn.asia/d/gQN4bLu)』ダイヤモンド社.
@@ -66,6 +66,7 @@ knitr::opts_chunk$set(fig.align = "center",
    * 星野匡郎・田中久稔. 2016.『[Rによる実証分析—回帰分析から因果分析へ—](http://amzn.asia/d/0LFlZqm)』オーム社.
    * 安井翔太. 2020. 『[効果検証入門—正しい比較のための因果推論/計量経済学の基礎](https://www.amazon.co.jp/dp/4297111179)』技術評論社.
    * Cunningham, Scott. 2021. [*Causal Inference: The Mixtape.*](https://mixtape.scunning.com/) Yale University Press.
+      * [邦訳](https://www.amazon.co.jp/dp/4297134179/)あり
    * 高橋将宜. 2022. 『[統計的因果推論の理論と実装](https://www.amazon.co.jp/dp/4320112458/)』共立出版.
 
 ## 講義内容
@@ -74,18 +75,18 @@ knitr::opts_chunk$set(fig.align = "center",
 
 |回|講義日|内容|
 |:---:|:---:|:---|
-|  1 | 2022/09/26 | ガイダンス |
-|  2 | 2022/10/03 | 因果推論の考え方 |
-|  3 | 2022/10/10 | 無作為化比較試験 |
-|  4 | 2022/10/17 | Rの復習（1） |
-|  5 | 2022/10/24 | Rの復習（2） |
-|  6 | 2022/10/24 | Rの復習（3） |
-|  7 | 2022/11/07 | 回帰分析とマッチング（理論） |
-|  8 | 2022/11/14 | 回帰分析とマッチング（理論） |
-|  9 | 2022/11/21 | 回帰分析とマッチング（実習） |
-| 10 | 2022/11/28 | 回帰分析とマッチング（実習） |
-| 11 | 2022/12/05 | 差分の差分法（理論） |
-| 12 | 2022/12/12 | 差分の差分法（実習） |
-| 13 | 2022/12/19 | 回帰不連続デザイン（理論） |
-| 14 | 2022/12/26 | 回帰不連続デザイン（実習） |
-| 15 | 2023/01/16 | 研究構想の発表 |
+|  1 | 2023/09/25 | ガイダンス |
+|  2 | 2023/10/02 | 因果推論の考え方 |
+|  3 | 2023/10/16 | 無作為化比較試験 |
+|  4 | 2023/10/23 | Rの復習（1） |
+|  5 | 2023/10/30 | Rの復習（2） |
+|  6 | 2023/11/06 | Rの復習（3） |
+|  7 | 2023/11/13 | 回帰分析とマッチング（理論） |
+|  8 | 2023/11/20 | 回帰分析とマッチング（実習） |
+|  9 | 2023/11/27 | 差分の差分法（理論） |
+| 10 | 2023/12/04 | 差分の差分法（実習） |
+| 11 | 2023/12/11 | 回帰不連続デザイン（理論） |
+| 12 | 2023/12/18 | 回帰不連続デザイン（実習） |
+| 13 | 2023/12/25 | 休講 |
+| 14 | 2024/01/15 | 研究構想の発表 |
+| 15 | 2024/01/22 | 研究構想の発表（講評） |

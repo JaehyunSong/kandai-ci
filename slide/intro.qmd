@@ -1,36 +1,12 @@
 ---
-title: "社会科学における因果推論"
 subtitle: "第1回 ガイダンス"
-author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
-institute: "関西大学総合情報学部"
-date: "2022/9/26"
-date-format: iso
-format:
-  revealjs: 
-    width: 1600
-    height: 900
-    slide-number: true
-    logo: figs/logo.png
-    theme: [default, styles.scss]
-    footer: <https://www.jaysong.net/kandai-ci>
-    link-external-newwindow: true
-    chalkboard: true
-    touch: true
-    controls: true
-    auto-stretch: false
+date: "2023/9/25"
+format: revealjs
+metadata-files: 
+  - _slide.yml
 ---
 
 # 講義概要
-
-```{r}
-#| include: false
-knitr::opts_chunk$set(dev       = "ragg_png",
-                      dpi       = 300,
-                      fig.align = "center",
-                      echo      = FALSE,
-                      message   = FALSE,
-                      warning   = FALSE)
-```
 
 ## 講義概要
 
@@ -77,10 +53,10 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 :::{.column width=70%}
 ### 宋のR環境
 
-* macOS 12.5 "Monterey"
+* macOS 13.5.2 "Ventura"
 * `r version$version.string`
    * R > 4.1ならOK
-* RStudio 2022.11.0+105 "Elsbeth Geranium"
+* RStudio 2023.6.2+561 "（前期授業）"
 * スライド、サポートページ、実習用資料の執筆環境
    * Quarto `r quarto::quarto_inspect()$quarto$version`
    * R package {quarto} `r packageVersion("quarto")`
@@ -118,7 +94,7 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 * データクリーニング、回帰分析、可視化などができるならベスト
 * 第4・5回にはRの復習を行う
 * 以下の内容が分かればOK
-   * <https://www.jaysong.net/micro-book/>
+   * <https://www.jaysong.net/r4ps/>
    * 『[私たちのR](https://www.jaysong.net/RBook/)』を読もう！
 :::
 ::::
@@ -154,9 +130,9 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 * 理論
    * 初級: 松林哲也. 2021.『[政治学と因果推論](https://www.amazon.co.jp/dp/4000269992/)』岩波書店.
    * 初級: Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect*.](http://amzn.asia/d/fIkurDl) Princeton University Press.
-   * 中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion*.](http://amzn.asia/d/2TJ1HXE) Princeton University Press.（『[「ほとんど無害」な計量経済学―応用経済学のための実証分析ガイド](http://amzn.asia/d/3JwCmNG)』）
+   * 中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion*.](http://amzn.asia/d/2TJ1HXE) Princeton University Press.（[邦訳](http://amzn.asia/d/3JwCmNG)あり）
 * 実装
-   * Cunningham, Scott. 2021. [*Causal Inference: The Mixtape*.](https://mixtape.scunning.com/) Yale University Press.
+   * Cunningham, Scott. 2021. [*Causal Inference: The Mixtape*.](https://mixtape.scunning.com/) Yale University Press.（[邦訳](https://www.amazon.co.jp/dp/4297134179/)あり）
    * 安井翔太. 2020. 『[効果検証入門](https://www.amazon.co.jp/dp/4297111179)』技術評論社.
    * 高橋将宜. 2022. 『[統計的因果推論の理論と実装](https://www.amazon.co.jp/dp/4320112458/)』共立出版.
 

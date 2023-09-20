@@ -1,23 +1,9 @@
 ---
-title: "社会科学における因果推論"
 subtitle: "第7回 回帰分析とマッチング"
-author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
-institute: "関西大学総合情報学部"
-date: "2022/11/07"
-date-format: iso
-format:
-  revealjs: 
-    width: 1600
-    height: 900
-    slide-number: true
-    logo: figs/logo.png
-    theme: [default, styles.scss]
-    footer: <https://www.jaysong.net/kandai-ci>
-    link-external-newwindow: true
-    chalkboard: true
-    touch: true
-    controls: true
-    auto-stretch: false
+date: "2023/11/13"
+format: revealjs
+metadata-files: 
+  - _slide.yml
 ---
 
 # マッチングの考え方
@@ -26,13 +12,6 @@ format:
 #| include: false
 pacman::p_load(tidyverse, gt, broom, modelsummary, 
                dagitty, ggdag, WeightIt, MatchIt, mvtnorm)
-
-knitr::opts_chunk$set(dev       = "ragg_png",
-                      dpi       = 300,
-                      fig.align = "center",
-                      echo      = FALSE,
-                      message   = FALSE,
-                      warning   = FALSE)
 
 df1 <- read_csv("data/matching_data1.csv")
 df2 <- read_csv("data/matching_data2.csv")

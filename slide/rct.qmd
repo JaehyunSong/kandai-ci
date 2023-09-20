@@ -1,23 +1,9 @@
 ---
-title: "社会科学における因果推論"
 subtitle: "第3回 無作為化比較試験"
-author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
-institute: "関西大学総合情報学部"
-date: "2022/10/10"
-date-format: iso
-format:
-  revealjs: 
-    width: 1600
-    height: 900
-    slide-number: true
-    logo: figs/logo.png
-    theme: [default, styles.scss]
-    footer: <https://www.jaysong.net/kandai-ci>
-    link-external-newwindow: true
-    chalkboard: true
-    touch: true
-    controls: true
-    auto-stretch: false
+date: "2023/10/16"
+format: revealjs
+metadata-files: 
+  - _slide.yml
 ---
 
 ## 信頼できるATEの条件
@@ -29,12 +15,6 @@ pacman::p_load(tidyverse, haven,
                modelsummary,
                gt, icons)
 pacman::p_load_gh("JaehyunSong/BalanceR")
-knitr::opts_chunk$set(dev       = "ragg_png",
-                      dpi       = 300,
-                      fig.align = "center",
-                      echo      = FALSE,
-                      message   = FALSE,
-                      warning   = FALSE)
 ```
 
 **内生性**の存在 $\rightarrow$ ATE推定値の信頼性$\downarrow$
@@ -731,8 +711,8 @@ $$
 **非干渉性:** 他人の処置・統制有無が処置効果に影響を与えないこと
 
 * 例) AさんITEは
-   * 例1) Bさんが統制群の場合は10、処置群の場合は5 $\leftarrow$ `r fontawesome("angry")`
-   * 例2) Bさんが統制群の場合も、処置群の場合も、5 $\leftarrow$ `r fontawesome("smile")`
+   * 例1) Bさんが統制群の場合は10、処置群の場合は5 $\leftarrow$ <i class="bi bi-emoji-frown"></i>
+   * 例2) Bさんが統制群の場合も、処置群の場合も、5 $\leftarrow$ <i class="bi bi-emoji-smile"></i>
 
 <center>
 :::{layout-ncol=2}
@@ -756,8 +736,8 @@ $$
 
 **処置の無分散性:** 同じグループに属する対象は同じ処置を受けること 
 
-* 手術の場合: 医者、設備、手順、環境など
-* 投票参加: 当日、期日前など
+* 手術の場合：医者、設備、手順、環境など
+* 投票参加：当日、期日前など
 
 ### サーベイ実験の場合
 * サーベイ実験ではSUTVAが満たされやすい。
@@ -767,15 +747,15 @@ $$
 
 ## 二重盲検法
 
-**二重盲検法** (Double Blind Test):ある被験者がどのような処置を受けているかについて研究者と被験者両方において不明な状態で実験を行う
+**二重盲検法**（Double Blind Test）：ある被験者がどのような処置を受けているかについて研究者と被験者両方において不明な状態で実験を行うこと
 
 <br/>
 
 二重盲検法を使えば以下の問題点に対処することが可能
 
-* **プラセボ効果** (placebo effect):偽薬が与えられても、薬だと信じ込む 事によって何らかの効果が生じる
-* **ホーソン効果** (Hawthorne effect):自分が観察されていることを認知さ れることによって何らかの効果が生じる
-* **観察者効果** (observer/experimenter effect):研究者の期待により被験者へ の対応が異なったり、被験者がその期待に添えるように行動すること
+* **プラセボ効果**（placebo effect）：偽薬が与えられても、薬だと信じ込む 事によって何らかの効果が生じる
+* **ホーソン効果**（Hawthorne effect）：自分が観察されていることを認知さ れることによって何らかの効果が生じる
+* **観察者効果**（observer/experimenter effect）：研究者の期待により被験者へ の対応が異なったり、被験者がその期待に添えるように行動すること
 
 # 来週以降の実習について
 

@@ -1,31 +1,9 @@
 ---
-title: "社会科学における因果推論"
-subtitle: "第14回 回帰不連続デザイン"
-author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
-institute: "関西大学総合情報学部"
-date: "2022/12/26"
-date-format: iso
-format:
-  revealjs: 
-    width: 1600
-    height: 900
-    slide-number: true
-    logo: Figs/logo.png
-    theme: [default, styles.scss]
-    footer: <https://www.jaysong.net/kandai-ci>
-    preview-links: true
-    chalkboard: true
-    touch: true
-    controls: true
-    auto-stretch: false
-knitr: 
-  opts_chunk: 
-    dev: "ragg_png"
-    dpi: 300
-    fig.align: "center"
-    echo: false
-    message: false
-    warning: false
+subtitle: "第11回 回帰不連続デザイン"
+date: "2023/12/11"
+format: revealjs
+metadata-files: 
+  - _slide.yml
 ---
 
 # 回帰不連続デザイン
@@ -33,7 +11,7 @@ knitr:
 ```{r}
 #| include: false
 pacman::p_load(tidyverse, haven, gt, modelsummary,
-               rdd, rdrobust, rddensity, latex2exp, marginaleffects)
+               rdd, rdrobust, rddensity, latex2exp, marginaleffects, broom)
 pacman::p_load_gh("JaehyunSong/BalanceR")
 
 french_df <- read_csv("data/rdd_french.csv")
