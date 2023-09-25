@@ -914,7 +914,7 @@
     "href": "slide/intro.html#実習",
     "title": "社会科学における因果推論",
     "section": "実習",
-    "text": "実習\n実習はRで行う。4・5回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS 13.5.2 “Ventura”\nr version$version.string\n\nR &gt; 4.1ならOK\n\nRStudio 2023.6.2+561 “（前期授業）”\nスライド、サポートページ、実習用資料の執筆環境\n\nQuarto r quarto::quarto_inspect()$quarto$version\nR package {quarto} r packageVersion(\"quarto\")"
+    "text": "実習\n実習はRで行う。4・5回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS Ventura 13.5.2\nR version 4.3.1 (2023-06-16)\nRStudio 2023.09.0+463\nスライド、サポートページ、実習用資料の執筆環境\n\nFirefox 117.0.1\nQuarto 1.4.330\nR package {quarto} 1.3"
   },
   {
     "objectID": "slide/intro.html#前提知識",
@@ -963,7 +963,7 @@
     "href": "slide/intro.html#オフィスアワー",
     "title": "社会科学における因果推論",
     "section": "オフィス・アワー",
-    "text": "オフィス・アワー\n宋が研究室に待機し、事前予約なしに相談、質問などが可能な時間\n\n場所：TA227研究室（A棟の2階）\n毎週火曜日3限 (13:00〜14:30)\n上記の時間外は事前予約が必要（メール、対面）\n\n song@kansai-u.ac.jp"
+    "text": "オフィス・アワー\n宋が研究室に待機し、事前予約なしに相談、質問などが可能な時間\n\n場所：TA227研究室（A棟の2階）\n毎週水曜日2限 (10:40〜12:10)\n上記の時間外は事前予約が必要（メール、対面）\n\n song@kansai-u.ac.jp"
   },
   {
     "objectID": "slide/intro.html#分析環境の準備",

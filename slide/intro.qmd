@@ -8,6 +8,17 @@ metadata-files:
 
 # 講義概要
 
+```{r}
+#| include: false
+ff_ver <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applications/Firefox.app/Contents/Info.plist -o -', intern = TRUE) |>
+  stringr::str_extract("[0-9]+\\.[0-9]+.+") |>
+  stringr::str_replace("\b", "")
+
+rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applications/RStudio.app/Contents/Info.plist -o -', intern = TRUE) |>
+  stringr::str_replace("-daily", "") |>
+  stringr::str_extract("202[0-9]\\.[0-9]+\\.[0-9]+\\+[0-9]+")
+```
+
 ## 講義概要
 
 * 科目名: 社会科学における因果推論
@@ -53,11 +64,11 @@ metadata-files:
 :::{.column width=70%}
 ### 宋のR環境
 
-* macOS 13.5.2 "Ventura"
+* `r sessionInfo()$running`
 * `r version$version.string`
-   * R > 4.1ならOK
-* RStudio 2023.6.2+561 "（前期授業）"
+* RStudio `r rs_ver1`
 * スライド、サポートページ、実習用資料の執筆環境
+   * Firefox `r ff_ver`
    * Quarto `r quarto::quarto_inspect()$quarto$version`
    * R package {quarto} `r packageVersion("quarto")`
 :::
@@ -170,7 +181,7 @@ metadata-files:
 宋が研究室に待機し、事前予約**なし**に相談、質問などが可能な時間
 
 * 場所：TA227研究室（A棟の2階）
-* 毎週火曜日3限 (13:00〜14:30)
+* 毎週水曜日2限 (10:40〜12:10)
 * 上記の時間外は事前予約が必要（メール、対面）
    * <i class="bi bi-envelope"></i> <song@kansai-u.ac.jp>
 
