@@ -18,7 +18,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 :::{.callout-tip}
 ## アイコン説明
 
-* <a href="https://jupyter.cs.rcos.nii.ac.jp/" target="_blank"><i class="bi bi-terminal"></i></a>：NIIオンライン分析システムの起動
+* <a href="https://jupyter.cs.rcos.nii.ac.jp/" target="_blank"><i class="bi bi-terminal"></i></a>：JDCat分析ツールの起動
    * 右クリックし、新しいタブ（or ウィンドウ）で開いてください。
    * 初期設定が必要です。初期設定の方法はRの使い方 > [Rの導入](intro/install.html)を参照してください。
 * <a href="https://www.jaysong.net/RBook/" target="_blank"><i class="bi bi-book"></i></a>：Rの教科書（『私たちのR』）

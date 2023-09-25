@@ -55,7 +55,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 
 ## 実習
 
-実習はRで行う。4・5回目はRの導入および使い方についても解説（復習レベル）する。
+実習はRで行う。第4〜6回目はRの導入および使い方についても解説（復習レベル）する。
 
 * 本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能
 
