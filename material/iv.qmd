@@ -1,8 +1,7 @@
 ---
 title: "操作変数法"
 toc: true
-link-external-icon: true
-link-external-newwindow: true
-code-line-numbers: true
+metadata-files: 
+  - _material.yml
 ---
 

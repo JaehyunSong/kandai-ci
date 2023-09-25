@@ -1,17 +1,8 @@
 ---
 title: "回帰不連続デザイン"
 toc: true
-link-external-icon: true
-link-external-newwindow: true
-code-line-numbers: true
-knitr: 
-  opts_chunk: 
-    dev: "ragg_png"
-    dpi: 150
-    fig.align: "center"
-    echo: true
-    message: false
-    warning: false
+metadata-files: 
+  - _material.yml
 ---
 
 ## スライド
