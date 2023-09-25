@@ -103,7 +103,8 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 ### R
 
 * データクリーニング、回帰分析、可視化などができるならベスト
-* 第4・5回にはRの復習を行う
+* 第4〜6回にはRの復習を行う
+   * 第7回以降の実習（第8・10・12回）は反転授業の形式を採用
 * 以下の内容が分かればOK
    * <https://www.jaysong.net/r4ps/>
    * 『[私たちのR](https://www.jaysong.net/RBook/)』を読もう！
@@ -187,13 +188,13 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 
 ## 分析環境の準備
 
-#### 自分のPCにR + RStudioがインストールされて**いる**場合
+#### 自分のPCにR + RStudioがインストールされて<u>いる</u>場合
 
 * Rのバージョンが4.1.2以上であればOK
 
 <br/>
 
-#### 自分のPCにR + RStudioがインストールされて**いない**場合
+#### 自分のPCにR + RStudioがインストールされて<u>いない</u>場合
 
 $\Rightarrow$ 少しでも不安があれば宋と相談しよう！
 
