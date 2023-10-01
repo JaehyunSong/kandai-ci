@@ -33,7 +33,7 @@ Morgan and Winship (2014) [*Counterfactuals and Causal Inference: Methods And Pr
 
 ## 相関から因果へ
 
-原因 ($X$) と結果 ($Y$) の関係: 啓発活動と投票率の関係（架空の例）
+原因（$X$）と結果（$Y$）の関係：啓発活動と投票率の関係（架空の例）
 
 ::::{.columns}
 
