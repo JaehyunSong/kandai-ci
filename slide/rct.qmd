@@ -79,7 +79,8 @@ bind_cols(Data[1:10, ],
    gt() |>
    cols_label("ID...1" = "ID", "Female...2" = "Female", "Age...3" = "Age",
               "X" = "",
-              "ID...5" = "ID", "Female...6" = "Female", "Age...7" = "Age")
+              "ID...5" = "ID", "Female...6" = "Female", "Age...7" = "Age") |> 
+  tab_options(table.font.size = 32)
 ```
 :::
 
@@ -106,7 +107,8 @@ bind_cols(Data[1:10, ],
    gt() |>
    cols_label("ID...1" = "ID", "Female...2" = "Female", "Age...3" = "Age",
               "Coin...4" = "Coin", "X" = "", "ID...6" = "ID", 
-              "Female...7" = "Female", "Age...8" = "Age", "Coin...9" = "Coin")
+              "Female...7" = "Female", "Age...8" = "Age", "Coin...9" = "Coin") |> 
+  tab_options(table.font.size = 32)
 ```
 :::
 
@@ -132,16 +134,16 @@ Data |>
 
 * $n \rightarrow \infty$ なら2つのグループはより同質的に（大数の弱法則）
 
-||女性の割合|平均年齢|
-|:---|---:|---:|
-|母集団 ($n=20$)| 55.0% | 38.0歳 |
-|統制群 ($n=11$)| 54.5% | 37.2歳 |
-|処置群 ($n=9$)| 55.6% | 39.0歳 |
+|                |女性の割合|平均年齢|
+|:---------------|---------:|-------:|
+|母集団（$n=20$）| 55.0%    | 38.0歳 |
+|統制群（$n=11$）| 54.5%    | 37.2歳 |
+|処置群（$n=9$） | 55.6%    | 39.0歳 |
 
-* 統制群と処置群、母集団はそれぞれ**交換可能** (exchangeable)
+* 統制群と処置群、母集団はそれぞれ**交換可能**（exchangeable）
    * 処置群に処置を与えること = 母集団全体に処置を与えること
    * 統制群に処置を与えないこと = 母集団全体に処置を与えないこと
-* 統制群と処置群の比較で**集団を一つの単位としたITE (= ATE)**が推定可能
+* 統制群と処置群の比較で**集団を一つの単位としたITE（= ATE）**が推定可能
    * 処置を与えた母集団 vs. 処置を与えなかった母集団
 
 ## 無作為割当の力
@@ -155,8 +157,8 @@ Data |>
       * 測定誤差の除去
 * 内生性:処置変数（講義の履修）と誤差項（やる気など）間の相関
    * コイン投げの結果は被験者（学生）の性質と**無関係**に行われるため、誤差項と相関がない。
-   * **外生変数** (Exogenous variable)
-   * 学生の性質 (X) と処置有無 (T) は独立している ⇒ $X \perp T$
+   * **外生変数**（Exogenous variable）
+   * 学生の性質（$X$）と処置有無（$T$）は独立している ⇒ $X \perp T$
 
 <br/>
 
@@ -188,18 +190,27 @@ Data |>
 
 ## ランダム化比較試験とは
 
-**Randomized Controlled Trial** (RCT)
+**Randomized Controlled Trial**（RCT）
 
 * 無作為割当で複数のグループを作り上げた上で、異なる刺激・処置を与え、結果を観察する手法
    * 社会科学でいう「**実験**」の多くはこれを指す
    * **因果推論の王道**
-* 因果効果をもたらす(と想定される)処置変数が外生的
+* 因果効果をもたらす（と想定される）処置変数が外生的
    * グループ間における結果変数の差 = 因果効果
-* データ生成過程(Data Generating Process; DGP)への直接介入
+* データ生成過程（Data Generating Process; **DGP**）への直接介入
    * **「真のモデル」が分かる**
 
 ::: aside
 * 参考）データ生成過程について
+   * 現実世界において、あるデータが生成されるプロセス
+      * 例）$Y$は$X_1$と$X_2$の線形結合した値を平均値とする正規分布から生成される。
+      * 例）
+      $$
+      \begin{align}
+      \hat{y} & \sim \mbox{Poisson}(\hat{\lambda}), \\
+      \hat{\lambda} & = e^{\beta_0 + \beta_1 X + \beta_2 Z}.
+      \end{align}
+      $$
    * King, Gary. 1989. [*Unifying Political Methodology*](https://www.amazon.co.jp/gp/product/0472085549/), Michigan University Press.（Ch.1-4）
    * 豊田秀樹. 2022.『[統計学入門 II: 尤度によるデータ生成過程の表現](https://www.amazon.co.jp/dp/4254122721/)』朝倉書店
 :::
@@ -207,14 +218,14 @@ Data |>
 ## データ生成過程への介入
 
 $$
-\text{Income} = \beta_0 + \beta_1 \cdot \text{Quant} + \varepsilon
+\mbox{Income} = \beta_0 + \beta_1 \cdot \mbox{Quant} + \varepsilon
 $$
 
-* Income: 10年後の年収 ($\in [0, \infty)$)
-* Quant:ソンさんの講義を履修したか否か ($\in \{0, 1\})$ )
-* 誤差項($\varepsilon$)には「やる気」や「真面目さ」が含まれるため、Quantと相関がある ($\rightarrow$ **内生性**)
-* 無作為割当で受講有無を決めると、「やる気」や「真面目さ」はQunatと無関係 (**独立**) になる
-   * 例) 受講有無をコイン投げ（W）で決める場合、コインの結果は誤差項（やる気や真面目さ）と独立（ただし、全員がコイン投げの結果に従うと仮定）
+* Income：10年後の年収（$\in [0, \infty)$）
+* Quant：ソンさんの講義を履修したか否か（$\in \{0, 1\})$）
+* 誤差項($\varepsilon$)には「やる気」や「真面目さ」が含まれるため、Quantと相関がある（$\rightarrow$ **内生性**）
+* 無作為割当で受講有無を決めると、「やる気」や「真面目さ」はQunatと無関係（**独立**）になる
+   * 例) 受講有無をコイン投げ（$W$）で決める場合、コインの結果は誤差項（やる気や真面目さ）と独立（ただし、全員がコイン投げの結果に従うと仮定）
    * $\Rightarrow$ 内生性がなくなる!
 
 ```{r}
@@ -307,9 +318,9 @@ Blais, André, Simon Labbé-St-Vincent, Laslier Jean-François, Nicolas Sauger, 
 
 
 * 42名 $\times$ 2グループ
-   * グループ1: 一回投票制4回 $\rightarrow$ 二回投票制4回
-   * グループ2: 二回投票制4回 $\rightarrow$ 一回投票制4回
-* 投票方式による戦略投票 (Strategic Vote) の傾向を比較 
+   * グループ1：一回投票制4回 $\rightarrow$ 二回投票制4回
+   * グループ2：二回投票制4回 $\rightarrow$ 一回投票制4回
+* 投票方式による戦略投票（Strategic Vote）の傾向を比較 
 
 ### 例2
 
@@ -345,14 +356,14 @@ Mueller, Pam A. and Daniel M. Oppenheimer. 2014. "[The Pen Is Mightier Than the 
 Asaba, Yuki, Kyu S Hahn, Seulgi Jang, Tetsuro Kobayashi, and Atsushi Tago. 2020. "[38 seconds above the 38th parallel: how short video clips produced by the US military can promote alignment despite antagonism between Japan and Korea](https://academic.oup.com/irap/article/20/2/253/5151306)," *International Relations of the Asia-Pacific,* 20(2): 253–273.
 
 * サーベイの回答者1500名を2グループに分割
-   * 統制群: 38秒の日米韓軍事協力に関するPACOM制作の動画を視聴
-   * 処置群: ほぼ同じ長さのPACOM制作の動画を視聴 (日韓の言及はなし) 
+   * 統制群：38秒の日米韓軍事協力に関するPACOM制作の動画を視聴
+   * 処置群：ほぼ同じ長さのPACOM制作の動画を視聴（日韓の言及はなし）
 * アメリカに対する感情温度、日韓協力に対する態度を測定
 * グループごとに結果を比較
 
 ### 例2
 
-Song, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022 (forthcoming). "[Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US](https://www.waseda.jp/fpse/winpec/public/working-paper/)," *Canadian Journal of Political Science*.
+Song, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022. "[Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US](https://www.waseda.jp/fpse/winpec/public/working-paper/)," *Canadian Journal of Political Science,* 55 (4): 852-872.
 
 * 回答者621名を統制群と処置群に割当
 * 統制群に以下のように質問
@@ -366,7 +377,7 @@ Now we are going to show you four activities that some people may experience dur
 * Campaign activists threatened me to vote for a candidate.
 :::
 
-* 処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加
+* 処置群には「**Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.**」を追加
 * 結果の平均値を比較
 
 :::
@@ -573,7 +584,7 @@ Statistical Science,* 23(2): 237-249.
 
 :::
 
-## 因果効果の推定: 重回帰分析は?
+## 因果効果の推定：重回帰分析は?
 
 無作為割当のおかげですべての変数が互いに独立
 
@@ -761,10 +772,11 @@ $$
 
 ## 用意するもの
 
+第4、5、6回はRの実習
+
 * ノートPC
-   * デスクトップを持ち込む自信があるなら、デスクトップでもOK
-* Rの導入
-   * 自分のPCにR/RStudioをインストール
-   * クラウド版のR + RStudioの利用
-   * 分からない場合は至急、宋と相談すること
-* ブラインドタッチのスキル
+   * デスクトップ、モニター、キーボード、マウスが持ち込めるなら、デスクトップでもOK（がんばって！！）
+* Rの導入（いずれの方法でもOK）
+   * 自分のPCにR/RStudioをインストールし使用する。
+   * JDCat分析ツール（クラウド版のR + RStudio）を使用する。
+* ブラインドタッチ

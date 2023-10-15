@@ -517,7 +517,7 @@
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 16px;
+  font-size: 32px;
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
@@ -1079,7 +1079,7 @@
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 16px;
+  font-size: 32px;
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
@@ -1651,29 +1651,29 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">母集団 (<span class="math inline">\(n=20\)</span>)</td>
+<td style="text-align: left;">母集団（<span class="math inline">\(n=20\)</span>）</td>
 <td style="text-align: right;">55.0%</td>
 <td style="text-align: right;">38.0歳</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">統制群 (<span class="math inline">\(n=11\)</span>)</td>
+<td style="text-align: left;">統制群（<span class="math inline">\(n=11\)</span>）</td>
 <td style="text-align: right;">54.5%</td>
 <td style="text-align: right;">37.2歳</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">処置群 (<span class="math inline">\(n=9\)</span>)</td>
+<td style="text-align: left;">処置群（<span class="math inline">\(n=9\)</span>）</td>
 <td style="text-align: right;">55.6%</td>
 <td style="text-align: right;">39.0歳</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>統制群と処置群、母集団はそれぞれ<strong>交換可能</strong> (exchangeable)
+<li>統制群と処置群、母集団はそれぞれ<strong>交換可能</strong>（exchangeable）
 <ul>
 <li>処置群に処置を与えること = 母集団全体に処置を与えること</li>
 <li>統制群に処置を与えないこと = 母集団全体に処置を与えないこと</li>
 </ul></li>
-<li>統制群と処置群の比較で<strong>集団を一つの単位としたITE (= ATE)</strong>が推定可能
+<li>統制群と処置群の比較で<strong>集団を一つの単位としたITE（= ATE）</strong>が推定可能
 <ul>
 <li>処置を与えた母集団 vs.&nbsp;処置を与えなかった母集団</li>
 </ul></li>
@@ -1697,8 +1697,8 @@
 <li>内生性:処置変数（講義の履修）と誤差項（やる気など）間の相関
 <ul>
 <li>コイン投げの結果は被験者（学生）の性質と<strong>無関係</strong>に行われるため、誤差項と相関がない。</li>
-<li><strong>外生変数</strong> (Exogenous variable)</li>
-<li>学生の性質 (X) と処置有無 (T) は独立している ⇒ <span class="math inline">\(X \perp T\)</span></li>
+<li><strong>外生変数</strong>（Exogenous variable）</li>
+<li>学生の性質（<span class="math inline">\(X\)</span>）と処置有無（<span class="math inline">\(T\)</span>）は独立している ⇒ <span class="math inline">\(X \perp T\)</span></li>
 </ul></li>
 </ul>
 <p><br></p>
@@ -1758,18 +1758,18 @@
 </section>
 <section id="ランダム化比較試験とは" class="slide level2">
 <h2>ランダム化比較試験とは</h2>
-<p><strong>Randomized Controlled Trial</strong> (RCT)</p>
+<p><strong>Randomized Controlled Trial</strong>（RCT）</p>
 <ul>
 <li>無作為割当で複数のグループを作り上げた上で、異なる刺激・処置を与え、結果を観察する手法
 <ul>
 <li>社会科学でいう「<strong>実験</strong>」の多くはこれを指す</li>
 <li><strong>因果推論の王道</strong></li>
 </ul></li>
-<li>因果効果をもたらす(と想定される)処置変数が外生的
+<li>因果効果をもたらす（と想定される）処置変数が外生的
 <ul>
 <li>グループ間における結果変数の差 = 因果効果</li>
 </ul></li>
-<li>データ生成過程(Data Generating Process; DGP)への直接介入
+<li>データ生成過程（Data Generating Process; <strong>DGP</strong>）への直接介入
 <ul>
 <li><strong>「真のモデル」が分かる</strong></li>
 </ul></li>
@@ -1779,6 +1779,16 @@
 <ul>
 <li>参考）データ生成過程について
 <ul>
+<li>現実世界において、あるデータが生成されるプロセス
+<ul>
+<li>例）<span class="math inline">\(Y\)</span>は<span class="math inline">\(X_1\)</span>と<span class="math inline">\(X_2\)</span>の線形結合した値を平均値とする正規分布から生成される。</li>
+<li>例） <span class="math display">\[
+\begin{align}
+\hat{y} &amp; \sim \mbox{Poisson}(\hat{\lambda}), \\
+\hat{\lambda} &amp; = e^{\beta_0 + \beta_1 X + \beta_2 Z}.
+\end{align}
+\]</span></li>
+</ul></li>
 <li>King, Gary. 1989. <a href="https://www.amazon.co.jp/gp/product/0472085549/"><em>Unifying Political Methodology</em></a>, Michigan University Press.（Ch.1-4）</li>
 <li>豊田秀樹. 2022.『<a href="https://www.amazon.co.jp/dp/4254122721/">統計学入門 II: 尤度によるデータ生成過程の表現</a>』朝倉書店</li>
 </ul></li>
@@ -1787,15 +1797,15 @@
 <section id="データ生成過程への介入" class="slide level2">
 <h2>データ生成過程への介入</h2>
 <p><span class="math display">\[
-\text{Income} = \beta_0 + \beta_1 \cdot \text{Quant} + \varepsilon
+\mbox{Income} = \beta_0 + \beta_1 \cdot \mbox{Quant} + \varepsilon
 \]</span></p>
 <ul>
-<li>Income: 10年後の年収 (<span class="math inline">\(\in [0, \infty)\)</span>)</li>
-<li>Quant:ソンさんの講義を履修したか否か (<span class="math inline">\(\in \{0, 1\})\)</span> )</li>
-<li>誤差項(<span class="math inline">\(\varepsilon\)</span>)には「やる気」や「真面目さ」が含まれるため、Quantと相関がある (<span class="math inline">\(\rightarrow\)</span> <strong>内生性</strong>)</li>
-<li>無作為割当で受講有無を決めると、「やる気」や「真面目さ」はQunatと無関係 (<strong>独立</strong>) になる
+<li>Income：10年後の年収（<span class="math inline">\(\in [0, \infty)\)</span>）</li>
+<li>Quant：ソンさんの講義を履修したか否か（<span class="math inline">\(\in \{0, 1\})\)</span>）</li>
+<li>誤差項(<span class="math inline">\(\varepsilon\)</span>)には「やる気」や「真面目さ」が含まれるため、Quantと相関がある（<span class="math inline">\(\rightarrow\)</span> <strong>内生性</strong>）</li>
+<li>無作為割当で受講有無を決めると、「やる気」や「真面目さ」はQunatと無関係（<strong>独立</strong>）になる
 <ul>
-<li>例) 受講有無をコイン投げ（W）で決める場合、コインの結果は誤差項（やる気や真面目さ）と独立（ただし、全員がコイン投げの結果に従うと仮定）</li>
+<li>例) 受講有無をコイン投げ（<span class="math inline">\(W\)</span>）で決める場合、コインの結果は誤差項（やる気や真面目さ）と独立（ただし、全員がコイン投げの結果に従うと仮定）</li>
 <li><span class="math inline">\(\Rightarrow\)</span> 内生性がなくなる!</li>
 </ul></li>
 </ul>
@@ -1905,10 +1915,10 @@
 <ul>
 <li>42名 <span class="math inline">\(\times\)</span> 2グループ
 <ul>
-<li>グループ1: 一回投票制4回 <span class="math inline">\(\rightarrow\)</span> 二回投票制4回</li>
-<li>グループ2: 二回投票制4回 <span class="math inline">\(\rightarrow\)</span> 一回投票制4回</li>
+<li>グループ1：一回投票制4回 <span class="math inline">\(\rightarrow\)</span> 二回投票制4回</li>
+<li>グループ2：二回投票制4回 <span class="math inline">\(\rightarrow\)</span> 一回投票制4回</li>
 </ul></li>
-<li>投票方式による戦略投票 (Strategic Vote) の傾向を比較</li>
+<li>投票方式による戦略投票（Strategic Vote）の傾向を比較</li>
 </ul>
 </div>
 <div id="tabset-4-2">
@@ -1964,15 +1974,15 @@
 <ul>
 <li>サーベイの回答者1500名を2グループに分割
 <ul>
-<li>統制群: 38秒の日米韓軍事協力に関するPACOM制作の動画を視聴</li>
-<li>処置群: ほぼ同じ長さのPACOM制作の動画を視聴 (日韓の言及はなし)</li>
+<li>統制群：38秒の日米韓軍事協力に関するPACOM制作の動画を視聴</li>
+<li>処置群：ほぼ同じ長さのPACOM制作の動画を視聴（日韓の言及はなし）</li>
 </ul></li>
 <li>アメリカに対する感情温度、日韓協力に対する態度を測定</li>
 <li>グループごとに結果を比較</li>
 </ul>
 </div>
 <div id="tabset-5-2">
-<p>Song, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022 (forthcoming). “<a href="https://www.waseda.jp/fpse/winpec/public/working-paper/">Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US</a>,” <em>Canadian Journal of Political Science</em>.</p>
+<p>Song, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022. “<a href="https://www.waseda.jp/fpse/winpec/public/working-paper/">Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US</a>,” <em>Canadian Journal of Political Science,</em> 55 (4): 852-872.</p>
 <ul>
 <li>回答者621名を統制群と処置群に割当</li>
 <li>統制群に以下のように質問</li>
@@ -1994,7 +2004,7 @@
 </div>
 </div>
 <ul>
-<li>処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加</li>
+<li>処置群には「<strong>Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.</strong>」を追加</li>
 <li>結果の平均値を比較</li>
 </ul>
 </div>
@@ -2270,8 +2280,8 @@
 <li><a href="https://www.jaysong.net/notes/simulation/consistency.html">一致性と不偏性の違いについて</a></li>
 </ul>
 </div></aside></section>
-<section id="因果効果の推定-重回帰分析は" class="slide level2">
-<h2>因果効果の推定: 重回帰分析は?</h2>
+<section id="因果効果の推定重回帰分析は" class="slide level2">
+<h2>因果効果の推定：重回帰分析は?</h2>
 <p>無作為割当のおかげですべての変数が互いに独立</p>
 <ul>
 <li>重回帰分析をしても人種のATEは変化しない (OVB がない)
@@ -2656,18 +2666,18 @@ mean in group 0 mean in group 1
 </section>
 <section id="用意するもの" class="slide level2">
 <h2>用意するもの</h2>
+<p>第4、5、6回はRの実習</p>
 <ul>
 <li>ノートPC
 <ul>
-<li>デスクトップを持ち込む自信があるなら、デスクトップでもOK</li>
+<li>デスクトップ、モニター、キーボード、マウスが持ち込めるなら、デスクトップでもOK（がんばって！！）</li>
 </ul></li>
-<li>Rの導入
+<li>Rの導入（いずれの方法でもOK）
 <ul>
-<li>自分のPCにR/RStudioをインストール</li>
-<li>クラウド版のR + RStudioの利用</li>
-<li>分からない場合は至急、宋と相談すること</li>
+<li>自分のPCにR/RStudioをインストールし使用する。</li>
+<li>JDCat分析ツール（クラウド版のR + RStudio）を使用する。</li>
 </ul></li>
-<li>ブラインドタッチのスキル</li>
+<li>ブラインドタッチ</li>
 </ul>
 
 <p><img src="figs/logo.png" class="slide-logo"></p>
