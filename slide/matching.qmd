@@ -10,8 +10,15 @@ metadata-files:
 
 ```{r}
 #| include: false
-pacman::p_load(tidyverse, gt, broom, modelsummary, 
+pacman::p_load(tidyverse, gt, gtExtras, broom, modelsummary, 
                dagitty, ggdag, WeightIt, MatchIt, mvtnorm)
+
+knitr::opts_chunk$set(dev       = "ragg_png",
+                      dpi       = 300,
+                      fig.align = "center",
+                      echo      = FALSE,
+                      message   = FALSE,
+                      warning   = FALSE)
 
 df1 <- read_csv("data/matching_data1.csv")
 df2 <- read_csv("data/matching_data2.csv")
@@ -64,12 +71,10 @@ df3 <- read_csv("data/matching_data3.csv")
 
 ## 内生性への対処
 
-`matching_data1.csv`の例 (架空データ; 30行 $\times$ 4列)
+`matching_data1.csv`の例（架空データ; 30行 $\times$ 4列）
 
 * 明らかに「やる気」と「履修」は連関
 * 履修有無による平均年収の差は約`r round(mean(df1$Income[df1$Rishu == 1]) - mean(df1$Income[df1$Rishu == 0]), 3)`万円
-
-<br/>
 
 :::{layout-ncol=3}
 ```{r}
@@ -87,15 +92,13 @@ df1[21:30, ]
 
 ## 内生性への対処
 
-方法: 処置変数と結果変数に影響を与える要因(交絡要因)を揃える 
+方法：処置変数と結果変数に影響を与える要因（交絡要因）を揃える 
 
 * 「やる気」のない学生（`Yaruki == 0`）だけに絞ってみる
 * 履修有無による平均年収の差は209万円
 
-<br/>
-
 ::::{.columns}
-:::{.column width=43%}
+:::{.column width=45%}
 ```{r}
 #| echo: true
 df1 |>
@@ -109,9 +112,6 @@ df1 |>
 #| echo: true
 402.5 - 193.5
 ```
-:::
-
-:::{.column width=2%}
 :::
 
 :::{.column width=55%}
@@ -136,7 +136,7 @@ bind_cols(df1 |>
              Income...2 = "所得", Income...7 = "所得",
              Yaruki...3 = "やる気", Yaruki...8 = "やる気", 
              Rishu...4 = "履修", Rishu...9 = "履修") |>
-  tab_options(table.font.size = 20)
+  tab_options(table.font.size = 24)
 ```
 :::
 ::::
@@ -148,10 +148,8 @@ bind_cols(df1 |>
 * 「やる気」のある学生（`Yaruki == 1`）だけに絞ってみる
 * 履修有無による平均年収の差は176.3万円
 
-<br/>
-
 ::::{.columns}
-:::{.column width=43%}
+:::{.column width=45%}
 ```{r}
 #| echo: true
 df1 |>
@@ -165,9 +163,6 @@ df1 |>
 #| echo: true
 570.5455 - 394.2000
 ```
-:::
-
-:::{.column width=2%}
 :::
 
 :::{.column width=55%}
@@ -192,7 +187,7 @@ bind_cols(df1 |>
              Income...2 = "所得", Income...7 = "所得",
              Yaruki...3 = "やる気", Yaruki...8 = "やる気", 
              Rishu...4 = "履修", Rishu...9 = "履修") |>
-  tab_options(table.font.size = 20)
+  tab_options(table.font.size = 24)
 ```
 :::
 ::::
@@ -200,31 +195,32 @@ bind_cols(df1 |>
 ## 内生性への対処
 
 ::::{.columns}
-:::{.column width=5%}
-:::
-
 :::{.column width=40%}
-やる気のない学生のみ（$Z_i = 0$）
-
-|履修（$T$）| 平均年収（$Y$）|
-|----------:|---------------:|
-| 1         | 402.5000       |
-| 0         | 193.5000       |
+```{r}
+#| tbl-cap: "やる気なし"
+tibble(履修 = c(1, 0),
+       平均年収 = c(402.5000, 193.5000)) |>
+  gt() |>
+  cols_label("履修"     = "履修 (T)",
+             "平均年収" = "平均年収 (Y)") |>
+  fmt_markdown(columns = 1, rows = 1) |> 
+  fmt_number(columns = 2, decimals = 1) |>
+  tab_options(table.font.size = 24)
+```
 :::
 
-:::{.column width=10%}
-:::
-
-:::{.column width=40%}
-やる気のある学生のみ（$Z_i = 1$）
-
-|履修（$T$）| 平均年収（$Y$）|
-|----------:|---------------:|
-| 1         | 570.5455       |
-| 0         | 394.2000       |
-:::
-
-:::{.column width=5%}
+:::{.column width=50%}
+```{r}
+#| tbl-cap: "やる気あり"
+tibble(履修 = c(1, 0),
+       平均年収 = c(570.5455, 394.2000))   |>
+  gt() |>
+  cols_label("履修"     = "履修 (T)",
+             "平均年収" = "平均年収 (Y)") |>
+  fmt_markdown(columns = 1, rows = 1) |> 
+  fmt_number(columns = 2, decimals = 1) |>
+  tab_options(table.font.size = 24)
+```
 :::
 ::::
 
@@ -232,26 +228,30 @@ bind_cols(df1 |>
 
 やる気のある（ない）被験者を一人の被験者として考える場合、差分はITEと解釈可能。
 
-* ITEの加重平均 $\rightarrow$ 講義履修の因果効果 $\rightarrow$ 約**191.6万円**
-* （言い換えれば、）$Z = 0$の学生のみのATEと$Z = 1$の学生のみのATEの加重平均
+```{r}
+tibble(ID     = 1:2,
+       N      = c(14, 16),
+       Yaruki = c(0, 1),
+       Y1     = c(402.5000, 570.5455),
+       Y2     = c(193.5000, 394.2000),
+       Diff   = c(209.0000, 176.3455)) |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Yaruki" = html("やる気 (Z<sub>i</sub>)"), 
+             "Y1" = html("Y<sub>i</sub>(T<sub>i</sub> = 1)"), 
+             "Y2" = html("Y<sub>i</sub>(T<sub>i</sub> = 0)"), 
+             "Diff" = html("ITE<sub>i</sub>")) |>
+  fmt_markdown(columns = 1:6)  |> 
+  fmt_number(columns = 4:6, decimals = 1) |> 
+  gt_highlight_cols(columns = 6, fill = "lightblue")
+```
 
-<br/>
+* ITEの**加重**平均 $\rightarrow$ 講義履修の因果効果 $\rightarrow$ 約**191.6万円**
 
-::::{.columns}
-:::{.column width=20%}
-:::
-
-:::{.column width=60%}
-|$i$|$N$|$Z_i$|$Y_i(T_i = 1)$|$Y_i(T_i = 0)$|$\mbox{ITE}_i$|
-|---:|---:|---:|---:|---:|---:|
-|1|14|0|402.5000|193.5000|209.0000|
-|2|16|1|570.5455|394.2000|176.3455|
-|||||加重平均|**191.5843**|
-:::
-
-:::{.column width=20%}
-:::
-::::
+```{r}
+#| echo: true
+weighted.mean(c(209.0, 176.3), w = c(14, 16))
+```
 
 ## マッチングの考え方
 
@@ -266,53 +266,45 @@ bind_cols(df1 |>
    * $\rightarrow$ **処置変数を外生変数として扱うことが可能に**
 * CIAが満たされるためには、割当メカニズム上のすべての交絡要因が必要
 
-## 条件付き独立の仮定とは（`matching_data3.csv`）
+## 条件付き独立の仮定とは
 
 ::::{.columns}
-:::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|
-|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | 1 |
-|  2 | 0 | 0 | 1 | 0 |
-|  3 | 0 | 0 | 0 | 0 |
-|  4 | 0 | 0 | 0 | 0 |
-|  5 | 0 | 1 | 0 | 0 |
-|  6 | 0 | 1 | 1 | 0 |
-|  7 | 0 | 1 | 0 | 0 |
-|  8 | 0 | 1 | 0 | 1 |
-|  9 | 1 | 0 | 1 | 1 |
-| 10 | 1 | 0 | 1 | 0 |
-| 11 | 1 | 0 | 0 | 1 |
-| 12 | 1 | 1 | 1 | 1 |
-| 13 | 1 | 1 | 1 | 1 |
-| 14 | 1 | 1 | 0 | 1 |
-| 15 | 1 | 1 | 0 | 1 |
-| 16 | 1 | 1 | 0 | 1 |
-| 17 | 1 | 1 | 1 | 1 |
-| 18 | 1 | 1 | 1 | 0 |
-| 19 | 1 | 1 | 1 | 0 |
-| 20 | 1 | 1 | 1 | 0 |
-</div>
+:::{.column width=45%}
+```{r}
+df3 |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>")) |>
+  tab_options(data_row.padding = 3,
+              table.font.size  = 18)
+```
 :::
 
 :::{.column width=5%}
 
 :::
 
-:::{.column width=55%}
-||$\mathbb{E}[Y(T = 0)]$|$\mathbb{E}[Y(T = 1)]$|
-|:---:|:---:|:---:|
-|統制群（$T = 0$）|**(A) 0.429**|(B) 0.429|
-|処置群（$T = 1$）|(C) 0.538|**(D) 0.538**|
+:::{.column width=50%}
+```{r}
+tibble(X = c("T = 0", "T = 1"),
+       Y0 = c("(A) **0.429**", "(C) 0.538"),
+       Y1 = c("(B) 0.429", "(D) **0.538**")) |>
+  gt() |>
+  cols_label("Y0" = html("Y<sub>0</sub>"),
+             "Y1" = html("Y<sub>1</sub>")) |>
+  fmt_markdown(columns = 1:3) |>
+  cols_align(align = "center") |>
+  tab_options(table.font.size = 24)
+```
 
-* 観察可能なデータから計算した処置効果は0.538 − 0.429 = 0.109
-   * 真の処置効果は0
-   * (B)と(C)は反実仮想（counterfactual）
-* もし、統制群と処置群が同質なら...
-   * A = C、そしてB = Dのはず
-   * 処置群がもし統制群になっても、今の統制群と同じ
-   * $\Rightarrow$ 交換可能性が成立せず
+* 処置効果は0.538 − 0.429 = 0.109
+* もし、統制群と処置群が同質なら
+* A = C、そしてB = Dのはず
+* 処置群がもし統制群になっても、今の統制群と同じ
+* $\Rightarrow$ 交換可能性が成立せず
 
 ![](figs/matching/moolook.png){width=150px fig-align="center"}
 
@@ -322,44 +314,40 @@ bind_cols(df1 |>
 ## 条件付き独立の仮定とは
 
 ::::{.columns}
-:::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|
-|---:|---:|---:|---:|---:|
-| <font color="red">**1**</font> | **0** | **0** | **0** | **1** |
-| <font color="red">**2**</font> | **0** | **0** | **1** | **0** |
-| <font color="red">**3**</font> | **0** | **0** | **0** | **0** |
-| <font color="red">**4**</font> | **0** | **0** | **0** | **0** |
-| <font color="red">**5**</font> | **0** | **1** | **0** | **0** |
-| <font color="red">**6**</font> | **0** | **1** | **1** | **0** |
-| <font color="red">**7**</font> | **0** | **1** | **0** | **0** |
-| <font color="red">**8**</font> | **0** | **1** | **0** | **1** |
-| <font color="red">**9**</font> | **1** | **0** | **1** | **1** |
-| 10 | 1 | 0 | 1 | 0 |
-| 11 | 1 | 0 | 0 | 1 |
-| 12 | 1 | 1 | 1 | 1 |
-| 13 | 1 | 1 | 1 | 1 |
-| 14 | 1 | 1 | 0 | 1 |
-| 15 | 1 | 1 | 0 | 1 |
-| 16 | 1 | 1 | 0 | 1 |
-| 17 | 1 | 1 | 1 | 1 |
-| 18 | 1 | 1 | 1 | 0 |
-| 19 | 1 | 1 | 1 | 0 |
-| 20 | 1 | 1 | 1 | 0 |
-</div>
+:::{.column width=45%}
+```{r}
+df3 |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>")) |>
+  tab_options(data_row.padding = 3,
+              table.font.size  = 18) |>
+  tab_style(style = cell_fill(color = "lightgreen"),
+            locations = cells_body(rows = (Z == 0)))
+```
 :::
 
 :::{.column width=5%}
 
 :::
 
-:::{.column width=55%}
+:::{.column width=50%}
 $Z$ で条件づけた場合 ( $Z = 0$ )
 
-||$\mathbb{E}[Y(T = 0)]$|$\mathbb{E}[Y(T = 1)]$|
-|:---:|:---:|:---:|
-|統制群（$T = 0$）|**(A) 0.250**|(B) 0.250|
-|処置群（$T = 1$）|(C) 0.250|**(D) 0.250**|
+```{r}
+tibble(X = c("T = 0", "T = 1"),
+       Y0 = c("(A) **0.250**", "(C) 0.250"),
+       Y1 = c("(B) 0.250", "(D) **0.250**")) |>
+  gt() |>
+  cols_label("Y0" = html("Y<sub>0</sub>"),
+             "Y1" = html("Y<sub>1</sub>")) |>
+  cols_align(align = "center") |>
+  fmt_markdown(columns = 1:3) |>
+  tab_options(table.font.size = 24)
+```
 
 * 処置効果は0.250 − 0.250 = 0.000
 * もし、統制群と処置群が同質なら
@@ -374,44 +362,40 @@ $Z$ で条件づけた場合 ( $Z = 0$ )
 ## 条件付き独立の仮定とは
 
 ::::{.columns}
-:::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|
-|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | 1 |
-|  2 | 0 | 0 | 1 | 0 |
-|  3 | 0 | 0 | 0 | 0 |
-|  4 | 0 | 0 | 0 | 0 |
-|  5 | 0 | 1 | 0 | 0 |
-|  6 | 0 | 1 | 1 | 0 |
-|  7 | 0 | 1 | 0 | 0 |
-|  8 | 0 | 1 | 0 | 1 |
-| <font color="red">**9**</font> | **1** | **0** | **1** | **1** |
-| <font color="red">**10**</font> | **1** | **0** | **1** | **0** |
-| <font color="red">**11**</font> | **1** | **0** | **0** | **1** |
-| <font color="red">**12**</font> | **1** | **1** | **1** | **1** |
-| <font color="red">**13**</font> | **1** | **1** | **1** | **1** |
-| <font color="red">**14**</font> | **1** | **1** | **0** | **1** |
-| <font color="red">**15**</font> | **1** | **1** | **0** | **1** |
-| <font color="red">**16**</font> | **1** | **1** | **0** | **1** |
-| <font color="red">**17**</font> | **1** | **1** | **1** | **1** |
-| <font color="red">**18**</font> | **1** | **1** | **1** | **0** |
-| <font color="red">**19**</font> | **1** | **1** | **1** | **0** |
-| <font color="red">**20**</font> | **1** | **1** | **1** | **0** |
-</div>
+:::{.column width=45%}
+```{r}
+df3 |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>")) |>
+  tab_options(data_row.padding = 3,
+              table.font.size  = 18) |>
+  tab_style(style = cell_fill(color = "lightgreen"),
+            locations = cells_body(rows = (Z == 1)))
+```
 :::
 
 :::{.column width=5%}
 
 :::
 
-:::{.column width=55%}
+:::{.column width=50%}
 $Z$ で条件づけた場合 ( $Z = 1$ )
 
-||$\mathbb{E}[Y(T = 0)]$|$\mathbb{E}[Y(T = 1)]$|
-|:---:|:---:|:---:|
-|統制群（$T = 0$）|**(A) 0.667**|(B) 0.667|
-|処置群（$T = 1$）|(C) 0.667|**(D) 0.667**|
+```{r}
+tibble(X = c("T = 0", "T = 1"),
+       Y0 = c("(A) **0.667**", "(C) 0.667"),
+       Y1 = c("(B) 0.667", "(D) **0.667**")) |>
+  gt() |>
+  cols_label("Y0" = html("Y<sub>0</sub>"),
+             "Y1" = html("Y<sub>1</sub>")) |>
+  cols_align(align = "center") |>
+  fmt_markdown(columns = 1:3) |>
+  tab_options(table.font.size = 24)
+```
 
 * 処置効果は0.667 − 0.667 = 0.000
 * もし、統制群と処置群が同質なら
@@ -426,42 +410,28 @@ $Z$ で条件づけた場合 ( $Z = 1$ )
 ## 条件付き独立の仮定とは
 
 ::::{.columns}
-:::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|
-|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | 1 |
-|  2 | 0 | 0 | 1 | 0 |
-|  3 | 0 | 0 | 0 | 0 |
-|  4 | 0 | 0 | 0 | 0 |
-|  5 | 0 | 1 | 0 | 0 |
-|  6 | 0 | 1 | 1 | 0 |
-|  7 | 0 | 1 | 0 | 0 |
-|  8 | 0 | 1 | 0 | 1 |
-|  9 | 1 | 0 | 1 | 1 |
-| 10 | 1 | 0 | 1 | 0 |
-| 11 | 1 | 0 | 0 | 1 |
-| 12 | 1 | 1 | 1 | 1 |
-| 13 | 1 | 1 | 1 | 1 |
-| 14 | 1 | 1 | 0 | 1 |
-| 15 | 1 | 1 | 0 | 1 |
-| 16 | 1 | 1 | 0 | 1 |
-| 17 | 1 | 1 | 1 | 1 |
-| 18 | 1 | 1 | 1 | 0 |
-| 19 | 1 | 1 | 1 | 0 |
-| 20 | 1 | 1 | 1 | 0 |
-</div>
+:::{.column width=45%}
+```{r}
+df3 |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>")) |>
+  tab_options(data_row.padding = 3)
+```
 :::
 
 :::{.column width=5%}
 
 :::
 
-:::{.column width=55%}
-条件付き独立が成立するということは...
+:::{.column width=50%}
+条件付き独立が成立するということは
 
+* 交換可能性が成立
 * 処置群を統制群に、統制群を処置群にしても同じ結果が得られること
-   * $\Rightarrow$ 統制群と処置群は交換可能
 :::
 ::::
 
@@ -474,9 +444,8 @@ $Z$ で条件づけた場合 ( $Z = 1$ )
 
 重回帰分析とマッチングの結果が近似することも $\bigcirc$
 
-* 手計算マッチング: 191.5843
-
-<br/>
+* 参考）手計算マッチングの結果：約191.6万円
+   * 計算時に小数点を切り捨てたため誤差あり
 
 ::::{.columns}
 :::{.column width=55%}
@@ -507,8 +476,8 @@ modelsummary(list("単回帰分析" = Fit1, "重回帰分析" = Fit2),
 * 具体的に言えば、回帰分析はマッチングの特殊な形態
    * 強い仮定を置いたマッチング
    * 回帰分析は $Y = \beta_0 + \beta_1 X_1 + ... + \beta_k X_k$ の関数型を仮定 (parametric)
-* 回帰分析において誤差項の平均値は必ず0を仮定 ( $\mathbb{E}[\varepsilon|T, X] = 0$ )
-   * マッチングの場合、( $\mathbb{E}[\varepsilon|T = 0, X] = \mathbb{E}[\varepsilon|T = 1, X]$ )
+* 回帰分析において誤差項の平均値は必ず0を仮定 ( $\mathbb{E}(\varepsilon|T, X) = 0$ )
+   * マッチングの場合、( $\mathbb{E}(\varepsilon|T = 0, X) = \mathbb{E}(\varepsilon|T = 1, X)$ )
 * 回帰分析はオーバーラップ条件を無視する
    * マッチングされないケースでも、線形関数によって予測されてしまう
    * マッチングはオーバーラップされないケースを分析から除外する
@@ -547,7 +516,7 @@ df1 |>
   select(ID, Yaruki, Y1, Y0, ITE) |>
   filter(ID <= 7 | ID > 19) |>
   mutate(across(where(is.numeric), as.character)) |>
-  add_row(ID = "平均 (ATT)", Yaruki = "", Y0 = "", Y1 = "", ITE = "185.1") |>
+  add_row(ID = "平均", Yaruki = "", Y0 = "", Y1 = "", ITE = "185.1") |>
   add_row(ID = "...", Yaruki = "...", Y0 = "...", Y1 = "...", ITE = "...",
           .after = 6) |>
   gt() |>
@@ -573,7 +542,7 @@ df1 |>
   select(ID, Yaruki, Y1, Y0, ITE) |>
   filter(ID < 17 | ID > 24) |>
   mutate(across(where(is.numeric), as.character)) |>
-  add_row(ID = "平均 (ATC)", Yaruki = "", Y0 = "", Y1 = "", ITE = "198.1") |>
+  add_row(ID = "平均", Yaruki = "", Y0 = "", Y1 = "", ITE = "198.1") |>
   add_row(ID = "...", Yaruki = "...", Y0 = "...", Y1 = "...", ITE = "...",
           .after = 6) |>
   gt() |>
@@ -645,8 +614,6 @@ $$d(i, j) = |X_i - X_j| + |Y_i - Y_j| \text{ where } i \neq j.$$
 
 :::{.column width=70%}
 ```{r}
-#| fig-width: 6
-#| fig-height: 3
 ggplot() +
   geom_segment(aes(x = -2, y = -2, xend = 4, yend = -2), size = 2) +
   geom_segment(aes(x = 4, y = -2, xend = 4, yend = 4), size = 2) +
@@ -655,7 +622,7 @@ ggplot() +
   scale_y_continuous(breaks = -5:5, labels = -5:5) +
   coord_cartesian(xlim = c(-5, 5), ylim = c(-5, 5)) +
   labs(x = "X", y = "Y") +
-  theme_bw(base_size = 16) +
+  theme_gray(base_size = 16) +
   theme(panel.grid.minor = element_blank())
 ```
 :::
@@ -672,8 +639,6 @@ $$d(i, j) = \sqrt{\Bigg(\frac{X_i - X_j}{\sigma_X}\Bigg)^2 + \Bigg(\frac{Y_i - Y
 
 :::{.column width=70%}
 ```{r}
-#| fig-width: 6
-#| fig-height: 3
 ggplot() +
   geom_segment(aes(x = -2, y = -2, xend = 4, yend = 4), size = 2) +
   geom_point(aes(x = c(-2, 4), y = c(-2, 4)), size = 2.5, color = "red") +
@@ -681,7 +646,7 @@ ggplot() +
   scale_y_continuous(breaks = -5:5, labels = -5:5) +
   coord_cartesian(xlim = c(-5, 5), ylim = c(-5, 5)) +
   labs(x = "X", y = "Y") +
-  theme_bw(base_size = 16) +
+  theme_gray(base_size = 16) +
   theme(panel.grid.minor = element_blank())
 ```
 :::
@@ -695,7 +660,7 @@ $$d(i, j) = \sqrt{\frac{1}{1 - \rho^2_{X, Y}} \Bigg[\Bigg(\frac{X_i - X_j}{\sigm
 
 ::::{.columns}
 :::{.column width=30%}
-![](figs/matching/Mahalanobis.png){width="350px" fig-align="center"}
+![](figs/matching/Mahalanobis.png){fig-align="center"}
 :::
 
 :::{.column width=70%}
@@ -755,7 +720,7 @@ mh_df |> ggplot() +
 
 ## k-nearest Neighbor Matching
 
-$k$-最近傍マッチング
+k-最近傍マッチング
 
 * 最も近い1個ケースを潜在的結果として使うのではなく、**最も近い $k$ 個のケースの平均値**を潜在的結果として用いる。
    * $j(m)$ : $i$ から $m$ 番目に近いケース $j$
@@ -773,8 +738,6 @@ $$Y_i(T_i = 0) = \begin{cases}Y_i & \text{ if } T_i = 0\\ \frac{1}{K} \sum_{m = 
 「カリパーマッチング」と訳される（訳されてない...?）
 
 * **半径 $h$ の中にある全てのケースの平均値**を潜在的結果として使用
-
-<br/>
 
 ::::{.columns}
 :::{.column width=45%}
@@ -805,7 +768,7 @@ mh_df |>
 
 ## 復元マッチングと非復元マッチング
 
-* 1:1マッチングの場合に生じる問題: マッチング済みの統制群（処置群）をどう扱うか
+* 1:1マッチングの場合に生じる問題：マッチング済みの統制群（or 処置群）をどう扱うか
    * 他にも近い処置群のケースがあればマッチング $\rightarrow$ 復元マッチング
    * 他にも近い処置群のケースがあっても使わない $\rightarrow$ 非復元マッチング
 * 復元マッチングの場合、統制群の各ケースに**重み**が付与される。
@@ -813,6 +776,7 @@ mh_df |>
 * 多くのパッケージは非復元がデフォルトとなっているが、推定ごとに結果が変化することも（図BとC）
    * 復元マッチングはバランスが改善されやすいが、サンプルサイズが小さくなる。
 * **正しい**方法はなく、分析者の判断が必要。
+* 下の例はATT推定の例（赤が処置群、青は統制群）
 
 ```{r}
 #| fig-width: 5
@@ -1015,7 +979,7 @@ tibble(Age  = c(rep("20代", 4),
 各ユニットの重みを計算
 
 ::::{.columns}
-:::{.column width=40%}
+:::{.column width=50%}
 $$w_i = \begin{cases} 1 & \text{ if } T_i = 1, \\ \frac{m_C}{m_T} \cdot \frac{m^s_T}{m^s_C} & \text{ if } T_i = 0.\end{cases}$$
 
 * $m_{C,T}$: 統制・処置ケースの数
@@ -1023,7 +987,7 @@ $$w_i = \begin{cases} 1 & \text{ if } T_i = 1, \\ \frac{m_C}{m_T} \cdot \frac{m^
 * $m^s_{C,T}$: 層 $s$ 内の統制・処置ケースの数
 :::
 
-:::{.column width=60%}
+:::{.column width=50%}
 ```{r}
 tibble(Age  = c(rep("20代", 4),
                 rep("30代", 2),
@@ -1064,12 +1028,13 @@ tibble(Age  = c(rep("20代", 4),
 重み付け回帰分析
 
 * $W = \{2.200, 0.367, 1.000, 1.100, 0.000, 0.000, ..., 1.100\}^{\top}$
-   * マッチングされないケースの重みは0にするか、分析から除外
-   * $\beta = (X^{\top}WX)^{-1}X^{\top}WY$
+   * マッチングされないケースの重みは0にする（= 分析から除外される）
+   * $\beta = (X^{\prime}WX)^{-1}X^{\prime}WY$
 * Rの場合、`lm(formula, data, weight = ...)`で推定可能
    * {cem} or {MatchIt}パッケージならもっと簡単
 * $\widehat{\text{Outcome}} = 4.567 + 2.033 \cdot \text{Treat}$
-   * 処置群における因果効果 (ATT) = 2.033
+   * 処置群における因果効果（ATT）= 2.033
+   * ATCの場合、重み付けが逆（統制群の重みを1とする）
 
 # 傾向スコア
 
@@ -1077,28 +1042,19 @@ tibble(Age  = c(rep("20代", 4),
 
 **Propensity Score**
 
-* 簡単にいうと「あるユニット $i$ が**処置を受ける確率**」
+* 簡単にいうと「あるユニット$i$が**処置を受ける確率**」
+   * 主に$e$と表記する。
    * $e_i = Pr(T_i = 1 | X_i)$
-
-<br/><br/><br/><br/>
-
-なぜ傾向スコア?
-
-* マッチングの限界
-   1. 次元の問題 (dimension problem)
-   2. 恣意性
-   3. カテゴリ変数の扱い方
-   4. スケールの問題
 
 ## 傾向スコアの計算
 
-処置変数 ( $T_i$ ) を応答変数とし、共変量 ( $X_i$ ) を説明変数とする
+処置変数（$T_i$）を応答変数とし、共変量（$X_i$）を説明変数とする。
 
 * 一般的に、ロジットやプロビット回帰分析で推定する。
    * 他にも色々ある
       * Support Vector Machine, Decision Tree, Neural Network, ...
    * 色んな手法で算出した傾向スコアを重み付けして合成することも可能
-      * Ensemble Method (Samii, Paler, and Zukerman 2016)
+      * Ensemble Method（Samii, Paler, and Zukerman 2016）
 
 <br/><br/>
 
@@ -1115,32 +1071,30 @@ tibble(Age  = c(rep("20代", 4),
 ::::{.columns}
 :::{.column width=40%}
 $$Pr(\text{処置}) \propto \beta_0 + \beta_1 \cdot \text{年齢} + \beta_2 \cdot \text{教育}$$
+
+* 参考）教育水準
+   1. 1：小
+   1. 2：中
+   1. 3：高
+   1. 4：専
+   1. 5：大
+   1. 6：院
 :::
 
 :::{.column width=60%}
 ```{r}
-df2_c3 <- df2 |>
-  mutate(Edu2 = case_when(Edu == 1 ~ "小",
-                          Edu == 2 ~ "中",
-                          Edu == 3 ~ "高",
-                          Edu == 4 ~ "専",
-                          Edu == 5 ~ "大",
-                          TRUE     ~ "院"))
+df2_c3 <- df2
 
 bind_cols(df2_c3 |> 
-            filter(ID <= 12) |> 
-            select(-Edu) |>
-            relocate(Edu2, .after = Age),
+            filter(ID <= 12),
           tibble(X = rep("", 12)), 
           df2_c3 |>
-            filter(ID > 12) |> 
-            select(-Edu) |>
-            relocate(Edu2, .after = Age)) |>
+            filter(ID > 12)) |>
   gt() |>
   cols_label(X = "　",
              ID...1 = "ID", ID...7 = "ID",
              Age...2 = "年齢", Age...8 = "年齢",
-             Edu2...3 = "教育", Edu2...9 = "教育",
+             Edu...3 = "教育", Edu...9 = "教育",
              Treat...4 = "処置", Treat...10 = "処置",
              Outcome...5 = "結果", Outcome...11 = "結果") |>
   tab_options(table.font.size = 24)
@@ -1168,33 +1122,40 @@ modelsummary(PS_Fit,
              gof_map   = c("nobs", "aic", "F"))
 ```
 
+予測確率の抽出
+
+```{r}
+#| echo: true
+PS_Fit$fitted.value
+```
+
 ## 傾向スコアの算出
 
 傾向スコアの抽出
 
+::::{.columns}
+:::{.column width=40%}
 ```{r}
 #| echo: true
 #| eval: false
 データ$PS <- PS_Fit$fitted.value
 ```
+:::
 
+:::{.column width=60%}
 ```{r}
 df2_c3$PS <- PS_Fit$fitted.value
 
 bind_cols(df2_c3 |> 
-            filter(ID <= 12) |> 
-            select(-Edu) |>
-            relocate(Edu2, .after = Age),
+            filter(ID <= 12),
           tibble(X = rep("", 12)), 
           df2_c3 |>
-            filter(ID > 12) |> 
-            select(-Edu) |>
-            relocate(Edu2, .after = Age)) |>
+            filter(ID > 12)) |>
   gt() |>
   cols_label(X = "　", PS...6 = "PS", PS...13 = "PS",
              ID...1 = "ID", ID...8 = "ID",
              Age...2 = "年齢", Age...9 = "年齢",
-             Edu2...3 = "教育", Edu2...10 = "教育",
+             Edu...3 = "教育", Edu...10 = "教育",
              Treat...4 = "処置", Treat...11 = "処置",
              Outcome...5 = "結果", Outcome...12 = "結果") |>
   fmt_number(columns = c(6, 13), decimals = 3) |>
@@ -1202,6 +1163,8 @@ bind_cols(df2_c3 |>
   tab_style(style = cell_fill(color = "gray90"),
             locations = cells_body(columns = c(6, 13)))
 ```
+:::
+::::
 
 ## 傾向スコアの算出
 
@@ -1209,8 +1172,7 @@ bind_cols(df2_c3 |>
 :::{.column width=50%}
 **ATT**: 傾向スコアが最も近い統制群を割り当てる
 
-* 一回マッチングされたケースを除外する vs. しない
-* 傾向スコアが同じケースが複数ある場合の対処
+* 復元マッチングの例
 :::
 
 :::{.column width=50%}
@@ -1230,7 +1192,6 @@ bind_cols(df2_c3[c(3, 7, 10, 11, 12, 14, 15, 18, 19, 21, 23), ] |>
              Outcome...2 = "結果", Outcome...6 = "結果",
              Diff = "差分") |>
   fmt_number(columns = c(3, 7), decimals = 3) |>
-  tab_options(table.font.size = 24) |>
   tab_spanner(label = "処置群", columns = 1:3) |>
   tab_spanner(label = "統制群", columns = 5:7) |>
   tab_style(style = cell_fill(color = "gray90"),
@@ -1339,30 +1300,17 @@ $$w_i = T_i \frac{1}{e_i} + (1 - T_i) \frac{1}{1 - e_i}.$$
 
 ::::{.columns}
 :::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|
-|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | 1 |
-|  2 | 0 | 0 | 1 | 0 |
-|  3 | 0 | 0 | 0 | 0 |
-|  4 | 0 | 0 | 0 | 0 |
-|  5 | 0 | 1 | 0 | 0 |
-|  6 | 0 | 1 | 1 | 0 |
-|  7 | 0 | 1 | 0 | 0 |
-|  8 | 0 | 1 | 0 | 1 |
-|  9 | 1 | 0 | 1 | 1 |
-| 10 | 1 | 0 | 1 | 0 |
-| 11 | 1 | 0 | 0 | 1 |
-| 12 | 1 | 1 | 1 | 1 |
-| 13 | 1 | 1 | 1 | 1 |
-| 14 | 1 | 1 | 0 | 1 |
-| 15 | 1 | 1 | 0 | 1 |
-| 16 | 1 | 1 | 0 | 1 |
-| 17 | 1 | 1 | 1 | 1 |
-| 18 | 1 | 1 | 1 | 0 |
-| 19 | 1 | 1 | 1 | 0 |
-| 20 | 1 | 1 | 1 | 0 |
-</div>
+```{r}
+df3 |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>")) |>
+  tab_options(table.font.size = 18,
+              data_row.padding = 3)
+```
 :::
 
 :::{.column width=60%}
@@ -1397,30 +1345,26 @@ $$w_i = T_i \frac{1}{e_i} + (1 - T_i) \frac{1}{1 - e_i}.$$
 
 ::::{.columns}
 :::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|$e_i$|$W_i$|
-|---:|---:|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  2 | 0 | 0 | 1 | ? | 0.50 | 2.00 |
-|  3 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  4 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  5 | 0 | 1 | ? | 0 | 0.50 |  |
-|  6 | 0 | 1 | ? | 0 | 0.50 |  |
-|  7 | 0 | 1 | ? | 0 | 0.50 |  |
-|  8 | 0 | 1 | ? | 1 | 0.50 |  |
-|  9 | 1 | 0 | 1 | ? | 0.75 | 4.00 |
-| 10 | 1 | 0 | 1 | ? | 0.75 | 4.00 |
-| 11 | 1 | 0 | 0 | ? | 0.75 | 4.00 |
-| 12 | 1 | 1 | ? | 1 | 0.75 |  |
-| 13 | 1 | 1 | ? | 1 | 0.75 |  |
-| 14 | 1 | 1 | ? | 1 | 0.75 |  |
-| 15 | 1 | 1 | ? | 1 | 0.75 |  |
-| 16 | 1 | 1 | ? | 1 | 0.75 |  |
-| 17 | 1 | 1 | ? | 1 | 0.75 |  |
-| 18 | 1 | 1 | ? | 0 | 0.75 |  |
-| 19 | 1 | 1 | ? | 0 | 0.75 |  |
-| 20 | 1 | 1 | ? | 0 | 0.75 |  |
-</div>
+```{r}
+df3 |>
+  mutate(across(everything(), as.character)) |>
+  mutate(Y0 = if_else(T == "0", Y0, "?"),
+         Y1 = if_else(T == "1", Y1, "?"),
+         e  = if_else(Z == "0", "0.50", "0.75"),
+         W  = case_when(Z == "0" & T == "0" ~ "2.00",
+                        Z == "1" & T == "0" ~ "4.00",
+                        TRUE                ~ " ")) |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>"),
+             "e"  = html("e<sub>i</sub>"),
+             "W"  = html("W<sub>i</sub>")) |>
+  tab_options(table.font.size = 18,
+              data_row.padding = 3)
+```
 :::
 
 :::{.column width=60%}
@@ -1442,30 +1386,26 @@ $$w_i = T_i \frac{1}{e_i} + (1 - T_i) \frac{1}{1 - e_i}.$$
 
 ::::{.columns}
 :::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|$e_i$|$W_i$|
-|---:|---:|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | ? | 0.50 |  |
-|  2 | 0 | 0 | 1 | ? | 0.50 |  |
-|  3 | 0 | 0 | 0 | ? | 0.50 |  |
-|  4 | 0 | 0 | 0 | ? | 0.50 |  |
-|  5 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  6 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  7 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  8 | 0 | 1 | ? | 1 | 0.50 | 2.00 |
-|  9 | 1 | 0 | 1 | ? | 0.75 |  |
-| 10 | 1 | 0 | 1 | ? | 0.75 |  |
-| 11 | 1 | 0 | 0 | ? | 0.75 |  |
-| 12 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 13 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 14 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 15 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 16 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 17 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 18 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-| 19 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-| 20 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-</div>
+```{r}
+df3 |>
+  mutate(across(everything(), as.character)) |>
+  mutate(Y0 = if_else(T == "0", Y0, "?"),
+         Y1 = if_else(T == "1", Y1, "?"),
+         e  = if_else(Z == "0", "0.50", "0.75"),
+         W  = case_when(Z == "0" & T == "1" ~ "2.00",
+                        Z == "1" & T == "1" ~ "1.33",
+                        TRUE                ~ " ")) |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>"),
+             "e"  = html("e<sub>i</sub>"),
+             "W"  = html("W<sub>i</sub>")) |>
+  tab_options(table.font.size = 18,
+              data_row.padding = 3)
+```
 :::
 
 :::{.column width=60%}
@@ -1487,30 +1427,30 @@ $$w_i = T_i \frac{1}{e_i} + (1 - T_i) \frac{1}{1 - e_i}.$$
 
 ::::{.columns}
 :::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|$e_i$|$W_i$|
-|---:|---:|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  2 | 0 | 0 | 1 | ? | 0.50 | 2.00 |
-|  3 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  4 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  5 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  6 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  7 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  8 | 0 | 1 | ? | 1 | 0.50 | 2.00 |
-|  9 | 1 | 0 | 1 | ? | 0.75 | 4.00 |
-| 10 | 1 | 0 | 1 | ? | 0.75 | 4.00 |
-| 11 | 1 | 0 | 0 | ? | 0.75 | 4.00 |
-| 12 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 13 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 14 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 15 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 16 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 17 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 18 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-| 19 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-| 20 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-</div>
+```{r}
+df3 |>
+  mutate(across(everything(), as.character)) |>
+  mutate(Y0 = if_else(T == "0", Y0, "?"),
+         Y1 = if_else(T == "1", Y1, "?"),
+         e  = if_else(Z == "0", "0.50", "0.75"),
+         W  = case_when(Z == "0" ~ "2.00",
+                        Z == "1" & T == "0" ~ "4.00",
+                        Z == "1" & T == "1" ~ "1.33")) |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>"),
+             "e"  = html("e<sub>i</sub>"),
+             "W"  = html("W<sub>i</sub>")) |>
+  tab_style(style = cell_fill(color = "cornsilk"),
+            locations = cells_body(rows = (T == 0))) |>
+  tab_style(style = cell_fill(color = "azure"),
+            locations = cells_body(rows = (T == 1))) |>
+  tab_options(table.font.size = 18,
+              data_row.padding = 3)
+```
 :::
 
 :::{.column width=60%}
@@ -1525,30 +1465,30 @@ $$w_i = T_i \frac{1}{e_i} + (1 - T_i) \frac{1}{1 - e_i}.$$
 
 ::::{.columns}
 :::{.column width=40%}
-<div style="font-size:0.8em">
-|$i$|$Z_i$|$T_i$|$Y_i(T_i = 0)$|$Y_i(T_i = 1)$|$e_i$|$W_i$|
-|---:|---:|---:|---:|---:|---:|---:|
-|  1 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  2 | 0 | 0 | 1 | ? | 0.50 | 2.00 |
-|  3 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  4 | 0 | 0 | 0 | ? | 0.50 | 2.00 |
-|  5 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  6 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  7 | 0 | 1 | ? | 0 | 0.50 | 2.00 |
-|  8 | 0 | 1 | ? | 1 | 0.50 | 2.00 |
-|  9 | 1 | 0 | 1 | ? | 0.75 | 4.00 |
-| 10 | 1 | 0 | 1 | ? | 0.75 | 4.00 |
-| 11 | 1 | 0 | 0 | ? | 0.75 | 4.00 |
-| 12 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 13 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 14 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 15 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 16 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 17 | 1 | 1 | ? | 1 | 0.75 | 1.33 |
-| 18 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-| 19 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-| 20 | 1 | 1 | ? | 0 | 0.75 | 1.33 |
-</div>
+```{r}
+df3 |>
+  mutate(across(everything(), as.character)) |>
+  mutate(Y0 = if_else(T == "0", Y0, "?"),
+         Y1 = if_else(T == "1", Y1, "?"),
+         e  = if_else(Z == "0", "0.50", "0.75"),
+         W  = case_when(Z == "0" ~ "2.00",
+                        Z == "1" & T == "0" ~ "4.00",
+                        Z == "1" & T == "1" ~ "1.33")) |>
+  gt() |>
+  cols_label("ID" = "ID (i)",
+             "Z"  = html("Z<sub>i</sub>"),
+             "T"  = html("T<sub>i</sub>"),
+             "Y0" = html("Y<sub>0, i</sub>"),
+             "Y1" = html("Y<sub>1, i</sub>"),
+             "e"  = html("e<sub>i</sub>"),
+             "W"  = html("W<sub>i</sub>")) |>
+  tab_style(style = cell_fill(color = "cornsilk"),
+            locations = cells_body(rows = (T == 0))) |>
+  tab_style(style = cell_fill(color = "azure"),
+            locations = cells_body(rows = (T == 1))) |>
+  tab_options(table.font.size = 18,
+              data_row.padding = 3)
+```
 :::
 
 :::{.column width=60%}
@@ -1673,12 +1613,11 @@ ggdag(DAG2, node_size = 16, text_size = 9, stylized = TRUE) +
 
 DAGitty --- draw and analyze causal diagrams
 
-* ウェーブページ or Rパッケージ{dagitty}（<http://www.dagitty.net/>）
-
-<br/>
+* ウェーブページ or Rパッケージ{dagitty}
+   * <http://www.dagitty.net/>
 
 ::::{.columns}
-:::{.column width=45%}
+:::{.column width=50%}
 ```{r}
 #| echo: true
 pacman::p_load(ggdag)
@@ -1695,10 +1634,7 @@ DAG1 <- dagitty(
 ```
 :::
 
-:::{.column width=2%}
-:::
-
-:::{.column width=53%}
+:::{.column width=50%}
 ```{r}
 #| echo: true
 # Total Effect推定のための共変量
@@ -1717,9 +1653,7 @@ adjustmentSets(DAG1,
 
 {ggdag}を用いた可視化 
 
-* 詳細は『私たちのR』[第20章](https://www.jaysong.net/RBook/visualization4.html#visual4-dag)を参照
-
-<br/>
+* 詳細は『私たちのR』[第22章](https://www.jaysong.net/RBook/visualization4.html#visual4-dag)を参照
 
 ::::{.columns}
 :::{.column width=45%}
@@ -1753,3 +1687,55 @@ ggdag(DAG1,
 ```
 :::
 ::::
+
+# 実習
+
+## 実習内容
+
+* マッチングの実装: {MatchIt}、{WeightIt}パッケージ
+   * 線形回帰分析
+   * 最近傍マッチング（Mahalanobis Matching）
+   * CEM
+   * 傾向スコアマッチング
+   * IPW
+* バランスチェック: {cobalt}パッケージ
+   * 標準化差分
+   * ヒストグラム
+   * QQ Plotなど
+* マッチング手法間の比較
+
+## 実習用データ: lalonde（職業訓練と所得）
+
+lalondeは様々なパッケージがサンプルデータとして提供しているが、本講義では{cobalt}のlalondeデータセットを利用
+
+::::{.columns}
+:::{.column width=65%}
+* `data("lalonde", package = "cobalt")`で読み込み
+   * その前に{cobalt}パッケージを読み込む
+
+```{r}
+#| echo: true
+data("lalonde", package = "cobalt")
+la_df <- as_tibble(lalonde) # tibble構造へ変換
+la_df
+```
+:::
+
+:::{.column width=35%}
+||変数名|説明|
+|:---:|:---|:---|
+| 1 | `treat` | 職業訓練の履修有無 |
+| 2 | `age` | 年齢 |
+| 3 | `educ` | 教育年数 |
+| 4 | `race` | 人種 |
+| 5 | `married` | 結婚有無 |
+| 6 | `nodegree` | 学位有無 |
+| 7 | `re74` | 1974年の所得 |
+| 8 | `re75` | 1975年の所得 |
+| 9 | `re78` | 1978年の所得 |
+:::
+::::
+
+:::{.aside}
+* Lalonde, Robert. 1984. "[Evaluating the Econometric Evaluations of Training Programs with Experimental Data](https://www.jstor.org/stable/1806062)," *American Economic Review,* 76 (4): 604-620.
+:::

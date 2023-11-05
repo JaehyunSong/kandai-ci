@@ -45,8 +45,6 @@ website:
         - intro/file.qmd
         - text: "パッケージ"
           href: intro/packages.qmd
-        #- intro/homework.qmd
-        #- intro/faq.qmd
     - id: material
       title: "講義資料"
       style: "docked"
