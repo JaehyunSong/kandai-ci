@@ -1,6 +1,6 @@
 ---
-subtitle: "第9回 差分の差分法"
-date: "2023/11/27"
+subtitle: "第10回 差分の差分法"
+date: "2023/12/04"
 format: revealjs
 metadata-files: 
   - _slide.yml
@@ -33,16 +33,14 @@ evote    <- read_csv("Data/did_data2.csv")
 
 ## 自然実験とは
 
-RCTの3つの特徴 (Freedman, Pisani, and Purves 2007)
+#### RCTの3つの特徴 (Freedman, Pisani, and Purves 2007)
 
-1. The response of experimental subjects assigned to receive a treatment is
+1. 処置群に割り当てられた被験者の反応（response/outcome）は、統制群に割り当てられた被験者の反応と比較されます。
 compared to the response of subjects assigned to a control group.
-2. The assignment of subjects to treatment and control groups is done at random, through a randomizing device such as a coin flip.
-3. The manipulation of the treatment—also known as the intervention—is under the control of an experimental researcher.
+2. 被験者を処置群と統制群に割り当てることは、ランダムな装置（コイン投げなど）を使って無作為に行われる。
+3. 処置（treatment/intervention）の操作は実験研究者の管理下で行われる。
 
-<br/>
-
-自然実験は (Dunning 2012)
+#### 自然実験は... (Dunning 2012)
 
 1. 同じ
 2. 処置の有無は無作為の**ように**決まる (as-if random)。
@@ -81,7 +79,10 @@ compared to the response of subjects assigned to a control group.
 
 ## 保育所の整備と母の就労率 (1)
 
-X軸：$\frac{\mbox{認可保育所定員}}{\mbox{5歳以下子供数}}$；Y軸：女性の就労率（元ネタ: [Asai, Kambayashi, and Yamaguchi (2015)](https://www.sciencedirect.com/science/article/pii/S088915831500043X) / データは宋が収集）
+元ネタ: [Asai, Kambayashi, and Yamaguchi (2015)](https://www.sciencedirect.com/science/article/pii/S088915831500043X)（データは宋が収集）
+
+* X軸：認可保育所定員率 = 認可保育所定員 / 5歳以下子供数
+* Y軸：女性の就労率
 
 ```{r}
 #| fig-width: 8
@@ -729,7 +730,7 @@ bind_rows(list("Model 1" = tidy(Hoiku_Fit1),
 
 実習用データ
 
-* `did_data3.csv`: 学校内銃撃事件と政治参加（LMSからダウンロード）
+* `did_data3.csv`: 学校内銃撃事件と政治参加
    * Laura García-Montoya, Ana Arjona, and Matthew Lacombe. 2022. "[Violence and Voting in the United States: How School Shootings Affect Elections](https://www.cambridge.org/core/journals/american-political-science-review/article/violence-and-voting-in-the-united-states-how-school-shootings-affect-elections/48D77237C8B89BCA106ED7BAC20CE2E4)," *American Political Science Review,* 116 (3): 807-826.
 
 ## データの説明
@@ -757,3 +758,11 @@ García-Montoya, Arjona, and Lacombe (2022)のFigure 3&4の一部を再現
 
 1. {estimatr}パッケージ（`lm_robust()`関数）の使い方
 1. 推定結果の可視化
+
+#### 参考
+
+* R pacakge: {[DIDdesign](https://github.com/naoki-egami/DIDdesign)}
+* Doubly Robust Difference-in-Differences Estimators
+* Difference-in-Difference-in-Difference（Triple difference; DDD）
+* Synthetic Control Method（SCM）、Generalized Synthetic Control Method
+* CausalImpact

@@ -1012,7 +1012,7 @@
     "href": "slide/did.html#自然実験とは",
     "title": "社会科学における因果推論",
     "section": "自然実験とは",
-    "text": "自然実験とは\nRCTの3つの特徴 (Freedman, Pisani, and Purves 2007)\n\nThe response of experimental subjects assigned to receive a treatment is compared to the response of subjects assigned to a control group.\nThe assignment of subjects to treatment and control groups is done at random, through a randomizing device such as a coin flip.\nThe manipulation of the treatment—also known as the intervention—is under the control of an experimental researcher.\n\n\n自然実験は (Dunning 2012)\n\n同じ\n処置の有無は無作為のように決まる (as-if random)。\n処置内容などを研究者が操作することは不可能\n\n2と3は自然、制度などによって影響を受ける"
+    "text": "自然実験とは\nRCTの3つの特徴 (Freedman, Pisani, and Purves 2007)\n\n処置群に割り当てられた被験者の反応（response/outcome）は、統制群に割り当てられた被験者の反応と比較されます。 compared to the response of subjects assigned to a control group.\n被験者を処置群と統制群に割り当てることは、ランダムな装置（コイン投げなど）を使って無作為に行われる。\n処置（treatment/intervention）の操作は実験研究者の管理下で行われる。\n\n自然実験は… (Dunning 2012)\n\n同じ\n処置の有無は無作為のように決まる (as-if random)。\n処置内容などを研究者が操作することは不可能\n\n2と3は自然、制度などによって影響を受ける"
   },
   {
     "objectID": "slide/did.html#自然実験の例",
@@ -1033,7 +1033,7 @@
     "href": "slide/did.html#保育所の整備と母の就労率-1",
     "title": "社会科学における因果推論",
     "section": "保育所の整備と母の就労率 (1)",
-    "text": "保育所の整備と母の就労率 (1)\nX軸：\\(\\frac{\\mbox{認可保育所定員}}{\\mbox{5歳以下子供数}}\\)；Y軸：女性の就労率（元ネタ: Asai, Kambayashi, and Yamaguchi (2015) / データは宋が収集）"
+    "text": "保育所の整備と母の就労率 (1)\n元ネタ: Asai, Kambayashi, and Yamaguchi (2015)（データは宋が収集）\n\nX軸：認可保育所定員率 = 認可保育所定員 / 5歳以下子供数\nY軸：女性の就労率"
   },
   {
     "objectID": "slide/did.html#保育所の整備と母の就労率-2",
@@ -1257,7 +1257,7 @@
     "href": "slide/did.html#実習用データ",
     "title": "社会科学における因果推論",
     "section": "実習用データ",
-    "text": "実習用データ\nスライドで使ったデータ\n\ndid_data1.csv: 保育所の整備と母の就労率\ndid_data2.csv: 電子投票の導入と投票率\n\n実習用データ\n\ndid_data3.csv: 学校内銃撃事件と政治参加（LMSからダウンロード）\n\nLaura García-Montoya, Ana Arjona, and Matthew Lacombe. 2022. “Violence and Voting in the United States: How School Shootings Affect Elections,” American Political Science Review, 116 (3): 807-826."
+    "text": "実習用データ\nスライドで使ったデータ\n\ndid_data1.csv: 保育所の整備と母の就労率\ndid_data2.csv: 電子投票の導入と投票率\n\n実習用データ\n\ndid_data3.csv: 学校内銃撃事件と政治参加\n\nLaura García-Montoya, Ana Arjona, and Matthew Lacombe. 2022. “Violence and Voting in the United States: How School Shootings Affect Elections,” American Political Science Review, 116 (3): 807-826."
   },
   {
     "objectID": "slide/did.html#データの説明",
@@ -1271,7 +1271,7 @@
     "href": "slide/did.html#実習内容",
     "title": "社会科学における因果推論",
     "section": "実習内容",
-    "text": "実習内容\n\n{estimatr}パッケージ（lm_robust()関数）の使い方\n推定結果の可視化\n\n\n\n\nhttps://www.jaysong.net/r4ps/"
+    "text": "実習内容\n\n{estimatr}パッケージ（lm_robust()関数）の使い方\n推定結果の可視化\n\n参考\n\nR pacakge: {DIDdesign}\nDoubly Robust Difference-in-Differences Estimators\nDifference-in-Difference-in-Difference（Triple difference; DDD）\nSynthetic Control Method（SCM）、Generalized Synthetic Control Method\nCausalImpact\n\n\n\n\nhttps://www.jaysong.net/r4ps/"
   },
   {
     "objectID": "slide/rdd.html#回帰不連続デザイン-1",
