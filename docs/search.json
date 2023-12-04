@@ -1271,7 +1271,7 @@
     "href": "slide/did.html#実習内容",
     "title": "社会科学における因果推論",
     "section": "実習内容",
-    "text": "実習内容\n\n{estimatr}パッケージ（lm_robust()関数）の使い方\n推定結果の可視化\n\n参考\n\nR pacakge: {DIDdesign}\nDoubly Robust Difference-in-Differences Estimators\nDifference-in-Difference-in-Difference（Triple difference; DDD）\nSynthetic Control Method（SCM）、Generalized Synthetic Control Method\nCausalImpact\n\n\n\n\nhttps://www.jaysong.net/r4ps/"
+    "text": "実習内容\n\n{estimatr}パッケージ（lm_robust()関数）の使い方\n推定結果の可視化\n\n参考\n\nR pacakge: {did}、{DIDdesign}\nDoubly Robust Difference-in-Differences Estimators（{DRDID}）\nDifference-in-Difference-in-Difference（Triple difference; DDD）\nSynthetic Control Method（SCM）、Generalized Synthetic Control Method\nCausalImpact\n\n\n\n\nhttps://www.jaysong.net/r4ps/"
   },
   {
     "objectID": "slide/rdd.html#回帰不連続デザイン-1",

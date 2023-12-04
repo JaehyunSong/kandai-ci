@@ -761,8 +761,8 @@ García-Montoya, Arjona, and Lacombe (2022)のFigure 3&4の一部を再現
 
 #### 参考
 
-* R pacakge: {[DIDdesign](https://github.com/naoki-egami/DIDdesign)}
-* Doubly Robust Difference-in-Differences Estimators
+* R pacakge: {[did](https://bcallaway11.github.io/did/)}、{[DIDdesign](https://github.com/naoki-egami/DIDdesign)}
+* Doubly Robust Difference-in-Differences Estimators（{[DRDID](https://psantanna.com/DRDID/)}）
 * Difference-in-Difference-in-Difference（Triple difference; DDD）
 * Synthetic Control Method（SCM）、Generalized Synthetic Control Method
 * CausalImpact
