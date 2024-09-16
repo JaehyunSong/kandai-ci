@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.330">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Causal Inference in Social Science@Kandai - RStudioの設定</title>
+<title>RStudioの設定 – Causal Inference in Social Science@Kandai</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,12 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "一致なし",
     "search-matching-documents-text": "一致した文書",
@@ -61,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "追加の検索結果",
     "search-more-matches-text": "追加の検索結果",
     "search-clear-button-title": "消去",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "取消",
     "search-submit-button-title": "検索",
     "search-label": "サーチ"
@@ -84,7 +86,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -95,7 +97,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </a>
   </div>
             <div id="quarto-search" class="" title="サーチ"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="ナビゲーションを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="ナビゲーションを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -105,7 +107,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <span class="menu-text">シラバス</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Rの使い方</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rの使い方">    
@@ -136,7 +138,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">講義資料</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
@@ -188,17 +190,17 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../intro/rstudio.html">RStudioの設定</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="サイドバーを切り替える" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -206,7 +208,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -248,7 +250,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -299,10 +301,11 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 
 </header>
 
+
 <p>　RStudioはそのままでも使えるが、少しカスタマイズするとより使い勝手が良くなる。RStudioのカスタマイズ画面はTools &gt; Global Optionsをクリックすることで表示される。</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize01.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
 <p>　以下の設定はJDCat分析ツールで使用可能なRStudio最新版 (RStudio Server 2022.12.0+353)の設定であり、宋の設定と同じである。</p>
@@ -312,10 +315,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="1.1" class="anchored" data-anchor-id="basicタブ"><span class="header-section-number">1.1</span> Basicタブ</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize02.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -366,10 +369,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="1.2" class="anchored" data-anchor-id="graphicsタブ"><span class="header-section-number">1.2</span> Graphicsタブ</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize03.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -395,10 +398,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="2.1" class="anchored" data-anchor-id="editingタブ"><span class="header-section-number">2.1</span> Editingタブ</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize04.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -477,10 +480,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="2.2" class="anchored" data-anchor-id="displayタブ"><span class="header-section-number">2.2</span> Displayタブ</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize05.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -555,10 +558,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="2.3" class="anchored" data-anchor-id="savingタブ"><span class="header-section-number">2.3</span> Savingタブ</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize06.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -609,10 +612,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="2.4" class="anchored" data-anchor-id="completionタブ"><span class="header-section-number">2.4</span> Completionタブ</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize07.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize07.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -672,10 +675,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h2 data-number="3" class="anchored" data-anchor-id="console"><span class="header-section-number">3</span> Console</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize08.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize08.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -730,7 +733,7 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h2 data-number="4" class="anchored" data-anchor-id="appearance"><span class="header-section-number">4</span> Appearance</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize09.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize09.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
 <ul>
@@ -741,10 +744,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h2 data-number="5" class="anchored" data-anchor-id="pane-layout"><span class="header-section-number">5</span> Pane Layout</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize10.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -777,10 +780,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="6.1" class="anchored" data-anchor-id="basic"><span class="header-section-number">6.1</span> Basic</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize11.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -831,10 +834,10 @@ gtag('config', 'G-9D5YDZ704S', { 'anonymize_ip': true});
 <h3 data-number="6.2" class="anchored" data-anchor-id="advanced"><span class="header-section-number">6.2</span> Advanced</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/RStudio/Customize12.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<p><img src="Figs/RStudio/Customize12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
 </figure>
 </div>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">項目</th>
@@ -898,18 +901,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -941,7 +933,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.jaysong\.net\/kandai-ci\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -976,7 +1008,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -991,15 +1027,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1008,7 +1057,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1050,6 +1107,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1125,7 +1205,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -1209,12 +1288,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../intro/install.html" class="pagination-link">
+      <a href="../intro/install.html" class="pagination-link" aria-label="Rの導入">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rの導入</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../intro/filesystem.html" class="pagination-link">
+      <a href="../intro/filesystem.html" class="pagination-link" aria-label="ファイル・システム">
         <span class="nav-page-text">ファイル・システム</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

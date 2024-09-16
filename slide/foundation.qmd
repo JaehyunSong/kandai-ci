@@ -1,6 +1,6 @@
 ---
 subtitle: "第2回 因果推論の考え方"
-date: "2023/10/2"
+date: "2024/9/30"
 format: revealjs
 metadata-files: 
   - _slide.yml

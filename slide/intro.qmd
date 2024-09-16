@@ -1,6 +1,6 @@
 ---
 subtitle: "第1回 ガイダンス"
-date: "2023/9/25"
+date: "2024/9/23"
 format: revealjs
 metadata-files: 
   - _slide.yml
@@ -140,9 +140,10 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 ## 参考書（因果推論）
 
 * 理論
-   * 初級: 松林哲也. 2021.『[政治学と因果推論](https://www.amazon.co.jp/dp/4000269992/)』岩波書店.
-   * 初級: Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect*.](http://amzn.asia/d/fIkurDl) Princeton University Press.
-   * 中級: Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion*.](http://amzn.asia/d/2TJ1HXE) Princeton University Press.（[邦訳](http://amzn.asia/d/3JwCmNG)あり）
+   * 初級：松林哲也. 2021.『[政治学と因果推論](https://www.amazon.co.jp/dp/4000269992/)』岩波書店.
+   * 初級：Angrist, Joahua D., and Jorn-steffen Pischke. 2014. [*Mastering ’Metrics: The Path from Cause to Effect*.](http://amzn.asia/d/fIkurDl) Princeton University Press.
+   * 中級：
+   Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion*.](http://amzn.asia/d/2TJ1HXE) Princeton University Press.（[邦訳](http://amzn.asia/d/3JwCmNG)あり）
 * 実装
    * Cunningham, Scott. 2021. [*Causal Inference: The Mixtape*.](https://mixtape.scunning.com/) Yale University Press.（[邦訳](https://www.amazon.co.jp/dp/4297134179/)あり）
    * 安井翔太. 2020. 『[効果検証入門](https://www.amazon.co.jp/dp/4297111179)』技術評論社.
@@ -182,7 +183,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 宋が研究室に待機し、事前予約**なし**に相談、質問などが可能な時間
 
 * 場所：TA227研究室（A棟の2階）
-* 毎週水曜日2限 (10:40〜12:10)
+* 毎週月曜日3限 (13:00〜14:30)
 * 上記の時間外は事前予約が必要（メール、対面）
    * <i class="bi bi-envelope"></i> <song@kansai-u.ac.jp>
 
@@ -190,7 +191,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 
 #### 自分のPCにR + RStudioがインストールされて<u>いる</u>場合
 
-* Rのバージョンが4.1.2以上であればOK
+* Rのバージョンが4.3.0以上であればOK
 
 <br/>
 
@@ -200,14 +201,14 @@ $\Rightarrow$ 少しでも不安があれば宋と相談しよう！
 
 ::::{.columns}
 :::{.column width=50%}
-**方法1:** 自分のPCにインストールする。
+**方法1：** 自分のPCにインストールする。
 
-* 参考資料: <https://yukiyanai.github.io/jp/resources/>
+* 参考資料：<https://yukiyanai.github.io/jp/resources/>
 :::
 
 :::{.column width=50%}
-**方法2:** クラウド版のR/RStudioを使用する。
+**方法2：** クラウド版のR/RStudioを使用する。
 
-* 参考資料: サポートページ > [Rの使い方](https://www.jaysong.net/kandai-ci/intro/install.html)
+* 参考資料：サポートページ > [Rの使い方](https://www.jaysong.net/kandai-ci/intro/install.html)
 :::
 ::::

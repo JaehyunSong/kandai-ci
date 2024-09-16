@@ -9,11 +9,11 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="宋(そん)&nbsp;&nbsp;財泫(じぇひょん)">
   <meta name="dcterms.date" content="2023-12-04">
-  <title>Causal Inference in Social Science@Kandai - 社会科学における因果推論</title>
+  <title>Causal Inference in Social Science@Kandai – 社会科学における因果推論</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -169,7 +169,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -332,9 +333,6 @@
       margin-right: 0; 
     }
   </style>
-  
-  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
-  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -460,7 +458,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-2-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -488,13 +486,12 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-3-1.png" width="1200"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="1200"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="差分の差分法" class="slide level2">
 <h2>差分の差分法</h2>
@@ -540,7 +537,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-4-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -565,7 +562,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-5-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -580,7 +577,7 @@
 <li><span class="math inline">\(i\)</span>：観測単位（人/自治体/国/企業など）</li>
 <li><span class="math inline">\(t\)</span>：観測時期</li>
 </ul>
-<table>
+<table class="caption-top">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -630,7 +627,7 @@
 <li><span class="math inline">\(Z = 1\)</span>であるA州の変化量（<span class="math inline">\(\Delta Y_1\)</span>）：10 − 15 = −5</li>
 <li><span class="math inline">\(Z = 0\)</span>であるB州の変化量（<span class="math inline">\(\Delta Y_2\)</span>）：15 − 17 = −2</li>
 </ul>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: center;">ID（<span class="math inline">\(i\)</span>）</th>
@@ -662,7 +659,7 @@
 </ul></li>
 <li>タバコ値上げの効果は<strong>-3箱</strong></li>
 </ul>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: center;"><span class="math inline">\(\quad \Delta Y(Z = 1) \quad\)</span></th>
@@ -697,7 +694,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-6-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -744,7 +741,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-7-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -757,7 +754,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-8-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -770,7 +767,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-9-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -783,7 +780,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-10-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -796,7 +793,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-11-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -816,7 +813,7 @@
 <li>POST: 処置が行われた後か否か</li>
 <li>Y: 結果変数</li>
 </ul>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>ID</th>
@@ -923,74 +920,166 @@
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table class="table" data-quarto-postprocess="true" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Model 1</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">保育所の整備率</td>
-<td style="text-align: center;">0.358</td>
-<td style="text-align: center;">−0.003</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.022)</td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.030)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Num.Obs.</td>
-<td style="text-align: center;">188</td>
-<td style="text-align: center;">188</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">R2</td>
-<td style="text-align: center;">0.510</td>
-<td style="text-align: center;">0.987</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">R2 Adj.</td>
-<td style="text-align: center;">0.508</td>
-<td style="text-align: center;">0.982</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">AIC</td>
-<td style="text-align: center;">−640.9</td>
-<td style="text-align: center;">−1222.7</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">BIC</td>
-<td style="text-align: center;">−631.2</td>
-<td style="text-align: center;">−1054.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RMSE</td>
-<td style="text-align: center;">0.04</td>
-<td style="text-align: center;">0.01</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Std.Errors</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">by: Pref_J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">都道府県ダミー</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">年ダミー</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-</tr>
-</tbody>
-</table>
+<!-- preamble start -->
 
+    <script>
+      function styleCell_l2d21yq4rel78a2hryhj(i, j, css_id) {
+        var table = document.getElementById("tinytable_l2d21yq4rel78a2hryhj");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_l2d21yq4rel78a2hryhj');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_l2d21yq4rel78a2hryhj(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_l2d21yq4rel78a2hryhj");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(0, 0, 'tinytable_css_idcbevpdqq0rw0bowzoebo') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(0, 1, 'tinytable_css_idsatiscvmp2ocwjp9plbj') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(0, 2, 'tinytable_css_idsatiscvmp2ocwjp9plbj') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(1, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(1, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(1, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(2, 0, 'tinytable_css_id5jfs4u16tk9bll3inveq') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(2, 1, 'tinytable_css_idokxbcaa0mvzvvvd0uod5') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(2, 2, 'tinytable_css_idokxbcaa0mvzvvvd0uod5') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(3, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(3, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(3, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(4, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(4, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(4, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(5, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(5, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(5, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(6, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(6, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(6, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(7, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(7, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(7, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(8, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(8, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(8, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(9, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(9, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(9, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(10, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(10, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(10, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(11, 0, 'tinytable_css_idg6lqq5uzwr8mwi39it5p') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(11, 1, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+window.addEventListener('load', function () { styleCell_l2d21yq4rel78a2hryhj(11, 2, 'tinytable_css_idv5lbukrt367cfoqudoyr') })
+    </script>
 
+    <style>
+    .table td.tinytable_css_idcbevpdqq0rw0bowzoebo, .table th.tinytable_css_idcbevpdqq0rw0bowzoebo {  text-align: left;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idsatiscvmp2ocwjp9plbj, .table th.tinytable_css_idsatiscvmp2ocwjp9plbj {  text-align: center;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idg6lqq5uzwr8mwi39it5p, .table th.tinytable_css_idg6lqq5uzwr8mwi39it5p {  text-align: left; }
+    .table td.tinytable_css_idv5lbukrt367cfoqudoyr, .table th.tinytable_css_idv5lbukrt367cfoqudoyr {  text-align: center; }
+    .table td.tinytable_css_id5jfs4u16tk9bll3inveq, .table th.tinytable_css_id5jfs4u16tk9bll3inveq {  border-bottom: solid 0.05em black;  text-align: left; }
+    .table td.tinytable_css_idokxbcaa0mvzvvvd0uod5, .table th.tinytable_css_idokxbcaa0mvzvvvd0uod5 {  border-bottom: solid 0.05em black;  text-align: center; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_l2d21yq4rel78a2hryhj" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Model 1</th>
+                <th scope="col">Model 2</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>保育所の整備率</td>
+                  <td>0.358  </td>
+                  <td>-0.003    </td>
+                </tr>
+                <tr>
+                  <td>              </td>
+                  <td>(0.022)</td>
+                  <td>(0.030)   </td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.      </td>
+                  <td>188    </td>
+                  <td>188       </td>
+                </tr>
+                <tr>
+                  <td>R2            </td>
+                  <td>0.510  </td>
+                  <td>0.987     </td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.       </td>
+                  <td>0.508  </td>
+                  <td>0.982     </td>
+                </tr>
+                <tr>
+                  <td>AIC           </td>
+                  <td>-640.9 </td>
+                  <td>-1222.7   </td>
+                </tr>
+                <tr>
+                  <td>BIC           </td>
+                  <td>-631.2 </td>
+                  <td>-1054.4   </td>
+                </tr>
+                <tr>
+                  <td>RMSE          </td>
+                  <td>0.04   </td>
+                  <td>0.01      </td>
+                </tr>
+                <tr>
+                  <td>Std.Errors    </td>
+                  <td>       </td>
+                  <td>by: Pref_J</td>
+                </tr>
+                <tr>
+                  <td>都道府県ダミー</td>
+                  <td>X      </td>
+                  <td>O         </td>
+                </tr>
+                <tr>
+                  <td>年ダミー      </td>
+                  <td>X      </td>
+                  <td>O         </td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </section>
@@ -1007,7 +1096,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-13-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -1061,92 +1150,200 @@
 <p>結果の比較</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table class="table" data-quarto-postprocess="true" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Model 1</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 2</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">保育所の整備率</td>
-<td style="text-align: center;">0.358</td>
-<td style="text-align: center;">−0.003</td>
-<td style="text-align: center;">−0.009</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.022)</td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.030)</td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.028)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Num.Obs.</td>
-<td style="text-align: center;">188</td>
-<td style="text-align: center;">188</td>
-<td style="text-align: center;">188</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">R2</td>
-<td style="text-align: center;">0.510</td>
-<td style="text-align: center;">0.987</td>
-<td style="text-align: center;">0.997</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">R2 Adj.</td>
-<td style="text-align: center;">0.508</td>
-<td style="text-align: center;">0.982</td>
-<td style="text-align: center;">0.995</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">AIC</td>
-<td style="text-align: center;">−640.9</td>
-<td style="text-align: center;">−1222.7</td>
-<td style="text-align: center;">−1439.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">BIC</td>
-<td style="text-align: center;">−631.2</td>
-<td style="text-align: center;">−1054.4</td>
-<td style="text-align: center;">−1122.0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RMSE</td>
-<td style="text-align: center;">0.04</td>
-<td style="text-align: center;">0.01</td>
-<td style="text-align: center;">0.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Std.Errors</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">by: Pref_J</td>
-<td style="text-align: center;">by: Pref_J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">都道府県ダミー</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">年ダミー</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">トレンド変数</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-</tr>
-</tbody>
-</table>
+<!-- preamble start -->
 
+    <script>
+      function styleCell_nztzvddngzev1ur8irvn(i, j, css_id) {
+        var table = document.getElementById("tinytable_nztzvddngzev1ur8irvn");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_nztzvddngzev1ur8irvn');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_nztzvddngzev1ur8irvn(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_nztzvddngzev1ur8irvn");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(0, 0, 'tinytable_css_idhiez5zjta320x26nzeq3') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(0, 1, 'tinytable_css_idtiedbnr9kwch6m8vtjli') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(0, 2, 'tinytable_css_idtiedbnr9kwch6m8vtjli') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(0, 3, 'tinytable_css_idtiedbnr9kwch6m8vtjli') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(1, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(1, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(1, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(1, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(2, 0, 'tinytable_css_idwfqaqabwgnfghgnrumy2') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(2, 1, 'tinytable_css_idm0jpz4fsjwkkdxpy8odk') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(2, 2, 'tinytable_css_idm0jpz4fsjwkkdxpy8odk') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(2, 3, 'tinytable_css_idm0jpz4fsjwkkdxpy8odk') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(3, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(3, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(3, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(3, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(4, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(4, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(4, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(4, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(5, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(5, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(5, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(5, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(6, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(6, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(6, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(6, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(7, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(7, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(7, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(7, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(8, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(8, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(8, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(8, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(9, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(9, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(9, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(9, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(10, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(10, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(10, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(10, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(11, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(11, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(11, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(11, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(12, 0, 'tinytable_css_idtdidzvusz3l0zei5dyei') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(12, 1, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(12, 2, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+window.addEventListener('load', function () { styleCell_nztzvddngzev1ur8irvn(12, 3, 'tinytable_css_idvudmas0vrwk1zal3v8tb') })
+    </script>
 
+    <style>
+    .table td.tinytable_css_idhiez5zjta320x26nzeq3, .table th.tinytable_css_idhiez5zjta320x26nzeq3 {  text-align: left;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idtiedbnr9kwch6m8vtjli, .table th.tinytable_css_idtiedbnr9kwch6m8vtjli {  text-align: center;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idtdidzvusz3l0zei5dyei, .table th.tinytable_css_idtdidzvusz3l0zei5dyei {  text-align: left; }
+    .table td.tinytable_css_idvudmas0vrwk1zal3v8tb, .table th.tinytable_css_idvudmas0vrwk1zal3v8tb {  text-align: center; }
+    .table td.tinytable_css_idwfqaqabwgnfghgnrumy2, .table th.tinytable_css_idwfqaqabwgnfghgnrumy2 {  border-bottom: solid 0.05em black;  text-align: left; }
+    .table td.tinytable_css_idm0jpz4fsjwkkdxpy8odk, .table th.tinytable_css_idm0jpz4fsjwkkdxpy8odk {  border-bottom: solid 0.05em black;  text-align: center; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_nztzvddngzev1ur8irvn" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Model 1</th>
+                <th scope="col">Model 2</th>
+                <th scope="col">Model 3</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>保育所の整備率</td>
+                  <td>0.358  </td>
+                  <td>-0.003    </td>
+                  <td>-0.009    </td>
+                </tr>
+                <tr>
+                  <td>              </td>
+                  <td>(0.022)</td>
+                  <td>(0.030)   </td>
+                  <td>(0.028)   </td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.      </td>
+                  <td>188    </td>
+                  <td>188       </td>
+                  <td>188       </td>
+                </tr>
+                <tr>
+                  <td>R2            </td>
+                  <td>0.510  </td>
+                  <td>0.987     </td>
+                  <td>0.997     </td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.       </td>
+                  <td>0.508  </td>
+                  <td>0.982     </td>
+                  <td>0.995     </td>
+                </tr>
+                <tr>
+                  <td>AIC           </td>
+                  <td>-640.9 </td>
+                  <td>-1222.7   </td>
+                  <td>-1439.2   </td>
+                </tr>
+                <tr>
+                  <td>BIC           </td>
+                  <td>-631.2 </td>
+                  <td>-1054.4   </td>
+                  <td>-1122.0   </td>
+                </tr>
+                <tr>
+                  <td>RMSE          </td>
+                  <td>0.04   </td>
+                  <td>0.01      </td>
+                  <td>0.00      </td>
+                </tr>
+                <tr>
+                  <td>Std.Errors    </td>
+                  <td>       </td>
+                  <td>by: Pref_J</td>
+                  <td>by: Pref_J</td>
+                </tr>
+                <tr>
+                  <td>都道府県ダミー</td>
+                  <td>X      </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                </tr>
+                <tr>
+                  <td>年ダミー      </td>
+                  <td>X      </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                </tr>
+                <tr>
+                  <td>トレンド変数  </td>
+                  <td>X      </td>
+                  <td>X         </td>
+                  <td>O         </td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </section>
@@ -1175,126 +1372,266 @@
 <p>結果の比較</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table class="table" data-quarto-postprocess="true" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Model 1</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 2</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 3</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 4</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">&nbsp;Model 5</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">保育所の整備率</td>
-<td style="text-align: center;">0.358</td>
-<td style="text-align: center;">−0.003</td>
-<td style="text-align: center;">−0.009</td>
-<td style="text-align: center;">0.002</td>
-<td style="text-align: center;">0.003</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.022)</td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.030)</td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.028)</td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.030)</td>
-<td style="text-align: center; box-shadow: 0px 1.5px;">(0.024)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Num.Obs.</td>
-<td style="text-align: center;">188</td>
-<td style="text-align: center;">188</td>
-<td style="text-align: center;">188</td>
-<td style="text-align: center;">188</td>
-<td style="text-align: center;">188</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">R2</td>
-<td style="text-align: center;">0.510</td>
-<td style="text-align: center;">0.987</td>
-<td style="text-align: center;">0.997</td>
-<td style="text-align: center;">0.987</td>
-<td style="text-align: center;">0.998</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">R2 Adj.</td>
-<td style="text-align: center;">0.508</td>
-<td style="text-align: center;">0.982</td>
-<td style="text-align: center;">0.995</td>
-<td style="text-align: center;">0.982</td>
-<td style="text-align: center;">0.995</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">AIC</td>
-<td style="text-align: center;">−640.9</td>
-<td style="text-align: center;">−1222.7</td>
-<td style="text-align: center;">−1439.2</td>
-<td style="text-align: center;">−1322.0</td>
-<td style="text-align: center;">−1543.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">BIC</td>
-<td style="text-align: center;">−631.2</td>
-<td style="text-align: center;">−1054.4</td>
-<td style="text-align: center;">−1122.0</td>
-<td style="text-align: center;">−1312.3</td>
-<td style="text-align: center;">−1385.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">RMSE</td>
-<td style="text-align: center;">0.04</td>
-<td style="text-align: center;">0.01</td>
-<td style="text-align: center;">0.00</td>
-<td style="text-align: center;">0.01</td>
-<td style="text-align: center;">0.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Std.Errors</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">by: Pref_J</td>
-<td style="text-align: center;">by: Pref_J</td>
-<td style="text-align: center;">by: Pref_J</td>
-<td style="text-align: center;">by: Pref_J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">都道府県ダミー</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">年ダミー</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">トレンド変数</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">共変量</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-</tbody>
-</table>
+<!-- preamble start -->
 
+    <script>
+      function styleCell_by2cr8blcfavi0nrl08l(i, j, css_id) {
+        var table = document.getElementById("tinytable_by2cr8blcfavi0nrl08l");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_by2cr8blcfavi0nrl08l');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_by2cr8blcfavi0nrl08l(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_by2cr8blcfavi0nrl08l");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(0, 0, 'tinytable_css_iddvbnh5fxa6md8lemcvje') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(0, 1, 'tinytable_css_idakscmbhjzuzaue03poe6') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(0, 2, 'tinytable_css_idakscmbhjzuzaue03poe6') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(0, 3, 'tinytable_css_idakscmbhjzuzaue03poe6') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(0, 4, 'tinytable_css_idakscmbhjzuzaue03poe6') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(0, 5, 'tinytable_css_idakscmbhjzuzaue03poe6') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(1, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(1, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(1, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(1, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(1, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(1, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(2, 0, 'tinytable_css_id7jruh8iedaxaqvka38si') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(2, 1, 'tinytable_css_idmus5wscv003bwmkv0njq') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(2, 2, 'tinytable_css_idmus5wscv003bwmkv0njq') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(2, 3, 'tinytable_css_idmus5wscv003bwmkv0njq') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(2, 4, 'tinytable_css_idmus5wscv003bwmkv0njq') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(2, 5, 'tinytable_css_idmus5wscv003bwmkv0njq') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(3, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(3, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(3, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(3, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(3, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(3, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(4, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(4, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(4, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(4, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(4, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(4, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(5, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(5, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(5, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(5, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(5, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(5, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(6, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(6, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(6, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(6, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(6, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(6, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(7, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(7, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(7, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(7, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(7, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(7, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(8, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(8, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(8, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(8, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(8, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(8, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(9, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(9, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(9, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(9, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(9, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(9, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(10, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(10, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(10, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(10, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(10, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(10, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(11, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(11, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(11, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(11, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(11, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(11, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(12, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(12, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(12, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(12, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(12, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(12, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(13, 0, 'tinytable_css_idf3ivekyxl91xphlszesu') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(13, 1, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(13, 2, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(13, 3, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(13, 4, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+window.addEventListener('load', function () { styleCell_by2cr8blcfavi0nrl08l(13, 5, 'tinytable_css_idzyd1n66i62q0l8xwgep8') })
+    </script>
 
+    <style>
+    .table td.tinytable_css_iddvbnh5fxa6md8lemcvje, .table th.tinytable_css_iddvbnh5fxa6md8lemcvje {  text-align: left;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idakscmbhjzuzaue03poe6, .table th.tinytable_css_idakscmbhjzuzaue03poe6 {  text-align: center;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idf3ivekyxl91xphlszesu, .table th.tinytable_css_idf3ivekyxl91xphlszesu {  text-align: left; }
+    .table td.tinytable_css_idzyd1n66i62q0l8xwgep8, .table th.tinytable_css_idzyd1n66i62q0l8xwgep8 {  text-align: center; }
+    .table td.tinytable_css_id7jruh8iedaxaqvka38si, .table th.tinytable_css_id7jruh8iedaxaqvka38si {  border-bottom: solid 0.05em black;  text-align: left; }
+    .table td.tinytable_css_idmus5wscv003bwmkv0njq, .table th.tinytable_css_idmus5wscv003bwmkv0njq {  border-bottom: solid 0.05em black;  text-align: center; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_by2cr8blcfavi0nrl08l" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Model 1</th>
+                <th scope="col">Model 2</th>
+                <th scope="col">Model 3</th>
+                <th scope="col">Model 4</th>
+                <th scope="col">Model 5</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>保育所の整備率</td>
+                  <td>0.358  </td>
+                  <td>-0.003    </td>
+                  <td>-0.009    </td>
+                  <td>0.002     </td>
+                  <td>0.003     </td>
+                </tr>
+                <tr>
+                  <td>              </td>
+                  <td>(0.022)</td>
+                  <td>(0.030)   </td>
+                  <td>(0.028)   </td>
+                  <td>(0.030)   </td>
+                  <td>(0.024)   </td>
+                </tr>
+                <tr>
+                  <td>Num.Obs.      </td>
+                  <td>188    </td>
+                  <td>188       </td>
+                  <td>188       </td>
+                  <td>188       </td>
+                  <td>188       </td>
+                </tr>
+                <tr>
+                  <td>R2            </td>
+                  <td>0.510  </td>
+                  <td>0.987     </td>
+                  <td>0.997     </td>
+                  <td>0.987     </td>
+                  <td>0.998     </td>
+                </tr>
+                <tr>
+                  <td>R2 Adj.       </td>
+                  <td>0.508  </td>
+                  <td>0.982     </td>
+                  <td>0.995     </td>
+                  <td>0.982     </td>
+                  <td>0.995     </td>
+                </tr>
+                <tr>
+                  <td>AIC           </td>
+                  <td>-640.9 </td>
+                  <td>-1222.7   </td>
+                  <td>-1439.2   </td>
+                  <td>-1322.0   </td>
+                  <td>-1543.8   </td>
+                </tr>
+                <tr>
+                  <td>BIC           </td>
+                  <td>-631.2 </td>
+                  <td>-1054.4   </td>
+                  <td>-1122.0   </td>
+                  <td>-1312.3   </td>
+                  <td>-1385.2   </td>
+                </tr>
+                <tr>
+                  <td>RMSE          </td>
+                  <td>0.04   </td>
+                  <td>0.01      </td>
+                  <td>0.00      </td>
+                  <td>0.01      </td>
+                  <td>0.00      </td>
+                </tr>
+                <tr>
+                  <td>Std.Errors    </td>
+                  <td>       </td>
+                  <td>by: Pref_J</td>
+                  <td>by: Pref_J</td>
+                  <td>by: Pref_J</td>
+                  <td>by: Pref_J</td>
+                </tr>
+                <tr>
+                  <td>都道府県ダミー</td>
+                  <td>X      </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                </tr>
+                <tr>
+                  <td>年ダミー      </td>
+                  <td>X      </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                </tr>
+                <tr>
+                  <td>トレンド変数  </td>
+                  <td>X      </td>
+                  <td>X         </td>
+                  <td>O         </td>
+                  <td>X         </td>
+                  <td>O         </td>
+                </tr>
+                <tr>
+                  <td>共変量        </td>
+                  <td>X      </td>
+                  <td>X         </td>
+                  <td>X         </td>
+                  <td>O         </td>
+                  <td>O         </td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </section>
@@ -1308,7 +1645,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="did_files/figure-revealjs/unnamed-chunk-16-1.png" width="2400"></p>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center" width="2400"></p>
 </figure>
 </div>
 </div>
@@ -1357,7 +1694,7 @@
 <li>銃撃事件は前回の選挙から今回の選挙の間に発生した場合1とし、今後続く。</li>
 <li>銃撃事件の深刻さは死者の有無で判定</li>
 </ul>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;">変数名</th>
@@ -1427,9 +1764,11 @@
 <li>CausalImpact</li>
 </ul>
 
+<div class="quarto-auto-generated-content">
 <p><img src="figs/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://www.jaysong.net/r4ps/" class="uri">https://www.jaysong.net/r4ps/</a></p>
+</div>
 </div>
 </section></section>
     </div>
@@ -1459,7 +1798,6 @@
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1715,18 +2053,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1758,11 +2085,55 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/www\.jaysong\.net\/kandai-ci\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1772,8 +2143,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1787,7 +2167,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
@@ -1827,20 +2211,6 @@
           });
         }
       }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var filterRegex = new RegExp("https:\/\/www\.jaysong\.net\/kandai-ci\/");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-              // target, if specified
-              link.setAttribute("target", "_blank");
-          }
-        }
     });
     </script>
     
