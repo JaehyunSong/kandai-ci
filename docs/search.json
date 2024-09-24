@@ -752,8 +752,8 @@
     "objectID": "slide/rct.html#信頼できるateの条件",
     "href": "slide/rct.html#信頼できるateの条件",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "内生性の存在 \\(\\rightarrow\\) ATE推定値の信頼性\\(\\downarrow\\)\n例) やる気のある学生だけがソンさんの講義を履修した場合\n\n自己選択バイアス\n\nソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下\n\n疑似相関\n\nやる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。\n\n測定誤差\n\n履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）\n\n\n\n\n内生性は因果推論の敵! どうすれば…?\n\\(\\downarrow\\)\n無作為割当 (Random Assignment)"
+    "section": "信頼できるATEの条件",
+    "text": "信頼できるATEの条件\n内生性の存在 \\(\\rightarrow\\) ATE推定値の信頼性\\(\\downarrow\\)\n例) やる気のある学生だけがソンさんの講義を履修した場合\n\n自己選択バイアス\n\nソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下\n\n疑似相関\n\nやる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。\n\n測定誤差\n\n履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）\n\n\n\n\n内生性は因果推論の敵! どうすれば…?\n\\(\\downarrow\\)\n無作為割当 (Random Assignment)"
   },
   {
     "objectID": "slide/rct.html#無作為割当とは",
@@ -858,7 +858,7 @@
     "href": "slide/rct.html#サーベイ実験1",
     "title": "社会科学における因果推論",
     "section": "サーベイ実験（1）",
-    "text": "サーベイ実験（1）\n世論調査に実験を埋め込む方法\n\n例1例2\n\n\nAsaba, Yuki, Kyu S Hahn, Seulgi Jang, Tetsuro Kobayashi, and Atsushi Tago. 2020. “38 seconds above the 38th parallel: how short video clips produced by the US military can promote alignment despite antagonism between Japan and Korea,” International Relations of the Asia-Pacific, 20(2): 253–273.\n\nサーベイの回答者1500名を2グループに分割\n\n統制群：38秒の日米韓軍事協力に関するPACOM制作の動画を視聴\n処置群：ほぼ同じ長さのPACOM制作の動画を視聴（日韓の言及はなし）\n\nアメリカに対する感情温度、日韓協力に対する態度を測定\nグループごとに結果を比較\n\n\n\nSong, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022. “Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US,” Canadian Journal of Political Science, 55 (4): 852-872.\n\n回答者621名を統制群と処置群に割当\n統制群に以下のように質問\n\n\n\n\n\n\n\nNow we are going to show you four activities that some people may experience during the electoral campaign. After you read all four, just answer HOW MANY activities you experienced during the last electoral campaign. (We do NOT want to know which ones, just how many.)\n\nI saw public debates between candidates for presidential elections on TV.\nI saw official websites/blogs of politicians and candidates.\nMy family/friends told me about the election.\nCampaign activists threatened me to vote for a candidate.\n\n\n\n\n\n処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加\n結果の平均値を比較"
+    "text": "サーベイ実験（1）\n世論調査に実験を埋め込む方法\n\n例1例2\n\n\nAsaba, Yuki, Kyu S Hahn, Seulgi Jang, Tetsuro Kobayashi, and Atsushi Tago. 2020. “38 seconds above the 38th parallel: how short video clips produced by the US military can promote alignment despite antagonism between Japan and Korea,” International Relations of the Asia-Pacific, 20(2): 253–273.\n\nサーベイの回答者1500名を2グループに分割\n\n統制群：38秒の日米韓軍事協力に関するPACOM制作の動画を視聴\n処置群：ほぼ同じ長さのPACOM制作の動画を視聴（日韓の言及はなし）\n\nアメリカに対する感情温度、日韓協力に対する態度を測定\nグループごとに結果を比較\n\n\n\nSong, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022. “Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US,” Canadian Journal of Political Science, 55 (4): 852-872.\n\n回答者621名を統制群と処置群に割当\n統制群に以下のように質問\n\n\n\n\nNow we are going to show you four activities that some people may experience during the electoral campaign. After you read all four, just answer HOW MANY activities you experienced during the last electoral campaign. (We do NOT want to know which ones, just how many.)\n\nI saw public debates between candidates for presidential elections on TV.\nI saw official websites/blogs of politicians and candidates.\nMy family/friends told me about the election.\nCampaign activists threatened me to vote for a candidate.\n\n\n\n\n\n処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加\n結果の平均値を比較"
   },
   {
     "objectID": "slide/rct.html#サーベイ実験2",
@@ -907,7 +907,7 @@
     "href": "slide/rct.html#因果効果の推定",
     "title": "社会科学における因果推論",
     "section": "因果効果の推定",
-    "text": "因果効果の推定\n\n参考）Freedman, David A. 2008. “Randomization Does Not Justify Logistic Regression,” Statistical Science Statistical Science, 23(2): 237-249.\n\nLogit: 一致推定量\\(\\times\\) & 不偏推定量\\(\\times\\)\nLinear: 一致推定量\\(\\bigcirc\\) & 不偏推定量\\(\\times\\)\n一致性と不偏性の違いについて\n\n\n平均値の差分の検定単回帰分析\n\n\n方法1: グループ間の結果変数の差分の検定 (\\(t\\)検定)\n\n因果効果 (ATE): \\(\\mathbb{E}[\\mbox{Call}|\\mbox{Race = Black}] - \\mathbb{E}[\\mbox{Call}|\\mbox{Race = White}] = -0.032\\)\nATE = 0の帰無仮説の検定\n\n\\(t_{\\text{df} = 4711.7} = −4.117\\); \\(p\\) &lt; 0.001; 95% CI = [−0.047, −0.017]\n\n応答変数の尺度に応じてノンパラメトリック分析\n\n\n\n方法2: 単回帰分析 (線形 or ロジスティックス/プロビット)\n\n\n\n\n\n\n\n\n線形回帰分析（LPM）\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n0.064\n0.006\n\n\nRace: White\n0.032\n0.008\n\n\n\n\n\n\nロジスティック回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-2.675\n0.083\n\n\nRace: White\n0.438\n0.107\n\n\n\n\n\n\nプロビット回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-1.518\n0.039\n\n\nRace: White\n0.217\n0.053"
+    "text": "因果効果の推定\n\n平均値の差分の検定単回帰分析\n\n\n方法1: グループ間の結果変数の差分の検定 (\\(t\\)検定)\n\n因果効果 (ATE): \\(\\mathbb{E}[\\mbox{Call}|\\mbox{Race = Black}] - \\mathbb{E}[\\mbox{Call}|\\mbox{Race = White}] = -0.032\\)\nATE = 0の帰無仮説の検定\n\n\\(t_{\\text{df} = 4711.7} = −4.117\\); \\(p\\) &lt; 0.001; 95% CI = [−0.047, −0.017]\n\n応答変数の尺度に応じてノンパラメトリック分析\n\n\n\n方法2: 単回帰分析 (線形 or ロジスティックス/プロビット)\n\n\n\n\n\n\n\n\n線形回帰分析（LPM）\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n0.064\n0.006\n\n\nRace: White\n0.032\n0.008\n\n\n\n\n\n\nロジスティック回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-2.675\n0.083\n\n\nRace: White\n0.438\n0.107\n\n\n\n\n\n\nプロビット回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-1.518\n0.039\n\n\nRace: White\n0.217\n0.053\n\n\n\n\n\n\n\n\n\n\n\n\n参考）Freedman, David A. 2008. “Randomization Does Not Justify Logistic Regression,” Statistical Science Statistical Science, 23(2): 237-249.\n\nLogit: 一致推定量\\(\\times\\) & 不偏推定量\\(\\times\\)\nLinear: 一致推定量\\(\\bigcirc\\) & 不偏推定量\\(\\times\\)\n一致性と不偏性の違いについて"
   },
   {
     "objectID": "slide/rct.html#因果効果の推定重回帰分析は",
@@ -963,7 +963,7 @@
     "href": "slide/rct.html#用意するもの",
     "title": "社会科学における因果推論",
     "section": "用意するもの",
-    "text": "用意するもの\n第4、5、6回はRの実習\n\nノートPC\n\nデスクトップ、モニター、キーボード、マウスが持ち込めるなら、デスクトップでもOK（がんばって！！）\n\nRの導入（いずれの方法でもOK）\n\n自分のPCにR/RStudioをインストールし使用する。\nJDCat分析ツール（クラウド版のR + RStudio）を使用する。\n\nブラインドタッチ"
+    "text": "用意するもの\n第4、5、6回はRの実習\n\nノートPC\n\nデスクトップ、モニター、キーボード、マウスが持ち込めるなら、デスクトップでもOK（がんばって！！）\n\nRの導入（いずれの方法でもOK）\n\n自分のPCにR/RStudioをインストールし使用する。\nJDCat分析ツール（クラウド版のR + RStudio）を使用する。\n\nブラインドタッチ\n\n\n\n\n\nhttps://www.jaysong.net/r4ps/"
   },
   {
     "objectID": "slide/intro.html#講義概要-1",
