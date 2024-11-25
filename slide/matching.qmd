@@ -1,6 +1,6 @@
 ---
 subtitle: "第7回 回帰分析とマッチング"
-date: "2023/11/13"
+date: "2024/11/25"
 format: revealjs
 metadata-files: 
   - _slide.yml
