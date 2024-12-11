@@ -1,5 +1,5 @@
 ---
-subtitle: "第1回 ガイダンス"
+subtitle: "ガイダンス"
 date: "2024/9/23"
 format: revealjs
 metadata-files: 

@@ -1,5 +1,5 @@
 ---
-subtitle: "第2回 因果推論の考え方"
+subtitle: "因果推論の考え方"
 date: "2024/9/30"
 format: revealjs
 metadata-files: 

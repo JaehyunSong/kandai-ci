@@ -1,5 +1,5 @@
 ---
-subtitle: "第3回 無作為化比較試験"
+subtitle: "無作為化比較試験"
 date: "2024/10/07"
 format: revealjs
 metadata-files: 

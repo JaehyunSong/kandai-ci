@@ -1,5 +1,5 @@
 ---
-subtitle: "第7回 回帰分析とマッチング"
+subtitle: "回帰分析とマッチング"
 date: "2024/11/25"
 format: revealjs
 metadata-files: 
