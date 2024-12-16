@@ -1089,7 +1089,7 @@
     "href": "slide/did.html#自然実験とは",
     "title": "社会科学における因果推論",
     "section": "自然実験とは",
-    "text": "自然実験とは\nRCTの3つの特徴 (Freedman, Pisani, and Purves 2007)\n\n処置群に割り当てられた被験者の反応（response/outcome）は、統制群に割り当てられた被験者の反応と比較されます。 compared to the response of subjects assigned to a control group.\n被験者を処置群と統制群に割り当てることは、ランダムな装置（コイン投げなど）を使って無作為に行われる。\n処置（treatment/intervention）の操作は実験研究者の管理下で行われる。\n\n自然実験は… (Dunning 2012)\n\n同じ\n処置の有無は無作為のように決まる (as-if random)。\n処置内容などを研究者が操作することは不可能\n\n2と3は自然、制度などによって影響を受ける"
+    "text": "自然実験とは\nRCTの3つの特徴 (Freedman, Pisani, and Purves 2007)\n\n処置群に割り当てられた被験者の反応は、統制群に割り当てられた被験者の反応と比較される。\n被験者を処置群と統制群に割り当てることは、ランダムな装置（コイン投げなど）を使って無作為に行われる。\n処置の操作は実験研究者の管理下で行われる。\n\n自然実験は… (Dunning 2012)\n\n同じ\n処置の有無は無作為のように決まる (as-if random)。\n処置内容などを研究者が操作することは不可能\n\n2と3は自然、制度などによって影響を受ける"
   },
   {
     "objectID": "slide/did.html#自然実験の例",
