@@ -1,6 +1,5 @@
 ---
-subtitle: "ガイダンス"
-date: "2024/9/23"
+subtitle: "1/ ガイダンス"
 format: revealjs
 metadata-files: 
   - _slide.yml
@@ -26,7 +25,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 * 所属: 関西大学総合情報学部
    * E-mail: song [*at*] kansai-u.ac.jp
    * Homepage: <https://www.jaysong.net>
-* 時間: 月曜日2限（10:40〜12:10）
+* 時間: 水曜日3限（13:00〜14:30）
 * 教室: TD106
 
 ## 内容
@@ -169,7 +168,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 
 ## 評価
 
-期末課題の詳細は学期末（12月頃）アナウンス
+期末課題の詳細は学期末にアナウンス
 
 * 平常点：70%
    * 授業への貢献度
@@ -183,7 +182,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
 宋が研究室に待機し、事前予約**なし**に相談、質問などが可能な時間
 
 * 場所：TA227研究室（A棟の2階）
-* 毎週月曜日3限 (13:00〜14:30)
+* 毎週水曜日2限 (10:40〜12:10)
 * 上記の時間外は事前予約が必要（メール、対面）
    * <i class="bi bi-envelope"></i> <song@kansai-u.ac.jp>
 
@@ -212,9 +211,3 @@ $\Rightarrow$ 少しでも不安があれば宋と相談しよう！
 * 参考資料：サポートページ > [Rの使い方](https://www.jaysong.net/kandai-ci/intro/install.html)
 :::
 ::::
-
-## 連絡事項
-
-- 10月28日は休講です（宋の出張）。
-- 11月4日は学祭日で学部は休講日ですが、大学院は授業日です。
-- 12月23日は?

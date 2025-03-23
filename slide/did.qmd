@@ -1,6 +1,5 @@
 ---
-subtitle: "差分の差分法"
-date: "2024/12/16"
+subtitle: "6/ 差分の差分法"
 format: revealjs
 metadata-files: 
   - _slide.yml

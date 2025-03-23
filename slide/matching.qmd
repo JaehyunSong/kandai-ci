@@ -1,6 +1,5 @@
 ---
-subtitle: "回帰分析とマッチング"
-date: "2024/11/25"
+subtitle: "5/ 回帰分析とマッチング"
 format: revealjs
 metadata-files: 
   - _slide.yml

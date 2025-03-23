@@ -1,6 +1,5 @@
 ---
-subtitle: "回帰不連続デザイン"
-date: "2025/1/6"
+subtitle: "7/ 回帰不連続デザイン"
 format: revealjs
 metadata-files: 
   - _slide.yml

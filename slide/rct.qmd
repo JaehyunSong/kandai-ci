@@ -1,6 +1,5 @@
 ---
-subtitle: "無作為化比較試験"
-date: "2024/10/07"
+subtitle: "3/ 無作為化比較試験"
 format: revealjs
 metadata-files: 
   - _slide.yml

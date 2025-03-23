@@ -1,6 +1,5 @@
 ---
-subtitle: "因果推論の考え方"
-date: "2024/9/30"
+subtitle: "2/ 因果推論の考え方"
 format: revealjs
 metadata-files: 
   - _slide.yml

@@ -12,13 +12,13 @@ knitr::opts_chunk$set(fig.align = "center",
 
 ## 概要
 
-* 科目名: 社会科学における因果推論
-* 講師: 宋財泫 (ソン ジェヒョン)
-* 所属: 関西大学総合情報学部
-   * E-mail: song<i class="bi bi-at"></i>kansai-u.ac.jp
-   * Homepage: <https://www.jaysong.net>
-* 時間: 月曜日2限（10:40〜12:10）
-* 教室: TD106
+- 科目名：社会科学における因果推論
+- 講師：宋財泫 (そん じぇひょん)
+- 所属：関西大学総合情報学部
+   * <i class="bi bi-envelope"></i> &nbsp; song<i class="bi bi-at"></i>kansai-u.ac.jp
+   <i class="bi bi-house"></i> &nbsp; <https://www.jaysong.net>
+- 時間：水曜日3限（13:00〜14:30）
+- 教室：TD106
 
 ## 授業の内容
 
@@ -26,10 +26,10 @@ knitr::opts_chunk$set(fig.align = "center",
 
 ## 評価
 
-* 平常点: 70%
+* 平常点：70%
    * 授業への参加度、質問など
-* 期末課題: 30%
-   * 第15回の研究構想の発表
+* 期末課題：30%
+   * 研究構想の発表、または提出
 
 ## 履修上の注意
 
@@ -37,22 +37,22 @@ knitr::opts_chunk$set(fig.align = "center",
 
 　本講義における共通言語はRである。Rの使い方に関しては既にインターネット上に膨大な情報がある。[宋](https://www.jaysong.net)と[矢内](https://yukiyanai.github.io/)(高知工科大学)が執筆中の以下の資料(無料で閲覧可能)を参照することも1つの選択肢である。
 
-* 宋財泫・矢内勇生. 『[私たちの R: ベストプラクティスの探究](https://www.jaysong.net/RBook/)』(web-book)
-   * Rの導入方法は講義中、宋が解説する。
+- 宋財泫・矢内勇生. 『[私たちの R: ベストプラクティスの探究](https://www.jaysong.net/RBook/)』(web-book)
+   - Rの導入方法は講義中、宋が解説する。
 
 　統計学および定量的分析、Rの使い方については以下の書籍を講義開始日までに読んで
 おくことを強く推奨する。
 
-* 浅野正彦・矢内勇生. 2019『[Rによる計量政治学](https://www.amazon.co.jp/dp/4274223132)』オーム社.
+- 浅野正彦・矢内勇生. 2019『[Rによる計量政治学](https://www.amazon.co.jp/dp/4274223132)』オーム社.
 
 　R スクリプト作成の際、{tidyverse}というパッケージ**群**を積極的に活用する。このパッケージには {dplyr}、{ggplot2}などのパッケージが含まれている。各パッケージの使い方を習得するには以下の教材を推奨する。
 
-* Wickham, Hadley and Grolemund, Garrett. 2017. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data,*](https://www.amazon.co.jp/dp/1491910399/) O’Reilly. ([邦訳](www.amazon.co.jp/dp/487311814X/)あり/[原著](https://r4ds.had.co.nz)はインターネットから無料で閲覧可)
-* 松村優哉・湯谷啓明・紀ノ定保礼・前田和寛 . 2021. 『[改訂2版 Rユーザのための RStudio[実践] 入門—tidyverseによるモダンな分析フローの世界—](https://www.amazon.co.jp/dp/4297121700/)』技術評論社.
+- Wickham, Hadley and Grolemund, Garrett. 2017. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data,*](https://www.amazon.co.jp/dp/1491910399/) O’Reilly. ([邦訳](www.amazon.co.jp/dp/487311814X/)あり/[原著](https://r4ds.had.co.nz)はインターネットから無料で閲覧可)
+- 松村優哉・湯谷啓明・紀ノ定保礼・前田和寛 . 2021. 『[改訂2版 Rユーザのための RStudio[実践] 入門—tidyverseによるモダンな分析フローの世界—](https://www.amazon.co.jp/dp/4297121700/)』技術評論社.
 
 ## 教科書・参考書
 
-以下は本書の内容を（一部）カバーする書籍の目録である。必ずしも購入する必要はないが、予習・復習において適宜参照することを推奨する。
+　以下は本書の内容を（一部）カバーする書籍の目録である。必ずしも購入する必要はないが、予習・復習において適宜参照することを推奨する。他にも宋が現在作成中のWeb資料（2026年度中に公開予定）も履修者限定で公開する。参考資料として使うこと
 
 * 因果推論の理論と実例
    * Angrist, Joahua D., and Jorn-steffen Pischke. 2008. [*Mostly Harmless Econometrics: An Empiricist’s Companion.*](http://amzn.asia/d/2TJ1HXE) Princeton University Press.
@@ -71,22 +71,16 @@ knitr::opts_chunk$set(fig.align = "center",
 
 ## 講義内容
 
-以下の内容は履修者の理解度や進捗状況に応じて変更される可能性がある。
+- 「XX月XX日にマッチングの内容について解説する」といった構成ではなく、トピック単位で進める。一つのトピックが数日にまたがることもあり得る。
+- 以下の内容は履修者の理解度や進捗状況に応じて変更される可能性がある。
 
-|回|講義日|内容|
-|:---:|:---:|:---|
-|  1 | 2024/09/23 | ガイダンス |
-|  2 | 2024/09/30 | 因果推論の考え方 |
-|  3 | 2024/10/07 | 無作為化比較試験 |
-|  4 | 2024/10/21 | Rの復習（1） |
-|  5 | 2024/10/28 | 休講 |
-|  6 | 2024/11/04 | Rの復習（2） |
-|  7 | 2024/11/11 | Rの復習（3） |
-|  8 | 2024/11/18 | 回帰分析とマッチング（理論） |
-|  9 | 2024/11/25 | 回帰分析とマッチング（実習） |
-| 10 | 2024/12/02 | 差分の差分法（理論） |
-| 11 | 2024/12/09 | 差分の差分法（実習） |
-| 12 | 2024/12/16 | 回帰不連続デザイン（理論） |
-| 13 | 2024/12/23 | 休講 |
-| 14 | 2025/01/06 | 回帰不連続デザイン（実習） |
-| 15 | 2025/01/13 | 研究構想の発表 |
+|トピック|内容|
+|:---:|:---|
+|  1 | ガイダンス |
+|  2 | 因果推論の考え方 |
+|  3 | 無作為化比較試験 |
+|  4 | Lab session（Rの復習） |
+|  5 | 回帰分析とマッチング |
+|  6 | 差分の差分法 |
+|  7 | 回帰不連続デザイン |
+|  8 | 操作変数法 |
