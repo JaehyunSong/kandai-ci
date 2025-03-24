@@ -12,7 +12,7 @@ metadata-files:
 pacman::p_load(tidyverse, haven, 
                ggdag, dagitty, 
                modelsummary,
-               gt, icons)
+               gt)
 pacman::p_load_gh("JaehyunSong/BalanceR")
 ```
 

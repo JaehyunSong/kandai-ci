@@ -332,127 +332,127 @@
     "objectID": "slide/matching.html#因果推論と内生性",
     "href": "slide/matching.html#因果推論と内生性",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "内生性: 処置変数と誤差項間の相関関係\n\n内生性は因果推論の敵\n例\n\n処置変数 = ソンさんの講義を履修するか否か\n結果変数 = 10年後の年収\nもし、やる気のある学生が履修する傾向があるとしたら?\nやる気のある学生は履修の有無と関係なく、高所得者になりやすい。\n\\(\\rightarrow\\) 「やる気」は処置と結果、両方と連関している\n\n\n\n\n内生性を除去する最良の手法 \\(\\rightarrow\\) RCT"
+    "section": "因果推論と内生性",
+    "text": "因果推論と内生性\n内生性: 処置変数と誤差項間の相関関係\n\n内生性は因果推論の敵\n例\n\n処置変数 = ソンさんの講義を履修するか否か\n結果変数 = 10年後の年収\nもし、やる気のある学生が履修する傾向があるとしたら?\nやる気のある学生は履修の有無と関係なく、高所得者になりやすい。\n\\(\\rightarrow\\) 「やる気」は処置と結果、両方と連関している\n\n\n\n\n内生性を除去する最良の手法 \\(\\rightarrow\\) RCT"
   },
   {
     "objectID": "slide/matching.html#rctの限界",
     "href": "slide/matching.html#rctの限界",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "高費用\n\n数万〜数億円\n\n倫理的な問題による実行不可能性\n\n喫煙と健康\nPhilip Zimbardo. 2008. The Lucifer Effect: How Good People Turn Evil. Rider.\n\n外的妥当性の問題\n\nMichael G. Findley, Kyosuke Kikuta, and Michael Denly. 2021. “External Validity,” Annual Review of Political Science, 24:365-393.\n\n回顧的因果推論には不向き\n\n主に介入 (intervention)の効果が推定対象"
+    "section": "RCTの限界",
+    "text": "RCTの限界\n\n高費用\n\n数万〜数億円\n\n倫理的な問題による実行不可能性\n\n喫煙と健康\nPhilip Zimbardo. 2008. The Lucifer Effect: How Good People Turn Evil. Rider.\n\n外的妥当性の問題\n\nMichael G. Findley, Kyosuke Kikuta, and Michael Denly. 2021. “External Validity,” Annual Review of Political Science, 24:365-393.\n\n回顧的因果推論には不向き\n\n主に介入 (intervention)の効果が推定対象"
   },
   {
     "objectID": "slide/matching.html#観察データを用いた因果推論",
     "href": "slide/matching.html#観察データを用いた因果推論",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "もし、\\(X\\)をしたら（did）\\(Y\\)はどうなった（would）だろうか\n\n過去を対象にRCTを行うことは不可能\n過去に収集された観察データを使用した因果推論が必要\nマッチング、回帰不連続デザイン、差分の差分法、操作変数法など\n\n\n割当メカニズム (assignment mechanism)\n\nユニットが処置を受けるか否かを規定するメカニズム\n例) 「やる気」が「履修」を規定\n無作為割当なら無作為に処置を受けるか否かが決まるため、考える必要がない。"
+    "section": "観察データを用いた因果推論",
+    "text": "観察データを用いた因果推論\nもし、\\(X\\)をしたら（did）\\(Y\\)はどうなった（would）だろうか\n\n過去を対象にRCTを行うことは不可能\n過去に収集された観察データを使用した因果推論が必要\nマッチング、回帰不連続デザイン、差分の差分法、操作変数法など\n\n\n割当メカニズム (assignment mechanism)\n\nユニットが処置を受けるか否かを規定するメカニズム\n例) 「やる気」が「履修」を規定\n無作為割当なら無作為に処置を受けるか否かが決まるため、考える必要がない。"
   },
   {
     "objectID": "slide/matching.html#内生性への対処",
     "href": "slide/matching.html#内生性への対処",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "matching_data1.csvの例（架空データ; 30行 \\(\\times\\) 4列）\n\n明らかに「やる気」と「履修」は連関\n履修有無による平均年収の差は約265.333万円\n\n\n\n\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1     1    659      0     1\n 2     2    587      1     1\n 3     3    628      1     1\n 4     4    563      1     1\n 5     5    531      1     1\n 6     6     79      0     0\n 7     7    356      0     1\n 8     8    176      0     0\n 9     9    339      0     0\n10    10    520      1     1\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1    11    239      0     0\n 2    12    276      1     0\n 3    13    609      1     1\n 4    14    254      0     0\n 5    15    423      0     1\n 6    16    172      0     1\n 7    17     20      0     0\n 8    18    447      1     0\n 9    19    498      1     1\n10    20    648      1     1\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1    21    155      0     0\n 2    22    768      1     1\n 3    23    463      1     0\n 4    24    309      1     0\n 5    25    304      0     0\n 6    26    408      1     1\n 7    27    259      0     0\n 8    28    516      1     1\n 9    29    476      1     0\n10    30    110      0     0"
+    "section": "内生性への対処",
+    "text": "内生性への対処\nmatching_data1.csvの例（架空データ; 30行 \\(\\times\\) 4列）\n\n明らかに「やる気」と「履修」は連関\n履修有無による平均年収の差は約265.333万円\n\n\n\n\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1     1    659      0     1\n 2     2    587      1     1\n 3     3    628      1     1\n 4     4    563      1     1\n 5     5    531      1     1\n 6     6     79      0     0\n 7     7    356      0     1\n 8     8    176      0     0\n 9     9    339      0     0\n10    10    520      1     1\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1    11    239      0     0\n 2    12    276      1     0\n 3    13    609      1     1\n 4    14    254      0     0\n 5    15    423      0     1\n 6    16    172      0     1\n 7    17     20      0     0\n 8    18    447      1     0\n 9    19    498      1     1\n10    20    648      1     1\n\n\n\n\n# A tibble: 10 × 4\n      ID Income Yaruki Rishu\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n 1    21    155      0     0\n 2    22    768      1     1\n 3    23    463      1     0\n 4    24    309      1     0\n 5    25    304      0     0\n 6    26    408      1     1\n 7    27    259      0     0\n 8    28    516      1     1\n 9    29    476      1     0\n10    30    110      0     0"
   },
   {
     "objectID": "slide/matching.html#内生性への対処-1",
     "href": "slide/matching.html#内生性への対処-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "方法：処置変数と結果変数に影響を与える要因（交絡要因）を揃える\n\n「やる気」のない学生（Yaruki == 0）だけに絞ってみる\n履修有無による平均年収の差は209万円\n\n\n\n\ndf1 |&gt;\n  filter(Yaruki == 0) |&gt;\n  group_by(Rishu) |&gt;\n  summarise(Inc = mean(Income)) |&gt;\n  pull(Inc)\n\n[1] 193.5 402.5\n\n\n\n402.5 - 193.5\n\n[1] 209\n\n\n\n\n\n\n\n\n\n\n\nID\n所得\nやる気\n履修\n　\nID\n所得\nやる気\n履修\n\n\n\n\n1\n659\n0\n1\n\n6\n79\n0\n0\n\n\n7\n356\n0\n1\n\n8\n176\n0\n0\n\n\n15\n423\n0\n1\n\n9\n339\n0\n0\n\n\n16\n172\n0\n1\n\n11\n239\n0\n0\n\n\n\n\n\n\n\n14\n254\n0\n0\n\n\n\n\n\n\n\n17\n20\n0\n0\n\n\n\n\n\n\n\n21\n155\n0\n0\n\n\n\n\n\n\n\n25\n304\n0\n0\n\n\n\n\n\n\n\n27\n259\n0\n0\n\n\n\n\n\n\n\n30\n110\n0\n0\n\n\nMean\n402.5\n\n\n\nMean\n193.5"
+    "section": "内生性への対処",
+    "text": "内生性への対処\n方法：処置変数と結果変数に影響を与える要因（交絡要因）を揃える\n\n「やる気」のない学生（Yaruki == 0）だけに絞ってみる\n履修有無による平均年収の差は209万円\n\n\n\n\ndf1 |&gt;\n  filter(Yaruki == 0) |&gt;\n  group_by(Rishu) |&gt;\n  summarise(Inc = mean(Income)) |&gt;\n  pull(Inc)\n\n[1] 193.5 402.5\n\n\n\n402.5 - 193.5\n\n[1] 209\n\n\n\n\n\n\n\n\n\n\n\nID\n所得\nやる気\n履修\n　\nID\n所得\nやる気\n履修\n\n\n\n\n1\n659\n0\n1\n\n6\n79\n0\n0\n\n\n7\n356\n0\n1\n\n8\n176\n0\n0\n\n\n15\n423\n0\n1\n\n9\n339\n0\n0\n\n\n16\n172\n0\n1\n\n11\n239\n0\n0\n\n\n\n\n\n\n\n14\n254\n0\n0\n\n\n\n\n\n\n\n17\n20\n0\n0\n\n\n\n\n\n\n\n21\n155\n0\n0\n\n\n\n\n\n\n\n25\n304\n0\n0\n\n\n\n\n\n\n\n27\n259\n0\n0\n\n\n\n\n\n\n\n30\n110\n0\n0\n\n\nMean\n402.5\n\n\n\nMean\n193.5"
   },
   {
     "objectID": "slide/matching.html#内生性への対処-2",
     "href": "slide/matching.html#内生性への対処-2",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "方法: 処置変数と結果変数に影響を与える要因(交絡要因)を揃える\n\n「やる気」のある学生（Yaruki == 1）だけに絞ってみる\n履修有無による平均年収の差は176.3万円\n\n\n\n\ndf1 |&gt;\n  filter(Yaruki == 1) |&gt;\n  group_by(Rishu) |&gt;\n  summarise(Inc = mean(Income)) |&gt;\n  pull(Inc)\n\n[1] 394.2000 570.5455\n\n\n\n570.5455 - 394.2000\n\n[1] 176.3455\n\n\n\n\n\n\n\n\n\n\n\nID\n所得\nやる気\n履修\n　\nID\n所得\nやる気\n履修\n\n\n\n\n2\n587\n1\n1\n\n12\n276\n1\n0\n\n\n3\n628\n1\n1\n\n18\n447\n1\n0\n\n\n4\n563\n1\n1\n\n23\n463\n1\n0\n\n\n5\n531\n1\n1\n\n24\n309\n1\n0\n\n\n10\n520\n1\n1\n\n29\n476\n1\n0\n\n\n13\n609\n1\n1\n\n\n\n\n\n\n\n19\n498\n1\n1\n\n\n\n\n\n\n\n20\n648\n1\n1\n\n\n\n\n\n\n\n22\n768\n1\n1\n\n\n\n\n\n\n\n26\n408\n1\n1\n\n\n\n\n\n\n\n28\n516\n1\n1\n\n\n\n\n\n\n\nMean\n570.5\n\n\n\nMean\n394.2"
+    "section": "内生性への対処",
+    "text": "内生性への対処\n方法: 処置変数と結果変数に影響を与える要因(交絡要因)を揃える\n\n「やる気」のある学生（Yaruki == 1）だけに絞ってみる\n履修有無による平均年収の差は176.3万円\n\n\n\n\ndf1 |&gt;\n  filter(Yaruki == 1) |&gt;\n  group_by(Rishu) |&gt;\n  summarise(Inc = mean(Income)) |&gt;\n  pull(Inc)\n\n[1] 394.2000 570.5455\n\n\n\n570.5455 - 394.2000\n\n[1] 176.3455\n\n\n\n\n\n\n\n\n\n\n\nID\n所得\nやる気\n履修\n　\nID\n所得\nやる気\n履修\n\n\n\n\n2\n587\n1\n1\n\n12\n276\n1\n0\n\n\n3\n628\n1\n1\n\n18\n447\n1\n0\n\n\n4\n563\n1\n1\n\n23\n463\n1\n0\n\n\n5\n531\n1\n1\n\n24\n309\n1\n0\n\n\n10\n520\n1\n1\n\n29\n476\n1\n0\n\n\n13\n609\n1\n1\n\n\n\n\n\n\n\n19\n498\n1\n1\n\n\n\n\n\n\n\n20\n648\n1\n1\n\n\n\n\n\n\n\n22\n768\n1\n1\n\n\n\n\n\n\n\n26\n408\n1\n1\n\n\n\n\n\n\n\n28\n516\n1\n1\n\n\n\n\n\n\n\nMean\n570.5\n\n\n\nMean\n394.2"
   },
   {
     "objectID": "slide/matching.html#内生性への対処-3",
     "href": "slide/matching.html#内生性への対処-3",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "やる気なし\n\n\n履修 (T)\n平均年収 (Y)\n\n\n\n\n1\n402.5\n\n\n0\n193.5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nやる気あり\n\n\n履修 (T)\n平均年収 (Y)\n\n\n\n\n1\n570.5\n\n\n0\n394.2\n\n\n\n\n\n\n\n\n\n\nやる気のある（ない）被験者を一人の被験者として考える場合、差分はITEと解釈可能。\n\n\n\n\n\n\n\n\nID (i)\nN\nやる気 (Zi)\nYi(Ti = 1)\nYi(Ti = 0)\nITEi\n\n\n\n\n1\n14\n0\n402.5\n193.5\n209.0\n\n\n2\n16\n1\n570.5\n394.2\n176.3\n\n\n\n\n\n\n\n\nITEの加重平均 \\(\\rightarrow\\) 講義履修の因果効果 \\(\\rightarrow\\) 約191.6万円\n\n\nweighted.mean(c(209.0, 176.3), w = c(14, 16))\n\n[1] 191.56"
+    "section": "内生性への対処",
+    "text": "内生性への対処\n\n\n\n\n\n\n\n\nやる気なし\n\n\n履修 (T)\n平均年収 (Y)\n\n\n\n\n1\n402.5\n\n\n0\n193.5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nやる気あり\n\n\n履修 (T)\n平均年収 (Y)\n\n\n\n\n1\n570.5\n\n\n0\n394.2\n\n\n\n\n\n\n\n\n\nやる気のある（ない）被験者を一人の被験者として考える場合、差分はITEと解釈可能。\n\n\n\n\n\n\n\n\nID (i)\nN\nやる気 (Zi)\nYi(Ti = 1)\nYi(Ti = 0)\nITEi\n\n\n\n\n1\n14\n0\n402.5\n193.5\n209.0\n\n\n2\n16\n1\n570.5\n394.2\n176.3\n\n\n\n\n\n\n\n\nITEの加重平均 \\(\\rightarrow\\) 講義履修の因果効果 \\(\\rightarrow\\) 約191.6万円\n\n\nweighted.mean(c(209.0, 176.3), w = c(14, 16))\n\n[1] 191.56"
   },
   {
     "objectID": "slide/matching.html#マッチングの考え方-1",
     "href": "slide/matching.html#マッチングの考え方-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "割当メカニズムを想定し、交絡要因が同じユニット同士を比較\n\n交絡要因: 処置変数と結果変数、両方と関係のある変数\n以下の条件が満たされる場合、マッチングで因果効果の推定が可能\n条件付き独立の仮定（Conditional Independece Assumption; CIA）\n\n\\(\\{Y_i(T_i = 1),Y_i(T_i = 0)\\} \\perp T_i∣X_i\\)\n\\(T_i\\) : 学生 \\(i\\) の履修有無、 \\(X_i\\) : 学生 \\(i\\) のやる気\nやる気（=交絡要因）が同じ場合、学生 \\(i\\) がソンさんの講義を履修するか否か（=処置変数）は彼（女）の将来収入（=結果変数）と関係なく決まる\n\\(\\rightarrow\\) 処置変数を外生変数として扱うことが可能に\n\nCIAが満たされるためには、割当メカニズム上のすべての交絡要因が必要"
+    "section": "マッチングの考え方",
+    "text": "マッチングの考え方\n割当メカニズムを想定し、交絡要因が同じユニット同士を比較\n\n交絡要因: 処置変数と結果変数、両方と関係のある変数\n以下の条件が満たされる場合、マッチングで因果効果の推定が可能\n条件付き独立の仮定（Conditional Independece Assumption; CIA）\n\n\\(\\{Y_i(T_i = 1),Y_i(T_i = 0)\\} \\perp T_i∣X_i\\)\n\\(T_i\\) : 学生 \\(i\\) の履修有無、 \\(X_i\\) : 学生 \\(i\\) のやる気\nやる気（=交絡要因）が同じ場合、学生 \\(i\\) がソンさんの講義を履修するか否か（=処置変数）は彼（女）の将来収入（=結果変数）と関係なく決まる\n\\(\\rightarrow\\) 処置変数を外生変数として扱うことが可能に\n\nCIAが満たされるためには、割当メカニズム上のすべての交絡要因が必要"
   },
   {
     "objectID": "slide/matching.html#条件付き独立の仮定とは",
     "href": "slide/matching.html#条件付き独立の仮定とは",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "ID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nY0\nY1\n\n\n\n\nT = 0\n0.429\n0.429\n\n\nT = 1\n0.538\n0.538\n\n\n\n\n\n\n\n\n処置効果は0.538 − 0.429 = 0.109\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dのはず\n処置群がもし統制群になっても、今の統制群と同じ\n\\(\\Rightarrow\\) 交換可能性が成立せず"
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\n\n\n\nID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nY0\nY1\n\n\n\n\nT = 0\n0.429\n0.429\n\n\nT = 1\n0.538\n0.538\n\n\n\n\n\n\n\n\n処置効果は0.538 − 0.429 = 0.109\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dのはず\n処置群がもし統制群になっても、今の統制群と同じ\n\\(\\Rightarrow\\) 交換可能性が成立せず"
   },
   {
     "objectID": "slide/matching.html#条件付き独立の仮定とは-1",
     "href": "slide/matching.html#条件付き独立の仮定とは-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "ID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n\\(Z\\) で条件づけた場合（\\(Z = 0\\)）\n\n\n\n\n\n\n\n\nX\nY0\nY1\n\n\n\n\nT = 0\n0.250\n0.250\n\n\nT = 1\n0.250\n0.250\n\n\n\n\n\n\n\n\n処置効果は0.250 − 0.250 = 0.000\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dが成立\n\\(\\Rightarrow\\) 交換可能性が成立"
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\n\n\n\nID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n\\(Z\\) で条件づけた場合（\\(Z = 0\\)）\n\n\n\n\n\n\n\n\nX\nY0\nY1\n\n\n\n\nT = 0\n0.250\n0.250\n\n\nT = 1\n0.250\n0.250\n\n\n\n\n\n\n\n\n処置効果は0.250 − 0.250 = 0.000\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dが成立\n\\(\\Rightarrow\\) 交換可能性が成立"
   },
   {
     "objectID": "slide/matching.html#条件付き独立の仮定とは-2",
     "href": "slide/matching.html#条件付き独立の仮定とは-2",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "ID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n\\(Z\\) で条件づけた場合 ( \\(Z = 1\\) )\n\n\n\n\n\n\n\n\nX\nY0\nY1\n\n\n\n\nT = 0\n0.667\n0.667\n\n\nT = 1\n0.667\n0.667\n\n\n\n\n\n\n\n\n処置効果は0.667 − 0.667 = 0.000\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dが成立\n\\(\\Rightarrow\\) 交換可能性が成立"
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\n\n\n\nID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n\\(Z\\) で条件づけた場合 ( \\(Z = 1\\) )\n\n\n\n\n\n\n\n\nX\nY0\nY1\n\n\n\n\nT = 0\n0.667\n0.667\n\n\nT = 1\n0.667\n0.667\n\n\n\n\n\n\n\n\n処置効果は0.667 − 0.667 = 0.000\nもし、統制群と処置群が同質なら\nA = C、そしてB = Dが成立\n\\(\\Rightarrow\\) 交換可能性が成立"
   },
   {
     "objectID": "slide/matching.html#条件付き独立の仮定とは-3",
     "href": "slide/matching.html#条件付き独立の仮定とは-3",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "ID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n条件付き独立が成立するということは\n\n交換可能性が成立\n処置群を統制群に、統制群を処置群にしても同じ結果が得られること"
+    "section": "条件付き独立の仮定とは",
+    "text": "条件付き独立の仮定とは\n\n\n\n\n\n\n\n\n\n\nID (i)\nZi\nTi\nY0, i\nY1, i\n\n\n\n\n1\n0\n0\n0\n1\n\n\n2\n0\n0\n1\n0\n\n\n3\n0\n0\n0\n0\n\n\n4\n0\n0\n0\n0\n\n\n5\n0\n1\n0\n0\n\n\n6\n0\n1\n1\n0\n\n\n7\n0\n1\n0\n0\n\n\n8\n0\n1\n0\n1\n\n\n9\n1\n0\n1\n1\n\n\n10\n1\n0\n1\n0\n\n\n11\n1\n0\n0\n1\n\n\n12\n1\n1\n1\n1\n\n\n13\n1\n1\n1\n1\n\n\n14\n1\n1\n0\n1\n\n\n15\n1\n1\n0\n1\n\n\n16\n1\n1\n0\n1\n\n\n17\n1\n1\n1\n1\n\n\n18\n1\n1\n1\n0\n\n\n19\n1\n1\n1\n0\n\n\n20\n1\n1\n1\n0\n\n\n\n\n\n\n\n\n\n\n条件付き独立が成立するということは\n\n交換可能性が成立\n処置群を統制群に、統制群を処置群にしても同じ結果が得られること"
   },
   {
     "objectID": "slide/matching.html#重回帰分析との比較",
     "href": "slide/matching.html#重回帰分析との比較",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "重回帰分析における回帰係数の解釈\n\n他の変数すべてが同じ場合、ある変数が1単位変化する時の応答変数の変化量\nマッチングと同じ?\n\n重回帰分析とマッチングの結果が近似することも \\(\\bigcirc\\)\n\n参考）手計算マッチングの結果：約191.6万円\n\n計算時に小数点を切り捨てたため誤差あり\n\n\n\n\n\n# df1 は matching_data1.csv\n# 単回帰分析\nFit1 &lt;- lm(Income ~ Rishu, data = df1)\n# 重回帰分析\nFit2 &lt;- lm(Income ~ Rishu + Yaruki, data = df1)\n\n\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                 \n                単回帰分析\n                重回帰分析\n              \n        \n        \n        \n                \n                  (Intercept)\n                  260.400 (36.459)\n                  198.595 (32.737)\n                \n                \n                  Rishu\n                  265.333 (51.561)\n                  191.167 (44.915)\n                \n                \n                  Yaruki\n                  \n                  185.415 (45.015)\n                \n                \n                  Num.Obs.\n                  30\n                  30\n                \n                \n                  R2\n                  0.486\n                  0.684"
+    "section": "重回帰分析との比較",
+    "text": "重回帰分析との比較\n重回帰分析における回帰係数の解釈\n\n他の変数すべてが同じ場合、ある変数が1単位変化する時の応答変数の変化量\nマッチングと同じ?\n\n重回帰分析とマッチングの結果が近似することも \\(\\bigcirc\\)\n\n参考）手計算マッチングの結果：約191.6万円\n\n計算時に小数点を切り捨てたため誤差あり\n\n\n\n\n\n# df1 は matching_data1.csv\n# 単回帰分析\nFit1 &lt;- lm(Income ~ Rishu, data = df1)\n# 重回帰分析\nFit2 &lt;- lm(Income ~ Rishu + Yaruki, data = df1)\n\n\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                 \n                単回帰分析\n                重回帰分析\n              \n        \n        \n        \n                \n                  (Intercept)\n                  260.400 (36.459)\n                  198.595 (32.737)\n                \n                \n                  Rishu\n                  265.333 (51.561)\n                  191.167 (44.915)\n                \n                \n                  Yaruki\n                  \n                  185.415 (45.015)\n                \n                \n                  Num.Obs.\n                  30\n                  30\n                \n                \n                  R2\n                  0.486\n                  0.684"
   },
   {
     "objectID": "slide/matching.html#重回帰分析との比較-1",
     "href": "slide/matching.html#重回帰分析との比較-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "実質的にマッチングと回帰分析は同じという見解も（Angrist and Pischke 2009）\n\n具体的に言えば、回帰分析はマッチングの特殊な形態\n\n強い仮定を置いたマッチング\n回帰分析は\\(Y = \\beta_0 + \\beta_1 X_1 + ... + \\beta_k X_k\\)の関数型を仮定（parametric）\n\n回帰分析において誤差項の平均値は必ず0を仮定（\\(\\mathbb{E}(\\varepsilon|T, X) = 0\\)）\n\nマッチングの場合、（\\(\\mathbb{E}(\\varepsilon|T = 0, X) = \\mathbb{E}(\\varepsilon|T = 1, X)\\)）\n\n回帰分析はオーバーラップ条件を無視する\n\nマッチングされないケースでも、線形関数によって予測されてしまう\nマッチングはオーバーラップされないケースを分析から除外する\n\n結論: 回帰分析より柔軟、拡張性がある"
+    "section": "重回帰分析との比較",
+    "text": "重回帰分析との比較\n実質的にマッチングと回帰分析は同じという見解も（Angrist and Pischke 2009）\n\n具体的に言えば、回帰分析はマッチングの特殊な形態\n\n強い仮定を置いたマッチング\n回帰分析は\\(Y = \\beta_0 + \\beta_1 X_1 + ... + \\beta_k X_k\\)の関数型を仮定（parametric）\n\n回帰分析において誤差項の平均値は必ず0を仮定（\\(\\mathbb{E}(\\varepsilon|T, X) = 0\\)）\n\nマッチングの場合、（\\(\\mathbb{E}(\\varepsilon|T = 0, X) = \\mathbb{E}(\\varepsilon|T = 1, X)\\)）\n\n回帰分析はオーバーラップ条件を無視する\n\nマッチングされないケースでも、線形関数によって予測されてしまう\nマッチングはオーバーラップされないケースを分析から除外する\n\n結論: 回帰分析より柔軟、拡張性がある"
   },
   {
     "objectID": "slide/matching.html#ateattatc",
     "href": "slide/matching.html#ateattatc",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "3種類の因果効果\n\nATE（Average Treatment Effect）：平均処置効果\nATT（ATE for the Treated）：処置群における平均処置効果\n\n潜在結果: 処置群が処置を受けなかった場合の応答変数\n\nATC（ATE for the Control）：統制群における平均処置効果\n\n潜在結果: 統制群が処置を受けた場合の応答変数\n\n\n\n\n因果効果は一般的に母集団ではなく、サンプルから推定されるため、「SATE/SATT/SATC」と呼ばれる場合も\nRCTでは主にATEが推定対象であるものの、マッチングの場合、ATTもよく使われる。\n\nATCはあまり見ないような気がする。\n\n統計ソフトウェアによってはATTを因果効果の推定値として表示する場合もある。"
+    "section": "ATE／ATT／ATC",
+    "text": "ATE／ATT／ATC\n3種類の因果効果\n\nATE（Average Treatment Effect）：平均処置効果\nATT（ATE for the Treated）：処置群における平均処置効果\n\n潜在結果: 処置群が処置を受けなかった場合の応答変数\n\nATC（ATE for the Control）：統制群における平均処置効果\n\n潜在結果: 統制群が処置を受けた場合の応答変数\n\n\n\n\n因果効果は一般的に母集団ではなく、サンプルから推定されるため、「SATE/SATT/SATC」と呼ばれる場合も\nRCTでは主にATEが推定対象であるものの、マッチングの場合、ATTもよく使われる。\n\nATCはあまり見ないような気がする。\n\n統計ソフトウェアによってはATTを因果効果の推定値として表示する場合もある。"
   },
   {
     "objectID": "slide/matching.html#att-処置群における平均処置効果",
     "href": "slide/matching.html#att-処置群における平均処置効果",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "処置群の潜在的結果を統制群から割り当てる。\n処置群は\\(Y_i(T_i = 1)\\)が観察済みであり、潜在的結果は\\(Y_i(T_i = 0)\\)\nやる気のない学生の\\(Y_i(T_i = 0)\\)は193.5、ある学生は394.2\n\n\n\n\n\n\n\n\n\nID (i)\nYarukii\nYi(Ti = 1)\nYi(Ti = 0)\nITEi\n\n\n\n\n1\n0\n659\n193.5\n465.5\n\n\n2\n1\n587\n394.2\n192.8\n\n\n3\n1\n628\n394.2\n233.8\n\n\n4\n1\n563\n394.2\n168.8\n\n\n5\n1\n531\n394.2\n136.8\n\n\n7\n0\n356\n193.5\n162.5\n\n\n...\n...\n...\n...\n...\n\n\n20\n1\n648\n394.2\n253.8\n\n\n22\n1\n768\n394.2\n373.8\n\n\n26\n1\n408\n394.2\n13.8\n\n\n28\n1\n516\n394.2\n121.8\n\n\n平均\n\n\n\n185.1"
+    "section": "ATT: 処置群における平均処置効果",
+    "text": "ATT: 処置群における平均処置効果\n\n処置群の潜在的結果を統制群から割り当てる。\n処置群は\\(Y_i(T_i = 1)\\)が観察済みであり、潜在的結果は\\(Y_i(T_i = 0)\\)\nやる気のない学生の\\(Y_i(T_i = 0)\\)は193.5、ある学生は394.2\n\n\n\n\n\n\n\n\n\nID (i)\nYarukii\nYi(Ti = 1)\nYi(Ti = 0)\nITEi\n\n\n\n\n1\n0\n659\n193.5\n465.5\n\n\n2\n1\n587\n394.2\n192.8\n\n\n3\n1\n628\n394.2\n233.8\n\n\n4\n1\n563\n394.2\n168.8\n\n\n5\n1\n531\n394.2\n136.8\n\n\n7\n0\n356\n193.5\n162.5\n\n\n...\n...\n...\n...\n...\n\n\n20\n1\n648\n394.2\n253.8\n\n\n22\n1\n768\n394.2\n373.8\n\n\n26\n1\n408\n394.2\n13.8\n\n\n28\n1\n516\n394.2\n121.8\n\n\n平均\n\n\n\n185.1"
   },
   {
     "objectID": "slide/matching.html#atc-統制群における平均処置効果",
     "href": "slide/matching.html#atc-統制群における平均処置効果",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "統制群の潜在的結果を処置群から割り当てる。\n統制群は\\(Y_i(T_i = 0)\\)が観察済みであり、潜在的結果は\\(Y_i(T_i = 1)\\)\nやる気のない学生の\\(Y_i(T_i = 1)\\)は402.5、ある学生は570.5\n\n\n\n\n\n\n\n\n\nID (i)\nYarukii\nYi(Ti = 1)\nYi(Ti = 0)\nITEi\n\n\n\n\n6\n0\n402.5\n79\n323.5\n\n\n8\n0\n402.5\n176\n226.5\n\n\n9\n0\n402.5\n339\n63.5\n\n\n11\n0\n402.5\n239\n163.5\n\n\n12\n1\n570.5\n276\n294.5\n\n\n14\n0\n402.5\n254\n148.5\n\n\n...\n...\n...\n...\n...\n\n\n25\n0\n402.5\n304\n98.5\n\n\n27\n0\n402.5\n259\n143.5\n\n\n29\n1\n570.5\n476\n94.5\n\n\n30\n0\n402.5\n110\n292.5\n\n\n平均\n\n\n\n198.1"
+    "section": "ATC: 統制群における平均処置効果",
+    "text": "ATC: 統制群における平均処置効果\n\n統制群の潜在的結果を処置群から割り当てる。\n統制群は\\(Y_i(T_i = 0)\\)が観察済みであり、潜在的結果は\\(Y_i(T_i = 1)\\)\nやる気のない学生の\\(Y_i(T_i = 1)\\)は402.5、ある学生は570.5\n\n\n\n\n\n\n\n\n\nID (i)\nYarukii\nYi(Ti = 1)\nYi(Ti = 0)\nITEi\n\n\n\n\n6\n0\n402.5\n79\n323.5\n\n\n8\n0\n402.5\n176\n226.5\n\n\n9\n0\n402.5\n339\n63.5\n\n\n11\n0\n402.5\n239\n163.5\n\n\n12\n1\n570.5\n276\n294.5\n\n\n14\n0\n402.5\n254\n148.5\n\n\n...\n...\n...\n...\n...\n\n\n25\n0\n402.5\n304\n98.5\n\n\n27\n0\n402.5\n259\n143.5\n\n\n29\n1\n570.5\n476\n94.5\n\n\n30\n0\n402.5\n110\n292.5\n\n\n平均\n\n\n\n198.1"
   },
   {
     "objectID": "slide/matching.html#ate-平均処置効果",
     "href": "slide/matching.html#ate-平均処置効果",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "ATTとATCの加重平均\n今回は処置群と統制群が15:15 \\(\\rightarrow\\) 単純平均でOK\n\n\\(\\frac{1}{2}(185.1 + 198.1) = 191.6\\)\n手計算マッチングとと同じ結果\n\n\n\\[\\text{ATE} = \\frac{N_{\\text{treated}}}{N_{\\text{all}}} \\text{ATT} + \\frac{N_{\\text{controlled}}}{N_{\\text{all}}} \\text{ATC}.\\]"
+    "section": "ATE: 平均処置効果",
+    "text": "ATE: 平均処置効果\n\nATTとATCの加重平均\n今回は処置群と統制群が15:15 \\(\\rightarrow\\) 単純平均でOK\n\n\\(\\frac{1}{2}(185.1 + 198.1) = 191.6\\)\n手計算マッチングとと同じ結果\n\n\n\\[\\text{ATE} = \\frac{N_{\\text{treated}}}{N_{\\text{all}}} \\text{ATT} + \\frac{N_{\\text{controlled}}}{N_{\\text{all}}} \\text{ATC}.\\]"
   },
   {
     "objectID": "slide/matching.html#マッチングいろいろ",
@@ -746,14 +746,14 @@
     "href": "slide/matching.html#実習用データ-lalonde職業訓練と所得",
     "title": "社会科学における因果推論",
     "section": "実習用データ: lalonde（職業訓練と所得）",
-    "text": "実習用データ: lalonde（職業訓練と所得）\nlalondeは様々なパッケージがサンプルデータとして提供しているが、本講義では{cobalt}のlalondeデータセットを利用\n\n\n\ndata(\"lalonde\", package = \"cobalt\")で読み込み\n\nその前に{cobalt}パッケージを読み込む\n\n\n\ndata(\"lalonde\", package = \"cobalt\")\nla_df &lt;- as_tibble(lalonde) # tibble構造へ変換\nla_df\n\n# A tibble: 614 × 9\n   treat   age  educ race   married nodegree  re74  re75   re78\n   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1    37    11 black        1        1     0     0  9930.\n 2     1    22     9 hispan       0        1     0     0  3596.\n 3     1    30    12 black        0        0     0     0 24909.\n 4     1    27    11 black        0        1     0     0  7506.\n 5     1    33     8 black        0        1     0     0   290.\n 6     1    22     9 black        0        1     0     0  4056.\n 7     1    23    12 black        0        0     0     0     0 \n 8     1    32    11 black        0        1     0     0  8472.\n 9     1    22    16 black        0        0     0     0  2164.\n10     1    33    12 white        1        0     0     0 12418.\n# ℹ 604 more rows\n\n\n\n\n\n\n\n変数名\n説明\n\n\n\n\n1\ntreat\n職業訓練の履修有無\n\n\n2\nage\n年齢\n\n\n3\neduc\n教育年数\n\n\n4\nrace\n人種\n\n\n5\nmarried\n結婚有無\n\n\n6\nnodegree\n学位有無\n\n\n7\nre74\n1974年の所得\n\n\n8\nre75\n1975年の所得\n\n\n9\nre78\n1978年の所得\n\n\n\n\n\n\n\n\n\n\nLalonde, Robert. 1984. “Evaluating the Econometric Evaluations of Training Programs with Experimental Data,” American Economic Review, 76 (4): 604-620."
+    "text": "実習用データ: lalonde（職業訓練と所得）\nlalondeは様々なパッケージがサンプルデータとして提供しているが、本講義では{cobalt}のlalondeデータセットを利用\n\n\n\ndata(\"lalonde\", package = \"cobalt\")で読み込み\n\nその前に{cobalt}パッケージを読み込む\n\n\n\ndata(\"lalonde\", package = \"cobalt\")\nla_df &lt;- as_tibble(lalonde) # tibble構造へ変換\nla_df\n\n# A tibble: 614 × 9\n   treat   age  educ race   married nodegree  re74  re75   re78\n   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;    &lt;int&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1    37    11 black        1        1     0     0  9930.\n 2     1    22     9 hispan       0        1     0     0  3596.\n 3     1    30    12 black        0        0     0     0 24909.\n 4     1    27    11 black        0        1     0     0  7506.\n 5     1    33     8 black        0        1     0     0   290.\n 6     1    22     9 black        0        1     0     0  4056.\n 7     1    23    12 black        0        0     0     0     0 \n 8     1    32    11 black        0        1     0     0  8472.\n 9     1    22    16 black        0        0     0     0  2164.\n10     1    33    12 white        1        0     0     0 12418.\n# ℹ 604 more rows\n\n\n\n\n\n\n\n変数名\n説明\n\n\n\n\n1\ntreat\n職業訓練の履修有無\n\n\n2\nage\n年齢\n\n\n3\neduc\n教育年数\n\n\n4\nrace\n人種\n\n\n5\nmarried\n結婚有無\n\n\n6\nnodegree\n学位有無\n\n\n7\nre74\n1974年の所得\n\n\n8\nre75\n1975年の所得\n\n\n9\nre78\n1978年の所得\n\n\n\n\n\n\n\n\n\nLalonde, Robert. 1984. “Evaluating the Econometric Evaluations of Training Programs with Experimental Data,” American Economic Review, 76 (4): 604-620."
   },
   {
     "objectID": "slide/rct.html#信頼できるateの条件",
     "href": "slide/rct.html#信頼できるateの条件",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "内生性の存在 \\(\\rightarrow\\) ATE推定値の信頼性\\(\\downarrow\\)\n例) やる気のある学生だけがソンさんの講義を履修した場合\n\n自己選択バイアス\n\nソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下\n\n疑似相関\n\nやる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。\n\n測定誤差\n\n履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）\n\n\n\n\n内生性は因果推論の敵! どうすれば…?\n\\(\\downarrow\\)\n無作為割当 (Random Assignment)"
+    "section": "信頼できるATEの条件",
+    "text": "信頼できるATEの条件\n内生性の存在 \\(\\rightarrow\\) ATE推定値の信頼性\\(\\downarrow\\)\n例) やる気のある学生だけがソンさんの講義を履修した場合\n\n自己選択バイアス\n\nソンさんの講義は鬼畜すぎるため、やる気満々の学生には役に立つものの、やる気のない学生にとってはむしろ学習意欲が低下\n\n疑似相関\n\nやる気のある学生はいろんな方面で頑張るから、将来年収が高くなる。\n\n測定誤差\n\n履修者の年収はジンバブエ・ドルで測定されている可能性も（これはないか）\n\n\n\n\n内生性は因果推論の敵! どうすれば…?\n\\(\\downarrow\\)\n無作為割当 (Random Assignment)"
   },
   {
     "objectID": "slide/rct.html#無作為割当とは",
@@ -858,7 +858,7 @@
     "href": "slide/rct.html#サーベイ実験1",
     "title": "社会科学における因果推論",
     "section": "サーベイ実験（1）",
-    "text": "サーベイ実験（1）\n世論調査に実験を埋め込む方法\n\n例1例2\n\n\nAsaba, Yuki, Kyu S Hahn, Seulgi Jang, Tetsuro Kobayashi, and Atsushi Tago. 2020. “38 seconds above the 38th parallel: how short video clips produced by the US military can promote alignment despite antagonism between Japan and Korea,” International Relations of the Asia-Pacific, 20(2): 253–273.\n\nサーベイの回答者1500名を2グループに分割\n\n統制群：38秒の日米韓軍事協力に関するPACOM制作の動画を視聴\n処置群：ほぼ同じ長さのPACOM制作の動画を視聴（日韓の言及はなし）\n\nアメリカに対する感情温度、日韓協力に対する態度を測定\nグループごとに結果を比較\n\n\n\nSong, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022. “Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US,” Canadian Journal of Political Science, 55 (4): 852-872.\n\n回答者621名を統制群と処置群に割当\n統制群に以下のように質問\n\n\n\n\n\n\n\nNow we are going to show you four activities that some people may experience during the electoral campaign. After you read all four, just answer HOW MANY activities you experienced during the last electoral campaign. (We do NOT want to know which ones, just how many.)\n\nI saw public debates between candidates for presidential elections on TV.\nI saw official websites/blogs of politicians and candidates.\nMy family/friends told me about the election.\nCampaign activists threatened me to vote for a candidate.\n\n\n\n\n\n処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加\n結果の平均値を比較"
+    "text": "サーベイ実験（1）\n世論調査に実験を埋め込む方法\n\n例1例2\n\n\nAsaba, Yuki, Kyu S Hahn, Seulgi Jang, Tetsuro Kobayashi, and Atsushi Tago. 2020. “38 seconds above the 38th parallel: how short video clips produced by the US military can promote alignment despite antagonism between Japan and Korea,” International Relations of the Asia-Pacific, 20(2): 253–273.\n\nサーベイの回答者1500名を2グループに分割\n\n統制群：38秒の日米韓軍事協力に関するPACOM制作の動画を視聴\n処置群：ほぼ同じ長さのPACOM制作の動画を視聴（日韓の言及はなし）\n\nアメリカに対する感情温度、日韓協力に対する態度を測定\nグループごとに結果を比較\n\n\n\nSong, Jaehyun, Takeshi Iida, Yuriko Takahashi, and Jesús Tovar. 2022. “Buying Votes across Borders? A List Experiment on Mexican Immigrants in the US,” Canadian Journal of Political Science, 55 (4): 852-872.\n\n回答者621名を統制群と処置群に割当\n統制群に以下のように質問\n\n\n\n\nNow we are going to show you four activities that some people may experience during the electoral campaign. After you read all four, just answer HOW MANY activities you experienced during the last electoral campaign. (We do NOT want to know which ones, just how many.)\n\nI saw public debates between candidates for presidential elections on TV.\nI saw official websites/blogs of politicians and candidates.\nMy family/friends told me about the election.\nCampaign activists threatened me to vote for a candidate.\n\n\n\n\n\n処置群には「Campaign activists gave any monetary benefits or did a favor to me or my family in Mexico.」を追加\n結果の平均値を比較"
   },
   {
     "objectID": "slide/rct.html#サーベイ実験2",
@@ -907,7 +907,7 @@
     "href": "slide/rct.html#因果効果の推定",
     "title": "社会科学における因果推論",
     "section": "因果効果の推定",
-    "text": "因果効果の推定\n\n参考）Freedman, David A. 2008. “Randomization Does Not Justify Logistic Regression,” Statistical Science Statistical Science, 23(2): 237-249.\n\nLogit: 一致推定量\\(\\times\\) & 不偏推定量\\(\\times\\)\nLinear: 一致推定量\\(\\bigcirc\\) & 不偏推定量\\(\\times\\)\n一致性と不偏性の違いについて\n\n\n平均値の差分の検定単回帰分析\n\n\n方法1: グループ間の結果変数の差分の検定 (\\(t\\)検定)\n\n因果効果 (ATE): \\(\\mathbb{E}[\\mbox{Call}|\\mbox{Race = Black}] - \\mathbb{E}[\\mbox{Call}|\\mbox{Race = White}] = -0.032\\)\nATE = 0の帰無仮説の検定\n\n\\(t_{\\text{df} = 4711.7} = −4.117\\); \\(p\\) &lt; 0.001; 95% CI = [−0.047, −0.017]\n\n応答変数の尺度に応じてノンパラメトリック分析\n\n\n\n方法2: 単回帰分析 (線形 or ロジスティックス/プロビット)\n\n\n\n\n\n\n\n\n線形回帰分析（LPM）\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n0.064\n0.006\n\n\nRace: White\n0.032\n0.008\n\n\n\n\n\n\nロジスティック回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-2.675\n0.083\n\n\nRace: White\n0.438\n0.107\n\n\n\n\n\n\nプロビット回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-1.518\n0.039\n\n\nRace: White\n0.217\n0.053"
+    "text": "因果効果の推定\n\n平均値の差分の検定単回帰分析\n\n\n方法1: グループ間の結果変数の差分の検定 (\\(t\\)検定)\n\n因果効果 (ATE): \\(\\mathbb{E}[\\mbox{Call}|\\mbox{Race = Black}] - \\mathbb{E}[\\mbox{Call}|\\mbox{Race = White}] = -0.032\\)\nATE = 0の帰無仮説の検定\n\n\\(t_{\\text{df} = 4711.7} = −4.117\\); \\(p\\) &lt; 0.001; 95% CI = [−0.047, −0.017]\n\n応答変数の尺度に応じてノンパラメトリック分析\n\n\n\n方法2: 単回帰分析 (線形 or ロジスティックス/プロビット)\n\n\n\n\n\n\n\n\n線形回帰分析（LPM）\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n0.064\n0.006\n\n\nRace: White\n0.032\n0.008\n\n\n\n\n\n\nロジスティック回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-2.675\n0.083\n\n\nRace: White\n0.438\n0.107\n\n\n\n\n\n\nプロビット回帰分析\n\n\nCovriates\nEst.\nS.E.\n\n\n\n\nIntercept\n-1.518\n0.039\n\n\nRace: White\n0.217\n0.053\n\n\n\n\n\n\n\n\n\n\n\n\n参考）Freedman, David A. 2008. “Randomization Does Not Justify Logistic Regression,” Statistical Science Statistical Science, 23(2): 237-249.\n\nLogit: 一致推定量\\(\\times\\) & 不偏推定量\\(\\times\\)\nLinear: 一致推定量\\(\\bigcirc\\) & 不偏推定量\\(\\times\\)\n一致性と不偏性の違いについて"
   },
   {
     "objectID": "slide/rct.html#因果効果の推定重回帰分析は",
@@ -969,29 +969,29 @@
     "objectID": "slide/intro.html#講義概要-1",
     "href": "slide/intro.html#講義概要-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "科目名: 社会科学における因果推論\n講師: 宋財泫 (ソン ジェヒョン)\n所属: 関西大学総合情報学部\n\nE-mail: song [at] kansai-u.ac.jp\nHomepage: https://www.jaysong.net\n\n時間: 水曜日3限（13:00〜14:30）\n教室: TD106"
+    "section": "講義概要",
+    "text": "講義概要\n\n科目名: 社会科学における因果推論\n講師: 宋財泫 (ソン ジェヒョン)\n所属: 関西大学総合情報学部\n\nE-mail: song [at] kansai-u.ac.jp\nHomepage: https://www.jaysong.net\n\n時間: 水曜日3限（13:00〜14:30）\n教室: TD106"
   },
   {
     "objectID": "slide/intro.html#内容",
     "href": "slide/intro.html#内容",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "因果推論とは\n内生性（自己選択バイアス）\n因果推論の根本問題\n\n\n\n\n\n\n無作為化比較試験\n回帰分析とその拡張\n\n共変量調整\nマッチング\n差分の差分法\n回帰不連続デザイン\n操作変数法"
+    "section": "内容",
+    "text": "内容\n\n\n因果推論の考え方\n\n因果推論とは\n内生性（自己選択バイアス）\n因果推論の根本問題\n\n\n因果推論の理論と方法\n\n無作為化比較試験\n回帰分析とその拡張\n\n共変量調整\nマッチング\n差分の差分法\n回帰不連続デザイン\n操作変数法"
   },
   {
     "objectID": "slide/intro.html#実習",
     "href": "slide/intro.html#実習",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "実習はRで行う。第4〜6回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n\n\n\nmacOS Sequoia 15.3.2\nR version 4.4.3 (2025-02-28)\nRStudio 2024.12.1+563\nスライド、サポートページ、実習用資料の執筆環境\n\nFirefox 136.0.1\nQuarto 1.6.42\nR package {quarto} 1.4.4"
+    "section": "実習",
+    "text": "実習\n実習はRで行う。第4〜6回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS Sequoia 15.3.2\nR version 4.4.3 (2025-02-28)\nRStudio 2024.12.1+563\nスライド、サポートページ、実習用資料の執筆環境\n\nFirefox 136.0.1\nQuarto 1.6.42\nR package {quarto} 1.4.4"
   },
   {
     "objectID": "slide/intro.html#前提知識",
     "href": "slide/intro.html#前提知識",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "第4回講義までに以下の本の内容が理解できていれば問題ない。\n\n浅野正彦・矢内勇生. 2019『Rによる計量政治学』オーム社.\n\n\n\n\n\n\n\n仮説検定\n統計的有意性検定\n\n\\(p\\)値\\(\\neq\\)帰無仮説が正しい確率\n\n回帰分析\n\n\n\n\n\n\nデータクリーニング、回帰分析、可視化などができるならベスト\n第4〜6回にはRの復習を行う\n\n第7回以降の実習（第8・10・12回）は反転授業の形式を採用\n\n以下の内容が分かればOK\n\nhttps://www.jaysong.net/r4ps/\n『私たちのR』を読もう！"
+    "section": "前提知識",
+    "text": "前提知識\n第4回講義までに以下の本の内容が理解できていれば問題ない。\n\n浅野正彦・矢内勇生. 2019『Rによる計量政治学』オーム社.\n\n\n\n\n統計学\n\n仮説検定\n統計的有意性検定\n\n\\(p\\)値\\(\\neq\\)帰無仮説が正しい確率\n\n回帰分析\n\n\nR\n\nデータクリーニング、回帰分析、可視化などができるならベスト\n第4〜6回にはRの復習を行う\n\n第7回以降の実習（第8・10・12回）は反転授業の形式を採用\n\n以下の内容が分かればOK\n\nhttps://www.jaysong.net/r4ps/\n『私たちのR』を読もう！"
   },
   {
     "objectID": "slide/intro.html#サポートページ",
@@ -1040,7 +1040,7 @@
     "href": "slide/intro.html#分析環境の準備",
     "title": "社会科学における因果推論",
     "section": "分析環境の準備",
-    "text": "分析環境の準備\n\n自分のPCにR + RStudioがインストールされている場合\n\nRのバージョンが4.3.0以上であればOK\n\n\n\n\n自分のPCにR + RStudioがインストールされていない場合\n\\(\\Rightarrow\\) 少しでも不安があれば宋と相談しよう！\n\n\n方法1： 自分のPCにインストールする。\n\n参考資料：https://yukiyanai.github.io/jp/resources/\n\n\n方法2： クラウド版のR/RStudioを使用する。\n\n参考資料：サポートページ &gt; Rの使い方"
+    "text": "分析環境の準備\n自分のPCにR + RStudioがインストールされている場合\n\nRのバージョンが4.3.0以上であればOK\n\n\n自分のPCにR + RStudioがインストールされていない場合\n\\(\\Rightarrow\\) 少しでも不安があれば宋と相談しよう！\n\n\n方法1： 自分のPCにインストールする。\n\n参考資料：https://yukiyanai.github.io/jp/resources/\n\n\n方法2： クラウド版のR/RStudioを使用する。\n\n参考資料：サポートページ &gt; Rの使い方"
   },
   {
     "objectID": "slide/intro.html#連絡事項",
@@ -1081,29 +1081,29 @@
     "objectID": "slide/did.html#マッチングの限界",
     "href": "slide/did.html#マッチングの限界",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "条件付き独立の仮定 (Conditional Independent Assumption; CIA)\n\n処置変数 (T) と結果変数 (Y) の間に存在する交絡要因 (X) が全て観察されている場合\n\n\\({Y_i (T_i = 1), Y_i (T_i = 0) \\perp T_i | X_i}\\)\n\\(\\rightarrow\\) 交絡変数を共変量として統制する場合、観察データからも因果効果の推定が可能\n\nしかし、全ての交絡要因がデータに含まれる場合もほぼゼロ\n\n\\(\\rightarrow\\) 仮定としては強すぎるため、(回帰分析を含む) マッチングによる厳密な因果推論は困難\nただし、単純に処置変数と結果変数の単回帰分析よりは望ましい。\n\nより緩い仮定の下で可能な因果推論の手法\n\n\\(\\rightarrow\\) 自然実験 (Natural Experiment)"
+    "section": "マッチングの限界",
+    "text": "マッチングの限界\n条件付き独立の仮定 (Conditional Independent Assumption; CIA)\n\n処置変数 (T) と結果変数 (Y) の間に存在する交絡要因 (X) が全て観察されている場合\n\n\\({Y_i (T_i = 1), Y_i (T_i = 0) \\perp T_i | X_i}\\)\n\\(\\rightarrow\\) 交絡変数を共変量として統制する場合、観察データからも因果効果の推定が可能\n\nしかし、全ての交絡要因がデータに含まれる場合もほぼゼロ\n\n\\(\\rightarrow\\) 仮定としては強すぎるため、(回帰分析を含む) マッチングによる厳密な因果推論は困難\nただし、単純に処置変数と結果変数の単回帰分析よりは望ましい。\n\nより緩い仮定の下で可能な因果推論の手法\n\n\\(\\rightarrow\\) 自然実験 (Natural Experiment)"
   },
   {
     "objectID": "slide/did.html#自然実験とは",
     "href": "slide/did.html#自然実験とは",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "処置群に割り当てられた被験者の反応は、統制群に割り当てられた被験者の反応と比較される。\n被験者を処置群と統制群に割り当てることは、ランダムな装置（コイン投げなど）を使って無作為に行われる。\n処置の操作は実験研究者の管理下で行われる。\n\n\n\n\n\n同じ\n処置の有無は無作為のように決まる (as-if random)。\n処置内容などを研究者が操作することは不可能\n\n2と3は自然、制度などによって影響を受ける"
+    "section": "自然実験とは",
+    "text": "自然実験とは\nRCTの3つの特徴 (Freedman, Pisani, and Purves 2007)\n\n処置群に割り当てられた被験者の反応は、統制群に割り当てられた被験者の反応と比較される。\n被験者を処置群と統制群に割り当てることは、ランダムな装置（コイン投げなど）を使って無作為に行われる。\n処置の操作は実験研究者の管理下で行われる。\n\n自然実験は… (Dunning 2012)\n\n同じ\n処置の有無は無作為のように決まる (as-if random)。\n処置内容などを研究者が操作することは不可能\n\n2と3は自然、制度などによって影響を受ける"
   },
   {
     "objectID": "slide/did.html#自然実験の例",
     "href": "slide/did.html#自然実験の例",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "処置を受けるか否かが自然、制度、偶然などによって規定される\n\n多数代表制と比例代表制\n\n人口3500未満なら多数代表制、以上なら比例代表制を採用 (フランス 地方選挙)\n\n軍の経験と所得\n\nベトナム戦争時、徴兵対象がくじによって決まる (アメリカ)\n\n最低賃金の効果\n\n隣接するペンシルベニア州とニュージャージー州の最低賃金の格差\n\n現職効果\n\n惜敗・辛勝の場合、候補者間の質には大差ないはず\n\n選挙区定数の効果\n\n人口によって選挙区定数が決まる\n\nその他"
+    "section": "自然実験の例",
+    "text": "自然実験の例\n処置を受けるか否かが自然、制度、偶然などによって規定される\n\n多数代表制と比例代表制\n\n人口3500未満なら多数代表制、以上なら比例代表制を採用 (フランス 地方選挙)\n\n軍の経験と所得\n\nベトナム戦争時、徴兵対象がくじによって決まる (アメリカ)\n\n最低賃金の効果\n\n隣接するペンシルベニア州とニュージャージー州の最低賃金の格差\n\n現職効果\n\n惜敗・辛勝の場合、候補者間の質には大差ないはず\n\n選挙区定数の効果\n\n人口によって選挙区定数が決まる\n\nその他"
   },
   {
     "objectID": "slide/did.html#自然実験の方法",
     "href": "slide/did.html#自然実験の方法",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "本講義では1と2を解説\n\n差分の差分法 (Difference-in-Difference; Diff-in-Diff/DID/DD)\n回帰不連続デザイン (Regression Discontinuity Design; RDD)\n\n中断時系列デザイン (Interrupted Time-series Design; ITS)\n\nRDDの時系列版であるが、自己相関などの対処が必要であるため本講義では省略\n\n\n操作変数 (Instrumental Variable; IV)\n集積分析 (Bunching Analysis)\nその他"
+    "section": "自然実験の方法",
+    "text": "自然実験の方法\n本講義では1と2を解説\n\n差分の差分法 (Difference-in-Difference; Diff-in-Diff/DID/DD)\n回帰不連続デザイン (Regression Discontinuity Design; RDD)\n\n中断時系列デザイン (Interrupted Time-series Design; ITS)\n\nRDDの時系列版であるが、自己相関などの対処が必要であるため本講義では省略\n\n\n操作変数 (Instrumental Variable; IV)\n集積分析 (Bunching Analysis)\nその他"
   },
   {
     "objectID": "slide/did.html#保育所の整備と母の就労率-1",
@@ -1348,56 +1348,56 @@
     "href": "slide/did.html#実習内容",
     "title": "社会科学における因果推論",
     "section": "実習内容",
-    "text": "実習内容\n\n{estimatr}パッケージ（lm_robust()関数）の使い方\n推定結果の可視化\n\n\n参考\n\nR pacakge: {did}、{DIDdesign}\nDoubly Robust Difference-in-Differences Estimators（{DRDID}）\nDifference-in-Difference-in-Difference（Triple difference; DDD）\nSynthetic Control Method（SCM）、Generalized Synthetic Control Method\nCausalImpact"
+    "text": "実習内容\n\n{estimatr}パッケージ（lm_robust()関数）の使い方\n推定結果の可視化\n\n参考\n\nR pacakge: {did}、{DIDdesign}\nDoubly Robust Difference-in-Differences Estimators（{DRDID}）\nDifference-in-Difference-in-Difference（Triple difference; DDD）\nSynthetic Control Method（SCM）、Generalized Synthetic Control Method\nCausalImpact"
   },
   {
     "objectID": "slide/rdd.html#回帰不連続デザイン-1",
     "href": "slide/rdd.html#回帰不連続デザイン-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Regression Discontinuity Design\n\nThistlewaite and Campbell (1960) で紹介\n「RDD」と呼ばれる場合が多い\n\n「かいきふれんぞくでざいん」は長すぎる\n\nある点 (閾値)を超えることで処置を受けるか否かが決まる\n\n例) 人口によって選挙制度が決まる場合 (0 = 多数代表制; 1 = 比例代表制)\n\n\n\\[T_i = \\begin{cases} 0 & \\text{ if } \\text{Population} &lt; 3500, \\\\ 1 & \\text{ if } \\text{Population} \\geq 3500. \\end{cases}\\]"
+    "section": "回帰不連続デザイン",
+    "text": "回帰不連続デザイン\nRegression Discontinuity Design\n\nThistlewaite and Campbell (1960) で紹介\n「RDD」と呼ばれる場合が多い\n\n「かいきふれんぞくでざいん」は長すぎる\n\nある点 (閾値)を超えることで処置を受けるか否かが決まる\n\n例) 人口によって選挙制度が決まる場合 (0 = 多数代表制; 1 = 比例代表制)\n\n\n\\[T_i = \\begin{cases} 0 & \\text{ if } \\text{Population} &lt; 3500, \\\\ 1 & \\text{ if } \\text{Population} \\geq 3500. \\end{cases}\\]"
   },
   {
     "objectID": "slide/rdd.html#rddの考え方",
     "href": "slide/rdd.html#rddの考え方",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "比例代表制と多数代表制の投票率の比較\n\n選挙制度は国レベルで異なるため国家間比較になる\n国固有の文脈により単純比較は困難\nフランスの場合、同一国家、レベルの選挙内で制度が異なる\n\n国固有の政治的文脈はコントロールされる\n\nしかし、人口が多いところは都市部が多いし、投票率の低い都市部の特徴により、比例代表制の投票率は過小評価される可能性\n\n「都市化度」という交絡要因が残存している\n\n人口が3450人と村と3550人の村なら「都市化度」はほぼ同じなのでは …?\n\nほぼ同条件で選挙制度だけが異なる状況\n\\(\\rightarrow\\) 交絡要因が除去されているため、因果推論が可能に"
+    "section": "RDDの考え方",
+    "text": "RDDの考え方\n比例代表制と多数代表制の投票率の比較\n\n選挙制度は国レベルで異なるため国家間比較になる\n国固有の文脈により単純比較は困難\nフランスの場合、同一国家、レベルの選挙内で制度が異なる\n\n国固有の政治的文脈はコントロールされる\n\nしかし、人口が多いところは都市部が多いし、投票率の低い都市部の特徴により、比例代表制の投票率は過小評価される可能性\n\n「都市化度」という交絡要因が残存している\n\n人口が3450人と村と3550人の村なら「都市化度」はほぼ同じなのでは …?\n\nほぼ同条件で選挙制度だけが異なる状況\n\\(\\rightarrow\\) 交絡要因が除去されているため、因果推論が可能に"
   },
   {
     "objectID": "slide/rdd.html#rddの考え方-1",
     "href": "slide/rdd.html#rddの考え方-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "比例代表制と多数代表制の投票率の比較 (架空データ)\n\n人口が多くなるにつれ、投票率が減少傾向"
+    "section": "RDDの考え方",
+    "text": "RDDの考え方\n比例代表制と多数代表制の投票率の比較 (架空データ)\n\n人口が多くなるにつれ、投票率が減少傾向"
   },
   {
     "objectID": "slide/rdd.html#rddの考え方-2",
     "href": "slide/rdd.html#rddの考え方-2",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "比例代表制と多数代表制の投票率の比較\n\n比例代表制は投票率を低下する制度だと解釈されてしまう"
+    "section": "RDDの考え方",
+    "text": "RDDの考え方\n比例代表制と多数代表制の投票率の比較\n\n比例代表制は投票率を低下する制度だと解釈されてしまう"
   },
   {
     "objectID": "slide/rdd.html#rddの考え方-3",
     "href": "slide/rdd.html#rddの考え方-3",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "比例代表制と多数代表制の投票率の比較 (架空データ)\n\n人口3500で分けてみると…"
+    "section": "RDDの考え方",
+    "text": "RDDの考え方\n比例代表制と多数代表制の投票率の比較 (架空データ)\n\n人口3500で分けてみると…"
   },
   {
     "objectID": "slide/rdd.html#rddの考え方-4",
     "href": "slide/rdd.html#rddの考え方-4",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "比例代表制と多数代表制の投票率の比較 (架空データ)\n\n人口3500で分けてみると…\n\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                 \n                (1)\n                (2)\n              \n        \n        \n        \n                \n                  切片\n                  59.650\n                  59.939\n                \n                \n                  \n                  (0.478)\n                  (0.453)\n                \n                \n                  人口\n                  -0.001\n                  -0.002\n                \n                \n                  \n                  (0.000)\n                  (0.000)\n                \n                \n                  人口3500以上ダミー\n                  \n                  6.561\n                \n                \n                  \n                  \n                  (0.831)\n                \n                \n                  Num.Obs.\n                  500\n                  500\n                \n                \n                  R2\n                  0.338\n                  0.411\n                \n                \n                  R2 Adj.\n                  0.336\n                  0.409\n                \n                \n                  RMSE\n                  5.27\n                  4.97"
+    "section": "RDDの考え方",
+    "text": "RDDの考え方\n比例代表制と多数代表制の投票率の比較 (架空データ)\n\n人口3500で分けてみると…\n\n\n\n\n\n    \n\n    \n    \n      \n        \n        \n              \n                 \n                (1)\n                (2)\n              \n        \n        \n        \n                \n                  切片\n                  59.650\n                  59.939\n                \n                \n                  \n                  (0.478)\n                  (0.453)\n                \n                \n                  人口\n                  -0.001\n                  -0.002\n                \n                \n                  \n                  (0.000)\n                  (0.000)\n                \n                \n                  人口3500以上ダミー\n                  \n                  6.561\n                \n                \n                  \n                  \n                  (0.831)\n                \n                \n                  Num.Obs.\n                  500\n                  500\n                \n                \n                  R2\n                  0.338\n                  0.411\n                \n                \n                  R2 Adj.\n                  0.336\n                  0.409\n                \n                \n                  RMSE\n                  5.27\n                  4.97"
   },
   {
     "objectID": "slide/rdd.html#つのrdd",
     "href": "slide/rdd.html#つのrdd",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "異なる割当メカニズムを想定した2つのRDD\n\n本講義で解説するのはSRDのみ\n\n\n\nSharp Regression Discontinuity (SRD)\n\n強制変数 (running variable) が閾値 (cut point) を超えると必ず処置を受ける。\nもっとも単純明快な RDD。実際、多く使われている。\n例) 人口と選挙制度\n\nFuzzy Regression Discontinuity (FRD)\n\n強制変数が閾値を超えると、処置を受ける確率が高まる。\n操作変数法の理解が必要 (実例もあまり見ないような . . . )\n例) 入試 (一定点数を超えると合格する可能性がある)"
+    "section": "2つのRDD",
+    "text": "2つのRDD\n異なる割当メカニズムを想定した2つのRDD\n\n本講義で解説するのはSRDのみ\n\n\n\nSharp Regression Discontinuity (SRD)\n\n強制変数 (running variable) が閾値 (cut point) を超えると必ず処置を受ける。\nもっとも単純明快な RDD。実際、多く使われている。\n例) 人口と選挙制度\n\nFuzzy Regression Discontinuity (FRD)\n\n強制変数が閾値を超えると、処置を受ける確率が高まる。\n操作変数法の理解が必要 (実例もあまり見ないような . . . )\n例) 入試 (一定点数を超えると合格する可能性がある)"
   },
   {
     "objectID": "slide/rdd.html#割当メカニズムの比較",
@@ -1410,8 +1410,8 @@
     "objectID": "slide/rdd.html#rddの仮定",
     "href": "slide/rdd.html#rddの仮定",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Moscoe and Barninnghausen (2015)\n\n閾値周辺において交絡要因が変化しないこと\n\n飲酒年齢の事故の例: 20歳になった瞬間、アルコールを分解する酵素が劇的に増加するような悲しい現象は起きない\n\n閾値のルールが明確であり、既知であること\n\nSRDの場合、閾値は制度に起因するものが多いため、問題になるケースは少ない\n\n強制変数が閾値周辺において連続であること\n\n閾値周辺において強制変数の操作が行われていない\n密度検定 (density test)で検定可能\n\n潜在的結果が閾値周辺において連続であること"
+    "section": "RDDの仮定",
+    "text": "RDDの仮定\nMoscoe and Barninnghausen (2015)\n\n閾値周辺において交絡要因が変化しないこと\n\n飲酒年齢の事故の例: 20歳になった瞬間、アルコールを分解する酵素が劇的に増加するような悲しい現象は起きない\n\n閾値のルールが明確であり、既知であること\n\nSRDの場合、閾値は制度に起因するものが多いため、問題になるケースは少ない\n\n強制変数が閾値周辺において連続であること\n\n閾値周辺において強制変数の操作が行われていない\n密度検定 (density test)で検定可能\n\n潜在的結果が閾値周辺において連続であること"
   },
   {
     "objectID": "slide/rdd.html#パラメトリック推定方法",
@@ -1691,7 +1691,7 @@
     "href": "slide/rdd.html#ik-optimal-bandwidth",
     "title": "社会科学における因果推論",
     "section": "IK Optimal Bandwidth",
-    "text": "IK Optimal Bandwidth\n簡単に計算可能な最適バンド幅の一つ (Imbens and Kalyanaraman 2009)\n\n他に CCT バンド幅 (Calonico, Cattaneo, and Titiunik 2014)、CV バンド幅 (Ludwig, and Mill 2007) など\n\n. . .\n\\[h_{\\text{opt}} = C_K \\cdot \\Bigg(\\frac{2 \\hat{\\sigma}^2(c) / \\hat{f}(c)}{\\big(m_{+}^{(2)}(c) - m_{-}^{(2)}(c)\\big)^2 + (\\hat{r}_{+} + \\hat{r}_{-})}\\Bigg)^{\\frac{1}{5}} \\cdot N^{-\\frac{1}{5}}\\]\n\n非常に簡単!\n\n\n\n\n\n\n. . .\n\nパソコンが勝手に計算してくれるので安心して良い"
+    "text": "IK Optimal Bandwidth\n簡単に計算可能な最適バンド幅の一つ (Imbens and Kalyanaraman 2009)\n\n他に CCT バンド幅 (Calonico, Cattaneo, and Titiunik 2014)、CV バンド幅 (Ludwig, and Mill 2007) など\n\n\n\\[h_{\\text{opt}} = C_K \\cdot \\Bigg(\\frac{2 \\hat{\\sigma}^2(c) / \\hat{f}(c)}{\\big(m_{+}^{(2)}(c) - m_{-}^{(2)}(c)\\big)^2 + (\\hat{r}_{+} + \\hat{r}_{-})}\\Bigg)^{\\frac{1}{5}} \\cdot N^{-\\frac{1}{5}}\\]\n\n非常に簡単!\n\n\n\n\n\n\n\n\n\nパソコンが勝手に計算してくれるので安心して良い"
   },
   {
     "objectID": "slide/rdd.html#カーネルとの関係",
@@ -1705,7 +1705,7 @@
     "href": "slide/rdd.html#実習用データ",
     "title": "社会科学における因果推論",
     "section": "実習用データ",
-    "text": "実習用データ\n\n宋が作成した架空データ\n\n\n\nファイル名\n説明\n真の因果効果\n\n\n\n\nrdd_french.csv\n架空のフランス地方選挙\n約5\n\n\nrdd_poly.csv\n多項式の例\n約50\n\n\nrdd_intreaction.csv\n交互作用の例\n約7.5\n\n\n\n\n\n実習用データ\n\nrdd_data.csv"
+    "text": "実習用データ\n宋が作成した架空データ\n\n\n\nファイル名\n説明\n真の因果効果\n\n\n\n\nrdd_french.csv\n架空のフランス地方選挙\n約5\n\n\nrdd_poly.csv\n多項式の例\n約50\n\n\nrdd_intreaction.csv\n交互作用の例\n約7.5\n\n\n\n実習用データ\n\nrdd_data.csv"
   },
   {
     "objectID": "slide/rdd.html#実習内容",
@@ -1718,106 +1718,106 @@
     "objectID": "slide/foundation.html#社会科学における因果推論の意味",
     "href": "slide/foundation.html#社会科学における因果推論の意味",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Morgan and Winship (2014) Counterfactuals and Causal Inference: Methods And Principles For Social Research. Cambridge.\n\nMore has been learned about causal inference in the last few decades than sum total of everything that had been learned about it in all prior recorded history. (Gary King)"
+    "section": "社会科学における因果推論の意味",
+    "text": "社会科学における因果推論の意味\nMorgan and Winship (2014) Counterfactuals and Causal Inference: Methods And Principles For Social Research. Cambridge.\n\nMore has been learned about causal inference in the last few decades than sum total of everything that had been learned about it in all prior recorded history. (Gary King)"
   },
   {
     "objectID": "slide/foundation.html#相関から因果へ",
     "href": "slide/foundation.html#相関から因果へ",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "原因（\\(X\\)）と結果（\\(Y\\)）の関係：啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\bigcirc\\): 啓発活動が行われる選挙区の投票率は低い（相関関係）\n\\(\\times\\): 啓発活動は投票率を下げる（因果関係）\n\\(\\Rightarrow\\) 統計分析から得られる結果は相関関係のみ\n\n\n\n理論/デザインを用い、観察された相関関係が因果関係であることを説得\n\n因果関係を担保してくれる統計的手法はない。\n\n「これは相関関係でなく因果関係である」と主張するためには、内生性がないことを示す必要がある。"
+    "section": "相関から因果へ",
+    "text": "相関から因果へ\n原因（\\(X\\)）と結果（\\(Y\\)）の関係：啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\bigcirc\\): 啓発活動が行われる選挙区の投票率は低い（相関関係）\n\\(\\times\\): 啓発活動は投票率を下げる（因果関係）\n\\(\\Rightarrow\\) 統計分析から得られる結果は相関関係のみ\n\n\n\n理論/デザインを用い、観察された相関関係が因果関係であることを説得\n\n因果関係を担保してくれる統計的手法はない。\n\n「これは相関関係でなく因果関係である」と主張するためには、内生性がないことを示す必要がある。"
   },
   {
     "objectID": "slide/foundation.html#同時性",
     "href": "slide/foundation.html#同時性",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Simultaneity\n\n\n\n\n\n\n\n\n原因と結果の間に双方向の因果関係が存在\n\n例) お酒 (原因; X) とストレス (結果; Y) の関係\n\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\n…\n\n\\(\\rightarrow\\) 地獄のような無限ループ\n\n\\(\\Rightarrow\\) 酒がストレスに与える影響は?"
+    "section": "同時性",
+    "text": "同時性\nSimultaneity\n\n\n\n\n\n\n\n\n原因と結果の間に双方向の因果関係が存在\n\n例) お酒 (原因; X) とストレス (結果; Y) の関係\n\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\nストレス解消のために酒を飲む\n酒を飲むとストレスが貯まる\n…\n\n\\(\\rightarrow\\) 地獄のような無限ループ\n\n\\(\\Rightarrow\\) 酒がストレスに与える影響は?"
   },
   {
     "objectID": "slide/foundation.html#見かけ上の相関",
     "href": "slide/foundation.html#見かけ上の相関",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Spurious Correlation、擬似相関\n\nたまたま相関関係がある場合\n\n例) メイン州の離婚率一人当たりマーガリンの消費量"
+    "section": "見かけ上の相関",
+    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\nたまたま相関関係がある場合\n\n例) メイン州の離婚率一人当たりマーガリンの消費量"
   },
   {
     "objectID": "slide/foundation.html#見かけ上の相関-1",
     "href": "slide/foundation.html#見かけ上の相関-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Spurious Correlation、擬似相関\n\n共通の要因からの影響（ビールとアイスクリーム消費量）"
+    "section": "見かけ上の相関",
+    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\n共通の要因からの影響（ビールとアイスクリーム消費量）"
   },
   {
     "objectID": "slide/foundation.html#見かけ上の相関-2",
     "href": "slide/foundation.html#見かけ上の相関-2",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Spurious Correlation、擬似相関\n\n共通の要因からの影響（ゲームをやると身長が伸びる説）"
+    "section": "見かけ上の相関",
+    "text": "見かけ上の相関\nSpurious Correlation、擬似相関\n\n共通の要因からの影響（ゲームをやると身長が伸びる説）"
   },
   {
     "objectID": "slide/foundation.html#逆の因果",
     "href": "slide/foundation.html#逆の因果",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Reverse Causality\n\n例) 心臓移植と生存率の例\n\n\n\n\n\n\n5年後に死亡\n5年後に生存\n\n\n\n\n心臓移植を\n受けた\n10名\n5名\n\n\n\n受けなかった\n5名\n10名\n\n\n\n\n心臓移植を受けたら死亡確率が上がる?\n死亡確率が高い人が心臓移植を受ける?"
+    "section": "逆の因果",
+    "text": "逆の因果\nReverse Causality\n\n例) 心臓移植と生存率の例\n\n\n\n\n\n\n5年後に死亡\n5年後に生存\n\n\n\n\n心臓移植を\n受けた\n10名\n5名\n\n\n\n受けなかった\n5名\n10名\n\n\n\n\n心臓移植を受けたら死亡確率が上がる?\n死亡確率が高い人が心臓移植を受ける?"
   },
   {
     "objectID": "slide/foundation.html#逆の因果-1",
     "href": "slide/foundation.html#逆の因果-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Reverse Causality\n\n「人気だから4文字に略されるのか、4文字に略せるからヒットす るのか、どっちなんでしょうね」"
+    "section": "逆の因果",
+    "text": "逆の因果\nReverse Causality\n\n「人気だから4文字に略されるのか、4文字に略せるからヒットす るのか、どっちなんでしょうね」"
   },
   {
     "objectID": "slide/foundation.html#欠落変数バイアス",
     "href": "slide/foundation.html#欠落変数バイアス",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Omitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていなくても\\(\\beta_1\\)の推定値は変化\\(\\times\\)\n\n\\(X\\)と\\(Z\\)は独立（\\(X \\perp Z\\)）\n\\(\\sigma_{X, Z} = 0\\)"
+    "section": "欠落変数バイアス",
+    "text": "欠落変数バイアス\nOmitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていなくても\\(\\beta_1\\)の推定値は変化\\(\\times\\)\n\n\\(X\\)と\\(Z\\)は独立（\\(X \\perp Z\\)）\n\\(\\sigma_{X, Z} = 0\\)"
   },
   {
     "objectID": "slide/foundation.html#欠落変数バイアス-1",
     "href": "slide/foundation.html#欠落変数バイアス-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "Omitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていない場合、\\(\\beta_1\\)の推定値にバイアス\n\n\\(Z \\rightarrow X\\)の関係が存在\n\\(\\sigma_{X, Z} \\neq 0\\)\n\n\\(\\beta_1\\)の真の値（=不偏推定量）を推定するためには\\(X\\)と\\(Y\\)両方と相関する変数すべてが必要\n\nそもそも、「真の値」とは？\n\\(X\\)と\\(Y\\)両方と相関するすべての変数は特定可能? 測定可能?\n\n\\(\\rightarrow\\) データ分析から得られた結果はあくまでも「分析モデルが想定している世界」のものに過ぎない\n\n定量的手法は反証可能性を高めやすい手法（=科学的な手法になりやすい）であって、科学そのものも、得られた結果が真理であることを保障するものでもない。"
+    "section": "欠落変数バイアス",
+    "text": "欠落変数バイアス\nOmitted Variable Bias\n例) 真のモデルが\\(Y = \\beta_0 + \\beta_1 \\cdot X + \\beta_2 \\cdot Z + e\\)の場合\n\n\n\n\n\n\n\n\n\n\n\n\n\nモデルに\\(Z\\)が含まれていない場合、\\(\\beta_1\\)の推定値にバイアス\n\n\\(Z \\rightarrow X\\)の関係が存在\n\\(\\sigma_{X, Z} \\neq 0\\)\n\n\\(\\beta_1\\)の真の値（=不偏推定量）を推定するためには\\(X\\)と\\(Y\\)両方と相関する変数すべてが必要\n\nそもそも、「真の値」とは？\n\\(X\\)と\\(Y\\)両方と相関するすべての変数は特定可能? 測定可能?\n\n\\(\\rightarrow\\) データ分析から得られた結果はあくまでも「分析モデルが想定している世界」のものに過ぎない\n\n定量的手法は反証可能性を高めやすい手法（=科学的な手法になりやすい）であって、科学そのものも、得られた結果が真理であることを保障するものでもない。"
   },
   {
     "objectID": "slide/foundation.html#自己選択バイアス",
     "href": "slide/foundation.html#自己選択バイアス",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "(Self-)Selection Bias\n\n例1) 職業訓練と期待収入\n\n\n\n\n\n\n3年後の収入\n\n\n\n\n職業訓練を\n受けた\n6349ドル\n\n\n\n受けなかった\n6984ドル\n\n\n\n\n職業訓練を受けたら収入が上がる?\nもともと低収入の人が職業訓練を受けようとする?\n参考) 心臓移植の例も自己選択のバイアスとして解釈可能\n参考) 交絡因子の不在として解釈可能（就労意欲など）"
+    "section": "自己選択バイアス",
+    "text": "自己選択バイアス\n(Self-)Selection Bias\n\n例1) 職業訓練と期待収入\n\n\n\n\n\n\n3年後の収入\n\n\n\n\n職業訓練を\n受けた\n6349ドル\n\n\n\n受けなかった\n6984ドル\n\n\n\n\n職業訓練を受けたら収入が上がる?\nもともと低収入の人が職業訓練を受けようとする?\n参考) 心臓移植の例も自己選択のバイアスとして解釈可能\n参考) 交絡因子の不在として解釈可能（就労意欲など）"
   },
   {
     "objectID": "slide/foundation.html#内生性",
     "href": "slide/foundation.html#内生性",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "これまでの多くの例は内生性（endogeneity）の問題\n\n内生性: 説明変数と誤差項間に相関が存在\n\n誤差項と相関のある説明変数: 内生変数（endogenous variable）\n\n内生性がある場合、推定値は一致推定量でも、不偏推定量でもはない\n\nサンプルサイズ（\\(N\\)）をいくら増やしても無駄\n\n内生性の原因\n\n同時性\n欠落変数バイアス\n（体系的な）測定誤差\n自己選択バイアス\n\n最近の教科書はこれはすべてを自己選択バイアスや欠落変数バイアスでまとめる傾向"
+    "section": "内生性",
+    "text": "内生性\nこれまでの多くの例は内生性（endogeneity）の問題\n\n内生性: 説明変数と誤差項間に相関が存在\n\n誤差項と相関のある説明変数: 内生変数（endogenous variable）\n\n内生性がある場合、推定値は一致推定量でも、不偏推定量でもはない\n\nサンプルサイズ（\\(N\\)）をいくら増やしても無駄\n\n内生性の原因\n\n同時性\n欠落変数バイアス\n（体系的な）測定誤差\n自己選択バイアス\n\n最近の教科書はこれはすべてを自己選択バイアスや欠落変数バイアスでまとめる傾向"
   },
   {
     "objectID": "slide/foundation.html#単純比較の罠",
     "href": "slide/foundation.html#単純比較の罠",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n単純比較の手法\n\n平均値の比較、平均値の差の検定（\\(t\\)検定、ANOVA）、単回帰分析など\n啓発ありの投票率 - 啓発なしの投票率 = -10%p\n\n内生性がない場合、「啓発活動は投票率を-10%p下げる」と主張できる。\n本当に、本当に、本当に、内生性はないのか。"
+    "section": "単純比較の罠",
+    "text": "単純比較の罠\n啓発活動と投票率の関係（架空の例）\n\n\n\n\n\n\n\n\n\n\n\n\n\n単純比較の手法\n\n平均値の比較、平均値の差の検定（\\(t\\)検定、ANOVA）、単回帰分析など\n啓発ありの投票率 - 啓発なしの投票率 = -10%p\n\n内生性がない場合、「啓発活動は投票率を-10%p下げる」と主張できる。\n本当に、本当に、本当に、内生性はないのか。"
   },
   {
     "objectID": "slide/foundation.html#内生性は",
     "href": "slide/foundation.html#内生性は",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "\\(Y\\): 投票率\n\\(X\\): 啓発活動の有無\n\\(W\\): 若者の割合\n\\(Z\\): これまでの投票率\n\\(e\\): \\(X\\)と\\(Z\\)以外に、\\(Y\\)に影響を与える要因\n\n\n\n投票率が低い選挙区ほど、啓発活動を行う傾向\n投票率が元々低い選挙区の場合、今回の投票率も低い傾向\n\n\\(\\Rightarrow\\) 自己選択バイアス/欠落変数バイアスの存在\n\n本当に比較すべき対象は…\n\n啓発活動を行わなかったA市 vs. 行ったA市\n啓発活動を行わなかったB市 vs. 行ったB市\nこれらは比較可能か?"
+    "section": "内生性は?",
+    "text": "内生性は?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(Y\\): 投票率\n\\(X\\): 啓発活動の有無\n\\(W\\): 若者の割合\n\\(Z\\): これまでの投票率\n\\(e\\): \\(X\\)と\\(Z\\)以外に、\\(Y\\)に影響を与える要因\n\n\n\n投票率が低い選挙区ほど、啓発活動を行う傾向\n投票率が元々低い選挙区の場合、今回の投票率も低い傾向\n\n\\(\\Rightarrow\\) 自己選択バイアス/欠落変数バイアスの存在\n\n本当に比較すべき対象は…\n\n啓発活動を行わなかったA市 vs. 行ったA市\n啓発活動を行わなかったB市 vs. 行ったB市\nこれらは比較可能か?"
   },
   {
     "objectID": "slide/foundation.html#相関から因果へ-1",
     "href": "slide/foundation.html#相関から因果へ-1",
     "title": "社会科学における因果推論",
-    "section": "",
-    "text": "内生性の除外 \\(\\rightarrow\\) 因果効果の推定"
+    "section": "相関から因果へ",
+    "text": "相関から因果へ\n内生性の除外 \\(\\rightarrow\\) 因果効果の推定"
   },
   {
     "objectID": "slide/foundation.html#因果関係の例",
@@ -2089,7 +2089,7 @@
     "href": "index.html",
     "title": "Causal Inference in Social Science@Kandai",
     "section": "",
-    "text": "関西大学総合情報学研究科「社会科学における因果推論（2024年度）」のサポートページです。\n\n\n\n\n\n\nアイコン説明\n\n\n\n\n：JDCat分析ツールの起動\n\n右クリックし、新しいタブ（or ウィンドウ）で開いてください。\n初期設定が必要です。初期設定の方法はRの使い方 &gt; Rの導入を参照してください。\n\n：Rの教科書（『私たちのR』）\n：本ウェブサイト内の検索\n\n\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2024年12月11日\n開発環境\n\nmacOS Sequoia 15.1.1\nFirefox 133.0\nR version 4.4.2 (2024-10-31)\nRStudio 2024.09.1+394\nQuarto 1.6.39\nR package {quarto} 1.4.4"
+    "text": "関西大学総合情報学研究科「社会科学における因果推論」のサポートページです。\n\n\n\n\n\n\nアイコン説明\n\n\n\n\n：JDCat分析ツールの起動\n\n右クリックし、新しいタブ（or ウィンドウ）で開いてください。\n初期設定が必要です。初期設定の方法はRの使い方 &gt; Rの導入を参照してください。\n\n：Rの教科書（『私たちのR』）\n：本ウェブサイト内の検索\n\n\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2025年03月24日\n開発環境\n\nmacOS Sequoia 15.3.2\nFirefox 136.0.1\nR version 4.4.3 (2025-02-28)\nRStudio 2024.12.1+563\nQuarto 1.6.42\nR package {quarto} 1.4.4"
   },
   {
     "objectID": "material/did.html",

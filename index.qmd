@@ -13,7 +13,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
   stringr::str_extract("202[0-9]\\.[0-9]+\\.[0-9]+\\+[0-9]+")
 ```
 
-関西大学総合情報学研究科「**社会科学における因果推論**（2024年度）」のサポートページです。
+関西大学総合情報学研究科「**社会科学における因果推論**」のサポートページです。
 
 :::{.callout-tip}
 ## アイコン説明
