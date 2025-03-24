@@ -1,5 +1,5 @@
 ---
-title: "Causal Inference in Social Science@Kandai"
+title: "関大総情（院）「社会科学における因果推論」"
 ---
 
 ```{r}
@@ -13,17 +13,7 @@ rs_ver1 <- system('plutil -extract "CFBundleShortVersionString" binary1 /Applica
   stringr::str_extract("202[0-9]\\.[0-9]+\\.[0-9]+\\+[0-9]+")
 ```
 
-関西大学総合情報学研究科「**社会科学における因果推論**」のサポートページです。
-
-:::{.callout-tip}
-## アイコン説明
-
-* <a href="https://jupyter.cs.rcos.nii.ac.jp/" target="_blank"><i class="bi bi-terminal"></i></a>：JDCat分析ツールの起動
-   * 右クリックし、新しいタブ（or ウィンドウ）で開いてください。
-   * 初期設定が必要です。初期設定の方法はRの使い方 > [Rの導入](intro/install.html)を参照してください。
-* <a href="https://www.jaysong.net/RBook/" target="_blank"><i class="bi bi-book"></i></a>：Rの教科書（『私たちのR』）
-* <i class="bi bi-search"></i>：本ウェブサイト内の検索
-:::
+<center><a href="https://jupyter.cs.rcos.nii.ac.jp/" class="btn btn-primary btn-lg" target="_blank" role="button"><i class="bi bi-terminal"></i>&nbsp;&nbsp;&nbsp;JDCat分析ツールの起動</a><br/><span style="font-size:0.75em">（はじめての方は「[Rの導入](intro/install.qmd)」を参照し、まず分析環境を作成してください。）</span></center>
 
 :::{.callout-note}
 ## ページ情報

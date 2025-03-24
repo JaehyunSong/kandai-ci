@@ -881,8 +881,8 @@ fit3_pred |>
 
 ```{r}
 fit3_ame <- fit3 |> 
-  marginaleffects(variables = "treatment",
-                  newdata = datagrid(hh_size = 1:8))
+  slopes(variables = "treatment",
+         newdata = datagrid(hh_size = 1:8))
 
 print(fit3_ame, style = "data.frame")
 ```

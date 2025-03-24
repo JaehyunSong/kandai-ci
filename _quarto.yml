@@ -5,13 +5,13 @@ project:
 lang: ja
 
 website:
-  title: "Causal Inference in Social Science@Kandai"
+  title: "CI4SS@Kandai"
   site-url: "https://www.jaysong.net/kandai-ci/"
   page-navigation: true
   favicon: figs/favicon.png
   page-footer: 
-    left: "Copyright 2022, <a href='https://www.jaysong.net' target='_blank'>Jaehyun Song</a>. Powered by <a href='https://quarto.org/' target='_blank'>Quarto</a>" 
     right:
+      - text: "© 2025 Jaehyun Song"
       - icon: house-fill
         href: https://www.jaysong.net
       - icon: github
@@ -28,11 +28,6 @@ website:
       - sidebar:material
       - text: "セッション情報"
         href: session.qmd
-    right: 
-      - icon: terminal
-        href: https://jupyter.cs.rcos.nii.ac.jp/
-      - icon: book
-        href: https://www.jaysong.net/RBook/
   sidebar:
     - id: intro
       title: "Rの使い方"

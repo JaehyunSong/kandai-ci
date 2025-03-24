@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>回帰分析とマッチング – Causal Inference in Social Science@Kandai</title>
+<title>回帰分析とマッチング – CI4SS@Kandai</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-fccf3ff2bbe9c122de7a9b90971ed827.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-818fc0ec18eddb34fddef0a4e6b06ca6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-65cf9b68e2eb4073b3e3929739b36804.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -156,7 +156,7 @@ window.Quarto = {
     <img src="../figs/logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Causal Inference in Social Science@Kandai</span>
+    <span class="navbar-title">CI4SS@Kandai</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="サーチ"></div>
@@ -238,18 +238,6 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="../session.html"> 
 <span class="menu-text">セッション情報</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"> <i class="bi bi-terminal" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.jaysong.net/RBook/"> <i class="bi bi-book" role="img">
-</i> 
-<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -622,8 +610,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_imblfyl352zkq4gs3750(i, j, css_id) {
-          var table = document.getElementById("tinytable_imblfyl352zkq4gs3750");
+      function styleCell_z66oyqicpp682x938vpf(i, j, css_id) {
+          var table = document.getElementById("tinytable_z66oyqicpp682x938vpf");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -633,7 +621,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_imblfyl352zkq4gs3750');
+        var table = document.getElementById('tinytable_z66oyqicpp682x938vpf');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -641,8 +629,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_imblfyl352zkq4gs3750(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_imblfyl352zkq4gs3750");
+      function spanCell_z66oyqicpp682x938vpf(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_z66oyqicpp682x938vpf");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -672,20 +660,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 1, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 },  ], css_id: 'tinytable_css_w6ns1igiaadktkd2zt2p',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_t9k3u1m3eo9525sv4wl7',}, 
-          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_kn40r5olaca4bzy6cvpj',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_dhi7rh1zd3rhozn4e9lg',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_be4qu2y72s0rlqwvshcz',}, 
-          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_ap1odsmi1tcdvlprwydf',}, 
-          { positions: [ { i: 2, j: 0 },  ], css_id: 'tinytable_css_7i72mlb1z8wbdgd19o82',}, 
-          { positions: [ { i: 2, j: 1 },  ], css_id: 'tinytable_css_63lupprbf8libkxzhp9x',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 },  ], css_id: 'tinytable_css_yhi5nymnsq04evvf8c0s',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_nxr3i9xl9nk21o5clh5l',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_lskqqzye05rlams8hu54',}, 
+          { positions: [ { i: 2, j: 0 },  ], css_id: 'tinytable_css_kac18jvhw3m99qumydjv',}, 
+          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_9f6xm7cil4mgrucu84m8',}, 
+          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_5cfgo8kqx5fawcebhloz',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_2m9pue6xz3nuomdzarnj',}, 
+          { positions: [ { i: 2, j: 1 },  ], css_id: 'tinytable_css_1bhkkfzrd0sjb8lvq2t0',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_imblfyl352zkq4gs3750(cell.i, cell.j, group.css_id);
+                  styleCell_z66oyqicpp682x938vpf(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -693,17 +681,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_w6ns1igiaadktkd2zt2p, .table th.tinytable_css_w6ns1igiaadktkd2zt2p { text-align: left; }
-      .table td.tinytable_css_t9k3u1m3eo9525sv4wl7, .table th.tinytable_css_t9k3u1m3eo9525sv4wl7 { text-align: center; }
-      .table td.tinytable_css_kn40r5olaca4bzy6cvpj, .table th.tinytable_css_kn40r5olaca4bzy6cvpj { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_dhi7rh1zd3rhozn4e9lg, .table th.tinytable_css_dhi7rh1zd3rhozn4e9lg { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_be4qu2y72s0rlqwvshcz, .table th.tinytable_css_be4qu2y72s0rlqwvshcz { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_ap1odsmi1tcdvlprwydf, .table th.tinytable_css_ap1odsmi1tcdvlprwydf { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_7i72mlb1z8wbdgd19o82, .table th.tinytable_css_7i72mlb1z8wbdgd19o82 { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_63lupprbf8libkxzhp9x, .table th.tinytable_css_63lupprbf8libkxzhp9x { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_yhi5nymnsq04evvf8c0s, .table th.tinytable_css_yhi5nymnsq04evvf8c0s { text-align: left; }
+      .table td.tinytable_css_nxr3i9xl9nk21o5clh5l, .table th.tinytable_css_nxr3i9xl9nk21o5clh5l { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_lskqqzye05rlams8hu54, .table th.tinytable_css_lskqqzye05rlams8hu54 { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_kac18jvhw3m99qumydjv, .table th.tinytable_css_kac18jvhw3m99qumydjv { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_9f6xm7cil4mgrucu84m8, .table th.tinytable_css_9f6xm7cil4mgrucu84m8 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_5cfgo8kqx5fawcebhloz, .table th.tinytable_css_5cfgo8kqx5fawcebhloz { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_2m9pue6xz3nuomdzarnj, .table th.tinytable_css_2m9pue6xz3nuomdzarnj { text-align: center; }
+      .table td.tinytable_css_1bhkkfzrd0sjb8lvq2t0, .table th.tinytable_css_1bhkkfzrd0sjb8lvq2t0 { text-align: center; border-bottom: solid black 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_imblfyl352zkq4gs3750" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_z66oyqicpp682x938vpf" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -718,20 +706,20 @@ window.Quarto = {
                   <td>6984.170 [6275.791, 7692.549]</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
+                  <td>treat</td>
                   <td>-635.026 [-1925.544, 655.492]</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>614                          </td>
+                  <td>Num.Obs.</td>
+                  <td>614</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.002                        </td>
+                  <td>R2</td>
+                  <td>0.002</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>0.000                        </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.000</td>
                 </tr>
         </tbody>
       </table>
@@ -843,8 +831,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_lx59tbz6lngb10bebu65(i, j, css_id) {
-          var table = document.getElementById("tinytable_lx59tbz6lngb10bebu65");
+      function styleCell_z8o5wubrx8y8f9bsmuvk(i, j, css_id) {
+          var table = document.getElementById("tinytable_z8o5wubrx8y8f9bsmuvk");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -854,7 +842,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_lx59tbz6lngb10bebu65');
+        var table = document.getElementById('tinytable_z8o5wubrx8y8f9bsmuvk');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -862,8 +850,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_lx59tbz6lngb10bebu65(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_lx59tbz6lngb10bebu65");
+      function spanCell_z8o5wubrx8y8f9bsmuvk(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_z8o5wubrx8y8f9bsmuvk");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -893,20 +881,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_v5rh988urm7ofh4dmrjp',}, 
-          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 9, j: 2 }, { i: 11, j: 1 }, { i: 12, j: 1 }, { i: 12, j: 2 }, { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 11, j: 2 },  ], css_id: 'tinytable_css_tjafffnlwixak8126vkv',}, 
-          { positions: [ { i: 13, j: 1 }, { i: 13, j: 2 },  ], css_id: 'tinytable_css_snuxpazxccfy60ypdkzk',}, 
-          { positions: [ { i: 10, j: 1 }, { i: 10, j: 2 },  ], css_id: 'tinytable_css_ribtl6mfx804awwuqwck',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 },  ], css_id: 'tinytable_css_dsnkq23c04mti9m35g9o',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_bbfhaq2op6jt6lu6lz47',}, 
-          { positions: [ { i: 13, j: 0 },  ], css_id: 'tinytable_css_6m3bc0vf5l3sa2symhdg',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_0k30cojdbero5973m09l',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_zbdhgpnspwnt8p4o3hsv',}, 
+          { positions: [ { i: 10, j: 0 },  ], css_id: 'tinytable_css_lu4l6n74eorfa71tn6qk',}, 
+          { positions: [ { i: 13, j: 1 }, { i: 13, j: 2 },  ], css_id: 'tinytable_css_j6ku71dqis2jl1mp9ibc',}, 
+          { positions: [ { i: 13, j: 0 },  ], css_id: 'tinytable_css_eeh2az7pndoag37v02ts',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_du0mogatp6nywra92aip',}, 
+          { positions: [ { i: 10, j: 1 }, { i: 10, j: 2 },  ], css_id: 'tinytable_css_7yg9h98qbi4sn8f8nrtc',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 9, j: 2 }, { i: 11, j: 1 }, { i: 12, j: 1 }, { i: 12, j: 2 }, { i: 1, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 11, j: 2 },  ], css_id: 'tinytable_css_5vvbu65ygsmvrft0yway',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 },  ], css_id: 'tinytable_css_3xft1r3f0p84kfrlwi9z',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_lx59tbz6lngb10bebu65(cell.i, cell.j, group.css_id);
+                  styleCell_z8o5wubrx8y8f9bsmuvk(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -914,17 +902,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_v5rh988urm7ofh4dmrjp, .table th.tinytable_css_v5rh988urm7ofh4dmrjp { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_tjafffnlwixak8126vkv, .table th.tinytable_css_tjafffnlwixak8126vkv { text-align: center; }
-      .table td.tinytable_css_snuxpazxccfy60ypdkzk, .table th.tinytable_css_snuxpazxccfy60ypdkzk { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_ribtl6mfx804awwuqwck, .table th.tinytable_css_ribtl6mfx804awwuqwck { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_dsnkq23c04mti9m35g9o, .table th.tinytable_css_dsnkq23c04mti9m35g9o { text-align: left; }
-      .table td.tinytable_css_bbfhaq2op6jt6lu6lz47, .table th.tinytable_css_bbfhaq2op6jt6lu6lz47 { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_6m3bc0vf5l3sa2symhdg, .table th.tinytable_css_6m3bc0vf5l3sa2symhdg { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_0k30cojdbero5973m09l, .table th.tinytable_css_0k30cojdbero5973m09l { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_zbdhgpnspwnt8p4o3hsv, .table th.tinytable_css_zbdhgpnspwnt8p4o3hsv { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_lu4l6n74eorfa71tn6qk, .table th.tinytable_css_lu4l6n74eorfa71tn6qk { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_j6ku71dqis2jl1mp9ibc, .table th.tinytable_css_j6ku71dqis2jl1mp9ibc { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_eeh2az7pndoag37v02ts, .table th.tinytable_css_eeh2az7pndoag37v02ts { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_du0mogatp6nywra92aip, .table th.tinytable_css_du0mogatp6nywra92aip { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_7yg9h98qbi4sn8f8nrtc, .table th.tinytable_css_7yg9h98qbi4sn8f8nrtc { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_5vvbu65ygsmvrft0yway, .table th.tinytable_css_5vvbu65ygsmvrft0yway { text-align: center; }
+      .table td.tinytable_css_3xft1r3f0p84kfrlwi9z, .table th.tinytable_css_3xft1r3f0p84kfrlwi9z { text-align: left; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_lx59tbz6lngb10bebu65" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_z8o5wubrx8y8f9bsmuvk" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -938,67 +926,67 @@ window.Quarto = {
                 <tr>
                   <td>(Intercept)</td>
                   <td>6984.170 (360.710)</td>
-                  <td>66.515 (2436.746)  </td>
+                  <td>66.515 (2436.746)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
+                  <td>treat</td>
                   <td>-635.026 (657.137)</td>
-                  <td>1548.244 (781.279) </td>
+                  <td>1548.244 (781.279)</td>
                 </tr>
                 <tr>
-                  <td>age        </td>
-                  <td>                  </td>
-                  <td>12.978 (32.489)    </td>
+                  <td>age</td>
+                  <td></td>
+                  <td>12.978 (32.489)</td>
                 </tr>
                 <tr>
-                  <td>educ       </td>
-                  <td>                  </td>
-                  <td>403.941 (158.906)  </td>
+                  <td>educ</td>
+                  <td></td>
+                  <td>403.941 (158.906)</td>
                 </tr>
                 <tr>
-                  <td>black      </td>
-                  <td>                  </td>
+                  <td>black</td>
+                  <td></td>
                   <td>-1240.644 (768.764)</td>
                 </tr>
                 <tr>
-                  <td>hispanic   </td>
-                  <td>                  </td>
-                  <td>498.897 (941.943)  </td>
+                  <td>hispanic</td>
+                  <td></td>
+                  <td>498.897 (941.943)</td>
                 </tr>
                 <tr>
-                  <td>married    </td>
-                  <td>                  </td>
-                  <td>406.621 (695.472)  </td>
+                  <td>married</td>
+                  <td></td>
+                  <td>406.621 (695.472)</td>
                 </tr>
                 <tr>
-                  <td>nodegree   </td>
-                  <td>                  </td>
-                  <td>259.817 (847.442)  </td>
+                  <td>nodegree</td>
+                  <td></td>
+                  <td>259.817 (847.442)</td>
                 </tr>
                 <tr>
-                  <td>re74       </td>
-                  <td>                  </td>
-                  <td>0.296 (0.058)      </td>
+                  <td>re74</td>
+                  <td></td>
+                  <td>0.296 (0.058)</td>
                 </tr>
                 <tr>
-                  <td>re75       </td>
-                  <td>                  </td>
-                  <td>0.232 (0.105)      </td>
+                  <td>re75</td>
+                  <td></td>
+                  <td>0.232 (0.105)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>614               </td>
-                  <td>614                </td>
+                  <td>Num.Obs.</td>
+                  <td>614</td>
+                  <td>614</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.002             </td>
-                  <td>0.148              </td>
+                  <td>R2</td>
+                  <td>0.002</td>
+                  <td>0.148</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>0.000             </td>
-                  <td>0.135              </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.000</td>
+                  <td>0.135</td>
                 </tr>
         </tbody>
       </table>
@@ -1082,8 +1070,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_8s1pcplokvjhovjq64bi(i, j, css_id) {
-          var table = document.getElementById("tinytable_8s1pcplokvjhovjq64bi");
+      function styleCell_5t3ts6jjucs8t0pj075h(i, j, css_id) {
+          var table = document.getElementById("tinytable_5t3ts6jjucs8t0pj075h");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1093,7 +1081,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_8s1pcplokvjhovjq64bi');
+        var table = document.getElementById('tinytable_5t3ts6jjucs8t0pj075h');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1101,8 +1089,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_8s1pcplokvjhovjq64bi(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_8s1pcplokvjhovjq64bi");
+      function spanCell_5t3ts6jjucs8t0pj075h(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_5t3ts6jjucs8t0pj075h");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1132,20 +1120,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_zyhj9quvkbn7111r4x21',}, 
-          { positions: [ { i: 4, j: 1 },  ], css_id: 'tinytable_css_pka8tftn3ajwoknmbfk1',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_pcuiynhodrvpongtfsfy',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_n0fct5efwv8l27hbt2vi',}, 
-          { positions: [ { i: 12, j: 1 },  ], css_id: 'tinytable_css_lhdraqvojshzxanz11te',}, 
-          { positions: [ { i: 4, j: 0 },  ], css_id: 'tinytable_css_d5sr4x0pz1ea8z51oul3',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 8, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_3b5shu6tbnhjiyg81qqn',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 11, j: 1 },  ], css_id: 'tinytable_css_1fhzt0vcresqmbpp72cy',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_zx3uq11l6ox1ydix9qwu',}, 
+          { positions: [ { i: 4, j: 1 },  ], css_id: 'tinytable_css_xj1wtis0fcvmkorwvgyt',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 8, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 },  ], css_id: 'tinytable_css_rd7zqmmncav25mujhvp9',}, 
+          { positions: [ { i: 12, j: 1 },  ], css_id: 'tinytable_css_r9jar2ithqdu9cnp6zlh',}, 
+          { positions: [ { i: 4, j: 0 },  ], css_id: 'tinytable_css_dum0cwpu1wxh10nuy02x',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 11, j: 1 },  ], css_id: 'tinytable_css_cranflko5gkmntr1e9id',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_9r42nhdovpp3pfuvdg4l',}, 
+          { positions: [ { i: 12, j: 0 },  ], css_id: 'tinytable_css_56ax728qdzsaymtr7ud3',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_8s1pcplokvjhovjq64bi(cell.i, cell.j, group.css_id);
+                  styleCell_5t3ts6jjucs8t0pj075h(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1153,17 +1141,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_zyhj9quvkbn7111r4x21, .table th.tinytable_css_zyhj9quvkbn7111r4x21 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_pka8tftn3ajwoknmbfk1, .table th.tinytable_css_pka8tftn3ajwoknmbfk1 { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_pcuiynhodrvpongtfsfy, .table th.tinytable_css_pcuiynhodrvpongtfsfy { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_n0fct5efwv8l27hbt2vi, .table th.tinytable_css_n0fct5efwv8l27hbt2vi { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_lhdraqvojshzxanz11te, .table th.tinytable_css_lhdraqvojshzxanz11te { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_d5sr4x0pz1ea8z51oul3, .table th.tinytable_css_d5sr4x0pz1ea8z51oul3 { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_3b5shu6tbnhjiyg81qqn, .table th.tinytable_css_3b5shu6tbnhjiyg81qqn { text-align: left; }
-      .table td.tinytable_css_1fhzt0vcresqmbpp72cy, .table th.tinytable_css_1fhzt0vcresqmbpp72cy { text-align: center; }
+      .table td.tinytable_css_zx3uq11l6ox1ydix9qwu, .table th.tinytable_css_zx3uq11l6ox1ydix9qwu { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_xj1wtis0fcvmkorwvgyt, .table th.tinytable_css_xj1wtis0fcvmkorwvgyt { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_rd7zqmmncav25mujhvp9, .table th.tinytable_css_rd7zqmmncav25mujhvp9 { text-align: left; }
+      .table td.tinytable_css_r9jar2ithqdu9cnp6zlh, .table th.tinytable_css_r9jar2ithqdu9cnp6zlh { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_dum0cwpu1wxh10nuy02x, .table th.tinytable_css_dum0cwpu1wxh10nuy02x { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_cranflko5gkmntr1e9id, .table th.tinytable_css_cranflko5gkmntr1e9id { text-align: center; }
+      .table td.tinytable_css_9r42nhdovpp3pfuvdg4l, .table th.tinytable_css_9r42nhdovpp3pfuvdg4l { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_56ax728qdzsaymtr7ud3, .table th.tinytable_css_56ax728qdzsaymtr7ud3 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_8s1pcplokvjhovjq64bi" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_5t3ts6jjucs8t0pj075h" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1175,51 +1163,51 @@ window.Quarto = {
         <tbody>
                 <tr>
                   <td>(Intercept)</td>
-                  <td>5810.581 </td>
+                  <td>5810.581</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(528.246)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
-                  <td>538.563  </td>
+                  <td>treat</td>
+                  <td>538.563</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(747.053)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>370      </td>
+                  <td>Num.Obs.</td>
+                  <td>370</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.001    </td>
+                  <td>R2</td>
+                  <td>0.001</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>-0.001   </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.001</td>
                 </tr>
                 <tr>
-                  <td>AIC        </td>
-                  <td>7625.0   </td>
+                  <td>AIC</td>
+                  <td>7625.0</td>
                 </tr>
                 <tr>
-                  <td>BIC        </td>
-                  <td>7636.8   </td>
+                  <td>BIC</td>
+                  <td>7636.8</td>
                 </tr>
                 <tr>
-                  <td>Log.Lik.   </td>
+                  <td>Log.Lik.</td>
                   <td>-3809.508</td>
                 </tr>
                 <tr>
-                  <td>F          </td>
-                  <td>0.520    </td>
+                  <td>F</td>
+                  <td>0.520</td>
                 </tr>
                 <tr>
-                  <td>RMSE       </td>
-                  <td>7165.48  </td>
+                  <td>RMSE</td>
+                  <td>7165.48</td>
                 </tr>
         </tbody>
       </table>
@@ -1235,8 +1223,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_zdtez2wdsmee757k6xzj(i, j, css_id) {
-          var table = document.getElementById("tinytable_zdtez2wdsmee757k6xzj");
+      function styleCell_uo1ysby9hsiegspyn8kv(i, j, css_id) {
+          var table = document.getElementById("tinytable_uo1ysby9hsiegspyn8kv");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1246,7 +1234,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_zdtez2wdsmee757k6xzj');
+        var table = document.getElementById('tinytable_uo1ysby9hsiegspyn8kv');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1254,8 +1242,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_zdtez2wdsmee757k6xzj(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_zdtez2wdsmee757k6xzj");
+      function spanCell_uo1ysby9hsiegspyn8kv(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_uo1ysby9hsiegspyn8kv");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1285,20 +1273,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 2, j: 0 },  ], css_id: 'tinytable_css_o3nihaq5afm6j6a8txk1',}, 
-          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_htgahqthn559qo3lm22g',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_e8itxcoqq01xan4skmc7',}, 
-          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_clwxkjmipdpxfkikp3ib',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 },  ], css_id: 'tinytable_css_9le5dv0wrkgsneb2zh9g',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_9dke5cmlg4h7un4zywf0',}, 
-          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_91hyepif2pkth3crzjwt',}, 
-          { positions: [ { i: 2, j: 1 },  ], css_id: 'tinytable_css_8sjl3qbpwfulxr4vs5if',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 },  ], css_id: 'tinytable_css_v9jby7daj1t1thu3nqvb',}, 
+          { positions: [ { i: 5, j: 1 },  ], css_id: 'tinytable_css_qz6yas059oua1nfvmn9a',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_etzcshowtx5gn3ut194k',}, 
+          { positions: [ { i: 2, j: 0 },  ], css_id: 'tinytable_css_bqd9f9rosem9g31n55yq',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 },  ], css_id: 'tinytable_css_baquvan38jceauwvo1f0',}, 
+          { positions: [ { i: 0, j: 1 },  ], css_id: 'tinytable_css_b7fb6jlbemw7639h6app',}, 
+          { positions: [ { i: 2, j: 1 },  ], css_id: 'tinytable_css_62xzj9mzuph7q6kkzjdl',}, 
+          { positions: [ { i: 5, j: 0 },  ], css_id: 'tinytable_css_13kq23r5ciq2g632a4sx',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_zdtez2wdsmee757k6xzj(cell.i, cell.j, group.css_id);
+                  styleCell_uo1ysby9hsiegspyn8kv(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1306,17 +1294,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_o3nihaq5afm6j6a8txk1, .table th.tinytable_css_o3nihaq5afm6j6a8txk1 { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_htgahqthn559qo3lm22g, .table th.tinytable_css_htgahqthn559qo3lm22g { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_e8itxcoqq01xan4skmc7, .table th.tinytable_css_e8itxcoqq01xan4skmc7 { text-align: center; }
-      .table td.tinytable_css_clwxkjmipdpxfkikp3ib, .table th.tinytable_css_clwxkjmipdpxfkikp3ib { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_9le5dv0wrkgsneb2zh9g, .table th.tinytable_css_9le5dv0wrkgsneb2zh9g { text-align: left; }
-      .table td.tinytable_css_9dke5cmlg4h7un4zywf0, .table th.tinytable_css_9dke5cmlg4h7un4zywf0 { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_91hyepif2pkth3crzjwt, .table th.tinytable_css_91hyepif2pkth3crzjwt { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_8sjl3qbpwfulxr4vs5if, .table th.tinytable_css_8sjl3qbpwfulxr4vs5if { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_v9jby7daj1t1thu3nqvb, .table th.tinytable_css_v9jby7daj1t1thu3nqvb { text-align: left; }
+      .table td.tinytable_css_qz6yas059oua1nfvmn9a, .table th.tinytable_css_qz6yas059oua1nfvmn9a { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_etzcshowtx5gn3ut194k, .table th.tinytable_css_etzcshowtx5gn3ut194k { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_bqd9f9rosem9g31n55yq, .table th.tinytable_css_bqd9f9rosem9g31n55yq { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_baquvan38jceauwvo1f0, .table th.tinytable_css_baquvan38jceauwvo1f0 { text-align: center; }
+      .table td.tinytable_css_b7fb6jlbemw7639h6app, .table th.tinytable_css_b7fb6jlbemw7639h6app { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_62xzj9mzuph7q6kkzjdl, .table th.tinytable_css_62xzj9mzuph7q6kkzjdl { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_13kq23r5ciq2g632a4sx, .table th.tinytable_css_13kq23r5ciq2g632a4sx { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_zdtez2wdsmee757k6xzj" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_uo1ysby9hsiegspyn8kv" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1331,20 +1319,20 @@ window.Quarto = {
                   <td>5810.581 (528.246)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
-                  <td>538.563 (747.053) </td>
+                  <td>treat</td>
+                  <td>538.563 (747.053)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>370               </td>
+                  <td>Num.Obs.</td>
+                  <td>370</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.001             </td>
+                  <td>R2</td>
+                  <td>0.001</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>-0.001            </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.001</td>
                 </tr>
         </tbody>
       </table>
@@ -1365,8 +1353,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_6jqncyg0yjamg9j8ccmv(i, j, css_id) {
-          var table = document.getElementById("tinytable_6jqncyg0yjamg9j8ccmv");
+      function styleCell_4ts8g4f39hdw00cruxsw(i, j, css_id) {
+          var table = document.getElementById("tinytable_4ts8g4f39hdw00cruxsw");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1376,7 +1364,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_6jqncyg0yjamg9j8ccmv');
+        var table = document.getElementById('tinytable_4ts8g4f39hdw00cruxsw');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1384,8 +1372,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_6jqncyg0yjamg9j8ccmv(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_6jqncyg0yjamg9j8ccmv");
+      function spanCell_4ts8g4f39hdw00cruxsw(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_4ts8g4f39hdw00cruxsw");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1415,20 +1403,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_q20qdc4pinr7cb45mz4q',}, 
-          { positions: [ { i: 23, j: 1 }, { i: 23, j: 2 },  ], css_id: 'tinytable_css_nqdiemqkzq8hs7v6kq27',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_lmyk3xw0as26yfl3zr2l',}, 
-          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_h04ewtq3or3skhk9x77b',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_fw6y0ayulwvbskedatzt',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 12, j: 2 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 22, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 16, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 21, j: 2 },  ], css_id: 'tinytable_css_dzv2012sbb2dox7cf4pi',}, 
-          { positions: [ { i: 20, j: 2 }, { i: 20, j: 1 },  ], css_id: 'tinytable_css_dj811drr45bjp0wmc4tz',}, 
-          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_chwxwjwwblrqkwd98cbr',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_w25j67fo4spsiwd32nvv',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 3, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 12, j: 2 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 22, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 16, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 21, j: 2 },  ], css_id: 'tinytable_css_simr4w297ywzxwq4v615',}, 
+          { positions: [ { i: 20, j: 2 }, { i: 20, j: 1 },  ], css_id: 'tinytable_css_pf0pi0ked9px77986blo',}, 
+          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_kv8sst1ci5p9ixp0dxk1',}, 
+          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_jrqngo05d13vzbj71n27',}, 
+          { positions: [ { i: 23, j: 1 }, { i: 23, j: 2 },  ], css_id: 'tinytable_css_iqqk003hznrjk8e2fuqa',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_2965lrb3z1h8x08bskbp',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_0epukg4el29owe4suhyb',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_6jqncyg0yjamg9j8ccmv(cell.i, cell.j, group.css_id);
+                  styleCell_4ts8g4f39hdw00cruxsw(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1436,17 +1424,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_q20qdc4pinr7cb45mz4q, .table th.tinytable_css_q20qdc4pinr7cb45mz4q { text-align: left; }
-      .table td.tinytable_css_nqdiemqkzq8hs7v6kq27, .table th.tinytable_css_nqdiemqkzq8hs7v6kq27 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_lmyk3xw0as26yfl3zr2l, .table th.tinytable_css_lmyk3xw0as26yfl3zr2l { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_h04ewtq3or3skhk9x77b, .table th.tinytable_css_h04ewtq3or3skhk9x77b { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_fw6y0ayulwvbskedatzt, .table th.tinytable_css_fw6y0ayulwvbskedatzt { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_dzv2012sbb2dox7cf4pi, .table th.tinytable_css_dzv2012sbb2dox7cf4pi { text-align: center; }
-      .table td.tinytable_css_dj811drr45bjp0wmc4tz, .table th.tinytable_css_dj811drr45bjp0wmc4tz { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_chwxwjwwblrqkwd98cbr, .table th.tinytable_css_chwxwjwwblrqkwd98cbr { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_w25j67fo4spsiwd32nvv, .table th.tinytable_css_w25j67fo4spsiwd32nvv { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_simr4w297ywzxwq4v615, .table th.tinytable_css_simr4w297ywzxwq4v615 { text-align: center; }
+      .table td.tinytable_css_pf0pi0ked9px77986blo, .table th.tinytable_css_pf0pi0ked9px77986blo { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_kv8sst1ci5p9ixp0dxk1, .table th.tinytable_css_kv8sst1ci5p9ixp0dxk1 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_jrqngo05d13vzbj71n27, .table th.tinytable_css_jrqngo05d13vzbj71n27 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_iqqk003hznrjk8e2fuqa, .table th.tinytable_css_iqqk003hznrjk8e2fuqa { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_2965lrb3z1h8x08bskbp, .table th.tinytable_css_2965lrb3z1h8x08bskbp { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_0epukg4el29owe4suhyb, .table th.tinytable_css_0epukg4el29owe4suhyb { text-align: left; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_6jqncyg0yjamg9j8ccmv" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_4ts8g4f39hdw00cruxsw" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1459,118 +1447,118 @@ window.Quarto = {
         <tbody>
                 <tr>
                   <td>(Intercept)</td>
-                  <td>5810.581 </td>
-                  <td>-563.793  </td>
+                  <td>5810.581</td>
+                  <td>-563.793</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(528.246)</td>
                   <td>(3546.733)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
-                  <td>538.563  </td>
-                  <td>1248.753  </td>
+                  <td>treat</td>
+                  <td>538.563</td>
+                  <td>1248.753</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(747.053)</td>
-                  <td>(812.200) </td>
+                  <td>(812.200)</td>
                 </tr>
                 <tr>
-                  <td>age        </td>
-                  <td>         </td>
-                  <td>16.287    </td>
+                  <td>age</td>
+                  <td></td>
+                  <td>16.287</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(45.729)  </td>
+                  <td></td>
+                  <td></td>
+                  <td>(45.729)</td>
                 </tr>
                 <tr>
-                  <td>educ       </td>
-                  <td>         </td>
-                  <td>536.770   </td>
+                  <td>educ</td>
+                  <td></td>
+                  <td>536.770</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(243.670) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(243.670)</td>
                 </tr>
                 <tr>
-                  <td>black      </td>
-                  <td>         </td>
-                  <td>-1122.952 </td>
+                  <td>black</td>
+                  <td></td>
+                  <td>-1122.952</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(907.128) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(907.128)</td>
                 </tr>
                 <tr>
-                  <td>hispanic   </td>
-                  <td>         </td>
-                  <td>1162.968  </td>
+                  <td>hispanic</td>
+                  <td></td>
+                  <td>1162.968</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1677.286)</td>
                 </tr>
                 <tr>
-                  <td>married    </td>
-                  <td>         </td>
-                  <td>655.742   </td>
+                  <td>married</td>
+                  <td></td>
+                  <td>655.742</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(984.969) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(984.969)</td>
                 </tr>
                 <tr>
-                  <td>nodegree   </td>
-                  <td>         </td>
-                  <td>-174.212  </td>
+                  <td>nodegree</td>
+                  <td></td>
+                  <td>-174.212</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1116.462)</td>
                 </tr>
                 <tr>
-                  <td>re74       </td>
-                  <td>         </td>
-                  <td>0.071     </td>
+                  <td>re74</td>
+                  <td></td>
+                  <td>0.071</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.098)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.098)</td>
                 </tr>
                 <tr>
-                  <td>re75       </td>
-                  <td>         </td>
-                  <td>0.273     </td>
+                  <td>re75</td>
+                  <td></td>
+                  <td>0.273</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.155)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.155)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>370      </td>
-                  <td>370       </td>
+                  <td>Num.Obs.</td>
+                  <td>370</td>
+                  <td>370</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.001    </td>
-                  <td>0.077     </td>
+                  <td>R2</td>
+                  <td>0.001</td>
+                  <td>0.077</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>-0.001   </td>
-                  <td>0.054     </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.001</td>
+                  <td>0.054</td>
                 </tr>
         </tbody>
       </table>
@@ -1754,8 +1742,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_mwdaym3twwf1wg43orau(i, j, css_id) {
-          var table = document.getElementById("tinytable_mwdaym3twwf1wg43orau");
+      function styleCell_co7wsvrrn19q70haj8lx(i, j, css_id) {
+          var table = document.getElementById("tinytable_co7wsvrrn19q70haj8lx");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -1765,7 +1753,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_mwdaym3twwf1wg43orau');
+        var table = document.getElementById('tinytable_co7wsvrrn19q70haj8lx');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -1773,8 +1761,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_mwdaym3twwf1wg43orau(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_mwdaym3twwf1wg43orau");
+      function spanCell_co7wsvrrn19q70haj8lx(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_co7wsvrrn19q70haj8lx");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -1804,20 +1792,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 23, j: 2 }, { i: 23, j: 3 }, { i: 23, j: 1 }, { i: 23, j: 4 },  ], css_id: 'tinytable_css_wfxxwr2wjv43rxgecl9e',}, 
-          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_tqri097ndtgecmy9wezv',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_p2q0mlphvn422ck2r9kr',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_oijzwchm7gmzt9ymjda9',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 8, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 1, j: 4 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 4, j: 4 }, { i: 16, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 9, j: 4 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 3, j: 4 }, { i: 8, j: 2 }, { i: 14, j: 4 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 17, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 22, j: 4 }, { i: 10, j: 4 }, { i: 19, j: 4 }, { i: 16, j: 4 }, { i: 13, j: 4 }, { i: 18, j: 4 }, { i: 21, j: 4 },  ], css_id: 'tinytable_css_lfpg289o9dssbzlezeio',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_8ye8wfolralt9srwmngi',}, 
-          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_6a0panp3uj2zpnqci137',}, 
-          { positions: [ { i: 20, j: 2 }, { i: 20, j: 4 }, { i: 20, j: 1 }, { i: 20, j: 3 },  ], css_id: 'tinytable_css_5f5p4pups97fn5cnobou',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_t4vxe46qevvi6rv9wodw',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_ouon4yezzy6h5x11wtdn',}, 
+          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_lqso0mextppk8lyz4hs8',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 8, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 1, j: 4 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 4, j: 4 }, { i: 16, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 9, j: 4 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 3, j: 4 }, { i: 8, j: 2 }, { i: 14, j: 4 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 17, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 22, j: 4 }, { i: 10, j: 4 }, { i: 19, j: 4 }, { i: 16, j: 4 }, { i: 13, j: 4 }, { i: 18, j: 4 }, { i: 21, j: 4 },  ], css_id: 'tinytable_css_hcelu2ne95yyrf9eutlp',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_dg29noc82tdx3ukgcu7u',}, 
+          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_8rirygz5bapcqktr1xu2',}, 
+          { positions: [ { i: 20, j: 2 }, { i: 20, j: 4 }, { i: 20, j: 1 }, { i: 20, j: 3 },  ], css_id: 'tinytable_css_7knsy8omxoent2cyvi7u',}, 
+          { positions: [ { i: 23, j: 2 }, { i: 23, j: 3 }, { i: 23, j: 1 }, { i: 23, j: 4 },  ], css_id: 'tinytable_css_22a1tnh4vkv736sdem0j',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_mwdaym3twwf1wg43orau(cell.i, cell.j, group.css_id);
+                  styleCell_co7wsvrrn19q70haj8lx(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -1825,17 +1813,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_wfxxwr2wjv43rxgecl9e, .table th.tinytable_css_wfxxwr2wjv43rxgecl9e { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_tqri097ndtgecmy9wezv, .table th.tinytable_css_tqri097ndtgecmy9wezv { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_p2q0mlphvn422ck2r9kr, .table th.tinytable_css_p2q0mlphvn422ck2r9kr { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_oijzwchm7gmzt9ymjda9, .table th.tinytable_css_oijzwchm7gmzt9ymjda9 { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_lfpg289o9dssbzlezeio, .table th.tinytable_css_lfpg289o9dssbzlezeio { text-align: center; }
-      .table td.tinytable_css_8ye8wfolralt9srwmngi, .table th.tinytable_css_8ye8wfolralt9srwmngi { text-align: left; }
-      .table td.tinytable_css_6a0panp3uj2zpnqci137, .table th.tinytable_css_6a0panp3uj2zpnqci137 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_5f5p4pups97fn5cnobou, .table th.tinytable_css_5f5p4pups97fn5cnobou { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_t4vxe46qevvi6rv9wodw, .table th.tinytable_css_t4vxe46qevvi6rv9wodw { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ouon4yezzy6h5x11wtdn, .table th.tinytable_css_ouon4yezzy6h5x11wtdn { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_lqso0mextppk8lyz4hs8, .table th.tinytable_css_lqso0mextppk8lyz4hs8 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_hcelu2ne95yyrf9eutlp, .table th.tinytable_css_hcelu2ne95yyrf9eutlp { text-align: center; }
+      .table td.tinytable_css_dg29noc82tdx3ukgcu7u, .table th.tinytable_css_dg29noc82tdx3ukgcu7u { text-align: left; }
+      .table td.tinytable_css_8rirygz5bapcqktr1xu2, .table th.tinytable_css_8rirygz5bapcqktr1xu2 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_7knsy8omxoent2cyvi7u, .table th.tinytable_css_7knsy8omxoent2cyvi7u { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_22a1tnh4vkv736sdem0j, .table th.tinytable_css_22a1tnh4vkv736sdem0j { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_mwdaym3twwf1wg43orau" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_co7wsvrrn19q70haj8lx" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -1850,164 +1838,164 @@ window.Quarto = {
         <tbody>
                 <tr>
                   <td>(Intercept)</td>
-                  <td>5810.581 </td>
-                  <td>-563.793  </td>
-                  <td>5953.896 </td>
-                  <td>1367.609  </td>
+                  <td>5810.581</td>
+                  <td>-563.793</td>
+                  <td>5953.896</td>
+                  <td>1367.609</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(528.246)</td>
                   <td>(3546.733)</td>
                   <td>(832.765)</td>
                   <td>(4742.325)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
-                  <td>538.563  </td>
-                  <td>1248.753  </td>
-                  <td>395.247  </td>
-                  <td>319.158   </td>
+                  <td>treat</td>
+                  <td>538.563</td>
+                  <td>1248.753</td>
+                  <td>395.247</td>
+                  <td>319.158</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(747.053)</td>
-                  <td>(812.200) </td>
+                  <td>(812.200)</td>
                   <td>(992.921)</td>
-                  <td>(989.821) </td>
+                  <td>(989.821)</td>
                 </tr>
                 <tr>
-                  <td>age        </td>
-                  <td>         </td>
-                  <td>16.287    </td>
-                  <td>         </td>
-                  <td>0.738     </td>
+                  <td>age</td>
+                  <td></td>
+                  <td>16.287</td>
+                  <td></td>
+                  <td>0.738</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(45.729)  </td>
-                  <td>         </td>
-                  <td>(63.289)  </td>
+                  <td></td>
+                  <td></td>
+                  <td>(45.729)</td>
+                  <td></td>
+                  <td>(63.289)</td>
                 </tr>
                 <tr>
-                  <td>educ       </td>
-                  <td>         </td>
-                  <td>536.770   </td>
-                  <td>         </td>
-                  <td>513.097   </td>
+                  <td>educ</td>
+                  <td></td>
+                  <td>536.770</td>
+                  <td></td>
+                  <td>513.097</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(243.670) </td>
-                  <td>         </td>
-                  <td>(315.294) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(243.670)</td>
+                  <td></td>
+                  <td>(315.294)</td>
                 </tr>
                 <tr>
-                  <td>black      </td>
-                  <td>         </td>
-                  <td>-1122.952 </td>
-                  <td>         </td>
-                  <td>-1441.462 </td>
+                  <td>black</td>
+                  <td></td>
+                  <td>-1122.952</td>
+                  <td></td>
+                  <td>-1441.462</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(907.128) </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
+                  <td>(907.128)</td>
+                  <td></td>
                   <td>(1547.443)</td>
                 </tr>
                 <tr>
-                  <td>hispanic   </td>
-                  <td>         </td>
-                  <td>1162.968  </td>
-                  <td>         </td>
-                  <td>47.198    </td>
+                  <td>hispanic</td>
+                  <td></td>
+                  <td>1162.968</td>
+                  <td></td>
+                  <td>47.198</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1677.286)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(2391.301)</td>
                 </tr>
                 <tr>
-                  <td>married    </td>
-                  <td>         </td>
-                  <td>655.742   </td>
-                  <td>         </td>
-                  <td>294.628   </td>
+                  <td>married</td>
+                  <td></td>
+                  <td>655.742</td>
+                  <td></td>
+                  <td>294.628</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(984.969) </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
+                  <td>(984.969)</td>
+                  <td></td>
                   <td>(1268.718)</td>
                 </tr>
                 <tr>
-                  <td>nodegree   </td>
-                  <td>         </td>
-                  <td>-174.212  </td>
-                  <td>         </td>
-                  <td>17.309    </td>
+                  <td>nodegree</td>
+                  <td></td>
+                  <td>-174.212</td>
+                  <td></td>
+                  <td>17.309</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1116.462)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1401.818)</td>
                 </tr>
                 <tr>
-                  <td>re74       </td>
-                  <td>         </td>
-                  <td>0.071     </td>
-                  <td>         </td>
-                  <td>0.082     </td>
+                  <td>re74</td>
+                  <td></td>
+                  <td>0.071</td>
+                  <td></td>
+                  <td>0.082</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.098)   </td>
-                  <td>         </td>
-                  <td>(0.132)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.098)</td>
+                  <td></td>
+                  <td>(0.132)</td>
                 </tr>
                 <tr>
-                  <td>re75       </td>
-                  <td>         </td>
-                  <td>0.273     </td>
-                  <td>         </td>
-                  <td>0.200     </td>
+                  <td>re75</td>
+                  <td></td>
+                  <td>0.273</td>
+                  <td></td>
+                  <td>0.200</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.155)   </td>
-                  <td>         </td>
-                  <td>(0.205)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.155)</td>
+                  <td></td>
+                  <td>(0.205)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>370      </td>
-                  <td>370       </td>
-                  <td>263      </td>
-                  <td>263       </td>
+                  <td>Num.Obs.</td>
+                  <td>370</td>
+                  <td>370</td>
+                  <td>263</td>
+                  <td>263</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.001    </td>
-                  <td>0.077     </td>
-                  <td>0.001    </td>
-                  <td>0.043     </td>
+                  <td>R2</td>
+                  <td>0.001</td>
+                  <td>0.077</td>
+                  <td>0.001</td>
+                  <td>0.043</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>-0.001   </td>
-                  <td>0.054     </td>
-                  <td>-0.003   </td>
-                  <td>0.009     </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.001</td>
+                  <td>0.054</td>
+                  <td>-0.003</td>
+                  <td>0.009</td>
                 </tr>
         </tbody>
       </table>
@@ -2062,8 +2050,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_kqy4i11clvykoyk2pbrj(i, j, css_id) {
-          var table = document.getElementById("tinytable_kqy4i11clvykoyk2pbrj");
+      function styleCell_hpxwle723b9tjj7db5ip(i, j, css_id) {
+          var table = document.getElementById("tinytable_hpxwle723b9tjj7db5ip");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -2073,7 +2061,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_kqy4i11clvykoyk2pbrj');
+        var table = document.getElementById('tinytable_hpxwle723b9tjj7db5ip');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -2081,8 +2069,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_kqy4i11clvykoyk2pbrj(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_kqy4i11clvykoyk2pbrj");
+      function spanCell_hpxwle723b9tjj7db5ip(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_hpxwle723b9tjj7db5ip");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -2112,20 +2100,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 8, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 1, j: 4 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 4, j: 4 }, { i: 16, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 9, j: 4 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 3, j: 4 }, { i: 8, j: 2 }, { i: 14, j: 4 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 17, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 22, j: 4 }, { i: 10, j: 4 }, { i: 19, j: 4 }, { i: 16, j: 4 }, { i: 13, j: 4 }, { i: 18, j: 4 }, { i: 21, j: 4 },  ], css_id: 'tinytable_css_x4tjydwxrdmocg7p59z9',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_wxa8px5935pkv7cup1gx',}, 
-          { positions: [ { i: 23, j: 2 }, { i: 23, j: 3 }, { i: 23, j: 1 }, { i: 23, j: 4 },  ], css_id: 'tinytable_css_q99scdoo2wqhn3ekxxlx',}, 
-          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_neu6fsoolq27puj7y6rx',}, 
-          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_n2stt7xeun5kl3adve2t',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_k825gxdnv0ggesyntkw8',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_31jryx0iwqn39ziqpzhu',}, 
-          { positions: [ { i: 20, j: 2 }, { i: 20, j: 4 }, { i: 20, j: 1 }, { i: 20, j: 3 },  ], css_id: 'tinytable_css_2btw838yfe9b24b2h22g',}, 
+          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_wqjmlofecvwgjgrsqrp0',}, 
+          { positions: [ { i: 20, j: 2 }, { i: 20, j: 4 }, { i: 20, j: 1 }, { i: 20, j: 3 },  ], css_id: 'tinytable_css_rnyu0f1x5olh9b2rzgbq',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_qud0t3dow26d75cy6lqf',}, 
+          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_orbjpn3xc26nh1et9dit',}, 
+          { positions: [ { i: 23, j: 2 }, { i: 23, j: 3 }, { i: 23, j: 1 }, { i: 23, j: 4 },  ], css_id: 'tinytable_css_hhl4syhq4pmcmnnmbiu0',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 8, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 1, j: 4 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 4, j: 4 }, { i: 16, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 9, j: 4 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 3, j: 4 }, { i: 8, j: 2 }, { i: 14, j: 4 }, { i: 2, j: 4 }, { i: 7, j: 4 }, { i: 17, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 11, j: 4 }, { i: 8, j: 4 }, { i: 22, j: 4 }, { i: 10, j: 4 }, { i: 19, j: 4 }, { i: 16, j: 4 }, { i: 13, j: 4 }, { i: 18, j: 4 }, { i: 21, j: 4 },  ], css_id: 'tinytable_css_ekj6iyfnh8dj0wylh3r4',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 3 },  ], css_id: 'tinytable_css_6ts1hxy950r1gpup7ful',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_3991ghrqpmuamd29egtw',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_kqy4i11clvykoyk2pbrj(cell.i, cell.j, group.css_id);
+                  styleCell_hpxwle723b9tjj7db5ip(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -2133,17 +2121,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_x4tjydwxrdmocg7p59z9, .table th.tinytable_css_x4tjydwxrdmocg7p59z9 { text-align: center; }
-      .table td.tinytable_css_wxa8px5935pkv7cup1gx, .table th.tinytable_css_wxa8px5935pkv7cup1gx { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_q99scdoo2wqhn3ekxxlx, .table th.tinytable_css_q99scdoo2wqhn3ekxxlx { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_neu6fsoolq27puj7y6rx, .table th.tinytable_css_neu6fsoolq27puj7y6rx { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_n2stt7xeun5kl3adve2t, .table th.tinytable_css_n2stt7xeun5kl3adve2t { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_k825gxdnv0ggesyntkw8, .table th.tinytable_css_k825gxdnv0ggesyntkw8 { text-align: left; }
-      .table td.tinytable_css_31jryx0iwqn39ziqpzhu, .table th.tinytable_css_31jryx0iwqn39ziqpzhu { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_2btw838yfe9b24b2h22g, .table th.tinytable_css_2btw838yfe9b24b2h22g { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_wqjmlofecvwgjgrsqrp0, .table th.tinytable_css_wqjmlofecvwgjgrsqrp0 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_rnyu0f1x5olh9b2rzgbq, .table th.tinytable_css_rnyu0f1x5olh9b2rzgbq { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_qud0t3dow26d75cy6lqf, .table th.tinytable_css_qud0t3dow26d75cy6lqf { text-align: left; }
+      .table td.tinytable_css_orbjpn3xc26nh1et9dit, .table th.tinytable_css_orbjpn3xc26nh1et9dit { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_hhl4syhq4pmcmnnmbiu0, .table th.tinytable_css_hhl4syhq4pmcmnnmbiu0 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_ekj6iyfnh8dj0wylh3r4, .table th.tinytable_css_ekj6iyfnh8dj0wylh3r4 { text-align: center; }
+      .table td.tinytable_css_6ts1hxy950r1gpup7ful, .table th.tinytable_css_6ts1hxy950r1gpup7ful { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_3991ghrqpmuamd29egtw, .table th.tinytable_css_3991ghrqpmuamd29egtw { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_kqy4i11clvykoyk2pbrj" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_hpxwle723b9tjj7db5ip" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -2158,164 +2146,164 @@ window.Quarto = {
         <tbody>
                 <tr>
                   <td>(Intercept)</td>
-                  <td>5953.896 </td>
-                  <td>1367.609  </td>
-                  <td>4357.528 </td>
-                  <td>-1268.481 </td>
+                  <td>5953.896</td>
+                  <td>1367.609</td>
+                  <td>4357.528</td>
+                  <td>-1268.481</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(832.765)</td>
                   <td>(4742.325)</td>
                   <td>(798.432)</td>
                   <td>(4329.104)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
-                  <td>395.247  </td>
-                  <td>319.158   </td>
-                  <td>1991.615 </td>
-                  <td>1926.426  </td>
+                  <td>treat</td>
+                  <td>395.247</td>
+                  <td>319.158</td>
+                  <td>1991.615</td>
+                  <td>1926.426</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(992.921)</td>
-                  <td>(989.821) </td>
+                  <td>(989.821)</td>
                   <td>(959.197)</td>
-                  <td>(962.213) </td>
+                  <td>(962.213)</td>
                 </tr>
                 <tr>
-                  <td>age        </td>
-                  <td>         </td>
-                  <td>0.738     </td>
-                  <td>         </td>
-                  <td>43.983    </td>
+                  <td>age</td>
+                  <td></td>
+                  <td>0.738</td>
+                  <td></td>
+                  <td>43.983</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(63.289)  </td>
-                  <td>         </td>
-                  <td>(59.595)  </td>
+                  <td></td>
+                  <td></td>
+                  <td>(63.289)</td>
+                  <td></td>
+                  <td>(59.595)</td>
                 </tr>
                 <tr>
-                  <td>educ       </td>
-                  <td>         </td>
-                  <td>513.097   </td>
-                  <td>         </td>
-                  <td>462.507   </td>
+                  <td>educ</td>
+                  <td></td>
+                  <td>513.097</td>
+                  <td></td>
+                  <td>462.507</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(315.294) </td>
-                  <td>         </td>
-                  <td>(275.406) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(315.294)</td>
+                  <td></td>
+                  <td>(275.406)</td>
                 </tr>
                 <tr>
-                  <td>black      </td>
-                  <td>         </td>
-                  <td>-1441.462 </td>
-                  <td>         </td>
-                  <td>-892.421  </td>
+                  <td>black</td>
+                  <td></td>
+                  <td>-1441.462</td>
+                  <td></td>
+                  <td>-892.421</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1547.443)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1526.070)</td>
                 </tr>
                 <tr>
-                  <td>hispanic   </td>
-                  <td>         </td>
-                  <td>47.198    </td>
-                  <td>         </td>
-                  <td>-171.481  </td>
+                  <td>hispanic</td>
+                  <td></td>
+                  <td>47.198</td>
+                  <td></td>
+                  <td>-171.481</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(2391.301)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(2323.016)</td>
                 </tr>
                 <tr>
-                  <td>married    </td>
-                  <td>         </td>
-                  <td>294.628   </td>
-                  <td>         </td>
-                  <td>282.877   </td>
+                  <td>married</td>
+                  <td></td>
+                  <td>294.628</td>
+                  <td></td>
+                  <td>282.877</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1268.718)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1282.599)</td>
                 </tr>
                 <tr>
-                  <td>nodegree   </td>
-                  <td>         </td>
-                  <td>17.309    </td>
-                  <td>         </td>
-                  <td>159.611   </td>
+                  <td>nodegree</td>
+                  <td></td>
+                  <td>17.309</td>
+                  <td></td>
+                  <td>159.611</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1401.818)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1367.608)</td>
                 </tr>
                 <tr>
-                  <td>re74       </td>
-                  <td>         </td>
-                  <td>0.082     </td>
-                  <td>         </td>
-                  <td>0.056     </td>
+                  <td>re74</td>
+                  <td></td>
+                  <td>0.082</td>
+                  <td></td>
+                  <td>0.056</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.132)   </td>
-                  <td>         </td>
-                  <td>(0.121)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.132)</td>
+                  <td></td>
+                  <td>(0.121)</td>
                 </tr>
                 <tr>
-                  <td>re75       </td>
-                  <td>         </td>
-                  <td>0.200     </td>
-                  <td>         </td>
-                  <td>0.163     </td>
+                  <td>re75</td>
+                  <td></td>
+                  <td>0.200</td>
+                  <td></td>
+                  <td>0.163</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.205)   </td>
-                  <td>         </td>
-                  <td>(0.198)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.205)</td>
+                  <td></td>
+                  <td>(0.198)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>263      </td>
-                  <td>263       </td>
-                  <td>267      </td>
-                  <td>267       </td>
+                  <td>Num.Obs.</td>
+                  <td>263</td>
+                  <td>263</td>
+                  <td>267</td>
+                  <td>267</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.001    </td>
-                  <td>0.043     </td>
-                  <td>0.016    </td>
-                  <td>0.053     </td>
+                  <td>R2</td>
+                  <td>0.001</td>
+                  <td>0.043</td>
+                  <td>0.016</td>
+                  <td>0.053</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>-0.003   </td>
-                  <td>0.009     </td>
-                  <td>0.012    </td>
-                  <td>0.020     </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.003</td>
+                  <td>0.009</td>
+                  <td>0.012</td>
+                  <td>0.020</td>
                 </tr>
         </tbody>
       </table>
@@ -2402,8 +2390,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_ssarym7cxtu4l040xchm(i, j, css_id) {
-          var table = document.getElementById("tinytable_ssarym7cxtu4l040xchm");
+      function styleCell_y3fuo31dszi076qz2lf1(i, j, css_id) {
+          var table = document.getElementById("tinytable_y3fuo31dszi076qz2lf1");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -2413,7 +2401,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_ssarym7cxtu4l040xchm');
+        var table = document.getElementById('tinytable_y3fuo31dszi076qz2lf1');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -2421,8 +2409,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_ssarym7cxtu4l040xchm(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_ssarym7cxtu4l040xchm");
+      function spanCell_y3fuo31dszi076qz2lf1(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_y3fuo31dszi076qz2lf1");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -2452,20 +2440,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_zr20f4fvbxybnm0i3gja',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 6 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 3 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_wdyru5er30wiwgeqa0wn',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_pk0r8f5b6ka7lvejh35g',}, 
-          { positions: [ { i: 5, j: 1 }, { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 1, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 14, j: 1 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 3, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 8, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 16, j: 1 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 4, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 7, j: 5 }, { i: 16, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 12, j: 5 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 15, j: 5 }, { i: 8, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 16, j: 2 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 4, j: 6 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 7, j: 6 }, { i: 16, j: 4 }, { i: 17, j: 4 }, { i: 18, j: 4 }, { i: 19, j: 4 }, { i: 12, j: 6 }, { i: 21, j: 4 }, { i: 22, j: 4 }, { i: 15, j: 6 }, { i: 8, j: 3 }, { i: 1, j: 5 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 17, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 9, j: 6 }, { i: 8, j: 5 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 1, j: 6 }, { i: 13, j: 5 }, { i: 14, j: 5 }, { i: 17, j: 6 }, { i: 16, j: 5 }, { i: 6, j: 6 }, { i: 18, j: 5 }, { i: 19, j: 5 }, { i: 22, j: 6 }, { i: 21, j: 5 }, { i: 22, j: 5 }, { i: 3, j: 6 }, { i: 8, j: 4 }, { i: 14, j: 6 }, { i: 2, j: 6 }, { i: 11, j: 6 }, { i: 8, j: 6 }, { i: 5, j: 6 }, { i: 19, j: 6 }, { i: 16, j: 6 }, { i: 13, j: 6 }, { i: 10, j: 6 }, { i: 21, j: 6 }, { i: 18, j: 6 },  ], css_id: 'tinytable_css_juisyb5pdu9wni0xr0t1',}, 
-          { positions: [ { i: 20, j: 4 }, { i: 20, j: 6 }, { i: 20, j: 2 }, { i: 20, j: 1 }, { i: 20, j: 5 }, { i: 20, j: 3 },  ], css_id: 'tinytable_css_hredgwmxefa5rxzaduow',}, 
-          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_frcuyjcw4qi0ahun0pxi',}, 
-          { positions: [ { i: 23, j: 5 }, { i: 23, j: 4 }, { i: 23, j: 2 }, { i: 23, j: 3 }, { i: 23, j: 1 }, { i: 23, j: 6 },  ], css_id: 'tinytable_css_5be5p77542osjemw6z3a',}, 
-          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_5ah36lpuurqn1c3giw9k',}, 
+          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_yd8cpk70m8edd7ni43r1',}, 
+          { positions: [ { i: 5, j: 1 }, { i: 2, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 1, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 14, j: 1 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 3, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 8, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 16, j: 1 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 4, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 7, j: 5 }, { i: 16, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 12, j: 5 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 15, j: 5 }, { i: 8, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 16, j: 2 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 4, j: 6 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 7, j: 6 }, { i: 16, j: 4 }, { i: 17, j: 4 }, { i: 18, j: 4 }, { i: 19, j: 4 }, { i: 12, j: 6 }, { i: 21, j: 4 }, { i: 22, j: 4 }, { i: 15, j: 6 }, { i: 8, j: 3 }, { i: 1, j: 5 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 17, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 9, j: 6 }, { i: 8, j: 5 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 1, j: 6 }, { i: 13, j: 5 }, { i: 14, j: 5 }, { i: 17, j: 6 }, { i: 16, j: 5 }, { i: 6, j: 6 }, { i: 18, j: 5 }, { i: 19, j: 5 }, { i: 22, j: 6 }, { i: 21, j: 5 }, { i: 22, j: 5 }, { i: 3, j: 6 }, { i: 8, j: 4 }, { i: 14, j: 6 }, { i: 2, j: 6 }, { i: 11, j: 6 }, { i: 8, j: 6 }, { i: 5, j: 6 }, { i: 19, j: 6 }, { i: 16, j: 6 }, { i: 13, j: 6 }, { i: 10, j: 6 }, { i: 21, j: 6 }, { i: 18, j: 6 },  ], css_id: 'tinytable_css_vm93xpn69zdjhy1y7f24',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_turw7h00v9gt2lm5dbeu',}, 
+          { positions: [ { i: 20, j: 4 }, { i: 20, j: 6 }, { i: 20, j: 2 }, { i: 20, j: 1 }, { i: 20, j: 5 }, { i: 20, j: 3 },  ], css_id: 'tinytable_css_rkz7o2mo2l8usgo6m2r1',}, 
+          { positions: [ { i: 23, j: 5 }, { i: 23, j: 4 }, { i: 23, j: 2 }, { i: 23, j: 3 }, { i: 23, j: 1 }, { i: 23, j: 6 },  ], css_id: 'tinytable_css_oxvh6v5vf8gk3u9sr3uq',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_odr6m58l51n4umz6vfhu',}, 
+          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_eg3evprdij4t0vnjqyup',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 6 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 3 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_0kecep03j3kkvcg0nh9a',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_ssarym7cxtu4l040xchm(cell.i, cell.j, group.css_id);
+                  styleCell_y3fuo31dszi076qz2lf1(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -2473,17 +2461,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_zr20f4fvbxybnm0i3gja, .table th.tinytable_css_zr20f4fvbxybnm0i3gja { text-align: left; }
-      .table td.tinytable_css_wdyru5er30wiwgeqa0wn, .table th.tinytable_css_wdyru5er30wiwgeqa0wn { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_pk0r8f5b6ka7lvejh35g, .table th.tinytable_css_pk0r8f5b6ka7lvejh35g { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_juisyb5pdu9wni0xr0t1, .table th.tinytable_css_juisyb5pdu9wni0xr0t1 { text-align: center; }
-      .table td.tinytable_css_hredgwmxefa5rxzaduow, .table th.tinytable_css_hredgwmxefa5rxzaduow { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_frcuyjcw4qi0ahun0pxi, .table th.tinytable_css_frcuyjcw4qi0ahun0pxi { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_5be5p77542osjemw6z3a, .table th.tinytable_css_5be5p77542osjemw6z3a { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_5ah36lpuurqn1c3giw9k, .table th.tinytable_css_5ah36lpuurqn1c3giw9k { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_yd8cpk70m8edd7ni43r1, .table th.tinytable_css_yd8cpk70m8edd7ni43r1 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_vm93xpn69zdjhy1y7f24, .table th.tinytable_css_vm93xpn69zdjhy1y7f24 { text-align: center; }
+      .table td.tinytable_css_turw7h00v9gt2lm5dbeu, .table th.tinytable_css_turw7h00v9gt2lm5dbeu { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_rkz7o2mo2l8usgo6m2r1, .table th.tinytable_css_rkz7o2mo2l8usgo6m2r1 { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_oxvh6v5vf8gk3u9sr3uq, .table th.tinytable_css_oxvh6v5vf8gk3u9sr3uq { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_odr6m58l51n4umz6vfhu, .table th.tinytable_css_odr6m58l51n4umz6vfhu { text-align: left; }
+      .table td.tinytable_css_eg3evprdij4t0vnjqyup, .table th.tinytable_css_eg3evprdij4t0vnjqyup { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_0kecep03j3kkvcg0nh9a, .table th.tinytable_css_0kecep03j3kkvcg0nh9a { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_ssarym7cxtu4l040xchm" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_y3fuo31dszi076qz2lf1" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -2500,210 +2488,210 @@ window.Quarto = {
         <tbody>
                 <tr>
                   <td>(Intercept)</td>
-                  <td>5953.896 </td>
-                  <td>1367.609  </td>
-                  <td>4357.528 </td>
-                  <td>-1268.481 </td>
-                  <td>5265.785  </td>
-                  <td>-7253.717 </td>
+                  <td>5953.896</td>
+                  <td>1367.609</td>
+                  <td>4357.528</td>
+                  <td>-1268.481</td>
+                  <td>5265.785</td>
+                  <td>-7253.717</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(832.765)</td>
                   <td>(4742.325)</td>
                   <td>(798.432)</td>
                   <td>(4329.104)</td>
-                  <td>(850.457) </td>
+                  <td>(850.457)</td>
                   <td>(7031.576)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
-                  <td>395.247  </td>
-                  <td>319.158   </td>
-                  <td>1991.615 </td>
-                  <td>1926.426  </td>
-                  <td>1070.907  </td>
-                  <td>1207.183  </td>
+                  <td>treat</td>
+                  <td>395.247</td>
+                  <td>319.158</td>
+                  <td>1991.615</td>
+                  <td>1926.426</td>
+                  <td>1070.907</td>
+                  <td>1207.183</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(992.921)</td>
-                  <td>(989.821) </td>
+                  <td>(989.821)</td>
                   <td>(959.197)</td>
-                  <td>(962.213) </td>
+                  <td>(962.213)</td>
                   <td>(1248.129)</td>
                   <td>(1245.959)</td>
                 </tr>
                 <tr>
-                  <td>age        </td>
-                  <td>         </td>
-                  <td>0.738     </td>
-                  <td>         </td>
-                  <td>43.983    </td>
-                  <td>          </td>
-                  <td>147.970   </td>
+                  <td>age</td>
+                  <td></td>
+                  <td>0.738</td>
+                  <td></td>
+                  <td>43.983</td>
+                  <td></td>
+                  <td>147.970</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(63.289)  </td>
-                  <td>         </td>
-                  <td>(59.595)  </td>
-                  <td>          </td>
-                  <td>(107.716) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(63.289)</td>
+                  <td></td>
+                  <td>(59.595)</td>
+                  <td></td>
+                  <td>(107.716)</td>
                 </tr>
                 <tr>
-                  <td>educ       </td>
-                  <td>         </td>
-                  <td>513.097   </td>
-                  <td>         </td>
-                  <td>462.507   </td>
-                  <td>          </td>
-                  <td>879.978   </td>
+                  <td>educ</td>
+                  <td></td>
+                  <td>513.097</td>
+                  <td></td>
+                  <td>462.507</td>
+                  <td></td>
+                  <td>879.978</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(315.294) </td>
-                  <td>         </td>
-                  <td>(275.406) </td>
-                  <td>          </td>
-                  <td>(472.982) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(315.294)</td>
+                  <td></td>
+                  <td>(275.406)</td>
+                  <td></td>
+                  <td>(472.982)</td>
                 </tr>
                 <tr>
-                  <td>black      </td>
-                  <td>         </td>
-                  <td>-1441.462 </td>
-                  <td>         </td>
-                  <td>-892.421  </td>
-                  <td>          </td>
-                  <td>-1941.465 </td>
+                  <td>black</td>
+                  <td></td>
+                  <td>-1441.462</td>
+                  <td></td>
+                  <td>-892.421</td>
+                  <td></td>
+                  <td>-1941.465</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1547.443)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1526.070)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(2485.215)</td>
                 </tr>
                 <tr>
-                  <td>hispanic   </td>
-                  <td>         </td>
-                  <td>47.198    </td>
-                  <td>         </td>
-                  <td>-171.481  </td>
-                  <td>          </td>
-                  <td>437.208   </td>
+                  <td>hispanic</td>
+                  <td></td>
+                  <td>47.198</td>
+                  <td></td>
+                  <td>-171.481</td>
+                  <td></td>
+                  <td>437.208</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(2391.301)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(2323.016)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(4223.958)</td>
                 </tr>
                 <tr>
-                  <td>married    </td>
-                  <td>         </td>
-                  <td>294.628   </td>
-                  <td>         </td>
-                  <td>282.877   </td>
-                  <td>          </td>
-                  <td>-3213.470 </td>
+                  <td>married</td>
+                  <td></td>
+                  <td>294.628</td>
+                  <td></td>
+                  <td>282.877</td>
+                  <td></td>
+                  <td>-3213.470</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1268.718)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1282.599)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(4445.151)</td>
                 </tr>
                 <tr>
-                  <td>nodegree   </td>
-                  <td>         </td>
-                  <td>17.309    </td>
-                  <td>         </td>
-                  <td>159.611   </td>
-                  <td>          </td>
-                  <td>1779.900  </td>
+                  <td>nodegree</td>
+                  <td></td>
+                  <td>17.309</td>
+                  <td></td>
+                  <td>159.611</td>
+                  <td></td>
+                  <td>1779.900</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1401.818)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1367.608)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(2019.035)</td>
                 </tr>
                 <tr>
-                  <td>re74       </td>
-                  <td>         </td>
-                  <td>0.082     </td>
-                  <td>         </td>
-                  <td>0.056     </td>
-                  <td>          </td>
-                  <td>-0.262    </td>
+                  <td>re74</td>
+                  <td></td>
+                  <td>0.082</td>
+                  <td></td>
+                  <td>0.056</td>
+                  <td></td>
+                  <td>-0.262</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.132)   </td>
-                  <td>         </td>
-                  <td>(0.121)   </td>
-                  <td>          </td>
-                  <td>(0.601)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.132)</td>
+                  <td></td>
+                  <td>(0.121)</td>
+                  <td></td>
+                  <td>(0.601)</td>
                 </tr>
                 <tr>
-                  <td>re75       </td>
-                  <td>         </td>
-                  <td>0.200     </td>
-                  <td>         </td>
-                  <td>0.163     </td>
-                  <td>          </td>
-                  <td>2.034     </td>
+                  <td>re75</td>
+                  <td></td>
+                  <td>0.200</td>
+                  <td></td>
+                  <td>0.163</td>
+                  <td></td>
+                  <td>2.034</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.205)   </td>
-                  <td>         </td>
-                  <td>(0.198)   </td>
-                  <td>          </td>
-                  <td>(0.883)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.205)</td>
+                  <td></td>
+                  <td>(0.198)</td>
+                  <td></td>
+                  <td>(0.883)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>263      </td>
-                  <td>263       </td>
-                  <td>267      </td>
-                  <td>267       </td>
-                  <td>140       </td>
-                  <td>140       </td>
+                  <td>Num.Obs.</td>
+                  <td>263</td>
+                  <td>263</td>
+                  <td>267</td>
+                  <td>267</td>
+                  <td>140</td>
+                  <td>140</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.001    </td>
-                  <td>0.043     </td>
-                  <td>0.016    </td>
-                  <td>0.053     </td>
-                  <td>0.005     </td>
-                  <td>0.079     </td>
+                  <td>R2</td>
+                  <td>0.001</td>
+                  <td>0.043</td>
+                  <td>0.016</td>
+                  <td>0.053</td>
+                  <td>0.005</td>
+                  <td>0.079</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>-0.003   </td>
-                  <td>0.009     </td>
-                  <td>0.012    </td>
-                  <td>0.020     </td>
-                  <td>-0.002    </td>
-                  <td>0.015     </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.003</td>
+                  <td>0.009</td>
+                  <td>0.012</td>
+                  <td>0.020</td>
+                  <td>-0.002</td>
+                  <td>0.015</td>
                 </tr>
         </tbody>
       </table>
@@ -2756,8 +2744,8 @@ window.Quarto = {
 
     <script>
 
-      function styleCell_x8vgaocrpojyj5a4avtn(i, j, css_id) {
-          var table = document.getElementById("tinytable_x8vgaocrpojyj5a4avtn");
+      function styleCell_3xbil2fyr9ie82ezqsll(i, j, css_id) {
+          var table = document.getElementById("tinytable_3xbil2fyr9ie82ezqsll");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -2767,7 +2755,7 @@ window.Quarto = {
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_x8vgaocrpojyj5a4avtn');
+        var table = document.getElementById('tinytable_3xbil2fyr9ie82ezqsll');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -2775,8 +2763,8 @@ window.Quarto = {
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_x8vgaocrpojyj5a4avtn(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_x8vgaocrpojyj5a4avtn");
+      function spanCell_3xbil2fyr9ie82ezqsll(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_3xbil2fyr9ie82ezqsll");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -2806,20 +2794,20 @@ window.Quarto = {
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_puhmclrnsf8swxq43em3',}, 
-          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_omd1nqc3ki643ua4gcvv',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 6 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 3 }, { i: 0, j: 8 }, { i: 0, j: 2 }, { i: 0, j: 7 },  ], css_id: 'tinytable_css_eipba7bhrn9xt1wgimq9',}, 
-          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_cajlt9350u5qd8gcjhso',}, 
-          { positions: [ { i: 2, j: 1 }, { i: 5, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 4, j: 1 }, { i: 13, j: 1 }, { i: 1, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 9, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 12, j: 1 }, { i: 2, j: 2 }, { i: 14, j: 1 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 22, j: 1 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 1, j: 2 }, { i: 15, j: 2 }, { i: 3, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 11, j: 2 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 14, j: 2 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 16, j: 1 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 4, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 7, j: 5 }, { i: 3, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 12, j: 5 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 15, j: 5 }, { i: 8, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 16, j: 2 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 4, j: 6 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 7, j: 6 }, { i: 8, j: 1 }, { i: 17, j: 4 }, { i: 18, j: 4 }, { i: 19, j: 4 }, { i: 12, j: 6 }, { i: 21, j: 4 }, { i: 22, j: 4 }, { i: 15, j: 6 }, { i: 8, j: 3 }, { i: 1, j: 5 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 12, j: 8 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 15, j: 8 }, { i: 16, j: 3 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 4, j: 7 }, { i: 13, j: 5 }, { i: 14, j: 5 }, { i: 7, j: 7 }, { i: 16, j: 5 }, { i: 17, j: 5 }, { i: 18, j: 5 }, { i: 19, j: 5 }, { i: 12, j: 7 }, { i: 21, j: 5 }, { i: 22, j: 5 }, { i: 15, j: 7 }, { i: 8, j: 4 }, { i: 1, j: 6 }, { i: 2, j: 6 }, { i: 3, j: 6 }, { i: 17, j: 6 }, { i: 5, j: 6 }, { i: 6, j: 6 }, { i: 9, j: 7 }, { i: 16, j: 4 }, { i: 9, j: 6 }, { i: 10, j: 6 }, { i: 11, j: 6 }, { i: 4, j: 8 }, { i: 13, j: 6 }, { i: 14, j: 6 }, { i: 7, j: 8 }, { i: 16, j: 6 }, { i: 6, j: 7 }, { i: 18, j: 6 }, { i: 19, j: 6 }, { i: 22, j: 7 }, { i: 21, j: 6 }, { i: 22, j: 6 }, { i: 1, j: 8 }, { i: 8, j: 5 }, { i: 1, j: 7 }, { i: 2, j: 7 }, { i: 3, j: 7 }, { i: 17, j: 7 }, { i: 5, j: 7 }, { i: 19, j: 7 }, { i: 9, j: 8 }, { i: 8, j: 7 }, { i: 11, j: 8 }, { i: 10, j: 7 }, { i: 11, j: 7 }, { i: 14, j: 8 }, { i: 13, j: 7 }, { i: 14, j: 7 }, { i: 17, j: 8 }, { i: 16, j: 7 }, { i: 6, j: 8 }, { i: 18, j: 7 }, { i: 8, j: 8 }, { i: 22, j: 8 }, { i: 21, j: 7 }, { i: 2, j: 8 }, { i: 3, j: 8 }, { i: 8, j: 6 }, { i: 5, j: 8 }, { i: 19, j: 8 }, { i: 21, j: 8 }, { i: 13, j: 8 }, { i: 10, j: 8 }, { i: 16, j: 8 }, { i: 18, j: 8 },  ], css_id: 'tinytable_css_9p7svv0yyxsyl0i02kzc',}, 
-          { positions: [ { i: 20, j: 6 }, { i: 20, j: 8 }, { i: 20, j: 5 }, { i: 20, j: 3 }, { i: 20, j: 4 }, { i: 20, j: 7 }, { i: 20, j: 1 }, { i: 20, j: 2 },  ], css_id: 'tinytable_css_7b7bukj6nag2usj2a3cj',}, 
-          { positions: [ { i: 23, j: 2 }, { i: 23, j: 7 }, { i: 23, j: 1 }, { i: 23, j: 6 }, { i: 23, j: 4 }, { i: 23, j: 5 }, { i: 23, j: 3 }, { i: 23, j: 8 },  ], css_id: 'tinytable_css_4e0y555ksb4rc1hpo5mg',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_17dxyxuzq3en5v7nk192',}, 
+          { positions: [ { i: 23, j: 2 }, { i: 23, j: 7 }, { i: 23, j: 1 }, { i: 23, j: 6 }, { i: 23, j: 4 }, { i: 23, j: 5 }, { i: 23, j: 3 }, { i: 23, j: 8 },  ], css_id: 'tinytable_css_zozhj06y7ngahw5hwotu',}, 
+          { positions: [ { i: 20, j: 0 },  ], css_id: 'tinytable_css_sykibmgb7ekkz20i8nc8',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_ntjevgu6r01190p4n3ro',}, 
+          { positions: [ { i: 23, j: 0 },  ], css_id: 'tinytable_css_n03ysfr6bk7f6miw0ach',}, 
+          { positions: [ { i: 2, j: 1 }, { i: 5, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 4, j: 1 }, { i: 13, j: 1 }, { i: 1, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 6, j: 1 }, { i: 12, j: 3 }, { i: 21, j: 1 }, { i: 9, j: 1 }, { i: 15, j: 3 }, { i: 11, j: 1 }, { i: 12, j: 1 }, { i: 2, j: 2 }, { i: 14, j: 1 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 19, j: 1 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 22, j: 1 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 1, j: 2 }, { i: 15, j: 2 }, { i: 3, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 12, j: 4 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 15, j: 4 }, { i: 11, j: 2 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 14, j: 2 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 16, j: 1 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 4, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 7, j: 5 }, { i: 3, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 12, j: 5 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 15, j: 5 }, { i: 8, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 16, j: 2 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 4, j: 6 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 7, j: 6 }, { i: 8, j: 1 }, { i: 17, j: 4 }, { i: 18, j: 4 }, { i: 19, j: 4 }, { i: 12, j: 6 }, { i: 21, j: 4 }, { i: 22, j: 4 }, { i: 15, j: 6 }, { i: 8, j: 3 }, { i: 1, j: 5 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 12, j: 8 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 15, j: 8 }, { i: 16, j: 3 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 4, j: 7 }, { i: 13, j: 5 }, { i: 14, j: 5 }, { i: 7, j: 7 }, { i: 16, j: 5 }, { i: 17, j: 5 }, { i: 18, j: 5 }, { i: 19, j: 5 }, { i: 12, j: 7 }, { i: 21, j: 5 }, { i: 22, j: 5 }, { i: 15, j: 7 }, { i: 8, j: 4 }, { i: 1, j: 6 }, { i: 2, j: 6 }, { i: 3, j: 6 }, { i: 17, j: 6 }, { i: 5, j: 6 }, { i: 6, j: 6 }, { i: 9, j: 7 }, { i: 16, j: 4 }, { i: 9, j: 6 }, { i: 10, j: 6 }, { i: 11, j: 6 }, { i: 4, j: 8 }, { i: 13, j: 6 }, { i: 14, j: 6 }, { i: 7, j: 8 }, { i: 16, j: 6 }, { i: 6, j: 7 }, { i: 18, j: 6 }, { i: 19, j: 6 }, { i: 22, j: 7 }, { i: 21, j: 6 }, { i: 22, j: 6 }, { i: 1, j: 8 }, { i: 8, j: 5 }, { i: 1, j: 7 }, { i: 2, j: 7 }, { i: 3, j: 7 }, { i: 17, j: 7 }, { i: 5, j: 7 }, { i: 19, j: 7 }, { i: 9, j: 8 }, { i: 8, j: 7 }, { i: 11, j: 8 }, { i: 10, j: 7 }, { i: 11, j: 7 }, { i: 14, j: 8 }, { i: 13, j: 7 }, { i: 14, j: 7 }, { i: 17, j: 8 }, { i: 16, j: 7 }, { i: 6, j: 8 }, { i: 18, j: 7 }, { i: 8, j: 8 }, { i: 22, j: 8 }, { i: 21, j: 7 }, { i: 2, j: 8 }, { i: 3, j: 8 }, { i: 8, j: 6 }, { i: 5, j: 8 }, { i: 19, j: 8 }, { i: 21, j: 8 }, { i: 13, j: 8 }, { i: 10, j: 8 }, { i: 16, j: 8 }, { i: 18, j: 8 },  ], css_id: 'tinytable_css_lvilgjkdxwzpfcqec6kx',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 6 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 3 }, { i: 0, j: 8 }, { i: 0, j: 2 }, { i: 0, j: 7 },  ], css_id: 'tinytable_css_hxskvkpkwqan7y44rcoa',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 },  ], css_id: 'tinytable_css_4r3zf0dp4dqjazcvsd8m',}, 
+          { positions: [ { i: 20, j: 6 }, { i: 20, j: 8 }, { i: 20, j: 5 }, { i: 20, j: 3 }, { i: 20, j: 4 }, { i: 20, j: 7 }, { i: 20, j: 1 }, { i: 20, j: 2 },  ], css_id: 'tinytable_css_45nebrzefaol9cyk9m85',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_x8vgaocrpojyj5a4avtn(cell.i, cell.j, group.css_id);
+                  styleCell_3xbil2fyr9ie82ezqsll(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -2827,17 +2815,17 @@ window.Quarto = {
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_puhmclrnsf8swxq43em3, .table th.tinytable_css_puhmclrnsf8swxq43em3 { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_omd1nqc3ki643ua4gcvv, .table th.tinytable_css_omd1nqc3ki643ua4gcvv { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_eipba7bhrn9xt1wgimq9, .table th.tinytable_css_eipba7bhrn9xt1wgimq9 { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_cajlt9350u5qd8gcjhso, .table th.tinytable_css_cajlt9350u5qd8gcjhso { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_9p7svv0yyxsyl0i02kzc, .table th.tinytable_css_9p7svv0yyxsyl0i02kzc { text-align: center; }
-      .table td.tinytable_css_7b7bukj6nag2usj2a3cj, .table th.tinytable_css_7b7bukj6nag2usj2a3cj { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_4e0y555ksb4rc1hpo5mg, .table th.tinytable_css_4e0y555ksb4rc1hpo5mg { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_17dxyxuzq3en5v7nk192, .table th.tinytable_css_17dxyxuzq3en5v7nk192 { text-align: left; }
+      .table td.tinytable_css_zozhj06y7ngahw5hwotu, .table th.tinytable_css_zozhj06y7ngahw5hwotu { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_sykibmgb7ekkz20i8nc8, .table th.tinytable_css_sykibmgb7ekkz20i8nc8 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_ntjevgu6r01190p4n3ro, .table th.tinytable_css_ntjevgu6r01190p4n3ro { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_n03ysfr6bk7f6miw0ach, .table th.tinytable_css_n03ysfr6bk7f6miw0ach { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_lvilgjkdxwzpfcqec6kx, .table th.tinytable_css_lvilgjkdxwzpfcqec6kx { text-align: center; }
+      .table td.tinytable_css_hxskvkpkwqan7y44rcoa, .table th.tinytable_css_hxskvkpkwqan7y44rcoa { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_4r3zf0dp4dqjazcvsd8m, .table th.tinytable_css_4r3zf0dp4dqjazcvsd8m { text-align: left; }
+      .table td.tinytable_css_45nebrzefaol9cyk9m85, .table th.tinytable_css_45nebrzefaol9cyk9m85 { text-align: center; border-bottom: solid black 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_x8vgaocrpojyj5a4avtn" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_3xbil2fyr9ie82ezqsll" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -2856,256 +2844,256 @@ window.Quarto = {
         <tbody>
                 <tr>
                   <td>(Intercept)</td>
-                  <td>5953.896 </td>
-                  <td>1367.609  </td>
-                  <td>4357.528 </td>
-                  <td>-1268.481 </td>
-                  <td>5265.785  </td>
-                  <td>-7253.717 </td>
-                  <td>5135.072 </td>
-                  <td>853.666   </td>
+                  <td>5953.896</td>
+                  <td>1367.609</td>
+                  <td>4357.528</td>
+                  <td>-1268.481</td>
+                  <td>5265.785</td>
+                  <td>-7253.717</td>
+                  <td>5135.072</td>
+                  <td>853.666</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(832.765)</td>
                   <td>(4742.325)</td>
                   <td>(798.432)</td>
                   <td>(4329.104)</td>
-                  <td>(850.457) </td>
+                  <td>(850.457)</td>
                   <td>(7031.576)</td>
                   <td>(401.194)</td>
                   <td>(2708.329)</td>
                 </tr>
                 <tr>
-                  <td>treat      </td>
-                  <td>395.247  </td>
-                  <td>319.158   </td>
-                  <td>1991.615 </td>
-                  <td>1926.426  </td>
-                  <td>1070.907  </td>
-                  <td>1207.183  </td>
-                  <td>1214.071 </td>
-                  <td>1237.405  </td>
+                  <td>treat</td>
+                  <td>395.247</td>
+                  <td>319.158</td>
+                  <td>1991.615</td>
+                  <td>1926.426</td>
+                  <td>1070.907</td>
+                  <td>1207.183</td>
+                  <td>1214.071</td>
+                  <td>1237.405</td>
                 </tr>
                 <tr>
-                  <td>           </td>
+                  <td></td>
                   <td>(992.921)</td>
-                  <td>(989.821) </td>
+                  <td>(989.821)</td>
                   <td>(959.197)</td>
-                  <td>(962.213) </td>
+                  <td>(962.213)</td>
                   <td>(1248.129)</td>
                   <td>(1245.959)</td>
                   <td>(568.904)</td>
-                  <td>(554.929) </td>
+                  <td>(554.929)</td>
                 </tr>
                 <tr>
-                  <td>age        </td>
-                  <td>         </td>
-                  <td>0.738     </td>
-                  <td>         </td>
-                  <td>43.983    </td>
-                  <td>          </td>
-                  <td>147.970   </td>
-                  <td>         </td>
-                  <td>-17.562   </td>
+                  <td>age</td>
+                  <td></td>
+                  <td>0.738</td>
+                  <td></td>
+                  <td>43.983</td>
+                  <td></td>
+                  <td>147.970</td>
+                  <td></td>
+                  <td>-17.562</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(63.289)  </td>
-                  <td>         </td>
-                  <td>(59.595)  </td>
-                  <td>          </td>
-                  <td>(107.716) </td>
-                  <td>         </td>
-                  <td>(33.570)  </td>
+                  <td></td>
+                  <td></td>
+                  <td>(63.289)</td>
+                  <td></td>
+                  <td>(59.595)</td>
+                  <td></td>
+                  <td>(107.716)</td>
+                  <td></td>
+                  <td>(33.570)</td>
                 </tr>
                 <tr>
-                  <td>educ       </td>
-                  <td>         </td>
-                  <td>513.097   </td>
-                  <td>         </td>
-                  <td>462.507   </td>
-                  <td>          </td>
-                  <td>879.978   </td>
-                  <td>         </td>
-                  <td>489.248   </td>
+                  <td>educ</td>
+                  <td></td>
+                  <td>513.097</td>
+                  <td></td>
+                  <td>462.507</td>
+                  <td></td>
+                  <td>879.978</td>
+                  <td></td>
+                  <td>489.248</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(315.294) </td>
-                  <td>         </td>
-                  <td>(275.406) </td>
-                  <td>          </td>
-                  <td>(472.982) </td>
-                  <td>         </td>
-                  <td>(172.550) </td>
+                  <td></td>
+                  <td></td>
+                  <td>(315.294)</td>
+                  <td></td>
+                  <td>(275.406)</td>
+                  <td></td>
+                  <td>(472.982)</td>
+                  <td></td>
+                  <td>(172.550)</td>
                 </tr>
                 <tr>
-                  <td>black      </td>
-                  <td>         </td>
-                  <td>-1441.462 </td>
-                  <td>         </td>
-                  <td>-892.421  </td>
-                  <td>          </td>
-                  <td>-1941.465 </td>
-                  <td>         </td>
-                  <td>-1149.368 </td>
+                  <td>black</td>
+                  <td></td>
+                  <td>-1441.462</td>
+                  <td></td>
+                  <td>-892.421</td>
+                  <td></td>
+                  <td>-1941.465</td>
+                  <td></td>
+                  <td>-1149.368</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1547.443)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1526.070)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(2485.215)</td>
-                  <td>         </td>
-                  <td>(950.708) </td>
+                  <td></td>
+                  <td>(950.708)</td>
                 </tr>
                 <tr>
-                  <td>hispanic   </td>
-                  <td>         </td>
-                  <td>47.198    </td>
-                  <td>         </td>
-                  <td>-171.481  </td>
-                  <td>          </td>
-                  <td>437.208   </td>
-                  <td>         </td>
-                  <td>202.126   </td>
+                  <td>hispanic</td>
+                  <td></td>
+                  <td>47.198</td>
+                  <td></td>
+                  <td>-171.481</td>
+                  <td></td>
+                  <td>437.208</td>
+                  <td></td>
+                  <td>202.126</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(2391.301)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(2323.016)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(4223.958)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1463.378)</td>
                 </tr>
                 <tr>
-                  <td>married    </td>
-                  <td>         </td>
-                  <td>294.628   </td>
-                  <td>         </td>
-                  <td>282.877   </td>
-                  <td>          </td>
-                  <td>-3213.470 </td>
-                  <td>         </td>
-                  <td>424.461   </td>
+                  <td>married</td>
+                  <td></td>
+                  <td>294.628</td>
+                  <td></td>
+                  <td>282.877</td>
+                  <td></td>
+                  <td>-3213.470</td>
+                  <td></td>
+                  <td>424.461</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1268.718)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1282.599)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(4445.151)</td>
-                  <td>         </td>
-                  <td>(807.171) </td>
+                  <td></td>
+                  <td>(807.171)</td>
                 </tr>
                 <tr>
-                  <td>nodegree   </td>
-                  <td>         </td>
-                  <td>17.309    </td>
-                  <td>         </td>
-                  <td>159.611   </td>
-                  <td>          </td>
-                  <td>1779.900  </td>
-                  <td>         </td>
-                  <td>-92.470   </td>
+                  <td>nodegree</td>
+                  <td></td>
+                  <td>17.309</td>
+                  <td></td>
+                  <td>159.611</td>
+                  <td></td>
+                  <td>1779.900</td>
+                  <td></td>
+                  <td>-92.470</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
+                  <td></td>
+                  <td></td>
                   <td>(1401.818)</td>
-                  <td>         </td>
+                  <td></td>
                   <td>(1367.608)</td>
-                  <td>          </td>
+                  <td></td>
                   <td>(2019.035)</td>
-                  <td>         </td>
-                  <td>(844.246) </td>
+                  <td></td>
+                  <td>(844.246)</td>
                 </tr>
                 <tr>
-                  <td>re74       </td>
-                  <td>         </td>
-                  <td>0.082     </td>
-                  <td>         </td>
-                  <td>0.056     </td>
-                  <td>          </td>
-                  <td>-0.262    </td>
-                  <td>         </td>
-                  <td>0.050     </td>
+                  <td>re74</td>
+                  <td></td>
+                  <td>0.082</td>
+                  <td></td>
+                  <td>0.056</td>
+                  <td></td>
+                  <td>-0.262</td>
+                  <td></td>
+                  <td>0.050</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.132)   </td>
-                  <td>         </td>
-                  <td>(0.121)   </td>
-                  <td>          </td>
-                  <td>(0.601)   </td>
-                  <td>         </td>
-                  <td>(0.078)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.132)</td>
+                  <td></td>
+                  <td>(0.121)</td>
+                  <td></td>
+                  <td>(0.601)</td>
+                  <td></td>
+                  <td>(0.078)</td>
                 </tr>
                 <tr>
-                  <td>re75       </td>
-                  <td>         </td>
-                  <td>0.200     </td>
-                  <td>         </td>
-                  <td>0.163     </td>
-                  <td>          </td>
-                  <td>2.034     </td>
-                  <td>         </td>
-                  <td>0.318     </td>
+                  <td>re75</td>
+                  <td></td>
+                  <td>0.200</td>
+                  <td></td>
+                  <td>0.163</td>
+                  <td></td>
+                  <td>2.034</td>
+                  <td></td>
+                  <td>0.318</td>
                 </tr>
                 <tr>
-                  <td>           </td>
-                  <td>         </td>
-                  <td>(0.205)   </td>
-                  <td>         </td>
-                  <td>(0.198)   </td>
-                  <td>          </td>
-                  <td>(0.883)   </td>
-                  <td>         </td>
-                  <td>(0.121)   </td>
+                  <td></td>
+                  <td></td>
+                  <td>(0.205)</td>
+                  <td></td>
+                  <td>(0.198)</td>
+                  <td></td>
+                  <td>(0.883)</td>
+                  <td></td>
+                  <td>(0.121)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.   </td>
-                  <td>263      </td>
-                  <td>263       </td>
-                  <td>267      </td>
-                  <td>267       </td>
-                  <td>140       </td>
-                  <td>140       </td>
-                  <td>614      </td>
-                  <td>614       </td>
+                  <td>Num.Obs.</td>
+                  <td>263</td>
+                  <td>263</td>
+                  <td>267</td>
+                  <td>267</td>
+                  <td>140</td>
+                  <td>140</td>
+                  <td>614</td>
+                  <td>614</td>
                 </tr>
                 <tr>
-                  <td>R2         </td>
-                  <td>0.001    </td>
-                  <td>0.043     </td>
-                  <td>0.016    </td>
-                  <td>0.053     </td>
-                  <td>0.005     </td>
-                  <td>0.079     </td>
-                  <td>0.007    </td>
-                  <td>0.071     </td>
+                  <td>R2</td>
+                  <td>0.001</td>
+                  <td>0.043</td>
+                  <td>0.016</td>
+                  <td>0.053</td>
+                  <td>0.005</td>
+                  <td>0.079</td>
+                  <td>0.007</td>
+                  <td>0.071</td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.    </td>
-                  <td>-0.003   </td>
-                  <td>0.009     </td>
-                  <td>0.012    </td>
-                  <td>0.020     </td>
-                  <td>-0.002    </td>
-                  <td>0.015     </td>
-                  <td>0.006    </td>
-                  <td>0.057     </td>
+                  <td>R2 Adj.</td>
+                  <td>-0.003</td>
+                  <td>0.009</td>
+                  <td>0.012</td>
+                  <td>0.020</td>
+                  <td>-0.002</td>
+                  <td>0.015</td>
+                  <td>0.006</td>
+                  <td>0.057</td>
                 </tr>
         </tbody>
       </table>
@@ -3178,16 +3166,16 @@ window.Quarto = {
 <pre><code># A tibble: 48 × 8
    Model          term  estimate std.error statistic  p.value conf.low conf.high
    &lt;chr&gt;          &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
- 1 単回帰_最近傍… (Int…  5.95e+3     833.     7.15   8.74e-12    4314.     7594.
- 2 単回帰_最近傍… treat  3.95e+2     993.     0.398  6.91e- 1   -1560.     2350.
- 3 重回帰_最近傍… (Int…  1.37e+3    4742.     0.288  7.73e- 1   -7972.    10707.
- 4 重回帰_最近傍… treat  3.19e+2     990.     0.322  7.47e- 1   -1630.     2268.
- 5 重回帰_最近傍… age    7.38e-1      63.3    0.0117 9.91e- 1    -124.      125.
- 6 重回帰_最近傍… educ   5.13e+2     315.     1.63   1.05e- 1    -108.     1134.
- 7 重回帰_最近傍… black -1.44e+3    1547.    -0.932  3.52e- 1   -4489.     1606.
- 8 重回帰_最近傍… hisp…  4.72e+1    2391.     0.0197 9.84e- 1   -4662.     4757.
- 9 重回帰_最近傍… marr…  2.95e+2    1269.     0.232  8.17e- 1   -2204.     2793.
-10 重回帰_最近傍… node…  1.73e+1    1402.     0.0123 9.90e- 1   -2743.     2778.
+ 1 単回帰_最近傍（マハラノビ… (Int…  5.95e+3     833.     7.15   8.74e-12    4314.     7594.
+ 2 単回帰_最近傍（マハラノビ… treat  3.95e+2     993.     0.398  6.91e- 1   -1560.     2350.
+ 3 重回帰_最近傍（マハラノビ… (Int…  1.37e+3    4742.     0.288  7.73e- 1   -7972.    10707.
+ 4 重回帰_最近傍（マハラノビ… treat  3.19e+2     990.     0.322  7.47e- 1   -1630.     2268.
+ 5 重回帰_最近傍（マハラノビ… age    7.38e-1      63.3    0.0117 9.91e- 1    -124.      125.
+ 6 重回帰_最近傍（マハラノビ… educ   5.13e+2     315.     1.63   1.05e- 1    -108.     1134.
+ 7 重回帰_最近傍（マハラノビ… black -1.44e+3    1547.    -0.932  3.52e- 1   -4489.     1606.
+ 8 重回帰_最近傍（マハラノビ… hisp…  4.72e+1    2391.     0.0197 9.84e- 1   -4662.     4757.
+ 9 重回帰_最近傍（マハラノビ… marr…  2.95e+2    1269.     0.232  8.17e- 1   -2204.     2793.
+10 重回帰_最近傍（マハラノビ… node…  1.73e+1    1402.     0.0123 9.90e- 1   -2743.     2778.
 # ℹ 38 more rows</code></pre>
 </div>
 </div>
@@ -3201,10 +3189,10 @@ window.Quarto = {
 <pre><code># A tibble: 8 × 8
   Model            term  estimate std.error statistic p.value conf.low conf.high
   &lt;chr&gt;            &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1 単回帰_最近傍（… treat     395.      993.     0.398  0.691   -1560.      2350.
-2 重回帰_最近傍（… treat     319.      990.     0.322  0.747   -1630.      2268.
-3 単回帰_最近傍（… treat    1992.      959.     2.08   0.0388    103.      3880.
-4 重回帰_最近傍（… treat    1926.      962.     2.00   0.0463     31.6     3821.
+1 単回帰_最近傍（マハラノビス）… treat     395.      993.     0.398  0.691   -1560.      2350.
+2 重回帰_最近傍（マハラノビス）… treat     319.      990.     0.322  0.747   -1630.      2268.
+3 単回帰_最近傍（傾向スコア）…… treat    1992.      959.     2.08   0.0388    103.      3880.
+4 重回帰_最近傍（傾向スコア）…… treat    1926.      962.     2.00   0.0463     31.6     3821.
 5 単回帰_CEM       treat    1071.     1248.     0.858  0.392   -1397.      3539.
 6 重回帰_CEM       treat    1207.     1246.     0.969  0.334   -1258.      3672.
 7 単回帰_IPW       treat    1214.      569.     2.13   0.0332     96.8     2331.
@@ -3223,10 +3211,10 @@ window.Quarto = {
 <pre><code># A tibble: 8 × 9
   Regression Method          term  estimate std.error statistic p.value conf.low
   &lt;chr&gt;      &lt;chr&gt;           &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-1 単回帰     最近傍（マハラ… treat     395.      993.     0.398  0.691   -1560. 
-2 重回帰     最近傍（マハラ… treat     319.      990.     0.322  0.747   -1630. 
-3 単回帰     最近傍（傾向ス… treat    1992.      959.     2.08   0.0388    103. 
-4 重回帰     最近傍（傾向ス… treat    1926.      962.     2.00   0.0463     31.6
+1 単回帰     最近傍（マハラノビス）…… treat     395.      993.     0.398  0.691   -1560. 
+2 重回帰     最近傍（マハラノビス）…… treat     319.      990.     0.322  0.747   -1630. 
+3 単回帰     最近傍（傾向スコア）…… treat    1992.      959.     2.08   0.0388    103. 
+4 重回帰     最近傍（傾向スコア）…… treat    1926.      962.     2.00   0.0463     31.6
 5 単回帰     CEM             treat    1071.     1248.     0.858  0.392   -1397. 
 6 重回帰     CEM             treat    1207.     1246.     0.969  0.334   -1258. 
 7 単回帰     IPW             treat    1214.      569.     2.13   0.0332     96.8
@@ -3737,13 +3725,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></p>
-</div>   
+      &nbsp;
+    </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © 2025 Jaehyun Song
+  </li>  
     <li class="nav-item compact">
     <a class="nav-link" href="https://www.jaysong.net">
       <i class="bi bi-house-fill" role="img">
