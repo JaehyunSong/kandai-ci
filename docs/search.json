@@ -984,7 +984,7 @@
     "href": "slide/intro.html#実習",
     "title": "社会科学における因果推論",
     "section": "実習",
-    "text": "実習\n実習はRで行う。第4〜6回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS Sequoia 15.3.2\nR version 4.4.3 (2025-02-28)\nRStudio 2024.12.1+563\nスライド、サポートページ、実習用資料の執筆環境\n\nFirefox 136.0.1\nQuarto 1.6.42\nR package {quarto} 1.4.4"
+    "text": "実習\n実習はRで行う。第4〜6回目はRの導入および使い方についても解説（復習レベル）する。\n\n本講義の分析はExcel, SPSS, Stata, Julia, Pythonなどでも可能\n\n\n\n宋のR環境\n\nmacOS Sequoia 15.3.2\nR version 4.4.3 (2025-02-28)\nRStudio 2024.12.1+563\nスライド、サポートページ、実習用資料の執筆環境\n\nFirefox 137.0\nQuarto 1.6.43\nR package {quarto} 1.4.4"
   },
   {
     "objectID": "slide/intro.html#前提知識",
@@ -2082,7 +2082,7 @@
     "href": "index.html",
     "title": "関大総情（院）「社会科学における因果推論」",
     "section": "",
-    "text": "JDCat分析ツールの起動（はじめての方は「Rの導入」を参照し、まず分析環境を作成してください。）\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2025年03月24日\n開発環境\n\nmacOS Sequoia 15.3.2\nFirefox 136.0.1\nR version 4.4.3 (2025-02-28)\nRStudio 2024.12.1+563\nQuarto 1.6.42\nR package {quarto} 1.4.4"
+    "text": "JDCat分析ツールの起動（はじめての方は「Rの導入」を参照し、まず分析環境を作成してください。）\n\n\n\n\n\n\n\nページ情報\n\n\n\n\n最終更新日: 2025年04月09日\n開発環境\n\nmacOS Sequoia 15.3.2\nFirefox 137.0\nR version 4.4.3 (2025-02-28)\nRStudio 2024.12.1+563\nQuarto 1.6.43\nR package {quarto} 1.4.4"
   },
   {
     "objectID": "material/did.html",
